@@ -10,7 +10,7 @@ If you discover a security vulnerability within this project, please follow thes
 - Exploit the vulnerability in production environments
 
 ### DO:
-1. Email security@isthistechdead.com with details of the vulnerability
+1. Email admin@isthistechdead.com with details of the vulnerability
 2. Include clear steps to reproduce the issue
 3. If possible, suggest a potential fix or mitigation strategy
 
