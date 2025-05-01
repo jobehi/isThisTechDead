@@ -3,30 +3,8 @@
  */
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { loadEnvVars } from './env-loader';
+import { TechWithScore } from '@/domains/tech';
 
-/**
- * Core Tech entity
- */
-interface Tech {
-  id: string;
-  name: string;
-  description?: string;
-  github_repo?: string;
-  owner?: string;
-  repo?: string;
-  stackshare_slug?: string;
-  created_at?: string;
-  updated_at?: string;
-}
-/**
- * Tech with score and additional metrics
- */
-interface TechWithScore extends Tech {
-  latest_score: number | null;
-  latest_snapshot_date: string | null;
-  respect_count: number;
-  project_count: number;
-}
 // Initialize environment
 const env = loadEnvVars();
 
