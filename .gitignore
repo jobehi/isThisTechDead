@@ -1,0 +1,49 @@
+# Environments
+.env
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDEs and editors
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Next.js
+.next/
+out/
+next-env.d.ts
+.vercel
+.turbo
+.swc/
+
+# Testing
+coverage/
+.nyc_output
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build
+dist/
+build/
+
+# Misc
+*.pem
+.DS_Store
+*.tsbuildinfo
+
+#OG Images
+public/og-images/
