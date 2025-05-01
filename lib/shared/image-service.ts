@@ -71,7 +71,7 @@ export class ImageService {
         }
 
         // Check if the response is successful
-        if (!response.statusCode || response.statusCode !== 200) {
+        if (response.statusCode !== 200) {
           return reject(new Error(`Failed to download image: ${response.statusCode}`));
         }
 

@@ -5,7 +5,7 @@
  * and saving the results as static files. It's designed to be run as part of
  * the build process to ensure all OG images are pre-generated.
  */
-import { ImageService } from '../../lib/shared';
+import { calculateDeaditudeScore, ImageService } from '../../lib/shared';
 import { loadEnvVars } from './env-loader';
 import { getAllTechs } from './api';
 
@@ -47,7 +47,7 @@ export async function generateAllOGImages(): Promise<void> {
     for (const tech of techs) {
       logger.info(`Processing: ${tech.name}`);
 
-      const latest_score = tech.latest_score ? tech.latest_score * 10 : null;
+      const latest_score = tech.latest_score ? calculateDeaditudeScore(tech.latest_score) : null;
 
       // Get tech details including the score
       if (!latest_score) {
