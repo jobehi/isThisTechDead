@@ -1,6 +1,7 @@
 # Changelog
 
 All notable changes to "Is This Tech Dead?" will be documented in this file. We follow [Semantic Versioning](https://semver.org/): MAJOR.MINOR.PATCH where:
+
 - MAJOR: Incompatible API changes
 - MINOR: Added functionality in a backward-compatible manner
 - PATCH: Backward-compatible bug fixes
@@ -8,6 +9,7 @@ All notable changes to "Is This Tech Dead?" will be documented in this file. We 
 ## [Unreleased]
 
 ### Planned Features
+
 - Technology trend prediction algorithm
 - Additional trend visualization tools
 - I'm using this tech form
@@ -16,6 +18,7 @@ All notable changes to "Is This Tech Dead?" will be documented in this file. We 
 ## [0.1.0] - Alpha Release - 2025-04-19
 
 ### Added
+
 - Basic project structure
 - Initial frontend design
 - Core API functionality
@@ -23,4 +26,4 @@ All notable changes to "Is This Tech Dead?" will be documented in this file. We 
 
 ---
 
-This project follows [Keep a Changelog](https://keepachangelog.com/) guidelines for version tracking and release notes. 
+This project follows [Keep a Changelog](https://keepachangelog.com/) guidelines for version tracking and release notes.

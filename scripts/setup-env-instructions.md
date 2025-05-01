@@ -43,4 +43,3 @@ NODE_ENV=development
 - **NEXT_PUBLIC_ENABLE_PROJECT_SUBMISSION**: Enable project submission form true by default
 - **NEXT_PUBLIC_ENABLE_PRESS_F**: Enable the "Press F to Pay Respects" feature true by default
 - **REVALIDATION_SECRET**: Secret key for revalidating pages via API : required for ISR revalidation
-

@@ -7,7 +7,7 @@ import { loadEnvVars } from './env-loader';
 /**
  * Core Tech entity
  */
- interface Tech {
+interface Tech {
   id: string;
   name: string;
   description?: string;
@@ -88,5 +88,5 @@ export async function getAllTechs(): Promise<TechWithScore[]> {
     })
   );
 
-  return techsWithScores
+  return techsWithScores;
 }
