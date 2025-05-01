@@ -47,6 +47,6 @@
 
 <!-- Share a brief insight about a technical challenge you encountered or an interesting approach you implemented. -->
 
-## Your Tech Funeral Speech
+## Your Tech Funeral Speech (Optional)
 
 <!-- Please write 1-2 sentences about a technology you've seen die in your career. This is for our archives. -->
