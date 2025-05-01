@@ -1,7 +1,7 @@
 ---
 name: Bug report
 about: Report an issue to help us improve
-title: "[BUG] "
+title: '[BUG] '
 labels: bug, triage
 assignees: ''
 ---
@@ -34,14 +34,16 @@ assignees: ''
 ## Environment:
 
 <!-- Please complete the following information -->
- - Device: [e.g., MacBook Pro, Windows PC, iPhone 13]
- - OS: [e.g., macOS 13.2.1, Windows 11, iOS 16.4]
- - Browser: [e.g., Chrome 108, Firefox 107, Safari 16]
- - Version: [e.g., 1.0.0]
+
+- Device: [e.g., MacBook Pro, Windows PC, iPhone 13]
+- OS: [e.g., macOS 13.2.1, Windows 11, iOS 16.4]
+- Browser: [e.g., Chrome 108, Firefox 107, Safari 16]
+- Version: [e.g., 1.0.0]
 
 ## Console Output
 
 <!-- If you have console errors, paste them here. -->
+
 ```
 Paste any relevant error messages here.
 ```
@@ -52,4 +54,4 @@ Paste any relevant error messages here.
 
 ## Possible Solution
 
-<!-- If you have ideas on how to fix this bug, share them here. --> 
+<!-- If you have ideas on how to fix this bug, share them here. -->

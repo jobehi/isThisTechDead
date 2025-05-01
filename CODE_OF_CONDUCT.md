@@ -10,19 +10,19 @@ Remember, we can have a sense of humor about technology while still respecting e
 
 ### Acceptable Behavior
 
-* Providing constructive feedback on technology and implementation approaches
-* Respecting differing viewpoints and experiences
-* Gracefully accepting constructive criticism about your contributions
-* Focusing on what is best for the community and project
-* Showing empathy towards fellow developers and community members
+- Providing constructive feedback on technology and implementation approaches
+- Respecting differing viewpoints and experiences
+- Gracefully accepting constructive criticism about your contributions
+- Focusing on what is best for the community and project
+- Showing empathy towards fellow developers and community members
 
 ### Unacceptable Behavior
 
-* Personal attacks or disparaging comments about other contributors
-* Public or private harassment
-* Publishing others' private information without explicit permission
-* Disruptive behavior in community discussions and forums
-* Other conduct which could reasonably be considered inappropriate in a professional setting
+- Personal attacks or disparaging comments about other contributors
+- Public or private harassment
+- Publishing others' private information without explicit permission
+- Disruptive behavior in community discussions and forums
+- Other conduct which could reasonably be considered inappropriate in a professional setting
 
 ## Our Responsibilities
 
@@ -40,7 +40,6 @@ Instances of abusive, harassing, or otherwise unacceptable behavior may be repor
 
 Project maintainers who do not follow or enforce the Code of Conduct in good faith may face temporary or permanent repercussions as determined by other members of the project's leadership.
 
-
 ## Final Thought
 
-Remember: We're all navigating the challenging world of tech together. A little humor helps us along the way, but kindness and respect are always the foundation. 
+Remember: We're all navigating the challenging world of tech together. A little humor helps us along the way, but kindness and respect are always the foundation.

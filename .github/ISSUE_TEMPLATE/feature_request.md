@@ -1,7 +1,7 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-title: "[FEATURE] "
+title: '[FEATURE] '
 labels: enhancement, triage
 assignees: ''
 ---
@@ -32,4 +32,4 @@ assignees: ''
 
 ## Technical Considerations (Optional)
 
-<!-- If you have thoughts on implementation approaches or technical considerations, feel free to share them here. --> 
+<!-- If you have thoughts on implementation approaches or technical considerations, feel free to share them here. -->

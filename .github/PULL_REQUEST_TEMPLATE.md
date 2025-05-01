@@ -49,4 +49,4 @@
 
 ## Your Tech Funeral Speech
 
-<!-- Please write 1-2 sentences about a technology you've seen die in your career. This is for our archives. --> 
+<!-- Please write 1-2 sentences about a technology you've seen die in your career. This is for our archives. -->

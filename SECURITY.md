@@ -5,11 +5,13 @@
 If you discover a security vulnerability within this project, please follow these steps to report it responsibly:
 
 ### DO NOT:
+
 - Create a public GitHub issue about the vulnerability
 - Share details of the vulnerability on social media or public forums
 - Exploit the vulnerability in production environments
 
 ### DO:
+
 1. Email admin@isthistechdead.com with details of the vulnerability
 2. Include clear steps to reproduce the issue
 3. If possible, suggest a potential fix or mitigation strategy
@@ -45,4 +47,4 @@ Only the latest version receives security updates. We recommend always using the
 
 We appreciate security researchers who help improve the safety of our project. Contributors who report significant vulnerabilities will be acknowledged in our security hall of fame.
 
-Thank you for helping keep this project secure and our users protected. 
+Thank you for helping keep this project secure and our users protected.
