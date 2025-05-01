@@ -1,7 +1,6 @@
 import type { NextRequest } from 'next/server';
 
 // Simple in-memory store for rate limiting
-// NOTE: This will reset when the server restarts and doesn't work across multiple instances
 const rateLimitStore = new Map<string, { count: number; timestamp: number }>();
 
 // Clean up old entries periodically to prevent memory leaks
