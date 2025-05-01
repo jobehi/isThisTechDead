@@ -1,0 +1,20 @@
+# Ignore build artifacts
+.next/
+out/
+build/
+dist/
+
+# Ignore dependencies
+node_modules/
+
+# Ignore generated files
+public/og-images/
+
+# Ignore configuration files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Ignore temporary files
+.DS_Store
+*.log 

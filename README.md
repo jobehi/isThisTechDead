@@ -10,7 +10,7 @@ We track the slow, painful decline of frameworks, languages, and tools that prom
 
 ## Features
 
-- **Tech Death Certificates**: Scientifically* accurate assessments of whether that shiny framework is actually a rotting corpse
+- **Tech Death Certificates**: Scientifically\* accurate assessments of whether that shiny framework is actually a rotting corpse
 - **Trend Tombstones**: Visual representations of adoption rates plummeting like your hopes and dreams
 - **Framework Funerals**: Detailed case studies of tech that died before its time (or long after it should have)
 - **Memorial Wall**: Pay respects to the tools that once paid your bills

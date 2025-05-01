@@ -22,6 +22,7 @@ Welcome to the "Is This Tech Dead?" project. While our website maintains a humor
 ### Commit Messages
 
 We follow conventional commits format:
+
 ```
 feat(component): add new tech trend visualization
 
