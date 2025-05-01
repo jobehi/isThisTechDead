@@ -52,7 +52,7 @@ export class ImageService {
     return new Promise((resolve, reject) => {
       this.logger.info(`Downloading from: ${url}`);
 
-      const protocol = https
+      const protocol = https;
 
       const options = new URL(url);
 
