@@ -129,11 +129,22 @@ export function SiteFooter() {
               Built With
             </h3>
             <div className="grid grid-cols-3 gap-3">
-              <TechBadge name="Next.js" />
-              <TechBadge name="React" />
-              <TechBadge name="TypeScript" />
-              <TechBadge name="Tailwind" />
-              <TechBadge name="Supabase" />
+              {/* referencing our own pages, because we can */}
+              <Link href="/nextjs">
+                <TechBadge name="Next.js" />
+              </Link>
+              <Link href="/react">
+                <TechBadge name="React" />
+              </Link>
+              <Link href="/typescript">
+                <TechBadge name="TypeScript" />
+              </Link>
+              <Link href="/tailwind">
+                <TechBadge name="Tailwind" />
+              </Link>
+              <Link href="/supabase">
+                <TechBadge name="Supabase" />
+              </Link>
             </div>
 
             <div className="mt-6 text-xs text-zinc-500">
