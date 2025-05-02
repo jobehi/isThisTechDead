@@ -2,4 +2,4 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 # Run lint-staged for linting and formatting checks
-npx lint-staged
+cd ./website && npx lint-staged -c lint-staged.config.js

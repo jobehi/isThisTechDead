@@ -1,9 +1,10 @@
-name: CI
+name: WEBSITE CI
 
 env:
   NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
   NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
   SITE_URL: ${{ secrets.SITE_URL }}
+
 
 on:
   push:
@@ -25,19 +26,25 @@ jobs:
           cache: npm
 
       - name: Install dependencies
+        working-directory: ./website
         run: npm ci
 
       - name: Lint
+        working-directory: ./website
         run: npm run lint
 
       - name: Prettier Check
+        working-directory: ./website
         run: npm run format:check
 
       - name: Type Check
+        working-directory: ./website
         run: npm run type-check
 
       - name: Unit Tests
+        working-directory: ./website
         run: npm test
 
       - name: Build
+        working-directory: ./website
         run: npm run build:ci
