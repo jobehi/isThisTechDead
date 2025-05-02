@@ -117,5 +117,4 @@ export class ProjectRepository {
       handleSupabaseError(error, 'Get latest projects');
     }
   }
-  
 }

@@ -82,7 +82,6 @@ export class ProjectService {
     return projects.map(project => this.enhanceProjectWithMeta(project));
   }
 
-
   /**
    * Enhance a project with additional metadata
    */
