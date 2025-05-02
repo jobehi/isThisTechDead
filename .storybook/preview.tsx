@@ -31,7 +31,8 @@ const DarkModeWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) 
 
   return (
     <div
-      className={`${geistSans.variable} ${geistMono.variable} font-sans bg-zinc-950 text-zinc-100 min-h-screen`}
+      className={`${geistSans.variable} ${geistMono.variable} font-sans bg-zinc-950 text-zinc-100`}
+      style={{ maxHeight: '400px' }}
     >
       {children}
     </div>
@@ -40,7 +41,19 @@ const DarkModeWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) 
 
 // Component wrapper with correct styling
 const ComponentWrapper = ({ children }: { children: React.ReactNode }) => (
-  <div className="p-8 rounded-md bg-zinc-950 text-zinc-100 min-h-[200px] min-w-[200px]">
+  <div
+    style={{
+      padding: '16px',
+      backgroundColor: 'transparent',
+      color: 'rgb(244, 244, 245)',
+      overflow: 'visible',
+      position: 'relative',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      maxHeight: '300px',
+    }}
+  >
     {children}
   </div>
 );
@@ -68,7 +81,12 @@ const preview: Preview = {
         },
       ],
     },
-    layout: 'centered',
+    // Improve layout settings to reduce empty space
+    layout: {
+      centered: true,
+      padded: true,
+      fullscreen: false,
+    },
     // Force dark mode for all stories
     darkMode: {
       current: 'dark',
@@ -79,6 +97,40 @@ const preview: Preview = {
     themes: {
       default: 'dark',
       clearable: false,
+    },
+    // Add viewport controls
+    viewport: {
+      viewports: {
+        mobile: {
+          name: 'Mobile',
+          styles: {
+            width: '375px',
+            height: '400px',
+          },
+        },
+        tablet: {
+          name: 'Tablet',
+          styles: {
+            width: '768px',
+            height: '400px',
+          },
+        },
+        desktop: {
+          name: 'Desktop',
+          styles: {
+            width: '1024px',
+            height: '400px',
+          },
+        },
+      },
+      defaultViewport: 'desktop',
+    },
+    // Force reasonable canvas size
+    docs: {
+      canvas: {
+        withToolbar: true,
+        className: 'fixed-height-canvas',
+      },
     },
   },
   decorators: [

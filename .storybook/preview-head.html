@@ -1,13 +1,96 @@
 <style>
-  /* Force dark mode on the entire document */
+  /* Essential dark mode */
   html, body {
     background-color: #09090b !important; /* zinc-950 */
     color: #f4f4f5 !important; /* zinc-100 */
   }
 
+  /* CRITICAL FIX: Strictly limit canvas height */
+  #root, 
+  #storybook-root, 
+  .sb-show-main,
+  [data-is-storybook="true"] {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Stop the canvas from becoming too tall */
+  .sb-show-main, 
+  .docs-story, 
+  .sb-main-padded,
+  #storybook-preview-wrapper,
+  .sb-canvas-container,
+  .sb-preview-content {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+  }
+  
+  /* Reduce padding and margins around preview content */
+  .sb-preview-content > div {
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.15) !important;
+    padding: 8px !important;
+    margin: 4px !important;
+    border-radius: 0 !important;
+  }
+
   /* Force dark mode on Storybook UI */
   html {
     color-scheme: dark !important;
+  }
+
+  /* Fix clipped corners in component previews */
+  .sb-show-main {
+    background-color: transparent !important;
+    padding: 0 !important;
+  }
+  
+  /* Reduce padding in docs and main view */
+  .docs-story, 
+  .sb-main-padded {
+    background: transparent !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+  }
+
+  /* Ensure components have room to breathe but don't take excessive space */
+  .docs-story > div, 
+  .sb-preview-content > div {
+    margin: 0.5rem !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+  }
+
+  /* Specific fixes for TechCard component */
+  a[href^="/"] {
+    display: block !important;
+    max-width: 100% !important;
+    border-radius: 0.75rem !important;
+    overflow: visible !important;
+    transform-origin: center !important;
+    margin: 0.5rem !important;
+  }
+
+  /* Fix for TechCard rounded corners */
+  .rounded-xl {
+    border-radius: 0.75rem !important;
+    overflow: hidden !important;
+  }
+
+  /* Ensure parent containers don't clip corners */
+  .docs-story a[href^="/"], 
+  .sb-preview-content a[href^="/"] {
+    isolation: isolate !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  /* Fix iframe height directly */
+  #storybook-preview-iframe {
+    height: 400px !important;
+    min-height: 0 !important;
   }
 
   /* Simulate Tailwind dark mode */
@@ -94,11 +177,6 @@
     opacity: 0.5 !important;
   }
 
-  /* Fix for rounded elements */
-  .rounded-md {
-    border-radius: 0.375rem !important;
-  }
-
   /* Additional component-specific fixes */
   .components-preview .dark {
     color-scheme: dark !important;
@@ -109,5 +187,38 @@
 
 <script>
   document.documentElement.classList.add('dark');
-  document.documentElement.setAttribute('data-theme', 'dark');
+  
+  // Additional script to fix TechCard rendering issues and canvas height
+  window.addEventListener('load', () => {
+    // Ensure all borders and corners are properly rendered
+    const techCards = document.querySelectorAll('a[href^="/"]');
+    techCards.forEach(card => {
+      card.style.borderRadius = '0.75rem';
+      card.style.overflow = 'hidden';
+      card.style.display = 'block';
+      card.style.margin = '0.5rem';
+    });
+    
+    // Force iframe height to be reasonable
+    const fixCanvasHeight = () => {
+      // Direct iframe fix
+      const iframe = document.getElementById('storybook-preview-iframe');
+      if (iframe) {
+        iframe.style.height = '400px';
+        iframe.style.minHeight = '0';
+      }
+      
+      // Canvas containers
+      const canvasContainers = document.querySelectorAll('.sb-canvas-container, .sb-show-main, #root, #storybook-root');
+      canvasContainers.forEach(container => {
+        container.style.height = 'auto';
+        container.style.minHeight = '0';
+      });
+    };
+    
+    // Run immediately and periodically to ensure it applies
+    fixCanvasHeight();
+    setInterval(fixCanvasHeight, 1000);
+    window.addEventListener('resize', fixCanvasHeight);
+  });
 </script> 
