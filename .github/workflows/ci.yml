@@ -1,5 +1,10 @@
 name: CI
 
+env:
+  NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+  SITE_URL: ${{ secrets.SITE_URL }}
+
 on:
   push:
     branches: [main, master]

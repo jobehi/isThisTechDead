@@ -30,12 +30,12 @@ const config: NextConfig = {
             key: 'Content-Security-Policy',
             value:
               "default-src 'self'; " +
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.isthistechdead.com https://scripts.simpleanalyticscdn.com https://buttondown.com/api/emails/embed-subscribe/is-this-tech-dead https://media.ethicalads.io https://server.ethicalads.io; " +
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.isthistechdead.com https://scripts.simpleanalyticscdn.com https://buttondown.com/api/emails/embed-subscribe/is-this-tech-dead https://media.ethicalads.io https://server.ethicalads.io https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; " +
               "style-src 'self' 'unsafe-inline'; " +
               "img-src 'self' data: blob: https:; " +
               "font-src 'self'; " +
-              "connect-src 'self' https://*.supabase.co https://buttondown.com/api/emails/embed-subscribe/is-this-tech-dead https://server.ethicalads.io; " +
-              "frame-src 'none'; " +
+              "connect-src 'self' https://*.supabase.co https://buttondown.com/api/emails/embed-subscribe/is-this-tech-dead https://server.ethicalads.io https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; " +
+              'frame-src https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/; ' +
               "object-src 'none'; " +
               "base-uri 'self'; " +
               "form-action 'self' https://buttondown.com; " +
