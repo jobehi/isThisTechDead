@@ -118,7 +118,7 @@ export const config: AppConfig = {
     siteKey: getEnv('NEXT_PUBLIC_RECAPTCHA_SITE_KEY', ''),
     secretKey: getEnv('RECAPTCHA_SECRET_KEY', ''),
   },
-  
+
   newsletter: {
     apiKey: getEnv('NEXT_PUBLIC_BUTTONDOWN_API_KEY', ''),
   },
@@ -144,15 +144,21 @@ export const config: AppConfig = {
 export function logConfigWarnings() {
   if (process.env.NODE_ENV !== 'production') {
     if (!process.env.NEXT_PUBLIC_SUPABASE_URL) {
-      console.warn('⚠️ Warning: NEXT_PUBLIC_SUPABASE_URL is not set. Some features will not work properly.');
+      console.warn(
+        '⚠️ Warning: NEXT_PUBLIC_SUPABASE_URL is not set. Some features will not work properly.'
+      );
     }
     if (!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
-      console.warn('⚠️ Warning: NEXT_PUBLIC_SUPABASE_ANON_KEY is not set. Some features will not work properly.');
+      console.warn(
+        '⚠️ Warning: NEXT_PUBLIC_SUPABASE_ANON_KEY is not set. Some features will not work properly.'
+      );
     }
-    
+
     if (config.features.enableProjectSubmission) {
       if (!config.recaptcha.siteKey) {
-        console.warn('NEXT_PUBLIC_RECAPTCHA_SITE_KEY is recommended when project submission is enabled');
+        console.warn(
+          'NEXT_PUBLIC_RECAPTCHA_SITE_KEY is recommended when project submission is enabled'
+        );
       }
       if (!config.recaptcha.secretKey) {
         console.warn('RECAPTCHA_SECRET_KEY is recommended when project submission is enabled');

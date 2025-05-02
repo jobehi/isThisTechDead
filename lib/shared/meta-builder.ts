@@ -1,6 +1,6 @@
 /**
  * Meta Builder Service
- * 
+ *
  * Shared utilities for generating SEO metadata and OG image paths
  * used by both the web UI and OG image generation scripts.
  */
@@ -27,7 +27,7 @@ export interface MetadataContent {
 
 export class MetaBuilder {
   private siteUrl: string;
-  
+
   constructor(options?: { siteUrl?: string }) {
     this.siteUrl = options?.siteUrl || config.site.url;
   }
@@ -57,10 +57,7 @@ export class MetaBuilder {
   /**
    * Generate metadata content for a tech
    */
-  generateMetadataContent(
-    tech: TechMetaInfo | null,
-    score: number | null
-  ): MetadataContent {
+  generateMetadataContent(tech: TechMetaInfo | null, score: number | null): MetadataContent {
     if (!tech) {
       return {
         title: 'Technology Not Found',
@@ -93,7 +90,7 @@ export class MetaBuilder {
    */
   generateStructuredData(
     tech: TechMetaInfo,
-    score: number, 
+    score: number,
     datePublished: string | null,
     slug: string
   ): Record<string, unknown> {
@@ -120,9 +117,9 @@ export class MetaBuilder {
           name: `Is ${tech.name} dead?`,
           acceptedAnswer: {
             '@type': 'Answer',
-            text: `According to our very scientific Deaditude Score™ of ${this.formatTechScore(score)}%, it's ${
-              this.getTechStatusDescription(score)
-            }`,
+            text: `According to our very scientific Deaditude Score™ of ${this.formatTechScore(score)}%, it's ${this.getTechStatusDescription(
+              score
+            )}`,
           },
         },
         {
@@ -144,4 +141,4 @@ export class MetaBuilder {
       ],
     };
   }
-} 
+}

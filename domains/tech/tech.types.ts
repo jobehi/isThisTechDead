@@ -4,7 +4,7 @@
  * Type definitions for the tech domain model.
  */
 
-import { Project } from "../project";
+import { Project } from '../project';
 
 /**
  * Core Tech entity
@@ -155,7 +155,6 @@ export interface Snapshot {
   stackshare_metrics: StackShareMetrics;
   google_jobs: GoogleJobsMetrics;
 }
-
 
 /**
  * Complete tech details with snapshots and projects

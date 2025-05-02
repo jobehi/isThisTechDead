@@ -164,13 +164,13 @@ export function createApiClient(config: ApiClientConfig) {
         ...options,
         method: 'POST',
       };
-      
+
       if (data) {
         requestOptions.body = JSON.stringify(data);
       } else {
         requestOptions.body = null;
       }
-      
+
       return request<T>(url, requestOptions);
     },
 
@@ -179,13 +179,13 @@ export function createApiClient(config: ApiClientConfig) {
         ...options,
         method: 'PUT',
       };
-      
+
       if (data) {
         requestOptions.body = JSON.stringify(data);
       } else {
         requestOptions.body = null;
       }
-      
+
       return request<T>(url, requestOptions);
     },
 
@@ -194,13 +194,13 @@ export function createApiClient(config: ApiClientConfig) {
         ...options,
         method: 'PATCH',
       };
-      
+
       if (data) {
         requestOptions.body = JSON.stringify(data);
       } else {
         requestOptions.body = null;
       }
-      
+
       return request<T>(url, requestOptions);
     },
 

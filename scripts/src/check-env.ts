@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Environment Variables Checker
- * 
+ *
  * This script checks for required environment variables and warns if they're missing.
  * It's designed to be run during development to help catch configuration issues early.
  */
@@ -19,10 +19,7 @@ if (fs.existsSync(envLocalPath)) {
 }
 
 // Define required variables
-const REQUIRED_VARS = [
-  'NEXT_PUBLIC_SUPABASE_URL',
-  'NEXT_PUBLIC_SUPABASE_ANON_KEY',
-];
+const REQUIRED_VARS = ['NEXT_PUBLIC_SUPABASE_URL', 'NEXT_PUBLIC_SUPABASE_ANON_KEY'];
 
 // Define recommended variables
 const RECOMMENDED_VARS = [
@@ -43,8 +40,12 @@ if (missingRequired.length === 0) {
   missingRequired.forEach(v => {
     console.log(chalk.red(`   - ${v}`));
   });
-  console.log(chalk.yellow('\nThe application may not function correctly without these variables.'));
-  console.log(chalk.yellow('Please check scripts/setup-env-instructions.md for setup instructions.'));
+  console.log(
+    chalk.yellow('\nThe application may not function correctly without these variables.')
+  );
+  console.log(
+    chalk.yellow('Please check scripts/setup-env-instructions.md for setup instructions.')
+  );
 }
 
 // Check recommended variables
@@ -62,4 +63,4 @@ console.log(chalk.blue('\n=============================\n'));
 // Exit with error code if required variables are missing
 if (missingRequired.length > 0) {
   process.exit(1);
-} 
+}

@@ -85,4 +85,4 @@ export function usePressFFeature(techId: string, techName: string) {
     dailyRespects,
     rateLimited,
   };
-} 
+}

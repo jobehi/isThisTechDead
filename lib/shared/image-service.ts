@@ -163,9 +163,10 @@ export class ImageService {
 /**
  * Generate the fallback OG image (Server Action)
  */
-export async function generateFallbackOGImage(
-  options?: { logger?: Logger; siteUrl?: string }
-): Promise<string> {
+export async function generateFallbackOGImage(options?: {
+  logger?: Logger;
+  siteUrl?: string;
+}): Promise<string> {
   'use server';
   const service = new ImageService(options);
   return service.generateFallbackOGImage();
@@ -175,7 +176,7 @@ export async function generateFallbackOGImage(
  * Generate an OG image for a tech (Server Action)
  */
 export async function generateTechOGImage(
-  techName: string, 
+  techName: string,
   score: number | null,
   options?: { logger?: Logger; siteUrl?: string }
 ): Promise<string> {

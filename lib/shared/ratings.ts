@@ -84,4 +84,4 @@ export function calculateDeaditudeScore(rawScore: number | null | undefined): nu
  */
 export function formatScore(score: number): string {
   return safeToFixed(score, 1);
-} 
+}

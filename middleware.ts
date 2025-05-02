@@ -32,8 +32,8 @@ export async function middleware(request: NextRequest) {
   // Add server-only protection for Supabase
   // This helps ensure client components aren't making direct Supabase calls
   if (request.headers.get('x-supabase-direct-client-call') === 'true') {
-    return new NextResponse('Server-only: Direct Supabase client calls are not allowed', { 
-      status: 403 
+    return new NextResponse('Server-only: Direct Supabase client calls are not allowed', {
+      status: 403,
     });
   }
 

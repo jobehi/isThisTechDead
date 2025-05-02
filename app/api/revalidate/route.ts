@@ -1,24 +1,31 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
 import { TechService } from '@/domains/tech';
-import { safeToFixed, ImageService } from '@/lib/shared';
+import { safeToFixed } from '@/lib/shared';
+import { generateTechOGImage } from '@/lib/shared/server';
+import config from '@/lib/config';
 
-// Initialize the image service
-const imageService = new ImageService({
-  siteUrl: process.env.SITE_URL || 'https://www.isthistechdead.com',
-  logger: {
-    info: message => console.log(`🔍 ${message}`),
-    success: message => console.log(`✅ ${message}`),
-    error: (message, error) => console.error(`❌ ${message}`, error),
-  },
-});
+// Logger for OG image generation
+const logger = {
+  info: (message: string) => console.log(`🔍 ${message}`),
+  success: (message: string) => console.log(`✅ ${message}`),
+  error: (message: string, error?: unknown) => console.error(`❌ ${message}`, error),
+};
 
 export async function POST(request: NextRequest) {
   try {
     // Extract the path to revalidate from the request
     const data = await request.json();
     const path = data.path || '/';
+    const secret = data.secret;
+
     console.log(`🔄 Received revalidation request for path: ${path}`);
+
+    // Direct env var check for revalidation secret
+    const revalidationSecret = config.security.revalidationSecret;
+    if (!secret || secret !== revalidationSecret) {
+      return NextResponse.json({ message: 'Invalid revalidation secret' }, { status: 401 });
+    }
 
     // Check if this is a tech page
     const techSlugMatch = path.match(/^\/([a-zA-Z0-9-]+)$/);
@@ -34,12 +41,18 @@ export async function POST(request: NextRequest) {
 
         if (tech && snapshots && snapshots.length > 0) {
           const latestSnapshot = snapshots[0];
-          const score = latestSnapshot.deaditude_score * 10;
-          const scoreFormatted = score ? safeToFixed(score) : 'Unknown';
+          // Add null check before accessing properties
+          const score = latestSnapshot?.deaditude_score
+            ? latestSnapshot.deaditude_score * 10
+            : null;
+          const scoreFormatted = score !== null ? safeToFixed(score) : 'Unknown';
 
           console.log(`🔍 Generating OG image for ${tech.name} with score ${scoreFormatted}`);
-          // Generate a new OG image for this tech
-          await imageService.generateTechOGImage(tech.name, score);
+          // Generate a new OG image for this tech using the server action
+          await generateTechOGImage(tech.name, score, {
+            logger,
+            siteUrl: config.site.url,
+          });
           console.log(`✅ OG image generation complete`);
         } else {
           console.log(`⚠️ No tech data or snapshots found for ${techSlug}`);

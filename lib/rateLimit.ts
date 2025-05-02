@@ -27,7 +27,7 @@ export async function rateLimitRequest(request: NextRequest) {
   // Get IP address from request headers
   const forwardedFor = request.headers.get('x-forwarded-for');
   // Get client IP or use a fallback
-  const ip = forwardedFor ? forwardedFor.split(',')[0]?.trim() ?? 'unknown' : 'unknown';
+  const ip = forwardedFor ? (forwardedFor.split(',')[0]?.trim() ?? 'unknown') : 'unknown';
 
   // Add path to make rate limit specific to the endpoint
   const identifier = `${ip}:${request.nextUrl.pathname}`;

@@ -82,4 +82,4 @@ export function useLocalRespectQuota() {
     getDailyRespectInfo,
     MAX_RESPECTS_PER_DAY,
   };
-} 
+}

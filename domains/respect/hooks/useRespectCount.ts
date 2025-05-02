@@ -31,4 +31,4 @@ export function useRespectCount(techId: string | null) {
   };
 
   return compatResponse;
-} 
+}

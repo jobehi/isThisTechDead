@@ -36,15 +36,11 @@ function getSupabaseClient(): SupabaseClient {
   }
 
   // Create the client with proper credentials
-  supabaseInstance = createClient(
-    config.supabase.url,
-    config.supabase.anonKey,
-    {
-      auth: {
-        persistSession: false,
-      },
-    }
-  );
+  supabaseInstance = createClient(config.supabase.url, config.supabase.anonKey, {
+    auth: {
+      persistSession: false,
+    },
+  });
 
   return supabaseInstance;
 }
@@ -55,22 +51,22 @@ export const supabase = new Proxy({} as SupabaseClient, {
     // Only initialize the client when methods are actually called
     const client = getSupabaseClient();
     const value = client[prop as keyof SupabaseClient];
-    
+
     if (typeof value === 'function') {
-      return function(...args: unknown[]) {
+      return function (...args: unknown[]) {
         return (value as (...args: unknown[]) => unknown).apply(client, args);
       };
     }
-    
+
     return value;
-  }
+  },
 });
 
 /**
  * Higher-order function to wrap a Supabase query with error handling
  * @param context The context to use in error messages
  * @returns A function that wraps a query function with error handling
- * 
+ *
  * @example
  * ```ts
  * const result = await withSupabaseErrorContext('Get tech by id')(async () => {
@@ -79,7 +75,7 @@ export const supabase = new Proxy({} as SupabaseClient, {
  *     .select('*')
  *     .eq('id', id)
  *     .single();
- *   
+ *
  *   if (error) throw error;
  *   return data;
  * });

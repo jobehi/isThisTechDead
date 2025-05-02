@@ -4,4 +4,4 @@
  */
 
 // Export image services (only available on server)
-export * from './image-service'; 
+export * from './image-service';

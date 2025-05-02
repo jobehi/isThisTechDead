@@ -35,9 +35,7 @@ export function apiSuccess<T>(
   };
 
   // Only include headers in options if they are provided
-  return headers 
-    ? NextResponse.json(response, { headers }) 
-    : NextResponse.json(response);
+  return headers ? NextResponse.json(response, { headers }) : NextResponse.json(response);
 }
 
 /**

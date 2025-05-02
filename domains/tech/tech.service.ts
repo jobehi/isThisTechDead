@@ -100,8 +100,8 @@ export class TechService {
     slug: string
   ): Record<string, unknown> {
     return this.metaBuilder.generateStructuredData(
-      tech, 
-      score, 
+      tech,
+      score,
       latestSnapshot?.created_at || null,
       slug
     );

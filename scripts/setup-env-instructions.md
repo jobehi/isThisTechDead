@@ -37,7 +37,6 @@ NODE_ENV=development
 - **NEXT_PUBLIC_SUPABASE_URL**: Your Supabase project URL
 - **NEXT_PUBLIC_SUPABASE_ANON_KEY**: Your Supabase anonymous key
 
-
 ## Optional Variables
 
 - **SITE_URL**: The URL of your site (defaults to http://localhost:3000 in development) : Required for building OG images
