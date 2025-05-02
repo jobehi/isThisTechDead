@@ -4,11 +4,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { GitHubDialog, useGitHubDialog } from './GitHubDialog';
 import { XIcon } from '../atoms/icons/XIcon';
 import { MenuIcon } from '../atoms/icons/MenuIcon';
 import { cn } from '@/lib/cn';
-
+import { GithubIcon } from '../atoms/icons/GithubIcon';
+import { config } from '@/lib/config';
 interface SiteHeaderProps {
   rightContent?: React.ReactNode;
   backLink?: boolean;
@@ -50,11 +50,6 @@ function LinkComponent({ href, children, className = '', onClick }: LinkProps) {
 export function SiteHeader({ rightContent }: SiteHeaderProps) {
   // Header is now always visible with background, no scroll listener needed
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const {
-    isOpen: isGitHubDialogOpen,
-    setIsOpen: setGitHubDialogOpen,
-    openDialog,
-  } = useGitHubDialog();
   const formattedDate = new Date().toLocaleDateString('en-US', {
     month: 'short',
     day: 'numeric',
@@ -106,14 +101,25 @@ export function SiteHeader({ rightContent }: SiteHeaderProps) {
           <nav className="hidden md:flex items-center space-x-1">
             <LinkComponent href="/">Home</LinkComponent>
             <LinkComponent href="/methodology">Methodology</LinkComponent>
-            <LinkComponent href="#" onClick={openDialog}>
-              GitHub
-            </LinkComponent>
             <LinkComponent href="/newsletter" className="text-lime-400 hover:text-lime-300">
               Newsletter
             </LinkComponent>
 
             <div className="border-l border-zinc-800 h-6 mx-2"></div>
+            {/* Github with icon */}
+            <a
+              href={config.site.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-zinc-400 transition-colors"
+              aria-label="Follow us on GitHub"
+            >
+              <GithubIcon />
+            </a>
+
+            {/* space */}
+            <div className="h-6 mx-2"></div>
+
             <div className="flex items-center space-x-4">
               <a
                 href="https://bsky.app/profile/isthistechdead.com"
@@ -171,17 +177,6 @@ export function SiteHeader({ rightContent }: SiteHeaderProps) {
                 >
                   Methodology
                 </LinkComponent>
-                <a
-                  href="#"
-                  onClick={e => {
-                    e.preventDefault();
-                    setMobileMenuOpen(false);
-                    setGitHubDialogOpen(true);
-                  }}
-                  className="px-4 py-2 text-white hover:bg-zinc-800 rounded-lg"
-                >
-                  GitHub
-                </a>
                 <LinkComponent
                   href="/newsletter"
                   className="text-lime-400 hover:text-lime-300 block px-3 py-2 rounded-md text-base font-medium"
@@ -190,10 +185,17 @@ export function SiteHeader({ rightContent }: SiteHeaderProps) {
                 </LinkComponent>
 
                 <div className="pt-4 pb-2">
-                  <p className="text-xs uppercase tracking-wider text-zinc-500 font-medium mb-3">
-                    Follow us
-                  </p>
                   <div className="flex items-center space-x-4">
+                    <a
+                      href={config.site.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white hover:text-zinc-400 transition-colors"
+                      aria-label="Follow us on GitHub"
+                    >
+                      <GithubIcon />
+                    </a>
+
                     <a
                       href="https://bsky.app/profile/isthistechdead.com"
                       target="_blank"
@@ -216,9 +218,6 @@ export function SiteHeader({ rightContent }: SiteHeaderProps) {
           )}
         </AnimatePresence>
       </div>
-
-      {/* GitHub Dialog */}
-      <GitHubDialog isOpen={isGitHubDialogOpen} onClose={() => setGitHubDialogOpen(false)} />
     </header>
   );
 }

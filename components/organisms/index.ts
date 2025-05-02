@@ -12,7 +12,6 @@ export * from './TechHeader';
 export * from './TechMetricsSection';
 export * from './TechHistorySection';
 export * from './Dialog';
-export * from './GitHubDialog';
 export * from './EthicalAd';
 export * from './NewsletterBox';
 export * from './PressF';
