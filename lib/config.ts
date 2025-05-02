@@ -21,6 +21,7 @@ interface SiteConfig {
   description: string;
   ogImage: string;
   githubUrl: string;
+  ethicalAdsId: string;
 }
 
 interface FeatureConfig {
@@ -109,6 +110,7 @@ export const config: AppConfig = {
     description: 'Find out if your favorite technologies are dying with data-driven insights.',
     ogImage: '/is_this_tech_dead_cover.png',
     githubUrl: 'https://github.com/jobehi/is-this-tech-dead-front',
+    ethicalAdsId: getEnv('ETHICAL_ADS_ID', 'isthistechdeadcom'),
   },
 
   features: {
