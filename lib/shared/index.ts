@@ -1,9 +1,13 @@
 /**
  * Shared utilities and services
+ * Use this import path: import { functionName } from '@/lib/shared';
  */
 
 // Export all utilities
 export * from './utils';
 
-// Export image services
-export * from './image-service';
+// Export metadata builder
+export * from './meta-builder';
+
+// Export ratings
+export * from './ratings';

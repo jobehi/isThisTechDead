@@ -1,6 +1,8 @@
-import supabase from '@/lib/supabase';
+import supabase, { withSupabaseErrorContext } from '@/lib/supabase';
 import { handleSupabaseError } from '@/lib/errors';
-import { Project, Snapshot, Tech, TechDetails } from './tech.types';
+import { Snapshot, Tech, TechDetails } from './tech.types';
+import { Project } from '../project';
+import { DB_TABLES } from '@/lib/config';
 
 /**
  * Tech Repository
@@ -12,22 +14,16 @@ export class TechRepository {
    * Get a tech by its ID
    */
   static async getTechById(id: string): Promise<Tech | null> {
-    try {
+    return withSupabaseErrorContext<Tech | null>('Get tech by id')(async () => {
       const { data, error } = await supabase
-        .from('tech_registry')
+        .from(DB_TABLES.TECH_REGISTRY)
         .select('*')
         .eq('id', id)
         .single();
 
       if (error) throw error;
       return data;
-    } catch (error) {
-      // Convert to not found if single() didn't find anything
-      if (error instanceof Error && error.message.includes('not found')) {
-        return null;
-      }
-      handleSupabaseError(error, 'Get tech by id');
-    }
+    });
   }
 
   /**
@@ -36,7 +32,7 @@ export class TechRepository {
   static async getAllTechs(): Promise<Tech[]> {
     try {
       const { data, error } = await supabase
-        .from('tech_registry')
+        .from(DB_TABLES.TECH_REGISTRY)
         .select('*')
         .order('name')
         .limit(1000);
@@ -54,7 +50,7 @@ export class TechRepository {
   static async getSnapshotsByTechId(techId: string): Promise<Snapshot[]> {
     try {
       const { data, error } = await supabase
-        .from('tech_snapshots')
+        .from(DB_TABLES.TECH_SNAPSHOTS)
         .select('*')
         .eq('tech_id', techId)
         .order('snapshot_date', { ascending: false });
@@ -72,7 +68,7 @@ export class TechRepository {
   static async getLatestSnapshotByTechId(techId: string): Promise<Snapshot | null> {
     try {
       const { data, error } = await supabase
-        .from('tech_snapshots')
+        .from(DB_TABLES.TECH_SNAPSHOTS)
         .select('*')
         .eq('tech_id', techId)
         .order('snapshot_date', { ascending: false })
@@ -103,7 +99,7 @@ export class TechRepository {
   static async getProjectsByTechId(techId: string): Promise<Project[]> {
     try {
       const { data, error } = await supabase
-        .from('tech_projects')
+        .from(DB_TABLES.TECH_PROJECTS)
         .select('*')
         .eq('tech_id', techId)
         .eq('is_approved', true)
@@ -122,7 +118,7 @@ export class TechRepository {
   static async getProjectCountByTechId(techId: string): Promise<number> {
     try {
       const { count, error } = await supabase
-        .from('tech_projects')
+        .from(DB_TABLES.TECH_PROJECTS)
         .select('*', { count: 'exact', head: true })
         .eq('tech_id', techId)
         .eq('is_approved', true);
@@ -140,7 +136,7 @@ export class TechRepository {
   static async getRespectCount(techId: string): Promise<number> {
     try {
       const { count, error } = await supabase
-        .from('respect_tracking')
+        .from(DB_TABLES.RESPECT_TRACKING)
         .select('*', { count: 'exact', head: true })
         .eq('tech_id', techId);
 

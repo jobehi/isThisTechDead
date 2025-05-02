@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { ImageService } from '../image-service';
+import { ImageService } from '../server';
 
 describe('ImageService', () => {
   it('should be defined', () => {

@@ -42,7 +42,6 @@ build/
 
 # Misc
 *.pem
-.DS_Store
 *.tsbuildinfo
 
 #OG Images

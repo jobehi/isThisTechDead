@@ -2,11 +2,14 @@
  * Image Service
  * Handles OG image generation for both API routes and build scripts
  */
+
 import * as fs from 'fs';
 import * as path from 'path';
 import * as https from 'https';
 import { URL } from 'url';
-import { formatTechFilename, safeToFixed } from './utils';
+import config from '../config';
+import { safeToFixed } from './ratings';
+import { formatTechFilename } from './utils';
 
 export const OG_IMAGE_DIR = path.join(process.cwd(), 'public', 'og-images');
 
@@ -29,7 +32,7 @@ export class ImageService {
 
   constructor(options?: { logger?: Logger; siteUrl?: string }) {
     this.logger = options?.logger || defaultLogger;
-    this.siteUrl = options?.siteUrl || process.env.SITE_URL || 'http://localhost:3000';
+    this.siteUrl = options?.siteUrl || config.site.url;
   }
 
   /**
@@ -152,4 +155,32 @@ export class ImageService {
       throw error;
     }
   }
+}
+
+// Server Action wrapper functions
+// These standalone functions can be marked with 'use server'
+
+/**
+ * Generate the fallback OG image (Server Action)
+ */
+export async function generateFallbackOGImage(options?: {
+  logger?: Logger;
+  siteUrl?: string;
+}): Promise<string> {
+  'use server';
+  const service = new ImageService(options);
+  return service.generateFallbackOGImage();
+}
+
+/**
+ * Generate an OG image for a tech (Server Action)
+ */
+export async function generateTechOGImage(
+  techName: string,
+  score: number | null,
+  options?: { logger?: Logger; siteUrl?: string }
+): Promise<string> {
+  'use server';
+  const service = new ImageService(options);
+  return service.generateTechOGImage(techName, score);
 }

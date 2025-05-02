@@ -124,3 +124,24 @@ export const PayRespectValidator = {
     };
   },
 };
+
+/**
+ * API response interfaces for standardized format
+ */
+
+export interface ApiSuccessResponse<T> {
+  success: boolean;
+  data?: T;
+  meta?: Record<string, unknown>;
+}
+
+export interface ApiErrorResponse {
+  success: boolean;
+  error: {
+    message: string;
+    code: string;
+    details?: unknown;
+  };
+}
+
+export type ApiResponse<T> = ApiSuccessResponse<T> | ApiErrorResponse;

@@ -4,6 +4,8 @@
  * Type definitions for the tech domain model.
  */
 
+import { Project } from '../project';
+
 /**
  * Core Tech entity
  */
@@ -152,23 +154,6 @@ export interface Snapshot {
   youtube_metrics: YouTubeMetrics;
   stackshare_metrics: StackShareMetrics;
   google_jobs: GoogleJobsMetrics;
-}
-
-/**
- * Project created using a tech
- */
-export interface Project {
-  id: number;
-  tech_id: string;
-  name: string;
-  url: string | null;
-  github_url: string | null;
-  description: string;
-  self_roast: string;
-  screenshot_url: string | null;
-  is_approved: boolean;
-  created_at: string;
-  approved_at: string | null;
 }
 
 /**

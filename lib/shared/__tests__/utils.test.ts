@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { safeToFixed, calculateDeaditudeScore, getScoreColor } from '../utils';
+import { calculateDeaditudeScore, getScoreColor, safeToFixed } from '../ratings';
 
 describe('utils', () => {
   it('safeToFixed returns fallback for invalid input', () => {

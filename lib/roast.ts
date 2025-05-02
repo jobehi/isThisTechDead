@@ -153,7 +153,10 @@ export const roastLevels = {
 export function getSarcasticCommentary(score: number | undefined | null): string {
   // Default to level 0 if score is undefined, null or not a number
   if (score === undefined || score === null || isNaN(score)) {
-    return roastLevels[0][Math.floor(Math.random() * roastLevels[0].length)];
+    // We know this array exists in our codebase, so we can safely assert it
+    const defaultRoasts = roastLevels[0];
+    const index = Math.floor(Math.random() * defaultRoasts.length);
+    return defaultRoasts[index] as string;
   }
 
   // Ensure score is between 0 and 100
@@ -171,7 +174,6 @@ export function getSarcasticCommentary(score: number | undefined | null): string
   const roastsForLevel = roastLevels[roastLevel] || roastLevels[0];
 
   // Get a random roast from the appropriate level
-  const roast = roastsForLevel[Math.floor(Math.random() * roastsForLevel.length)];
-
-  return roast;
+  const index = Math.floor(Math.random() * roastsForLevel.length);
+  return roastsForLevel[index] as string;
 }

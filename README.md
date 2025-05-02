@@ -23,6 +23,7 @@ We track the slow, painful decline of frameworks, languages, and tools that prom
 - Node.js (whatever version works this week)
 - A sense of impending doom
 - At least 3 abandoned side projects using different frameworks
+- Supabase account (free tier will work)
 
 ### Installation
 
@@ -35,6 +36,10 @@ cd is-this-tech-dead-front
 
 # Install dependencies and existential dread
 npm install
+
+# Set up environment variables (CRITICAL STEP)
+cp scripts/setup-env-instructions.md .env
+# Edit .env with your Supabase credentials
 
 # Start the development server and your journey into tech nihilism
 npm run dev

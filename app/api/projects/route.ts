@@ -11,8 +11,6 @@ export const dynamic = 'force-dynamic';
 
 // Rate limiting - Map to track submissions by IP
 const rateLimitMap = new Map<string, { count: number; timestamp: number }>();
-const RATE_LIMIT_WINDOW = 60 * 60 * 1000; // 1 hour
-const MAX_SUBMISSIONS_PER_WINDOW = 5;
 
 export async function POST(request: NextRequest) {
   try {
@@ -27,14 +25,15 @@ export async function POST(request: NextRequest) {
     // Rate limiting by IP
     const ip = request.headers.get('x-forwarded-for') || 'unknown';
     const now = Date.now();
+    const { windowMs, requestsPerHour } = config.security.rateLimits.projectSubmission;
 
     if (rateLimitMap.has(ip)) {
       const rateLimitData = rateLimitMap.get(ip)!;
 
       // Reset if window has passed
-      if (now - rateLimitData.timestamp > RATE_LIMIT_WINDOW) {
+      if (now - rateLimitData.timestamp > windowMs) {
         rateLimitMap.set(ip, { count: 1, timestamp: now });
-      } else if (rateLimitData.count >= MAX_SUBMISSIONS_PER_WINDOW) {
+      } else if (rateLimitData.count >= requestsPerHour) {
         return NextResponse.json(
           { error: 'Too many submissions. Try again later.' },
           { status: 429 }
@@ -68,7 +67,7 @@ export async function POST(request: NextRequest) {
     // Verify reCAPTCHA token if provided
     if (recaptchaToken) {
       try {
-        const recaptchaSecretKey = process.env.RECAPTCHA_SECRET_KEY;
+        const recaptchaSecretKey = config.recaptcha.secretKey;
 
         if (recaptchaSecretKey) {
           const verificationResponse = await fetch(

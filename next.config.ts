@@ -10,7 +10,7 @@ const config: NextConfig = {
   env: {
     NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
     NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-    REVALIDATE_SECRET: process.env.REVALIDATE_SECRET,
+    REVALIDATION_SECRET: process.env.REVALIDATION_SECRET,
   },
 
   async headers() {
