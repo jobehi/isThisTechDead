@@ -160,27 +160,48 @@ export function createApiClient(config: ApiClientConfig) {
     },
 
     post<T>(url: string, data?: unknown, options?: RequestInit) {
-      return request<T>(url, {
+      const requestOptions = {
         ...options,
         method: 'POST',
-        body: data ? JSON.stringify(data) : undefined,
-      });
+      };
+      
+      if (data) {
+        requestOptions.body = JSON.stringify(data);
+      } else {
+        requestOptions.body = null;
+      }
+      
+      return request<T>(url, requestOptions);
     },
 
     put<T>(url: string, data?: unknown, options?: RequestInit) {
-      return request<T>(url, {
+      const requestOptions = {
         ...options,
         method: 'PUT',
-        body: data ? JSON.stringify(data) : undefined,
-      });
+      };
+      
+      if (data) {
+        requestOptions.body = JSON.stringify(data);
+      } else {
+        requestOptions.body = null;
+      }
+      
+      return request<T>(url, requestOptions);
     },
 
     patch<T>(url: string, data?: unknown, options?: RequestInit) {
-      return request<T>(url, {
+      const requestOptions = {
         ...options,
         method: 'PATCH',
-        body: data ? JSON.stringify(data) : undefined,
-      });
+      };
+      
+      if (data) {
+        requestOptions.body = JSON.stringify(data);
+      } else {
+        requestOptions.body = null;
+      }
+      
+      return request<T>(url, requestOptions);
     },
 
     delete<T>(url: string, options?: RequestInit) {
