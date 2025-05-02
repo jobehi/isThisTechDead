@@ -18,7 +18,7 @@ const allowedOrigins = [
 ];
 
 // In development, also allow localhost
-if (process.env.NODE_ENV === 'development') {
+if (config.isDevelopment) {
   allowedOrigins.push('http://localhost:3000');
 }
 
