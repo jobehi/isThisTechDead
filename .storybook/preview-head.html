@@ -1,0 +1,113 @@
+<style>
+  /* Force dark mode on the entire document */
+  html, body {
+    background-color: #09090b !important; /* zinc-950 */
+    color: #f4f4f5 !important; /* zinc-100 */
+  }
+
+  /* Force dark mode on Storybook UI */
+  html {
+    color-scheme: dark !important;
+  }
+
+  /* Simulate Tailwind dark mode */
+  html.dark {
+    color-scheme: dark !important;
+  }
+
+  /* Tailwind button variants */
+  .bg-lime-700 {
+    background-color: rgb(77, 124, 15) !important;
+  }
+  
+  .hover\:bg-lime-600:hover {
+    background-color: rgb(101, 163, 13) !important;
+  }
+  
+  .bg-zinc-800 {
+    background-color: rgb(39, 39, 42) !important;
+  }
+  
+  .hover\:bg-zinc-700:hover {
+    background-color: rgb(63, 63, 70) !important;
+  }
+
+  /* Basic text colors */
+  .text-lime-500 {
+    color: rgb(132, 204, 22) !important;
+  }
+  
+  .text-zinc-400 {
+    color: rgb(161, 161, 170) !important;
+  }
+  
+  .text-zinc-300 {
+    color: rgb(212, 212, 216) !important;
+  }
+  
+  .text-zinc-200 {
+    color: rgb(228, 228, 231) !important;
+  }
+  
+  .text-zinc-100 {
+    color: rgb(244, 244, 245) !important;
+  }
+
+  .text-white {
+    color: rgb(255, 255, 255) !important;
+  }
+
+  /* Background colors */  
+  .bg-zinc-950 {
+    background-color: rgb(9, 9, 11) !important;
+  }
+  
+  .bg-zinc-900 {
+    background-color: rgb(24, 24, 27) !important;
+  }
+  
+  .bg-zinc-800 {
+    background-color: rgb(39, 39, 42) !important;
+  }
+
+  /* Force borders to be visible */
+  .border-zinc-800 {
+    border-color: rgb(39, 39, 42) !important;
+  }
+
+  .border-zinc-700 {
+    border-color: rgb(63, 63, 70) !important;
+  }
+
+  /* Form elements */
+  .focus\:ring-lime-500:focus {
+    --tw-ring-color: rgb(132, 204, 22) !important;
+    --tw-ring-opacity: 1 !important;
+  }
+
+  .focus\:border-lime-500:focus {
+    border-color: rgb(132, 204, 22) !important;
+  }
+
+  /* Fix for button states */
+  button:disabled, .disabled\:opacity-50:disabled {
+    opacity: 0.5 !important;
+  }
+
+  /* Fix for rounded elements */
+  .rounded-md {
+    border-radius: 0.375rem !important;
+  }
+
+  /* Additional component-specific fixes */
+  .components-preview .dark {
+    color-scheme: dark !important;
+    background-color: rgb(9, 9, 11) !important;
+    color: rgb(244, 244, 245) !important;
+  }
+</style>
+
+<script>
+  document.documentElement.classList.add('dark');
+  document.documentElement.setAttribute('data-theme', 'dark');
+</script> 

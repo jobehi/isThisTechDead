@@ -46,3 +46,4 @@ build/
 
 #OG Images
 public/og-images/
+*storybook.log

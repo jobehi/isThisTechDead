@@ -2,7 +2,8 @@ module.exports = {
   extends: [
     'next/core-web-vitals',
     'plugin:jsx-a11y/recommended',
-    'prettier', // Make sure this is last to override other configs
+    'prettier',
+    'plugin:storybook/recommended',
   ],
   plugins: ['jsx-a11y'],
   rules: {
