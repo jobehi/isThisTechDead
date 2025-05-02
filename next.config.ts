@@ -30,11 +30,11 @@ const config: NextConfig = {
             key: 'Content-Security-Policy',
             value:
               "default-src 'self'; " +
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.isthistechdead.com https://scripts.simpleanalyticscdn.com https://buttondown.com/api/emails/embed-subscribe/is-this-tech-dead https://media.ethicalads.io https://server.ethicalads.io https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; " +
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.isthistechdead.com https://scripts.simpleanalyticscdn.com https://buttondown.com/api/emails/embed-subscribe/is-this-tech-dead https://media.ethicalads.io https://server.ethicalads.io https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/ https://*.vercel-scripts.com https://*.vercel.com https://*.vercel-analytics.com https://*.vercel-insights.com; " +
               "style-src 'self' 'unsafe-inline'; " +
               "img-src 'self' data: blob: https:; " +
               "font-src 'self'; " +
-              "connect-src 'self' https://*.supabase.co https://buttondown.com/api/emails/embed-subscribe/is-this-tech-dead https://server.ethicalads.io https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; " +
+              "connect-src 'self' https://*.supabase.co https://buttondown.com/api/emails/embed-subscribe/is-this-tech-dead https://server.ethicalads.io https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/ https://*.vercel-scripts.com https://*.vercel.com https://*.vercel-analytics.com https://*.vercel-insights.com; " +
               'frame-src https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/; ' +
               "object-src 'none'; " +
               "base-uri 'self'; " +

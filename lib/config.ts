@@ -20,6 +20,7 @@ interface SiteConfig {
   name: string;
   description: string;
   ogImage: string;
+  githubUrl: string;
 }
 
 interface FeatureConfig {
@@ -107,6 +108,7 @@ export const config: AppConfig = {
     name: 'Is This Tech Dead?',
     description: 'Find out if your favorite technologies are dying with data-driven insights.',
     ogImage: '/is_this_tech_dead_cover.png',
+    githubUrl: 'https://github.com/jobehi/is-this-tech-dead-front',
   },
 
   features: {

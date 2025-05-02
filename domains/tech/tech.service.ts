@@ -1,6 +1,5 @@
 import { TechRepository } from './tech.repository';
 import { Snapshot, Tech, TechDetails, TechWithScore } from './tech.types';
-import { AppError } from '@/lib/errors';
 import { MetaBuilder } from '@/lib/shared';
 
 /**
@@ -50,13 +49,19 @@ export class TechService {
    * Get the complete details for a technology by ID
    */
   static async getTechDetails(techId: string): Promise<TechDetails> {
-    const details = await TechRepository.getTechDetails(techId);
+    try {
+      const details = await TechRepository.getTechDetails(techId);
 
-    if (!details.tech) {
-      throw AppError.notFound(`Technology with ID "${techId}" not found`);
+      // Simply return the details, even if tech is null
+      return details;
+    } catch {
+      // Return empty details structure instead of throwing
+      return {
+        tech: null,
+        snapshots: [],
+        projects: [],
+      };
     }
-
-    return details;
   }
 
   /**
