@@ -1,6 +1,7 @@
 import { supabase } from '@/lib/supabase';
 import { RespectEntry, RespectCountsMap } from './respect.types';
 import { handleSupabaseError } from '@/lib/errors';
+import { DB_TABLES } from '@/lib/config';
 
 // Define the response type from the count query
 interface RespectCountResult {
@@ -17,7 +18,7 @@ export class RespectRepository {
    * @param respectEntry The respect entry to add
    */
   async addRespect(respectEntry: RespectEntry): Promise<void> {
-    const { error } = await supabase.from('respect_tracking').insert({
+    const { error } = await supabase.from(DB_TABLES.RESPECT_TRACKING).insert({
       tech_id: respectEntry.tech_id,
       tech_name: respectEntry.tech_name,
     });
@@ -34,7 +35,7 @@ export class RespectRepository {
    */
   async getRespectCount(techId: string): Promise<number> {
     const { count, error } = await supabase
-      .from('respect_tracking')
+      .from(DB_TABLES.RESPECT_TRACKING)
       .select('*', { count: 'exact', head: true })
       .eq('tech_id', techId);
 
@@ -86,7 +87,7 @@ export class RespectRepository {
    * @returns An array of tech IDs
    */
   async getAllTechIds(): Promise<string[]> {
-    const { data, error } = await supabase.from('tech_registry').select('id');
+    const { data, error } = await supabase.from(DB_TABLES.TECH_REGISTRY).select('id');
 
     if (error) {
       handleSupabaseError(error, 'Getting all tech IDs');
