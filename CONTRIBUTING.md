@@ -60,4 +60,49 @@ Contributors are credited in our project, and significant contributions will be 
 
 ## Code of Conduct
 
-Please read our [Code of Conduct](./CODE_OF_CONDUCT.md) before contributing. We maintain a respectful, inclusive environment for all contributors. 
+Please read our [Code of Conduct](./CODE_OF_CONDUCT.md) before contributing. We maintain a respectful, inclusive environment for all contributors.
+
+## Project Architecture
+
+This project follows a Domain-Driven Design (DDD) approach with clear separation of concerns:
+
+### Domains
+
+We organize our code around business domains, each with its own:
+
+- **Types**: Domain models and interfaces
+- **Repository**: Data access layer
+- **Service**: Business logic
+- **Hooks**: React hooks for components if needed
+
+Current domains:
+
+- **Tech**: Technology-related functionality
+- **Project**: Project submission and display
+- **Respect**: User interactions to pay respects to dead technologies
+
+### Component Architecture
+
+We follow the Atomic Design pattern:
+
+- **Atoms**: Basic UI building blocks
+- **Molecules**: Simple combinations of atoms
+- **Organisms**: Complex UI sections
+- **Features**: Domain-specific components
+
+### Adding New Features
+
+1. Determine which domain your feature belongs to
+2. If it's a new domain, create the proper structure:
+   ```
+   domains/new-domain/
+     ├── new-domain.types.ts
+     ├── new-domain.repository.ts
+     ├── new-domain.service.ts
+     ├── new-domain.hooks.ts
+     └── index.ts
+   ```
+3. Create UI components following the Atomic Design pattern
+4. Add any necessary API routes in the appropriate location
+
+Refer to the environment setup documentation in `scripts/setup-env-instructions.md` for configuration details.

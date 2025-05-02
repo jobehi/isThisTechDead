@@ -14,7 +14,7 @@ We track the slow, painful decline of frameworks, languages, and tools that prom
 - **Trend Tombstones**: Visual representations of adoption rates plummeting like your hopes and dreams
 - **Framework Funerals**: Detailed case studies of tech that died before its time (or long after it should have)
 - **Memorial Wall**: Pay respects to the tools that once paid your bills
-
+- **Rate-Limited Respect System**: Users can pay respects up to 10 times per day per tech (we have feelings, but let's not get carried away)
 
 ## Getting Started
 
@@ -49,6 +49,34 @@ Visit `http://localhost:3000` to begin your descent.
 - **Tailwind**: For when you want your CSS in your HTML like it's 2002 again
 - **TypeScript**: Pretending errors happen at compile time instead of in your career choices
 - **Supabase**: Because Firebase was too mainstream to mock
+
+## Architecture
+
+We've embraced a modern, domain-driven design with atomic component architecture:
+
+### Domain-Driven Structure
+
+- `/domains`: Business domains organized by feature (tech, project, respect)
+  - Each domain contains its own types, repository, service, and hooks
+- `/lib`: Shared utilities, API clients, error handling, and configuration
+- `/app`: Next.js app router with API routes and pages
+
+### Component Architecture
+
+- **Atomic Design Pattern**:
+  - `/components/atoms`: Basic UI building blocks
+  - `/components/molecules`: Simple combinations of atoms
+  - `/components/organisms`: Complex UI sections
+  - `/components/features`: Domain-specific components
+- `/templates`: Page layouts and templates
+
+### Modern Practices
+
+- **Type Safety**: Comprehensive TypeScript types throughout the codebase
+- **Error Handling**: Centralized error classes with proper handling
+- **API Client**: Robust API client with interceptors and retry logic
+- **Server Components**: Leveraging Next.js server components for optimal loading
+- **Hooks**: Custom React hooks for all data fetching and state management
 
 ## Contributing
 
