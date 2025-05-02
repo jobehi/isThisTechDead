@@ -15,3 +15,4 @@ export * from './Dialog';
 export * from './EthicalAd';
 export * from './NewsletterBox';
 export * from './PressF';
+export * from './DynamicPressF';

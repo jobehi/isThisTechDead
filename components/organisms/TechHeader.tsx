@@ -3,7 +3,7 @@
 import { formatDate, getScoreColor, safeToFixed } from '@/lib/shared';
 import { getSarcasticCommentary } from '@/lib/roast';
 import { ScoreIndicator } from '@/components/molecules';
-import { DynamicPressFWrapper } from '@/components/features/tech';
+import { DynamicPressF } from '@/components/organisms';
 import { Snapshot } from '@/domains/tech';
 import { textGradientVariants } from '@/lib/ui';
 import { cn } from '@/lib/cn';
@@ -73,7 +73,7 @@ export function TechHeader({ techId, techName, score, latestSnapshot }: TechHead
 
           {/* Pay Respects Button */}
           <div className="mt-8">
-            <DynamicPressFWrapper techId={techId} techName={techName} key={`pressf-${techId}`} />
+            <DynamicPressF techId={techId} techName={techName} key={`pressf-${techId}`} />
           </div>
         </div>
       )}
