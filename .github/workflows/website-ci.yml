@@ -1,9 +1,10 @@
-name: CI
+name: WEBSITE CI
 
 env:
   NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
   NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
   SITE_URL: ${{ secrets.SITE_URL }}
+
 
 on:
   push:
@@ -13,6 +14,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./website
 
     steps:
       - name: Checkout repository
@@ -22,7 +26,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
+          cache: 'npm'
+          cache-dependency-path: './website/package-lock.json'
 
       - name: Install dependencies
         run: npm ci
