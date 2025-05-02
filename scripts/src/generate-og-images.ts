@@ -5,7 +5,8 @@
  * and saving the results as static files. It's designed to be run as part of
  * the build process to ensure all OG images are pre-generated.
  */
-import { calculateDeaditudeScore, ImageService } from '../../lib/shared';
+import { calculateDeaditudeScore } from '../../lib/shared';
+import { generateFallbackOGImage, generateTechOGImage } from '../../lib/shared/server';
 import { loadEnvVars } from './env-loader';
 import { getAllTechs } from './api';
 
@@ -20,11 +21,11 @@ const logger = {
   error: (message: string, error?: unknown) => console.error(`❌ ${message}`, error || ''),
 };
 
-// Initialize the image service with our logger
-const imageService = new ImageService({
+// Configuration options
+const options = {
   logger,
   siteUrl: env.SITE_URL || 'http://localhost:3000',
-});
+};
 
 /**
  * Generate OG images for all technologies
@@ -34,7 +35,7 @@ export async function generateAllOGImages(): Promise<void> {
 
   try {
     // Generate fallback OG image first
-    await imageService.generateFallbackOGImage();
+    await generateFallbackOGImage(options);
 
     // Get all techs
     const techs = await getAllTechs();
@@ -57,8 +58,8 @@ export async function generateAllOGImages(): Promise<void> {
       }
 
       try {
-        // Generate image using our shared service
-        await imageService.generateTechOGImage(tech.name, latest_score);
+        // Generate image using the server action
+        await generateTechOGImage(tech.name, latest_score, options);
         successCount++;
       } catch (error) {
         logger.error(`Error generating OG image for ${tech.name}:`, error);
