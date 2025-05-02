@@ -12,4 +12,3 @@ export * from './tech.repository';
 
 // Export service
 export * from './tech.service';
-
