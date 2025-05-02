@@ -7,9 +7,9 @@ import * as path from 'path';
 import * as fs from 'fs';
 
 interface EnvConfig {
-  NEXT_PUBLIC_SUPABASE_URL?: string;
-  NEXT_PUBLIC_SUPABASE_ANON_KEY?: string;
-  SITE_URL?: string;
+  NEXT_PUBLIC_SUPABASE_URL: string | undefined;
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: string | undefined;
+  SITE_URL: string;
 }
 
 export function loadEnvVars(): EnvConfig {
@@ -48,10 +48,15 @@ export function loadEnvVars(): EnvConfig {
     return {
       NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
       NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-      SITE_URL: process.env.SITE_URL,
+      SITE_URL: process.env.SITE_URL || 'http://localhost:3000',
     };
   } catch (error) {
     console.error('Error loading environment variables:', error);
-    return {};
+    // Return a fallback configuration
+    return {
+      NEXT_PUBLIC_SUPABASE_URL: undefined,
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: undefined,
+      SITE_URL: 'http://localhost:3000',
+    };
   }
 }
