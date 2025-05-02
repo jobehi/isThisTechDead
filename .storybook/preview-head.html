@@ -1,23 +1,24 @@
 <style>
   /* Essential dark mode */
-  html, body {
+  html,
+  body {
     background-color: #09090b !important; /* zinc-950 */
     color: #f4f4f5 !important; /* zinc-100 */
   }
 
   /* CRITICAL FIX: Strictly limit canvas height */
-  #root, 
-  #storybook-root, 
+  #root,
+  #storybook-root,
   .sb-show-main,
-  [data-is-storybook="true"] {
+  [data-is-storybook='true'] {
     height: auto !important;
     min-height: 0 !important;
     overflow: visible !important;
   }
 
   /* Stop the canvas from becoming too tall */
-  .sb-show-main, 
-  .docs-story, 
+  .sb-show-main,
+  .docs-story,
   .sb-main-padded,
   #storybook-preview-wrapper,
   .sb-canvas-container,
@@ -27,10 +28,10 @@
     box-shadow: none !important;
     overflow: visible !important;
   }
-  
+
   /* Reduce padding and margins around preview content */
   .sb-preview-content > div {
-    box-shadow: 0 0 0 1px rgba(255,255,255,0.15) !important;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15) !important;
     padding: 8px !important;
     margin: 4px !important;
     border-radius: 0 !important;
@@ -46,9 +47,9 @@
     background-color: transparent !important;
     padding: 0 !important;
   }
-  
+
   /* Reduce padding in docs and main view */
-  .docs-story, 
+  .docs-story,
   .sb-main-padded {
     background: transparent !important;
     padding: 0 !important;
@@ -56,7 +57,7 @@
   }
 
   /* Ensure components have room to breathe but don't take excessive space */
-  .docs-story > div, 
+  .docs-story > div,
   .sb-preview-content > div {
     margin: 0.5rem !important;
     box-shadow: none !important;
@@ -64,7 +65,7 @@
   }
 
   /* Specific fixes for TechCard component */
-  a[href^="/"] {
+  a[href^='/'] {
     display: block !important;
     max-width: 100% !important;
     border-radius: 0.75rem !important;
@@ -80,8 +81,8 @@
   }
 
   /* Ensure parent containers don't clip corners */
-  .docs-story a[href^="/"], 
-  .sb-preview-content a[href^="/"] {
+  .docs-story a[href^='/'],
+  .sb-preview-content a[href^='/'] {
     isolation: isolate !important;
     position: relative !important;
     z-index: 1 !important;
@@ -102,15 +103,15 @@
   .bg-lime-700 {
     background-color: rgb(77, 124, 15) !important;
   }
-  
+
   .hover\:bg-lime-600:hover {
     background-color: rgb(101, 163, 13) !important;
   }
-  
+
   .bg-zinc-800 {
     background-color: rgb(39, 39, 42) !important;
   }
-  
+
   .hover\:bg-zinc-700:hover {
     background-color: rgb(63, 63, 70) !important;
   }
@@ -119,19 +120,19 @@
   .text-lime-500 {
     color: rgb(132, 204, 22) !important;
   }
-  
+
   .text-zinc-400 {
     color: rgb(161, 161, 170) !important;
   }
-  
+
   .text-zinc-300 {
     color: rgb(212, 212, 216) !important;
   }
-  
+
   .text-zinc-200 {
     color: rgb(228, 228, 231) !important;
   }
-  
+
   .text-zinc-100 {
     color: rgb(244, 244, 245) !important;
   }
@@ -140,15 +141,15 @@
     color: rgb(255, 255, 255) !important;
   }
 
-  /* Background colors */  
+  /* Background colors */
   .bg-zinc-950 {
     background-color: rgb(9, 9, 11) !important;
   }
-  
+
   .bg-zinc-900 {
     background-color: rgb(24, 24, 27) !important;
   }
-  
+
   .bg-zinc-800 {
     background-color: rgb(39, 39, 42) !important;
   }
@@ -173,7 +174,8 @@
   }
 
   /* Fix for button states */
-  button:disabled, .disabled\:opacity-50:disabled {
+  button:disabled,
+  .disabled\:opacity-50:disabled {
     opacity: 0.5 !important;
   }
 
@@ -187,7 +189,7 @@
 
 <script>
   document.documentElement.classList.add('dark');
-  
+
   // Additional script to fix TechCard rendering issues and canvas height
   window.addEventListener('load', () => {
     // Ensure all borders and corners are properly rendered
@@ -198,7 +200,7 @@
       card.style.display = 'block';
       card.style.margin = '0.5rem';
     });
-    
+
     // Force iframe height to be reasonable
     const fixCanvasHeight = () => {
       // Direct iframe fix
@@ -207,18 +209,20 @@
         iframe.style.height = '400px';
         iframe.style.minHeight = '0';
       }
-      
+
       // Canvas containers
-      const canvasContainers = document.querySelectorAll('.sb-canvas-container, .sb-show-main, #root, #storybook-root');
+      const canvasContainers = document.querySelectorAll(
+        '.sb-canvas-container, .sb-show-main, #root, #storybook-root'
+      );
       canvasContainers.forEach(container => {
         container.style.height = 'auto';
         container.style.minHeight = '0';
       });
     };
-    
+
     // Run immediately and periodically to ensure it applies
     fixCanvasHeight();
     setInterval(fixCanvasHeight, 1000);
     window.addEventListener('resize', fixCanvasHeight);
   });
-</script> 
+</script>
