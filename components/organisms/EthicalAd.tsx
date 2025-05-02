@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-
+import { config } from '@/lib/config';
 interface EthicalAdProps {
   type: 'text' | 'image';
   className?: string;
@@ -32,7 +32,7 @@ export function EthicalAd({ type, className = '' }: EthicalAdProps) {
   }, []);
 
   return (
-    <div data-ea-publisher="isthistechdeadcom" data-ea-type={type} className={className}>
+    <div data-ea-publisher={config.site.ethicalAdsId} data-ea-type={type} className={className}>
       <div className="text-xs text-zinc-500">This is supposed to be an ad</div>
     </div>
   );
