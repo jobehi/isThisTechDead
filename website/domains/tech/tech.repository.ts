@@ -31,14 +31,22 @@ export class TechRepository {
    */
   static async getAllTechs(): Promise<Tech[]> {
     try {
+      // Query techs that have at least one snapshot in the v2 table
       const { data, error } = await supabase
         .from(DB_TABLES.TECH_REGISTRY)
-        .select('*')
+        .select(
+          `
+          *,
+          snapshots:${DB_TABLES.TECH_SNAPSHOTS}(id)
+        `
+        )
+        .not('snapshots', 'is', null)
         .order('name')
         .limit(1000);
 
       if (error) throw error;
-      return data || [];
+
+      return data;
     } catch (error) {
       handleSupabaseError(error, 'Get all techs');
     }
@@ -72,24 +80,14 @@ export class TechRepository {
         .select('*')
         .eq('tech_id', techId)
         .order('snapshot_date', { ascending: false })
-        .limit(1)
-        .single();
+        .limit(1);
 
-      if (error) {
-        // Not found is expected for new techs with no snapshots
-        if (error.message?.includes('not found')) {
-          return null;
-        }
-        throw error;
-      }
-
-      return data;
+      if (error) throw error;
+      return data && data.length > 0 ? data[0] : null;
     } catch (error) {
-      // Single not found is expected and should return null
-      if (error instanceof Error && error.message.includes('not found')) {
-        return null;
-      }
-      handleSupabaseError(error, 'Get latest snapshot by tech id');
+      console.error('Error fetching latest snapshot:', error);
+      // If there's an error, return null instead of throwing
+      return null;
     }
   }
 
