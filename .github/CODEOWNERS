@@ -1,0 +1,19 @@
+# CODEOWNERS file for Is This Tech Dead
+# Each line is a file pattern followed by one or more owners.
+
+# These owners will be the default owners for everything in the repo
+# unless a later match takes precedence
+* @jobehi
+
+# Website frontend specific ownership
+/website/ @jobehi
+
+# Deaditude engine specific ownership
+/deaditude/ @jobehi
+
+# GitHub Actions workflows ownership
+/.github/ @jobehi
+
+# Documentation ownership
+*.md @jobehi
+/docs/ @jobehi 

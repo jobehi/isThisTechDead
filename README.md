@@ -1,48 +1,59 @@
 # ☠️ [Is This Tech Dead?](https://www.isthistechdead.com) ☠️
 
-The frontend part of a digital hospice where we monitor technology's vital signs and prepare the funeral arrangements.
+Where we monitor tech's vital signs, calculate time of death, and prepare the funeral arrangements.
 
 <p align="center">
   <a href="https://www.isthistechdead.com">Visit the site</a> •
   <a href="#installation">Installation</a> •
   <a href="#features">Features</a> •
-  <a href="#tech-stack">Tech Stack</a> •
-  <a href="#architecture">Architecture</a> •
+  <a href="#project-structure">Project Structure</a> •
   <a href="#contributing">Contributing</a> •
   <a href="#license">License</a>
 </p>
 
 ## What Is This?
 
-A Next.js 15 powered obituary service for technology that was once the darling of LinkedIn influencers but is now being kept alive by Stack Overflow questions from 2017.
+A digital hospice for technologies that were once the darlings of LinkedIn influencers but are now being kept alive by Stack Overflow questions from 2017. We're the WebMD for your tech stack, except our diagnosis is always "it's probably dying."
 
-We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety.
+We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
+
+## Project Components
+
+This monorepo contains two main components:
+
+### 1. 🌐 Frontend (website/)
+
+A Next.js 15 powered obituary service with a responsive UI that works on all devices, except Windows phones (and we're not apologizing for that).
+
+### 2. 🧠 Deaditude Engine (deaditude/)
+
+Our Python-powered analysis brain that ingests data from multiple sources, calculates "deaditude" scores, and determines if your favorite technology is thriving or has one foot in the grave.
+
+Don't trust your tech stack to gut feelings and Medium articles—trust our cold, hard data that's just as judgmental as your tech lead.
 
 ## Features
 
-- **Tech Vitality Metrics**: Data-driven analysis of technology health using GitHub, StackOverflow, Reddit, Hacker News, YouTube, and job market data
-- **Deaditude Scoring System**: Proprietary algorithm that calculates how dead a technology is based on multiple factors
+- **Tech Vitality Metrics**: Data-driven analysis using GitHub, StackOverflow, Reddit, Hacker News, YouTube, and job market data
+- **Deaditude Scoring System**: Proprietary algorithm that calculates how dead a technology is (spoiler: it's probably deader than you think)
 - **Technology Detail Pages**: In-depth analysis for each technology with historical trends and key metrics
-- **Project Showcase**: Gallery of projects still using "dead" technologies with submission capability
-- **Pay Respects Feature**: Interactive system for users to pay their respects to dying technologies
-- **Responsive Design**: Mobile-first interface that works across all devices, except windows phones. No we don't care.
+- **Project Showcase**: Gallery of projects still using "dead" technologies (aka "the wall of shame")
+- **Pay Respects Feature**: Press F to pay respects to dying technologies
+- **Responsive Design**: Because even obituaries should look good on mobile
 
 ## Installation
 
 ### Prerequisites
 
-- Node.js 18.x or later
-- npm 8.x or later
-- Supabase account (free tier will work)
+- Node.js 18+ (for frontend)
+- Python 3.9+ (for deaditude engine)
+- Supabase account (free tier works, but your data might die too)
+- API keys for various services (we're data vampires)
 
-### Setup Steps
+### Frontend Setup
 
 ```bash
-# Clone the repository
-git clone https://github.com/jobehi/isThisTechDead.git
-
-# Navigate to the project directory
-cd isThisTechDead
+# Navigate to the website directory
+cd website
 
 # Install dependencies
 npm install
@@ -55,75 +66,88 @@ cp scripts/setup-env-instructions.md .env.local
 npm run dev
 ```
 
-Visit `http://localhost:3000` to view the application.
+Visit `http://localhost:3000` to view your very own tech funeral parlor.
 
-### Available Scripts
+### Deaditude Engine Setup
 
-- `npm run dev` - Start the development server with Turbopack
-- `npm run build` - Build the application for production
-- `npm run start` - Start the production server
-- `npm run lint` - Run ESLint to check code quality
-- `npm run format` - Format code with Prettier
-- `npm run test` - Run tests with Vitest
-- `npm run storybook` - Run Storybook for component development
+```bash
+# Navigate to the deaditude directory
+cd deaditude
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Set up environment variables
+cp .env.sample .env
+# Edit .env with your API keys and configuration
+
+# Run a sample analysis
+python -m engine.cli analyze react facebook
+```
+
+## Project Structure
+
+```
+isthistechdead/
+├── website/            # Frontend Next.js application
+│   ├── app/            # Next.js app router
+│   ├── components/     # React components
+│   ├── domains/        # Business domains organized by feature
+│   └── lib/            # Shared utilities and configuration
+│
+├── deaditude/          # Analysis engine
+│   ├── engine/         # Core analysis modules
+│   │   ├── collectors/ # Data collectors for different sources
+│   │   └── scoring/    # Analysis and scoring algorithms
+│   └── packages/       # Shared functionality
+│       └── db/         # Database integration
+│
+├── .github/            # GitHub Actions workflows
+│   └── workflows/      # CI/CD and cron job configurations
+│
+└── README.md           # You are here (congratulations on reading)
+```
 
 ## Tech Stack
 
-- **Next.js 15**: App Router, API Routes, Server Components
-- **React 19**: The latest React features
-- **TypeScript**: For type safety throughout the codebase
-- **Tailwind CSS 4**: Utility-first CSS framework
-- **Supabase**: Backend as a Service for data storage and auth
-- **Framer Motion**: For smooth animations and transitions
-- **Storybook 8**: For component development and testing
-- **Vitest**: Testing framework
+### Frontend
+- **Next.js 15**: Because someone told us server components would fix everything
+- **React 19**: For when plain HTML would be too straightforward
+- **TypeScript**: So we can feel superior about our error messages
+- **Tailwind CSS 4**: For people who hate writing actual CSS
+- **Supabase**: Because we're too lazy to build our own backend
+- **Framer Motion**: For animations that distract from the existential dread
 
-## Architecture
-
-We've embraced a modern, domain-driven design with atomic component architecture:
-
-### Domain-Driven Structure
-
-- `/domains`: Business domains organized by feature
-  - Each domain contains its own types, repository, service, and hooks
-- `/lib`: Shared utilities, API clients, error handling, and configuration
-- `/app`: Next.js app router with API routes and pages
-
-### Component Architecture
-
-- **Atomic Design Pattern**:
-  - `/components/atoms`: Basic UI building blocks
-  - `/components/molecules`: Simple combinations of atoms
-  - `/components/organisms`: Complex UI sections
-  - `/components/features`: Domain-specific components
-- `/templates`: Page layouts and templates
+### Backend
+- **Python 3.10+**: A language that refuses to die, ironically
+- **Supabase**: Our data overlord
+- **GitHub Actions**: For automated disappointment delivery
 
 ## Contributing
 
-We welcome contributions from the community! Please see our [Contributing Guide](./CONTRIBUTING.md) for more details on:
+We welcome contributions from fellow tech necromancers and skeptics! Before contributing, please:
 
-- Our development workflow
-- Code style and standards
-- Pull request process
-- Issue reporting
-
-Before contributing, please read our [Code of Conduct](./CODE_OF_CONDUCT.md).
+1. Check if your favorite technology is already dead (it probably is)
+2. Read our [Contributing Guide](./CONTRIBUTING.md)
+3. Remember that all code you write will eventually end up on this site
 
 ## License
 
-This project is licensed under the [Elastic License 2.0 (Modified)](./LICENSE).
+This project is licensed under the [Elastic License 2.0 (Modified)](./LICENSE), because even our licensing is slightly unconventional.
 
 ## Security
 
-If you discover a security vulnerability, please follow our [Security Policy](./SECURITY.md).
+If you discover a security vulnerability, please follow our [Security Policy](./SECURITY.md). We take security seriously, unlike the developers of half the technologies we track.
 
 ## Acknowledgments
 
-- All contributors who have helped shape this project
-- The open-source community for the tools that make this possible
+- All contributors who have helped dig these technological graves
+- The open-source community for tools we'll eventually declare dead
 - Everyone who has shared their tech horror stories
-- Everyone who has paid their respects to the technologies we've mourned
+- Everyone who has paid their respects to technologies we've mourned
 
 ---
 
-Built with resentment and caffeine by the "Is This Tech Dead?" team.
+Built with resentment, caffeine, and the tears of developers who bet their careers on the wrong framework. Join us in our digital cemetery—where technologies come to die and developers come to grief.
+
+*Remember: Your tech stack isn't getting old, it's becoming "vintage."*
