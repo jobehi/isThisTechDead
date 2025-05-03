@@ -57,12 +57,3 @@ jobs:
           CHECK_THRESHOLD_DAYS: ${{ vars.CHECK_THRESHOLD_DAYS || '7' }}
           DEBUG_LOGGING: ${{ vars.DEBUG_LOGGING || 'false' }}
         run: python -m engine.cli batch
-      
-      - name: Notify on failure
-        if: failure()
-        uses: rtCamp/action-slack-notify@v2
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_TITLE: 'Deaditude Nightly Analysis Failed'
-          SLACK_COLOR: '#FF0000'
-          SLACK_MESSAGE: 'The nightly deaditude analysis job has failed. Please check the GitHub Actions logs.' 
