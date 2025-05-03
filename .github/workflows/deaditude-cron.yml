@@ -1,0 +1,68 @@
+name: Deaditude Nightly Analysis
+
+on:
+  schedule:
+    # Run at 23:00 UTC
+    - cron: '00 23 * * *'
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  run-analysis:
+    name: Run Tech Analysis
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+      
+      - name: Install dependencies
+        working-directory: ./deaditude
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Run batch analysis
+        working-directory: ./deaditude
+        env:
+          # Database
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          ENABLE_REVALIDATION: 'true'
+          # GitHub
+          DEAD_GITHUB_PAT: ${{ secrets.DEAD_GITHUB_PAT }}
+          # Reddit
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          # Stack Overflow
+          STACK_APP_KEY: ${{ secrets.STACK_APP_KEY }}
+          # YouTube
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          # Google
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          SEARCH_ENGINE_ID: ${{ secrets.SEARCH_ENGINE_ID }}
+          # Adzuna
+          ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
+          # Revalidation
+          REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
+          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL || 'https://isthistechdead.com/api' }}
+          # Configuration
+          MAX_BATCH_SIZE: ${{ vars.MAX_BATCH_SIZE || '15' }}
+          CHECK_THRESHOLD_DAYS: ${{ vars.CHECK_THRESHOLD_DAYS || '7' }}
+          DEBUG_LOGGING: ${{ vars.DEBUG_LOGGING || 'false' }}
+        run: python -m engine.cli batch
+      
+      - name: Notify on failure
+        if: failure()
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_TITLE: 'Deaditude Nightly Analysis Failed'
+          SLACK_COLOR: '#FF0000'
+          SLACK_MESSAGE: 'The nightly deaditude analysis job has failed. Please check the GitHub Actions logs.' 

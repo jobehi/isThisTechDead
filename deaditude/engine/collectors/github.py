@@ -31,7 +31,7 @@ load_dotenv()
 
 GQL_ENDPOINT = "https://api.github.com/graphql"
 REST_ROOT = "https://api.github.com"
-TOKEN: str | None = os.getenv("GITHUB_PAT")
+TOKEN: str | None = os.getenv("DEAD_GITHUB_PAT")
 
 logger = logging.getLogger(__name__)
 
