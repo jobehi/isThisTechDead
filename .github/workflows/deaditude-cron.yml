@@ -56,4 +56,4 @@ jobs:
           MAX_BATCH_SIZE: ${{ vars.MAX_BATCH_SIZE || '15' }}
           CHECK_THRESHOLD_DAYS: ${{ vars.CHECK_THRESHOLD_DAYS || '7' }}
           DEBUG_LOGGING: ${{ vars.DEBUG_LOGGING || 'false' }}
-        run: python -m engine.cli batch
+        run: python -m engine.cli --batch
