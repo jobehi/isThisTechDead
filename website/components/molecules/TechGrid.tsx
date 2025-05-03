@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import Link from 'next/link';
 import { EthicalAd } from '@/components/organisms';
-import { formatDate, getScoreColor } from '@/lib/shared';
+import { formatDate, getScoreColor, calculateDeaditudeScore } from '@/lib/shared';
 import type { TechWithScore as Tech } from '@/domains';
 
 interface TechGridProps {
@@ -75,9 +75,9 @@ export function TechGrid({
             <div className="group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/70 backdrop-blur-sm transition-all duration-300 hover:bg-zinc-800/80 hover:border-zinc-700">
               {/* Death Rating Tag */}
               <div
-                className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-medium z-10 ${getRatingTagClass((tech.latest_score || 0) * 10)}`}
+                className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-medium z-10 ${getRatingTagClass(calculateDeaditudeScore(tech.latest_score))}`}
               >
-                {getRatingLabel((tech.latest_score || 0) * 10)}
+                {getRatingLabel(calculateDeaditudeScore(tech.latest_score))}
               </div>
 
               <div className="p-6">
@@ -89,23 +89,19 @@ export function TechGrid({
                   <div
                     className="absolute top-0 left-0 h-full rounded-full transition-all duration-1000 ease-out group-hover:animate-pulse"
                     style={{
-                      width: `${tech.latest_score !== null ? tech.latest_score * 10 : 0}%`,
-                      backgroundColor: getScoreColor(
-                        tech.latest_score !== null ? tech.latest_score * 10 : 0
-                      ),
-                      boxShadow: `0 0 10px ${getScoreColor(tech.latest_score !== null ? tech.latest_score * 10 : 0)}`,
+                      width: `${calculateDeaditudeScore(tech.latest_score)}%`,
+                      backgroundColor: getScoreColor(calculateDeaditudeScore(tech.latest_score)),
+                      boxShadow: `0 0 10px ${getScoreColor(calculateDeaditudeScore(tech.latest_score))}`,
                     }}
                   ></div>
                   <div className="absolute top-0 right-2 h-full flex items-center text-xs font-bold">
                     <span
                       className="drop-shadow-[0_0_3px_rgba(0,0,0,1)]"
                       style={{
-                        color: getScoreColor(
-                          tech.latest_score !== null ? tech.latest_score * 10 : 0
-                        ),
+                        color: getScoreColor(calculateDeaditudeScore(tech.latest_score)),
                       }}
                     >
-                      {(tech.latest_score !== null ? tech.latest_score * 10 : 0).toFixed(1)}%
+                      {calculateDeaditudeScore(tech.latest_score).toFixed(1)}%
                     </span>
                   </div>
                 </div>
