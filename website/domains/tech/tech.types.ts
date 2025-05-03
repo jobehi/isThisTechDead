@@ -143,17 +143,85 @@ export interface GoogleJobsMetrics {
 export interface Snapshot {
   id: string;
   tech_id: string;
+  tech_name: string;
   snapshot_date: string;
   created_at: string;
+
+  // Overall scores
   deaditude_score: number;
   component_scores: Record<string, ComponentScore>;
+  confidence_score?: number;
+  verdict?: string;
+
+  // GitHub metrics
   github_metrics: GitHubMetrics;
-  reddit_metrics: RedditMetrics;
-  hn_metrics: HackerNewsMetrics;
+  github_stars?: number;
+  github_forks?: number;
+  github_commits_last_month?: number;
+  github_issues_open?: number;
+  github_issues_closed_ratio?: number;
+  github_days_since_last_commit?: number;
+  github_contributors_count?: number;
+  github_trend_direction?: string;
+  github_trend_growth_rate?: number;
+  github_quality?: number;
+
+  // Stack Overflow metrics
   so_metrics: StackOverflowMetrics;
+  so_trend_direction?: string;
+  so_trend_growth_rate?: number;
+  so_period_counts?: Record<string, number>;
+  so_total_questions?: number;
+  so_answered_ratio?: number;
+  so_accepted_ratio?: number;
+  so_zero_answer_ratio?: number;
+  so_median_response_hr?: number;
+  so_last_activity_days?: number;
+  so_quality?: number;
+
+  // YouTube metrics
   youtube_metrics: YouTubeMetrics;
+  youtube_trend_direction?: string;
+  youtube_trend_growth_rate?: number;
+  youtube_period_counts?: Record<string, number>;
+  youtube_video_count?: number;
+  youtube_avg_views?: number;
+  youtube_days_since_last?: number;
+  youtube_quality?: number;
+
+  // Reddit metrics
+  reddit_metrics: RedditMetrics;
+  reddit_post_count?: number;
+  reddit_avg_upvotes?: number;
+  reddit_comments_per_post?: number;
+  reddit_days_since_last?: number;
+  reddit_trend_direction?: string;
+  reddit_trend_growth_rate?: number;
+  reddit_quality?: number;
+
+  // Hacker News metrics
+  hn_metrics: HackerNewsMetrics;
+  hn_post_count?: number;
+  hn_avg_points?: number;
+  hn_avg_comments?: number;
+  hn_days_since_last?: number;
+  hn_trend_direction?: string;
+  hn_quality?: number;
+
+  // StackShare metrics
   stackshare_metrics: StackShareMetrics;
+  stackshare_stacks_count?: number;
+  stackshare_followers?: number;
+  stackshare_upvotes?: number;
+  stackshare_mentions?: number;
+  stackshare_quality?: number;
+
+  // Google Jobs metrics
   google_jobs: GoogleJobsMetrics;
+  google_jobs_count?: number;
+  google_jobs_trend_direction?: string;
+  google_jobs_trend_growth_rate?: number;
+  google_jobs_quality?: number;
 }
 
 /**
