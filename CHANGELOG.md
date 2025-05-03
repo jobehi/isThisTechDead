@@ -24,6 +24,26 @@ All notable changes to "Is This Tech Dead?" will be documented in this file. We 
 - Core API functionality
 - Foundational data models
 
+## [0.2.0] - Alpha Release - 2025-04-21
+
+### Added
+
+- deaditude-engine v1.0.0
+- advances website UI
+
+
+## [1.0.0] - 2025-05-03
+
+### Added
+
+- Deaditude-engine v2
+- New scoring system
+- New more robust collectors
+- Database migration
+- CLI improvements
+- Documentation improvements
+- OSS configuration
+
 ---
 
 This project follows [Keep a Changelog](https://keepachangelog.com/) guidelines for version tracking and release notes.
