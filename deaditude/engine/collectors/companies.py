@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-"""company_collector.py
+"""companies_collector.py
 ========================
 Company-adoption collector (v 2.0)
 
