@@ -46,7 +46,7 @@ export function TechHistorySection({ snapshots }: TechHistorySectionProps) {
             {snapshots.map((snapshot: Snapshot, index: number) => {
               const snapshotScore =
                 typeof snapshot?.deaditude_score === 'number' && !isNaN(snapshot.deaditude_score)
-                  ? snapshot.deaditude_score * 10
+                  ? snapshot.deaditude_score
                   : 0;
 
               return (

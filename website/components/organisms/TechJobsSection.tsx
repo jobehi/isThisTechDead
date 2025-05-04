@@ -38,6 +38,7 @@ const COUNTRY_FLAGS: Record<string, string> = {
 export default function TechJobsSection({ tech, last_snapshot }: JobsSectionProps) {
   const jobsMetrics = last_snapshot.google_jobs || { deaditude_score: 5, by_country: {} };
   const jobsByCountry = (jobsMetrics.by_country || {}) as CountryJobs;
+  const stackshareCompaniesCount = last_snapshot.stackshare_stacks_count || 0;
 
   // Calculate total number of jobs
   const totalJobs = useMemo(() => {
@@ -154,12 +155,52 @@ export default function TechJobsSection({ tech, last_snapshot }: JobsSectionProp
           <div className="bg-zinc-900/40 p-4 rounded-lg">
             <h3 className="text-xs font-medium text-zinc-400 mb-2">Market Summary</h3>
 
-            <div className="flex flex-col space-y-3">
+            <div className="flex flex-col space-y-4">
               <div>
                 <div className="text-2xl font-bold text-lime-400">
                   {jobsNumber.toLocaleString()}
                 </div>
                 <div className="text-xs text-zinc-500">Total Jobs</div>
+              </div>
+
+              <div className="border-t border-zinc-800 pt-4">
+                <div className="flex items-center">
+                  <span className="mr-2 text-lg">🏢</span>
+                  <div>
+                    <div className="text-2xl font-bold text-blue-400">
+                      {stackshareCompaniesCount.toLocaleString()}
+                    </div>
+                    <div className="text-xs text-zinc-500">Companies Using It</div>
+                  </div>
+                </div>
+
+                {stackshareCompaniesCount > 0 && (
+                  <div className="mt-2">
+                    <div className="w-full bg-zinc-800 rounded-full h-2 mb-1">
+                      <div
+                        className="bg-gradient-to-r from-blue-500 to-indigo-500 h-2 rounded-full"
+                        style={{
+                          width: `${Math.min(Math.max((stackshareCompaniesCount / 1000) * 100, 5), 100)}%`,
+                        }}
+                      ></div>
+                    </div>
+                    <div className="text-xs text-zinc-500 italic">
+                      {stackshareCompaniesCount > 10000
+                        ? 'The entire industry is hooked on this tech. Resistance is futile.'
+                        : stackshareCompaniesCount > 5000
+                          ? "Big tech's favorite toy. Even your local coffee shop probably uses it."
+                          : stackshareCompaniesCount > 1000
+                            ? 'Major players still rely on this. Job security... for now.'
+                            : stackshareCompaniesCount > 500
+                              ? 'A handful of brave companies keeping the dream alive.'
+                              : stackshareCompaniesCount > 100
+                                ? 'A small but determined corporate fanbase exists.'
+                                : stackshareCompaniesCount > 10
+                                  ? 'A few courageous (or stubborn) companies still on board.'
+                                  : 'Even the companies that made it are migrating away.'}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
