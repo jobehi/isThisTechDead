@@ -74,7 +74,7 @@ export function calculateDeaditudeScore(rawScore: number | null | undefined): nu
     return 0;
   }
 
-  return rawScore * 10;
+  return rawScore;
 }
 
 /**

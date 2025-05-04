@@ -18,7 +18,9 @@
     "test": "vitest run",
     "prepare": "husky",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "clean": "rm -rf .next",
+    "build:fresh": "npm run clean && npm run build"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.4",

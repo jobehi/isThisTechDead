@@ -10,6 +10,13 @@ import { JsonLd } from '@/components/atoms';
 import { TechService } from '@/domains/tech';
 import { calculateDeaditudeScore } from '@/lib/shared';
 import config from '@/lib/config';
+import { GithubSection } from '@/components/organisms/TechGithubPulse';
+import { StackOverflowSection } from '@/components/organisms/TechStackoverflowPulse';
+import { TechLifecycleChart } from '@/components/organisms/TechLifecycleChart';
+import TechRedditSection from '@/components/organisms/TechRedditSection';
+import TechJobsSection from '@/components/organisms/TechJobsSection';
+import TechHackerNewsSection from '@/components/organisms/TechHackerNewsSection';
+import TechYoutubeSection from '@/components/organisms/TechYoutubeSection';
 export const revalidate = 86400; // One apocalyptic day
 
 export async function generateMetadata({
@@ -123,7 +130,28 @@ export default async function TechDetailPage({ params }: { params: Promise<{ slu
         {latestSnapshot ? (
           <>
             {/* Show metrics data */}
-            <TechMetricsSection latestSnapshot={latestSnapshot} techName={tech.name} />
+            <TechMetricsSection latestSnapshot={latestSnapshot} />
+
+            {/* Show lifecycle chart */}
+            <TechLifecycleChart last_snapshot={latestSnapshot} creation_year={tech.creation_year} />
+
+            {/* Show GitHub pulse data */}
+            <GithubSection last_snapshot={latestSnapshot} />
+
+            {/* Show StackOverflow pulse data */}
+            <StackOverflowSection last_snapshot={latestSnapshot} />
+
+            {/* Show Reddit community data */}
+            <TechRedditSection last_snapshot={latestSnapshot} tech={tech} />
+
+            {/* Show jobs data */}
+            <TechJobsSection last_snapshot={latestSnapshot} tech={tech} />
+
+            {/*  Show hackernews data */}
+            <TechHackerNewsSection last_snapshot={latestSnapshot} tech={tech} />
+
+            {/* Show youtube data */}
+            <TechYoutubeSection last_snapshot={latestSnapshot} tech={tech} />
 
             {/* Show historical data */}
             <TechHistorySection snapshots={snapshots} />

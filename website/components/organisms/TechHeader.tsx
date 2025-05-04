@@ -7,6 +7,7 @@ import { DynamicPressF } from '@/components/organisms';
 import { Snapshot } from '@/domains/tech';
 import { textGradientVariants } from '@/lib/ui';
 import { cn } from '@/lib/cn';
+import Link from 'next/link';
 
 interface TechHeaderProps {
   techId: string;
@@ -45,17 +46,25 @@ export function TechHeader({ techId, techName, score, latestSnapshot }: TechHead
 
       {typeof score === 'number' && !isNaN(score) && (
         <div className="mt-8 max-w-2xl mx-auto">
-          <div className="flex items-center mb-4 justify-center">
-            <h2 className="text-2xl font-semibold mr-4">Deaditude Score:</h2>
-            <span
-              className="text-3xl font-bold px-4 py-2 rounded-md shadow-lg border border-zinc-700 transition-all hover:scale-105 duration-300"
-              style={{
-                backgroundColor: getScoreColor(score),
-                color: score > 50 ? '#fff' : '#000',
-              }}
+          <div className="flex flex-col items-center mb-4 justify-center">
+            <div className="flex items-center justify-center mb-2">
+              <h2 className="text-2xl font-semibold mr-4">Deaditude Score:</h2>
+              <span
+                className="text-3xl font-bold px-4 py-2 rounded-md shadow-lg border border-zinc-700 transition-all hover:scale-105 duration-300"
+                style={{
+                  backgroundColor: getScoreColor(score),
+                  color: score > 50 ? '#fff' : '#000',
+                }}
+              >
+                {safeToFixed(score)}%
+              </span>
+            </div>
+            <Link
+              href="/methodology"
+              className="mt-2 text-xs text-lime-400 hover:text-lime-300 transition-colors underline flex items-center"
             >
-              {safeToFixed(score)}%
-            </span>
+              &#9432; How is this calculated?
+            </Link>
           </div>
 
           <ScoreIndicator score={score} size="lg" />

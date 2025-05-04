@@ -176,7 +176,7 @@ export function logConfigWarnings() {
  */
 export enum DB_TABLES {
   TECH_REGISTRY = 'tech_registry',
-  TECH_SNAPSHOTS = 'tech_snapshots',
+  TECH_SNAPSHOTS = 'tech_snapshots_v2',
   TECH_PROJECTS = 'tech_projects',
   RESPECT_TRACKING = 'respect_tracking',
 }
