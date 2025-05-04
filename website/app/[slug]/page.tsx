@@ -14,6 +14,7 @@ import { GithubSection } from '@/components/organisms/TechGithubPulse';
 import { StackOverflowSection } from '@/components/organisms/TechStackoverflowPulse';
 import { TechLifecycleChart } from '@/components/organisms/TechLifecycleChart';
 import TechRedditSection from '@/components/organisms/TechRedditSection';
+import TechJobsSection from '@/components/organisms/TechJobsSection';
 export const revalidate = 86400; // One apocalyptic day
 
 export async function generateMetadata({
@@ -140,6 +141,9 @@ export default async function TechDetailPage({ params }: { params: Promise<{ slu
 
             {/* Show Reddit community data */}
             <TechRedditSection last_snapshot={latestSnapshot} tech={tech} />
+
+            {/* Show jobs data */}
+            <TechJobsSection last_snapshot={latestSnapshot} tech={tech} />
 
             {/* Show historical data */}
             <TechHistorySection snapshots={snapshots} />

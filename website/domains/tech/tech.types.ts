@@ -179,10 +179,16 @@ export interface StackShareMetrics {
  * Google Jobs metrics
  */
 export interface GoogleJobsMetrics {
-  count?: number;
-  trend?: 'up' | 'down' | 'stable';
-  percent_change?: number;
   deaditude_score: number;
+  by_country?: {
+    ca: number;
+    us: number;
+    gb: number;
+    fr: number;
+    de: number;
+    in: number;
+  };
+  source: string;
 }
 
 /**
