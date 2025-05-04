@@ -19,6 +19,7 @@ export interface Tech {
   stackshare_slug?: string;
   created_at?: string;
   updated_at?: string;
+  creation_year?: number;
 }
 
 /**

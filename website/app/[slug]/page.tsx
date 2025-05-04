@@ -12,6 +12,7 @@ import { calculateDeaditudeScore } from '@/lib/shared';
 import config from '@/lib/config';
 import { GithubSection } from '@/components/organisms/TechGithubPulse';
 import { StackOverflowSection } from '@/components/organisms/TechStackoverflowPulse';
+import { TechLifecycleChart } from '@/components/organisms/TechLifecycleChart';
 export const revalidate = 86400; // One apocalyptic day
 
 export async function generateMetadata({
@@ -126,6 +127,9 @@ export default async function TechDetailPage({ params }: { params: Promise<{ slu
           <>
             {/* Show metrics data */}
             <TechMetricsSection latestSnapshot={latestSnapshot} />
+
+            {/* Show lifecycle chart */}
+            <TechLifecycleChart last_snapshot={latestSnapshot} creation_year={tech.creation_year} />
 
             {/* Show GitHub pulse data */}
             <GithubSection last_snapshot={latestSnapshot} />
