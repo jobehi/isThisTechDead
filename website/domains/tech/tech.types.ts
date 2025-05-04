@@ -43,6 +43,7 @@ export interface ComponentScore {
  * GitHub-specific metrics
  */
 export interface GitHubMetrics {
+  deaditude_score: number;
   main_repo?: {
     stars?: number;
     forks?: number;
@@ -65,6 +66,7 @@ export interface GitHubMetrics {
  * Reddit-specific metrics
  */
 export interface RedditMetrics {
+  deaditude_score: number;
   top_internal_posts?: Array<{
     title: string;
     subreddit: string;
@@ -77,6 +79,8 @@ export interface RedditMetrics {
  * Hacker News metrics
  */
 export interface HackerNewsMetrics {
+  deaditude_score: number;
+
   metrics?: {
     avg_karma: number;
     top_posts?: Array<{
@@ -100,12 +104,14 @@ export interface StackOverflowMetrics {
     score: number;
     view_count: number;
   }>;
+  deaditude_score: number;
 }
 
 /**
  * YouTube metrics
  */
 export interface YouTubeMetrics {
+  deaditude_score: number;
   metrics?: {
     total_views?: number;
     days_since_last_upload?: number;
@@ -126,6 +132,7 @@ export interface StackShareMetrics {
     name: string;
     url: string;
   }>;
+  deaditude_score: number;
 }
 
 /**
@@ -135,6 +142,7 @@ export interface GoogleJobsMetrics {
   count?: number;
   trend?: 'up' | 'down' | 'stable';
   percent_change?: number;
+  deaditude_score: number;
 }
 
 /**
