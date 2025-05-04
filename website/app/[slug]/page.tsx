@@ -10,6 +10,7 @@ import { JsonLd } from '@/components/atoms';
 import { TechService } from '@/domains/tech';
 import { calculateDeaditudeScore } from '@/lib/shared';
 import config from '@/lib/config';
+import { GithubSection } from '@/components/organisms/TechGithubPulse';
 export const revalidate = 86400; // One apocalyptic day
 
 export async function generateMetadata({
@@ -123,7 +124,10 @@ export default async function TechDetailPage({ params }: { params: Promise<{ slu
         {latestSnapshot ? (
           <>
             {/* Show metrics data */}
-            <TechMetricsSection latestSnapshot={latestSnapshot} techName={tech.name} />
+            <TechMetricsSection latestSnapshot={latestSnapshot} />
+
+            {/* Show GitHub pulse data */}
+            <GithubSection last_snapshot={latestSnapshot} />
 
             {/* Show historical data */}
             <TechHistorySection snapshots={snapshots} />

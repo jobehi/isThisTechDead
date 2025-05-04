@@ -42,8 +42,20 @@ export interface ComponentScore {
 /**
  * GitHub-specific metrics
  */
+export interface GithubLanguage {
+  name: string;
+  percentage: number;
+}
 export interface GitHubMetrics {
   deaditude_score: number;
+  statistics?: {
+    participation?: {
+      all?: number[];
+      owner?: number[];
+    };
+  };
+  languages?: GithubLanguage[];
+
   main_repo?: {
     stars?: number;
     forks?: number;

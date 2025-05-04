@@ -6,7 +6,6 @@ import { ScoreIndicator } from '@/components/molecules';
 
 interface TechMetricsSectionProps {
   latestSnapshot: Snapshot;
-  techName: string;
 }
 
 /**
