@@ -110,13 +110,23 @@ export interface StackOverflowMetrics {
   so_zero_answer_count?: number;
   so_accepted_answers?: number;
   so_avg_views?: number;
-  top_questions?: Array<{
-    title: string;
-    url: string;
-    score: number;
-    view_count: number;
-  }>;
+  raw: {
+    questions?: Array<StackOverflowQuestion>;
+  };
   deaditude_score: number;
+}
+
+/**
+ * StackOverflow question details
+ */
+export interface StackOverflowQuestion {
+  title: string;
+  link: string;
+  is_answered: boolean;
+  view_count: number;
+  tags?: Array<string>;
+  answer_count: number;
+  last_activity_date: string;
 }
 
 /**
