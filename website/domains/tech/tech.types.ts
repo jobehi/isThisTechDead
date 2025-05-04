@@ -111,12 +111,13 @@ export interface RedditMetrics {
 export interface HackerNewsMetrics {
   deaditude_score: number;
 
-  metrics?: {
-    avg_karma: number;
-    top_posts?: Array<{
+  raw: {
+    hits?: Array<{
       title: string;
-      url: string;
-      score: number;
+      num_comments: number;
+      points: number;
+      url?: string;
+      created_at_i: number;
     }>;
   };
 }
@@ -255,10 +256,7 @@ export interface Snapshot {
   hn_metrics: HackerNewsMetrics;
   hn_post_count?: number;
   hn_avg_points?: number;
-  hn_avg_comments?: number;
   hn_days_since_last?: number;
-  hn_trend_direction?: string;
-  hn_quality?: number;
 
   // StackShare metrics
   stackshare_metrics: StackShareMetrics;
