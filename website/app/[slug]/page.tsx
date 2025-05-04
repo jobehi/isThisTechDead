@@ -16,6 +16,7 @@ import { TechLifecycleChart } from '@/components/organisms/TechLifecycleChart';
 import TechRedditSection from '@/components/organisms/TechRedditSection';
 import TechJobsSection from '@/components/organisms/TechJobsSection';
 import TechHackerNewsSection from '@/components/organisms/TechHackerNewsSection';
+import TechYoutubeSection from '@/components/organisms/TechYoutubeSection';
 export const revalidate = 86400; // One apocalyptic day
 
 export async function generateMetadata({
@@ -148,6 +149,9 @@ export default async function TechDetailPage({ params }: { params: Promise<{ slu
 
             {/*  Show hackernews data */}
             <TechHackerNewsSection last_snapshot={latestSnapshot} tech={tech} />
+
+            {/* Show youtube data */}
+            <TechYoutubeSection last_snapshot={latestSnapshot} tech={tech} />
 
             {/* Show historical data */}
             <TechHistorySection snapshots={snapshots} />

@@ -153,13 +153,32 @@ export interface StackOverflowQuestion {
  */
 export interface YouTubeMetrics {
   deaditude_score: number;
-  metrics?: {
-    total_views?: number;
-    days_since_last_upload?: number;
-    top_videos?: Array<{
-      title: string;
-      url: string;
-      view_count: number;
+  total_views: number;
+  trend_metrics?: {
+    growth_rate?: number;
+  };
+  raw: {
+    videos?: Array<{
+      id: string;
+      snippet: {
+        title: string;
+        url: string;
+        views: number;
+        channelTitle: string;
+        thumbnails: {
+          medium: {
+            url: string;
+            width: number;
+            height: number;
+          };
+        };
+      };
+      timestamp: number;
+      statistics: {
+        viewCount: number;
+        likeCount: number;
+        commentCount: number;
+      };
     }>;
   };
 }
@@ -236,13 +255,8 @@ export interface Snapshot {
 
   // YouTube metrics
   youtube_metrics: YouTubeMetrics;
-  youtube_trend_direction?: string;
-  youtube_trend_growth_rate?: number;
-  youtube_period_counts?: Record<string, number>;
   youtube_video_count?: number;
   youtube_avg_views?: number;
-  youtube_days_since_last?: number;
-  youtube_quality?: number;
 
   // Reddit metrics
   reddit_metrics: RedditMetrics;
