@@ -133,7 +133,7 @@ We welcome contributions from fellow tech necromancers and skeptics! Before cont
 
 ## License
 
-This project is licensed under the [Elastic License 2.0 (Modified)](./LICENSE), because even our licensing is slightly unconventional.
+This project is licensed under the [MIT](./LICENSE). License. Use it, abuse it, but don't blame us when your tech stack dies a slow, painful death.
 
 ## Security
 
