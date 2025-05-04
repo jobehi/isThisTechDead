@@ -1,7 +1,7 @@
 'use client';
 
 import { Snapshot, Tech } from '@/domains';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 
 interface JobsSectionProps {
   last_snapshot: Snapshot;
@@ -36,8 +36,14 @@ const COUNTRY_FLAGS: Record<string, string> = {
  * It includes visual representations of job counts and snarky analysis of the job market.
  */
 export default function TechJobsSection({ tech, last_snapshot }: JobsSectionProps) {
+  const [showScoreInfo, setShowScoreInfo] = useState(false);
   const jobsMetrics = last_snapshot.google_jobs || { deaditude_score: 5, by_country: {} };
-  const jobsByCountry = (jobsMetrics.by_country || {}) as CountryJobs;
+
+  // Memoize jobsByCountry to prevent re-renders
+  const jobsByCountry = useMemo(() => {
+    return (jobsMetrics.by_country || {}) as CountryJobs;
+  }, [jobsMetrics.by_country]);
+
   const stackshareCompaniesCount = last_snapshot.stackshare_stacks_count || 0;
 
   // Calculate total number of jobs
@@ -96,8 +102,62 @@ export default function TechJobsSection({ tech, last_snapshot }: JobsSectionProp
             <div className={`text-sm font-medium ${jobMarketStatus.color} px-3 py-1 rounded-full`}>
               {jobMarketStatus.label}
             </div>
+            <button
+              onClick={() => setShowScoreInfo(!showScoreInfo)}
+              className="ml-2 text-zinc-400 hover:text-lime-300 transition-colors text-xs underline"
+              aria-label="Show deaditude score calculation information"
+            >
+              How is this calculated?
+            </button>
           </div>
         </div>
+
+        {showScoreInfo && (
+          <div className="mb-4 p-3 bg-zinc-900/70 rounded-lg border border-zinc-700 text-sm">
+            <h3 className="text-lime-300 font-medium mb-1">
+              How the Job Market deaditude score is calculated:
+            </h3>
+            <p className="text-zinc-300 mb-2">
+              Our algorithm uses a tiered scoring system based on total job count across major
+              markets:
+            </p>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-1 ml-4 text-zinc-400">
+              <div className="font-medium">Job Count</div>
+              <div className="font-medium">Deaditude Score</div>
+
+              <div>≥100,000 jobs</div>
+              <div className="text-green-400">1.0 (thriving)</div>
+
+              <div>≥50,000 jobs</div>
+              <div className="text-green-400">2.5</div>
+
+              <div>≥20,000 jobs</div>
+              <div className="text-lime-400">4.0</div>
+
+              <div>≥5,000 jobs</div>
+              <div className="text-yellow-400">5.5</div>
+
+              <div>≥1,000 jobs</div>
+              <div className="text-orange-400">7.0</div>
+
+              <div>≥100 jobs</div>
+              <div className="text-red-400">8.5</div>
+
+              <div>&lt;100 jobs</div>
+              <div className="text-red-500">10.0 (extinct)</div>
+            </div>
+            <p className="text-zinc-400 mt-3">
+              Data is primarily collected from Adzuna&apos;s job API across multiple countries (US,
+              UK, Canada, France, Germany, India). If not available, we fall back to Google search
+              results.
+            </p>
+            <div className="mt-3 bg-zinc-800/60 p-2 rounded border border-zinc-700">
+              <code className="text-xs text-lime-300 font-mono">
+                deaditude = job_count_based_tiered_score
+              </code>
+            </div>
+          </div>
+        )}
 
         <p className="text-zinc-400 italic mb-6 text-sm">{getSnark()}</p>
 

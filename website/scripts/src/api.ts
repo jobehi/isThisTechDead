@@ -3,7 +3,7 @@
  */
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { loadEnvVars } from './env-loader';
-import { Tech, TechWithScore } from '@/domains/tech/tech.types';
+import { TechWithScore } from '@/domains/tech/tech.types';
 
 // Initialize environment
 const env = loadEnvVars();
@@ -48,7 +48,7 @@ export async function getAllTechs(): Promise<TechWithScore[]> {
 
   // Get the latest snapshot for each tech to get the score
   const techsWithScores = await Promise.all(
-    techs.map(async (tech: Tech) => {
+    techs.map(async (tech: TechWithScore) => {
       // Get latest snapshot
       const { data: snapshots } = await supabase
         .from('tech_snapshots_v2')

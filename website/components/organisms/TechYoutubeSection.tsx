@@ -14,6 +14,7 @@ interface TechYoutubeSectionProps {
  */
 export default function TechYoutubeSection({ tech, last_snapshot }: TechYoutubeSectionProps) {
   const [showAllVideos, setShowAllVideos] = useState(false);
+  const [showScoreInfo, setShowScoreInfo] = useState(false);
   const ytMetrics = last_snapshot.youtube_metrics;
   const videos = ytMetrics?.raw?.videos || [];
   const videoCount = last_snapshot.youtube_video_count || 0;
@@ -119,8 +120,68 @@ export default function TechYoutubeSection({ tech, last_snapshot }: TechYoutubeS
             <div className={`text-sm font-medium ${status.color} px-3 py-1 rounded-full`}>
               {status.label}
             </div>
+            <button
+              onClick={() => setShowScoreInfo(!showScoreInfo)}
+              className="ml-2 text-zinc-400 hover:text-red-400 transition-colors text-xs underline"
+              aria-label="Show deaditude score calculation information"
+            >
+              How is this calculated?
+            </button>
           </div>
         </div>
+
+        {showScoreInfo && (
+          <div className="mb-4 p-3 bg-zinc-900/70 rounded-lg border border-zinc-700 text-sm">
+            <h3 className="text-red-400 font-medium mb-1">
+              How the YouTube deaditude score is calculated:
+            </h3>
+            <p className="text-zinc-300 mb-2">
+              Our algorithm analyzes four key components of YouTube activity:
+            </p>
+            <ul className="text-zinc-400 space-y-1 ml-4 list-disc">
+              <li>
+                <span className="font-medium">Video Count (max 2.5 points)</span>: log<sub>10</sub>
+                (video_count) × 1.2
+              </li>
+              <li>
+                <span className="font-medium">View Score (max 4.0 points)</span>: Based on average
+                views per video
+                <ul className="ml-5 mt-1 space-y-0.5 list-[circle] text-xs">
+                  <li>≥100K views: 4.0 points</li>
+                  <li>≥30K views: 3.0 points</li>
+                  <li>≥10K views: 2.0 points</li>
+                  <li>≥3K views: 1.0 points</li>
+                  <li>&gt;0 views: 0.5 points</li>
+                </ul>
+              </li>
+              <li>
+                <span className="font-medium">Recency (max 1.5 points)</span>: Decreases based on
+                days since last upload
+              </li>
+              <li>
+                <span className="font-medium">Trend (max 2.0 points)</span>: Bonus for growing
+                content, penalty for declining content
+                <ul className="ml-5 mt-1 space-y-0.5 list-[circle] text-xs">
+                  <li>Fast growth (≥50%): +2.0 points</li>
+                  <li>Moderate growth (≥20%): +1.4 points</li>
+                  <li>Slow growth: +0.8 points</li>
+                  <li>Slow decline: -0.4 points</li>
+                  <li>Moderate decline: -0.7 points</li>
+                  <li>Fast decline: -1.0 points</li>
+                </ul>
+              </li>
+            </ul>
+            <p className="text-zinc-400 mt-2">
+              These components create an &quot;alive score&quot; which is then subtracted from 10 to
+              produce the final deaditude score.
+            </p>
+            <div className="mt-3 bg-zinc-800/60 p-2 rounded border border-zinc-700">
+              <code className="text-xs text-red-300 font-mono">
+                deaditude = 10 - (video_count_score + view_score + recency_score + trend_score)
+              </code>
+            </div>
+          </div>
+        )}
 
         <p className="text-zinc-400 italic mb-6 text-sm">{getSnark()}</p>
 

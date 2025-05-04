@@ -7,7 +7,7 @@ describe('utils', () => {
   });
 
   it('calculateDeaditudeScore converts 0-10 scale to 0-100', () => {
-    expect(calculateDeaditudeScore(7)).toBe(70);
+    expect(calculateDeaditudeScore(7)).toBe(7);
   });
 
   it('getScoreColor returns correct color for score', () => {

@@ -14,6 +14,7 @@ interface RedditSectionProps {
  */
 export default function TechRedditSection({ tech, last_snapshot }: RedditSectionProps) {
   const [showAllPosts, setShowAllPosts] = useState(false);
+  const [showScoreInfo, setShowScoreInfo] = useState(false);
   const redditMetrics = last_snapshot.reddit_metrics;
   const redditPosts = redditMetrics.raw.posts || [];
   const growthRate = last_snapshot.reddit_trend_growth_rate || 0;
@@ -88,8 +89,76 @@ export default function TechRedditSection({ tech, last_snapshot }: RedditSection
             >
               {deadnessLevel > 50 ? 'Pretty Dead' : 'Still Breathing'}
             </div>
+            <button
+              onClick={() => setShowScoreInfo(!showScoreInfo)}
+              className="ml-2 text-zinc-400 hover:text-lime-400 transition-colors text-xs underline"
+              aria-label="Show deaditude score calculation information"
+            >
+              How is this calculated?
+            </button>
           </div>
         </div>
+
+        {showScoreInfo && (
+          <div className="mb-4 p-3 bg-zinc-900/70 rounded-lg border border-zinc-700 text-sm">
+            <h3 className="text-lime-300 font-medium mb-1">
+              How the Reddit deaditude score is calculated:
+            </h3>
+            <p className="text-zinc-300 mb-2">
+              Our algorithm uses a complex weighted formula combining multiple metrics:
+            </p>
+            <ul className="text-zinc-400 space-y-1 ml-4 list-disc">
+              <li>
+                <span className="font-medium">Subscriber count (15% weight)</span>:
+                <ul className="ml-5 mt-1 space-y-0.5 list-[circle] text-xs">
+                  <li>≥100K subscribers: 3.0 points</li>
+                  <li>≥20K subscribers: 2.0 points</li>
+                  <li>≥5K subscribers: 1.0 points</li>
+                  <li>≥1K subscribers: 0.5 points</li>
+                </ul>
+              </li>
+              <li>
+                <span className="font-medium">Post volume (15% weight)</span>:
+                <ul className="ml-5 mt-1 space-y-0.5 list-[circle] text-xs">
+                  <li>≥50 posts: 3.0 points</li>
+                  <li>≥20 posts: 2.0 points</li>
+                  <li>≥10 posts: 1.0 points</li>
+                  <li>≥5 posts: 0.5 points</li>
+                </ul>
+              </li>
+              <li>
+                <span className="font-medium">Engagement (10% weight)</span>: Based on average score
+                per post (upvotes)
+              </li>
+              <li>
+                <span className="font-medium">Trend (35% weight)</span>: Post frequency over time,
+                with bonuses for growth
+              </li>
+              <li>
+                <span className="font-medium">Sentiment (15% weight)</span>: Text analysis of post
+                titles
+              </li>
+              <li>
+                <span className="font-medium">Migration mentions (10% weight)</span>: Penalty for
+                discussions about abandoning the technology
+              </li>
+            </ul>
+            <p className="text-zinc-400 mt-2">
+              These components create an &quot;alive score&quot; which is converted to the final
+              deaditude score using a non-linear formula that further penalizes technologies showing
+              decline patterns.
+            </p>
+            <div className="mt-3 bg-zinc-800/60 p-2 rounded border border-zinc-700">
+              <code className="text-xs text-lime-300 font-mono leading-relaxed">
+                activity = subscriber_score + post_volume_score + engagement_score + trend_score
+                <br />
+                alive_score = activity * 0.5 + sentiment_score * 0.35 - migration_penalty * 0.2
+                <br />
+                deaditude = 10 - alive_score (with additional adjustments)
+              </code>
+            </div>
+          </div>
+        )}
 
         <p className="text-zinc-400 italic mb-6 text-sm">{getSnark()}</p>
 

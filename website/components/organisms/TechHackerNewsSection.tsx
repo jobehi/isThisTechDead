@@ -14,6 +14,7 @@ interface HackerNewsSectionProps {
  */
 export default function TechHackerNewsSection({ tech, last_snapshot }: HackerNewsSectionProps) {
   const [showAllPosts, setShowAllPosts] = useState(false);
+  const [showScoreInfo, setShowScoreInfo] = useState(false);
   const hnMetrics = last_snapshot.hn_metrics;
   const hnPosts = hnMetrics?.raw?.hits || [];
   const postCount = last_snapshot.hn_post_count || 0;
@@ -118,8 +119,49 @@ export default function TechHackerNewsSection({ tech, last_snapshot }: HackerNew
             <div className={`text-sm font-medium ${status.color} px-3 py-1 rounded-full`}>
               {status.label}
             </div>
+            <button
+              onClick={() => setShowScoreInfo(!showScoreInfo)}
+              className="ml-2 text-zinc-400 hover:text-orange-400 transition-colors text-xs underline"
+              aria-label="Show deaditude score calculation information"
+            >
+              How is this calculated?
+            </button>
           </div>
         </div>
+
+        {showScoreInfo && (
+          <div className="mb-4 p-3 bg-zinc-900/70 rounded-lg border border-zinc-700 text-sm">
+            <h3 className="text-orange-400 font-medium mb-1">
+              How the Hacker News deaditude score is calculated:
+            </h3>
+            <p className="text-zinc-300 mb-2">
+              Our algorithm analyzes Hacker News activity using three key metrics:
+            </p>
+            <ul className="text-zinc-400 space-y-1 ml-4 list-disc">
+              <li>
+                <span className="font-medium">Volume (40% weight)</span>: Posts count divided by 2,
+                capped at 10
+              </li>
+              <li>
+                <span className="font-medium">Karma (40% weight)</span>: Average points per post
+                divided by 5, capped at 10
+              </li>
+              <li>
+                <span className="font-medium">Recency (20% weight)</span>: Full score if mentioned
+                in last 7 days, otherwise decays based on days since last mention
+              </li>
+            </ul>
+            <p className="text-zinc-400 mt-2">
+              These three components create an &quot;alive score&quot; which is then subtracted from
+              10 to produce the final deaditude score on a scale of 0-10.
+            </p>
+            <div className="mt-3 bg-zinc-800/60 p-2 rounded border border-zinc-700">
+              <code className="text-xs text-orange-300 font-mono">
+                deaditude = 10 - (volume_score × 0.4 + karma_score × 0.4 + recency_score × 0.2)
+              </code>
+            </div>
+          </div>
+        )}
 
         <p className="text-zinc-400 italic mb-6 text-sm">{getSnark()}</p>
 

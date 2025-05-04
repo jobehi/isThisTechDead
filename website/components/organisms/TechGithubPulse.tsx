@@ -1,5 +1,8 @@
+'use client';
+
 import { GithubLanguage, Snapshot } from '@/domains';
 import { GithubIcon } from '../atoms/icons/GithubIcon';
+import { useState } from 'react';
 
 interface GithubSectionProps {
   last_snapshot: Snapshot;
@@ -42,6 +45,7 @@ function getLanguageColor(language: string): string {
 }
 
 export function GithubSection({ last_snapshot }: GithubSectionProps) {
+  const [showScoreInfo, setShowScoreInfo] = useState(false);
   const github_metrics = last_snapshot?.github_metrics || {};
   const github_stars = last_snapshot.github_stars || 0;
   const github_forks = last_snapshot.github_forks || 0;
@@ -49,16 +53,108 @@ export function GithubSection({ last_snapshot }: GithubSectionProps) {
   const github_issues_open = last_snapshot.github_issues_open || 0;
   const github_contributors_count = last_snapshot.github_contributors_count || 0;
   const github_participation = github_metrics?.statistics?.participation?.all || [];
+
+  const deadnessLevel = github_metrics.deaditude_score || 5;
+
+  // Get status label based on deaditude score
+  const getStatusLabel = () => {
+    if (deadnessLevel > 8) return { label: 'Abandoned', color: 'text-red-500 bg-red-900/20' };
+    if (deadnessLevel > 6) return { label: 'Declining', color: 'text-orange-400 bg-orange-900/20' };
+    if (deadnessLevel > 4)
+      return { label: 'Maintenance Mode', color: 'text-yellow-400 bg-yellow-900/20' };
+    if (deadnessLevel > 2) return { label: 'Stable', color: 'text-blue-400 bg-blue-900/20' };
+    return { label: 'Active Development', color: 'text-green-400 bg-green-900/20' };
+  };
+
+  const status = getStatusLabel();
+
   return (
     <>
       <section className="mb-8 bg-zinc-800/60 p-6 rounded-xl shadow-lg border border-zinc-700">
-        <h2 className="text-xl font-bold mb-4 text-lime-300 flex items-center">
-          <span className="mr-2">
-            {' '}
-            <GithubIcon />
-          </span>{' '}
-          GitHub Pulse
-        </h2>
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-xl font-bold text-lime-300 flex items-center">
+            <span className="mr-2">
+              {' '}
+              <GithubIcon />
+            </span>{' '}
+            GitHub Pulse
+          </h2>
+          <div className="flex items-center">
+            <div className={`text-sm font-medium ${status.color} px-3 py-1 rounded-full`}>
+              {status.label}
+            </div>
+            <button
+              onClick={() => setShowScoreInfo(!showScoreInfo)}
+              className="ml-2 text-zinc-400 hover:text-lime-300 transition-colors text-xs underline"
+              aria-label="Show deaditude score calculation information"
+            >
+              How is this calculated?
+            </button>
+          </div>
+        </div>
+
+        {showScoreInfo && (
+          <div className="mb-4 p-3 bg-zinc-900/70 rounded-lg border border-zinc-700 text-sm">
+            <h3 className="text-lime-300 font-medium mb-1">
+              How the GitHub deaditude score is calculated:
+            </h3>
+            <p className="text-zinc-300 mb-2">
+              Our algorithm analyzes GitHub repository activity using these key factors:
+            </p>
+            <ul className="text-zinc-400 space-y-1 ml-4 list-disc">
+              <li>
+                <span className="font-medium">Commit activity (last 30 days)</span>:
+                <ul className="ml-4 mt-1 list-circle">
+                  <li>No commits: +3.0 penalty</li>
+                  <li>1-9 commits: +2.0 penalty</li>
+                  <li>10-29 commits: +1.0 penalty</li>
+                  <li>30-49 commits: -1.0 bonus</li>
+                  <li>50+ commits: -2.0 bonus</li>
+                </ul>
+              </li>
+              <li>
+                <span className="font-medium">PR age</span>: Penalties based on average age of open
+                PRs
+                <ul className="ml-4 mt-1 list-circle">
+                  <li>90-180 days: +1.0 penalty</li>
+                  <li>180+ days: +2.0 penalty</li>
+                </ul>
+              </li>
+              <li>
+                <span className="font-medium">Latest release</span>: Penalties for outdated or
+                missing releases
+                <ul className="ml-4 mt-1 list-circle">
+                  <li>60-365 days old: +1.0 penalty</li>
+                  <li>365+ days old: +2.0 penalty</li>
+                  <li>No releases: +2.0 penalty</li>
+                </ul>
+              </li>
+              <li>
+                <span className="font-medium">Stars</span>: Bonuses for popularity
+                <ul className="ml-4 mt-1 list-circle">
+                  <li>10,000-50,000 stars: -1.0 bonus</li>
+                  <li>50,000-100,000 stars: -2.0 bonus</li>
+                  <li>100,000+ stars: -3.0 bonus</li>
+                </ul>
+              </li>
+              <li>
+                <span className="font-medium">Contributors</span>: Bonuses for community involvement
+                <ul className="ml-4 mt-1 list-circle">
+                  <li>5-20 contributors: -1.0 bonus</li>
+                  <li>20-50 contributors: -1.5 bonus</li>
+                  <li>50+ contributors: -2.0 bonus</li>
+                </ul>
+              </li>
+            </ul>
+            <div className="mt-3 bg-zinc-800/60 p-2 rounded border border-zinc-700">
+              <code className="text-xs text-lime-300 font-mono leading-relaxed">
+                score = 5.0 (baseline) + penalties - bonuses
+                <br />
+                deaditude = max(0, min(10, score))
+              </code>
+            </div>
+          </div>
+        )}
 
         <div className="mb-4">
           <div className="bg-zinc-900/40 p-4 rounded-lg">
