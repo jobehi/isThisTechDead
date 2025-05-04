@@ -13,6 +13,7 @@ import config from '@/lib/config';
 import { GithubSection } from '@/components/organisms/TechGithubPulse';
 import { StackOverflowSection } from '@/components/organisms/TechStackoverflowPulse';
 import { TechLifecycleChart } from '@/components/organisms/TechLifecycleChart';
+import TechRedditSection from '@/components/organisms/TechRedditSection';
 export const revalidate = 86400; // One apocalyptic day
 
 export async function generateMetadata({
@@ -136,6 +137,9 @@ export default async function TechDetailPage({ params }: { params: Promise<{ slu
 
             {/* Show StackOverflow pulse data */}
             <StackOverflowSection last_snapshot={latestSnapshot} />
+
+            {/* Show Reddit community data */}
+            <TechRedditSection last_snapshot={latestSnapshot} tech={tech} />
 
             {/* Show historical data */}
             <TechHistorySection snapshots={snapshots} />

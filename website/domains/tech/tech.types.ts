@@ -20,6 +20,7 @@ export interface Tech {
   created_at?: string;
   updated_at?: string;
   creation_year?: number;
+  subreddit?: string;
 }
 
 /**
@@ -80,12 +81,28 @@ export interface GitHubMetrics {
  */
 export interface RedditMetrics {
   deaditude_score: number;
-  top_internal_posts?: Array<{
-    title: string;
-    subreddit: string;
-    upvotes: number;
-    url?: string;
-  }>;
+  raw: {
+    posts?: Array<{
+      title: string;
+      url: string;
+      sub: number;
+      num_comments: number;
+      score: number;
+      upvote_ratio: number;
+      created: string;
+    }>;
+  };
+  avg_sentiment?: number;
+  post_count?: number;
+  trend_metrics?: {
+    growth_rate?: number;
+    trend_direction?: string;
+  };
+  subreddit_metrics?: {
+    subscribers?: number;
+    active_users?: number;
+  };
+  migration_mentions: number;
 }
 
 /**
@@ -224,8 +241,6 @@ export interface Snapshot {
   reddit_metrics: RedditMetrics;
   reddit_post_count?: number;
   reddit_avg_upvotes?: number;
-  reddit_comments_per_post?: number;
-  reddit_days_since_last?: number;
   reddit_trend_direction?: string;
   reddit_trend_growth_rate?: number;
   reddit_quality?: number;
