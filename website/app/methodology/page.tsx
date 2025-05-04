@@ -695,6 +695,15 @@ export default function MethodologyPage() {
             calibrated with our proprietary "I Told You So" algorithm, developed by bitter senior engineers 
             who warned against using these technologies in the first place.`}
           </p>
+          <p>
+            {"You don't like it ? "}
+            <Link
+              href="https://github.com/jobehi/isThisTechDead/tree/main/deaditude"
+              className="text-lime-400 hover:text-lime-300 transition-colors underline"
+            >
+              {'Change it.'}
+            </Link>
+          </p>
 
           <p className="text-sm text-zinc-400 italic">
             Remember: All technologies die eventually. The question is whether your resumé will be
