@@ -222,10 +222,10 @@ export default function TechYoutubeSection({ tech, last_snapshot }: TechYoutubeS
               </div>
             </div>
 
-            <div className="space-y-4">
+            <div className="grid space-y-4 md:grid-cols-2 gap-4">
               {videos
                 .sort((a, b) => (b.statistics?.viewCount || 0) - (a.statistics?.viewCount || 0))
-                .slice(0, showAllVideos ? videos.length : 3)
+                .slice(0, showAllVideos ? videos.length : 4)
                 .map((video, idx) => {
                   const views = video.statistics?.viewCount || 0;
                   const likes = video.statistics?.likeCount || 0;
