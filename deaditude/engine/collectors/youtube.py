@@ -310,7 +310,7 @@ def collect_youtube_signals(tech: Dict[str, str]) -> Tuple[Dict[str, Any],
         "trend_score": round(trend_score, 2),
         "trend_metrics": trend,
         "deaditude_score": deaditude,
-        "raw": {"videos": filtered[:100]},
+        "raw": {"videos": filtered[:6]},
     }
 
     print(

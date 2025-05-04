@@ -339,7 +339,7 @@ def collect_so_signals(tag: str) -> Tuple[Dict[str, Any], float]:
         "views_avg": views_avg,
         "views_high": views_high,
         "trend_metrics": trend_metrics,
-        "raw": {"questions": all_q[:200]},
+        "raw": {"questions": all_q[:5]},
     }
     metrics["deaditude_score"] = _score(metrics)
 
