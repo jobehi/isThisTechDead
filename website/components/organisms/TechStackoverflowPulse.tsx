@@ -3,6 +3,7 @@
 import { Snapshot, StackOverflowQuestion } from '@/domains';
 import { useState } from 'react';
 import { StackOverflowIcon } from '../atoms/icons/StackOverflowIcon';
+import { ExternalLinkDialog } from '@/components/molecules';
 
 interface StackOverflowProps {
   last_snapshot: Snapshot;
@@ -153,11 +154,10 @@ export function StackOverflowSection({ last_snapshot }: StackOverflowProps) {
                 .sort((a, b) => b.view_count - a.view_count)
                 .slice(0, 3)
                 .map((question: StackOverflowQuestion, idx: number) => (
-                  <a
+                  <ExternalLinkDialog
                     key={idx}
                     href={question.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    platform="other"
                     className="text-zinc-300 text-sm line-clamp-2 hover:text-lime-300 transition-colors"
                   >
                     <div className="bg-zinc-800/60 p-3 rounded-lg">
@@ -184,7 +184,7 @@ export function StackOverflowSection({ last_snapshot }: StackOverflowProps) {
                         </div>
                       </div>
                     </div>
-                  </a>
+                  </ExternalLinkDialog>
                 ))}
             </div>
           </div>

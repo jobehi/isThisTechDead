@@ -2,6 +2,7 @@
 
 import { Snapshot, Tech } from '@/domains';
 import { useState } from 'react';
+import { ExternalLinkDialog } from '@/components/molecules';
 
 interface RedditSectionProps {
   last_snapshot: Snapshot;
@@ -374,24 +375,22 @@ export default function TechRedditSection({ tech, last_snapshot }: RedditSection
                     key={idx}
                     className="bg-zinc-800/60 p-3 rounded-lg hover:bg-zinc-700/60 transition-colors"
                   >
-                    <a
+                    <ExternalLinkDialog
                       href={post.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      platform="reddit"
                       className="text-zinc-300 text-sm line-clamp-2 hover:text-lime-300 transition-colors"
                     >
                       {post.title}
-                    </a>
+                    </ExternalLinkDialog>
                     <div className="flex items-center justify-between mt-2 text-xs">
                       <div className="flex items-center">
-                        <a
+                        <ExternalLinkDialog
                           href={`https://reddit.com/r/${post.sub}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          platform="reddit"
                           className="text-orange-400 hover:text-orange-300 transition-colors"
                         >
                           r/{post.sub}
-                        </a>
+                        </ExternalLinkDialog>
                         <span className="text-zinc-500 ml-2">{formatPostDate(post.created)}</span>
                       </div>
                       <div className="flex items-center space-x-3">
@@ -442,14 +441,13 @@ export default function TechRedditSection({ tech, last_snapshot }: RedditSection
                 {showAllPosts ? 'Show Less' : `Show All (${redditPosts.length})`}
               </button>
             )}
-            <a
+            <ExternalLinkDialog
               href={`https://www.reddit.com/search/?q=${encodeURIComponent(tech.subreddit || tech.name)}`}
-              target="_blank"
-              rel="noopener noreferrer"
+              platform="reddit"
               className="px-3 py-1.5 bg-orange-900/30 text-orange-400 rounded-full text-xs hover:bg-orange-900/50 transition-colors"
             >
               Browse Reddit
-            </a>
+            </ExternalLinkDialog>
           </div>
         </div>
 

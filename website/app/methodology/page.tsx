@@ -4,35 +4,10 @@ import React from 'react';
 import { PageLayout } from '@/templates';
 import { Card, GlitchText } from '@/components/molecules';
 import { JsonLd } from '@/components/atoms';
-import { motion } from 'framer-motion';
 import config from '@/lib/config';
 import Link from 'next/link';
 
 export default function MethodologyPage() {
-  // Animation container variants for staggered animations
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: [0.22, 1, 0.36, 1],
-      },
-    },
-  };
-
   // JSON-LD structured data for the methodology page
   const structuredData = {
     '@context': 'https://schema.org',
@@ -66,12 +41,7 @@ export default function MethodologyPage() {
       <JsonLd data={structuredData} />
 
       <div className="max-w-4xl mx-auto px-6 py-12">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-8"
-        >
+        <div className="mb-8">
           <h1 className="text-4xl font-bold text-lime-400 mb-2">
             <GlitchText text="Our Methodology" as="span" />
             <span className="text-xs align-top text-zinc-500 ml-2">
@@ -85,17 +55,12 @@ export default function MethodologyPage() {
             showing up unannounced, poking around in dark corners, and leaving with a clipboard full of horrifying facts
             you'd rather not know.`}
           </p>
-        </motion.div>
+        </div>
 
-        <motion.h2
-          className="text-2xl font-semibold text-lime-400 mt-10 mb-4"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
+        <h2 className="text-2xl font-semibold text-lime-400 mt-10 mb-4">
           Deaditude Score™ Calculation{' '}
           <span className="text-sm text-zinc-500">(Or: Quantifying Your Poor Life Choices)</span>
-        </motion.h2>
+        </h2>
 
         <p className="text-zinc-300 mb-6">
           Our Deaditude Score ranges from 0 (thriving like venture capital at a buzzword convention)
@@ -119,13 +84,10 @@ export default function MethodologyPage() {
                   { name: 'Stack Overflow Panic', weight: '15%' },
                   { name: 'YouTube Desperation', weight: '15%' },
                   { name: 'Hacker News Contempt', weight: '15%' },
-                ].map((source, index) => (
-                  <motion.li
+                ].map(source => (
+                  <li
                     key={source.name}
                     className="flex justify-between items-center border-b border-zinc-800 pb-2"
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: 0.4 + index * 0.07 }}
                   >
                     <span className="text-zinc-300">
                       {source.name}
@@ -133,14 +95,8 @@ export default function MethodologyPage() {
                         <span className="text-xs ml-1">(or lack thereof)</span>
                       )}
                     </span>
-                    <motion.span
-                      className="text-lime-400 font-mono"
-                      whileHover={{ scale: 1.1, y: -2 }}
-                      transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-                    >
-                      {source.weight}
-                    </motion.span>
-                  </motion.li>
+                    <span className="text-lime-400 font-mono">{source.weight}</span>
+                  </li>
                 ))}
               </ul>
             </div>
@@ -182,50 +138,30 @@ export default function MethodologyPage() {
                     description:
                       'Abandoned — This tech is deader than your Tamagotchi. Time to update that résumé, champ.',
                   },
-                ].map((score, index) => (
-                  <motion.li
+                ].map(score => (
+                  <li
                     key={score.range}
                     className="flex items-start gap-2 border-b border-zinc-800 pb-2"
-                    initial={{ opacity: 0, x: 10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: 0.4 + index * 0.07 }}
                   >
-                    <motion.span
-                      className={`${score.color} font-mono whitespace-nowrap`}
-                      whileHover={{ scale: 1.1, x: 2 }}
-                      transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-                    >
+                    <span className={`${score.color} font-mono whitespace-nowrap`}>
                       {score.range}:
-                    </motion.span>
+                    </span>
                     <span className="text-zinc-300">{score.description}</span>
-                  </motion.li>
+                  </li>
                 ))}
               </ul>
             </div>
           </div>
         </Card>
 
-        <motion.h2
-          className="text-2xl font-semibold text-lime-400 mt-10 mb-6"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-        >
+        <h2 className="text-2xl font-semibold text-lime-400 mt-10 mb-6">
           Detailed Platform Methodologies{' '}
           <span className="text-sm text-zinc-500">(The Gory Details)</span>
-        </motion.h2>
+        </h2>
 
-        <motion.div
-          className="space-y-8"
-          variants={containerVariants}
-          initial="hidden"
-          animate="show"
-        >
+        <div className="space-y-8">
           {/* GitHub Analysis */}
-          <motion.div
-            variants={itemVariants}
-            className="bg-zinc-900/60 rounded-lg p-6 border border-zinc-800"
-          >
+          <div className="bg-zinc-900/60 rounded-lg p-6 border border-zinc-800">
             <h3 className="text-xl font-semibold text-lime-300 mb-3 flex items-center">
               <span className="mr-2">🐙</span> GitHub Analysis
               <span className="text-sm text-zinc-500 ml-2">(Digital Archaeology)</span>
@@ -304,13 +240,10 @@ export default function MethodologyPage() {
                 deaditude = max(0, min(10, score))
               </code>
             </div>
-          </motion.div>
+          </div>
 
           {/* Stack Overflow Analysis */}
-          <motion.div
-            variants={itemVariants}
-            className="bg-zinc-900/60 rounded-lg p-6 border border-zinc-800"
-          >
+          <div className="bg-zinc-900/60 rounded-lg p-6 border border-zinc-800">
             <h3 className="text-xl font-semibold text-lime-300 mb-3 flex items-center">
               <span className="mr-2">🧠</span> Stack Overflow Analysis
               <span className="text-sm text-zinc-500 ml-2">(Desperation Metrics)</span>
@@ -391,13 +324,10 @@ export default function MethodologyPage() {
                 View detailed Stack Overflow methodology →
               </Link>
             </div>
-          </motion.div>
+          </div>
 
           {/* YouTube Analysis */}
-          <motion.div
-            variants={itemVariants}
-            className="bg-zinc-900/60 rounded-lg p-6 border border-zinc-800"
-          >
+          <div className="bg-zinc-900/60 rounded-lg p-6 border border-zinc-800">
             <h3 className="text-xl font-semibold text-lime-300 mb-3 flex items-center">
               <span className="mr-2">🎬</span> YouTube Analysis
               <span className="text-sm text-zinc-500 ml-2">(Tutorial Desperation)</span>
@@ -473,13 +403,10 @@ export default function MethodologyPage() {
                 deaditude = score / 10
               </code>
             </div>
-          </motion.div>
+          </div>
 
           {/* Reddit Analysis */}
-          <motion.div
-            variants={itemVariants}
-            className="bg-zinc-900/60 rounded-lg p-6 border border-zinc-800"
-          >
+          <div className="bg-zinc-900/60 rounded-lg p-6 border border-zinc-800">
             <h3 className="text-xl font-semibold text-lime-300 mb-3 flex items-center">
               <span className="mr-2">💬</span> Reddit Analysis
               <span className="text-sm text-zinc-500 ml-2">(Community Complaints)</span>
@@ -546,13 +473,10 @@ export default function MethodologyPage() {
                 deaditude = max(0, min(10, score))
               </code>
             </div>
-          </motion.div>
+          </div>
 
           {/* Hacker News Analysis */}
-          <motion.div
-            variants={itemVariants}
-            className="bg-zinc-900/60 rounded-lg p-6 border border-zinc-800"
-          >
+          <div className="bg-zinc-900/60 rounded-lg p-6 border border-zinc-800">
             <h3 className="text-xl font-semibold text-lime-300 mb-3 flex items-center">
               <span className="mr-2">🔸</span> Hacker News Analysis
               <span className="text-sm text-zinc-500 ml-2">(Silicon Valley Contempt)</span>
@@ -595,13 +519,10 @@ export default function MethodologyPage() {
                 deaditude = max(0, min(10, score))
               </code>
             </div>
-          </motion.div>
+          </div>
 
           {/* Jobs Analysis */}
-          <motion.div
-            variants={itemVariants}
-            className="bg-zinc-900/60 rounded-lg p-6 border border-zinc-800"
-          >
+          <div className="bg-zinc-900/60 rounded-lg p-6 border border-zinc-800">
             <h3 className="text-xl font-semibold text-lime-300 mb-3 flex items-center">
               <span className="mr-2">💼</span> Jobs Analysis
               <span className="text-sm text-zinc-500 ml-2">(Economic Distress Signals)</span>
@@ -679,15 +600,10 @@ export default function MethodologyPage() {
               Note: We also analyze job requirements for &quot;maintenance of legacy systems&quot;
               as a red flag multiplier.
             </p>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
-        <motion.div
-          className="mt-16 p-6 border border-zinc-700 rounded-lg bg-zinc-900/40"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
-        >
+        <div className="mt-16 p-6 border border-zinc-700 rounded-lg bg-zinc-900/40">
           <h2 className="text-xl font-semibold text-lime-400 mb-3">The Final Diagnosis</h2>
           <p className="text-zinc-300 mb-4">
             {`Our platform combines all these signals to deliver the brutal truth about your technology choices. 
@@ -695,7 +611,7 @@ export default function MethodologyPage() {
             calibrated with our proprietary "I Told You So" algorithm, developed by bitter senior engineers 
             who warned against using these technologies in the first place.`}
           </p>
-          <p>
+          <p className="mb-4">
             {"You don't like it ? "}
             <Link
               href="https://github.com/jobehi/isThisTechDead/tree/main/deaditude"
@@ -704,12 +620,11 @@ export default function MethodologyPage() {
               {'Change it.'}
             </Link>
           </p>
-
           <p className="text-sm text-zinc-400 italic">
             Remember: All technologies die eventually. The question is whether your resumé will be
             updated before that happens.
           </p>
-        </motion.div>
+        </div>
       </div>
     </PageLayout>
   );
