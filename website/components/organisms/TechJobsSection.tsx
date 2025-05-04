@@ -2,6 +2,7 @@
 
 import { Snapshot, Tech } from '@/domains';
 import { useMemo, useState } from 'react';
+import { ExternalLinkDialog } from '@/components/molecules';
 
 interface JobsSectionProps {
   last_snapshot: Snapshot;
@@ -312,7 +313,7 @@ export default function TechJobsSection({ tech, last_snapshot }: JobsSectionProp
           </div>
           {/* source Adzuna */}
           <div className="text-xs text-zinc-500">
-            <a href="https://developer.adzuna.com/" target="_blank" rel="noopener noreferrer">
+            <ExternalLinkDialog href="https://developer.adzuna.com/" platform="other">
               <p className="flex items-center">
                 <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -324,7 +325,7 @@ export default function TechJobsSection({ tech, last_snapshot }: JobsSectionProp
                 </svg>
                 Source: Adzuna
               </p>
-            </a>
+            </ExternalLinkDialog>
           </div>
         </div>
       </section>

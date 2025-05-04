@@ -2,6 +2,7 @@
 
 import { Snapshot, Tech } from '@/domains';
 import { useState } from 'react';
+import { ExternalLinkDialog } from '@/components/molecules';
 
 interface HackerNewsSectionProps {
   last_snapshot: Snapshot;
@@ -275,14 +276,13 @@ export default function TechHackerNewsSection({ tech, last_snapshot }: HackerNew
                     key={idx}
                     className="bg-zinc-800/60 p-3 rounded-lg hover:bg-zinc-700/60 transition-colors"
                   >
-                    <a
+                    <ExternalLinkDialog
                       href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      platform="hackernews"
                       className="text-zinc-300 text-sm hover:text-orange-400 transition-colors"
                     >
                       {title}
-                    </a>
+                    </ExternalLinkDialog>
                     <div className="flex items-center justify-between mt-2 text-xs">
                       <span className="text-zinc-500">{formatPostDate(post.created_at_i)}</span>
                       <div className="flex items-center space-x-3">
@@ -319,14 +319,13 @@ export default function TechHackerNewsSection({ tech, last_snapshot }: HackerNew
                   {showAllPosts ? 'Show Less' : `Show All (${hnPosts.length})`}
                 </button>
               )}
-              <a
+              <ExternalLinkDialog
                 href={`https://hn.algolia.com/?q=${encodeURIComponent(tech.name)}`}
-                target="_blank"
-                rel="noopener noreferrer"
+                platform="hackernews"
                 className="px-3 py-1.5 bg-orange-900/30 text-orange-400 rounded-full text-xs hover:bg-orange-900/50 transition-colors"
               >
                 Search on HN
-              </a>
+              </ExternalLinkDialog>
             </div>
           </div>
         ) : (
@@ -335,14 +334,13 @@ export default function TechHackerNewsSection({ tech, last_snapshot }: HackerNew
             <p className="text-zinc-500 text-xs mt-2 italic">
               Even &quot;Blockchain AI for the Web3 Metaverse&quot; gets more attention.
             </p>
-            <a
+            <ExternalLinkDialog
               href={`https://hn.algolia.com/?q=${encodeURIComponent(tech.name)}`}
-              target="_blank"
-              rel="noopener noreferrer"
+              platform="hackernews"
               className="inline-block mt-4 px-3 py-1.5 bg-orange-900/30 text-orange-400 rounded-full text-xs hover:bg-orange-900/50 transition-colors"
             >
               Double-check on HN
-            </a>
+            </ExternalLinkDialog>
           </div>
         )}
 

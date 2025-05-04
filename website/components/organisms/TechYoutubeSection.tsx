@@ -2,6 +2,7 @@
 
 import { Snapshot, Tech } from '@/domains';
 import { useState } from 'react';
+import { ExternalLinkDialog } from '@/components/molecules';
 
 interface TechYoutubeSectionProps {
   last_snapshot: Snapshot;
@@ -298,10 +299,9 @@ export default function TechYoutubeSection({ tech, last_snapshot }: TechYoutubeS
                       className="flex flex-col md:flex-row bg-zinc-800/60 rounded-lg overflow-hidden hover:bg-zinc-700/60 transition-colors"
                     >
                       <div className="md:w-40 lg:w-48 flex-shrink-0">
-                        <a
+                        <ExternalLinkDialog
                           href={video.snippet.url || `https://www.youtube.com/watch?v=${video.id}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          platform="youtube"
                           className="block relative pb-[56.25%] w-full h-0 bg-zinc-900"
                         >
                           {video.snippet.thumbnails?.medium?.url ? (
@@ -322,21 +322,20 @@ export default function TechYoutubeSection({ tech, last_snapshot }: TechYoutubeS
                           <div className="absolute bottom-0 right-0 bg-black/80 text-white text-xs px-1 py-0.5">
                             {formatNumber(views)} views
                           </div>
-                        </a>
+                        </ExternalLinkDialog>
                       </div>
 
                       <div className="p-3 flex-1 flex flex-col justify-between">
                         <div>
-                          <a
+                          <ExternalLinkDialog
                             href={
                               video.snippet.url || `https://www.youtube.com/watch?v=${video.id}`
                             }
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            platform="youtube"
                             className="text-sm text-zinc-200 font-medium hover:text-red-400 transition-colors line-clamp-2"
                           >
                             {video.snippet.title}
-                          </a>
+                          </ExternalLinkDialog>
                           <div className="text-xs text-zinc-500 mt-1">
                             {video.snippet.channelTitle}
                           </div>
@@ -376,14 +375,13 @@ export default function TechYoutubeSection({ tech, last_snapshot }: TechYoutubeS
                   {showAllVideos ? 'Show Less' : `Show All Videos (${videos.length})`}
                 </button>
               )}
-              <a
+              <ExternalLinkDialog
                 href={`https://www.youtube.com/results?search_query=${encodeURIComponent(tech.name)}`}
-                target="_blank"
-                rel="noopener noreferrer"
+                platform="youtube"
                 className="px-3 py-1.5 bg-red-900/30 text-red-400 rounded-full text-xs hover:bg-red-900/50 transition-colors"
               >
                 Search on YouTube
-              </a>
+              </ExternalLinkDialog>
             </div>
           </div>
         ) : (
@@ -392,14 +390,13 @@ export default function TechYoutubeSection({ tech, last_snapshot }: TechYoutubeS
             <p className="text-zinc-500 text-xs mt-2 italic">
               Even TikTok dances about programming languages get more content than this.
             </p>
-            <a
+            <ExternalLinkDialog
               href={`https://www.youtube.com/results?search_query=${encodeURIComponent(tech.name)}`}
-              target="_blank"
-              rel="noopener noreferrer"
+              platform="youtube"
               className="inline-block mt-4 px-3 py-1.5 bg-red-900/30 text-red-400 rounded-full text-xs hover:bg-red-900/50 transition-colors"
             >
               Search on YouTube
-            </a>
+            </ExternalLinkDialog>
           </div>
         )}
 
