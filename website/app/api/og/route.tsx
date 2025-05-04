@@ -2,8 +2,6 @@ import { ImageResponse } from 'next/og';
 import { NextRequest } from 'next/server';
 import { getSarcasticCommentary } from '@/lib/roast';
 
-export const runtime = 'edge';
-
 export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
