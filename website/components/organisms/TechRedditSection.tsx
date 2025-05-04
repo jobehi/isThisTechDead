@@ -27,12 +27,12 @@ export default function TechRedditSection({ tech, last_snapshot }: RedditSection
 
   // Get some snark based on metrics
   const getSnark = () => {
-    if (deadnessLevel > 80)
+    if (deadnessLevel > 8)
       return "Even necromancers couldn't resurrect this tech's Reddit presence";
-    if (deadnessLevel > 60) return 'The Reddit tumbleweeds have taken over';
-    if (deadnessLevel > 40)
+    if (deadnessLevel > 6) return 'The Reddit tumbleweeds have taken over';
+    if (deadnessLevel > 4)
       return 'Posting about this tech is the Reddit equivalent of shouting into the void';
-    if (deadnessLevel > 20) return 'Not dead yet, but the Reddit vultures are circling';
+    if (deadnessLevel > 2) return 'Not dead yet, but the Reddit vultures are circling';
     return 'Surprisingly alive and kicking on Reddit';
   };
 
