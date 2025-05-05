@@ -9,6 +9,7 @@ import { MenuIcon } from '../atoms/icons/MenuIcon';
 import { cn } from '@/lib/cn';
 import { GithubIcon } from '../atoms/icons/GithubIcon';
 import { config } from '@/lib/config';
+
 interface SiteHeaderProps {
   rightContent?: React.ReactNode;
   backLink?: boolean;
@@ -50,13 +51,6 @@ function LinkComponent({ href, children, className = '', onClick }: LinkProps) {
 export function SiteHeader({ rightContent }: SiteHeaderProps) {
   // Header is now always visible with background, no scroll listener needed
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const formattedDate = new Date().toLocaleDateString('en-US', {
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric',
-  });
-
-  // No scroll listener required for static header
 
   // Handle keyboard escape for mobile menu
   useEffect(() => {
@@ -81,16 +75,26 @@ export function SiteHeader({ rightContent }: SiteHeaderProps) {
         <div className="flex justify-between items-center">
           {/* Logo and title */}
           <Link href="/" className="group flex items-center gap-2">
-            <Image
-              src="/is_this_tech_dead_logo_small_2.png"
-              alt="Is This Tech Dead?"
-              width={100}
-              height={0}
-            />
+            <div className="relative w-[100px] h-[50px] flex-shrink-0">
+              <Image
+                src="/is_this_tech_dead_logo_small_2.png"
+                alt="Is This Tech Dead?"
+                fill
+                sizes="100px"
+                priority
+                className="object-contain"
+              />
+            </div>
             <div>
               <span className="font-bold text-white block leading-tight">Is This Tech Dead?</span>
               <div className="text-xs text-zinc-500 flex items-center gap-1">
-                <span>{formattedDate}</span>
+                <span>
+                  {new Date().toLocaleDateString('en-US', {
+                    month: 'short',
+                    day: 'numeric',
+                    year: 'numeric',
+                  })}
+                </span>
                 <span className="inline-block h-1 w-1 rounded-full bg-zinc-700 mx-0.5" />
                 <span className="text-lime-500 animate-pulse">Live</span>
               </div>
@@ -128,13 +132,15 @@ export function SiteHeader({ rightContent }: SiteHeaderProps) {
                 className="text-white hover:text-zinc-400 transition-colors"
                 aria-label="Follow us on Bluesky"
               >
-                <Image
-                  src="/bluesky.svg"
-                  alt="Bluesky"
-                  width={40}
-                  height={40}
-                  className="w-6 h-6"
-                />
+                <div className="relative w-6 h-6">
+                  <Image
+                    src="/bluesky.svg"
+                    alt="Bluesky"
+                    fill
+                    sizes="24px"
+                    className="object-contain"
+                  />
+                </div>
               </a>
             </div>
             <div className="border-l border-zinc-800 h-6 mx-2"></div>
@@ -203,13 +209,15 @@ export function SiteHeader({ rightContent }: SiteHeaderProps) {
                       className="text-white hover:text-zinc-400 transition-colors"
                       aria-label="Follow us on Bluesky"
                     >
-                      <Image
-                        src="/bluesky.svg"
-                        alt="Bluesky"
-                        width={24}
-                        height={24}
-                        className="w-6 h-6"
-                      />
+                      <div className="relative w-6 h-6">
+                        <Image
+                          src="/bluesky.svg"
+                          alt="Bluesky"
+                          fill
+                          sizes="24px"
+                          className="object-contain"
+                        />
+                      </div>
                     </a>
                   </div>
                 </div>
