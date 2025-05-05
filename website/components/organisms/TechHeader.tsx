@@ -8,6 +8,8 @@ import { Snapshot } from '@/domains/tech';
 import { textGradientVariants } from '@/lib/ui';
 import { cn } from '@/lib/cn';
 import Link from 'next/link';
+import { SocialShareButtons } from '@/components/molecules/SocialShareButtons';
+import { useEffect, useState } from 'react';
 
 interface TechHeaderProps {
   techId: string;
@@ -33,6 +35,16 @@ interface TechHeaderProps {
  * ```
  */
 export function TechHeader({ techId, techName, score, latestSnapshot }: TechHeaderProps) {
+  const [currentUrl, setCurrentUrl] = useState('');
+
+  useEffect(() => {
+    // Only set the URL in the browser
+    setCurrentUrl(window.location.href);
+  }, []);
+
+  const shareTitle = `Looks like ${techName} is ${safeToFixed(score)}% dead`;
+  const shareSummary = `Check out ${techName}'s deaditude score on Is This Tech Dead?`;
+
   return (
     <header className="pt-16 pb-8 px-8 sm:px-20 text-center relative overflow-hidden">
       <h1
@@ -59,12 +71,14 @@ export function TechHeader({ techId, techName, score, latestSnapshot }: TechHead
                 {safeToFixed(score)}%
               </span>
             </div>
-            <Link
-              href="/methodology"
-              className="mt-2 text-xs text-lime-400 hover:text-lime-300 transition-colors underline flex items-center"
-            >
-              &#9432; How is this calculated?
-            </Link>
+            <div className="flex items-center justify-center mt-3 mb-1">
+              <Link
+                href="/methodology"
+                className="text-xs text-lime-400 hover:text-lime-300 transition-colors underline flex items-center mr-4"
+              >
+                &#9432; How is this calculated?
+              </Link>
+            </div>
           </div>
 
           <ScoreIndicator score={score} size="lg" />
@@ -78,6 +92,15 @@ export function TechHeader({ techId, techName, score, latestSnapshot }: TechHead
           <div className="mt-2 text-xs text-zinc-500 italic max-w-2xl mx-auto">
             *Data last collected: {formatDate(latestSnapshot?.created_at || '')}, so it might be
             even worse now, sorry.
+          </div>
+          <div className="mt-2 flex justify-center">
+            {currentUrl && (
+              <SocialShareButtons
+                url={currentUrl}
+                title={shareTitle + ' and ' + getSarcasticCommentary(score)}
+                summary={shareSummary}
+              />
+            )}
           </div>
 
           {/* Pay Respects Button */}
