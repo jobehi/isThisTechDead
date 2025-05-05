@@ -4,6 +4,8 @@
  * Centralized error types and handling for the application.
  */
 
+import logger from '@/lib/logger';
+
 // Base application error class
 export class AppError extends Error {
   constructor(
@@ -82,7 +84,7 @@ export class ValidationError extends AppError {
 export async function apiErrorHandler(
   error: unknown
 ): Promise<{ statusCode: number; body: unknown }> {
-  console.error('API Error:', error);
+  logger.error('API Error:', error);
 
   if (error instanceof AppError) {
     return {
