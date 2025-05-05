@@ -3,6 +3,7 @@ import { handleSupabaseError } from '@/lib/errors';
 import { Snapshot, Tech, TechDetails } from './tech.types';
 import { Project } from '../project';
 import { DB_TABLES } from '@/lib/config';
+import logger from '@/lib/logger';
 
 /**
  * Tech Repository
@@ -85,7 +86,7 @@ export class TechRepository {
       if (error) throw error;
       return data && data.length > 0 ? data[0] : null;
     } catch (error) {
-      console.error('Error fetching latest snapshot:', error);
+      logger.error('Error fetching latest snapshot:', error);
       // If there's an error, return null instead of throwing
       return null;
     }

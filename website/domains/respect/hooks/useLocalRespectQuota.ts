@@ -1,6 +1,7 @@
 'use client';
 
 import { config } from '@/lib/config';
+import logger from '@/lib/logger';
 
 // Use the centralized config
 const MAX_RESPECTS_PER_DAY = config.security.rateLimits.respect.maxPerDay;
@@ -34,7 +35,7 @@ export function trackRespect(techId: string): boolean {
     return true;
   } catch (err) {
     // Don't silently swallow errors - log them
-    console.warn('Error tracking respect in localStorage:', err);
+    logger.warn('Error tracking respect in localStorage:', err);
     // If localStorage fails, we'll still allow the action
     return true;
   }
@@ -67,7 +68,7 @@ export function getDailyRespectInfo(techId: string): { count: number; remaining:
     };
   } catch (err) {
     // Don't silently swallow errors - log them
-    console.warn('Error getting daily respect info:', err);
+    logger.warn('Error getting daily respect info:', err);
     // If localStorage fails, assume no respects
     return { count: 0, remaining: MAX_RESPECTS_PER_DAY };
   }

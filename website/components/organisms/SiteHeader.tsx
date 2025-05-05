@@ -9,6 +9,8 @@ import { MenuIcon } from '../atoms/icons/MenuIcon';
 import { cn } from '@/lib/cn';
 import { GithubIcon } from '../atoms/icons/GithubIcon';
 import { config } from '@/lib/config';
+import { ClientOnly } from '@/components/atoms';
+
 interface SiteHeaderProps {
   rightContent?: React.ReactNode;
   backLink?: boolean;
@@ -50,13 +52,6 @@ function LinkComponent({ href, children, className = '', onClick }: LinkProps) {
 export function SiteHeader({ rightContent }: SiteHeaderProps) {
   // Header is now always visible with background, no scroll listener needed
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const formattedDate = new Date().toLocaleDateString('en-US', {
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric',
-  });
-
-  // No scroll listener required for static header
 
   // Handle keyboard escape for mobile menu
   useEffect(() => {
@@ -90,7 +85,15 @@ export function SiteHeader({ rightContent }: SiteHeaderProps) {
             <div>
               <span className="font-bold text-white block leading-tight">Is This Tech Dead?</span>
               <div className="text-xs text-zinc-500 flex items-center gap-1">
-                <span>{formattedDate}</span>
+                <ClientOnly fallback="Loading...">
+                  <span>
+                    {new Date().toLocaleDateString('en-US', {
+                      month: 'short',
+                      day: 'numeric',
+                      year: 'numeric',
+                    })}
+                  </span>
+                </ClientOnly>
                 <span className="inline-block h-1 w-1 rounded-full bg-zinc-700 mx-0.5" />
                 <span className="text-lime-500 animate-pulse">Live</span>
               </div>
