@@ -3,8 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import config from '@/lib/config';
-import logger from '@/lib/logger';
-import { ClientOnly } from '@/components/atoms';
 
 /**
  * NewsletterBox component displays a subscription form for the tech death alerts newsletter.
@@ -139,7 +137,7 @@ export function NewsletterBox() {
           else {
             const text = await response.text();
             if (config.isDevelopment) {
-              logger.error('Error response:', text.substring(0, 150));
+              console.error('Error response:', text.substring(0, 150));
             }
 
             // Check for duplicate email in HTML response
@@ -157,7 +155,7 @@ export function NewsletterBox() {
           }
         } catch (parseError) {
           if (config.isDevelopment) {
-            logger.error('Error parsing response:', parseError);
+            console.error('Error parsing response:', parseError);
           }
         }
 
@@ -165,7 +163,7 @@ export function NewsletterBox() {
       }
     } catch (err) {
       if (config.isDevelopment) {
-        logger.error('Submission failed:', err);
+        console.error('Submission failed:', err);
       }
       setError('Failed to subscribe. The server is as dead as CoffeeScript.');
     } finally {
@@ -182,6 +180,9 @@ export function NewsletterBox() {
     'Success! Your monthly dose of schadenfreude has been scheduled. We all enjoy watching tech die.',
     "Congratulations. You'll now be smugly informed when your coworkers' favorite frameworks get EOL'd.",
   ];
+
+  // Randomly select a success message
+  const randomSuccessMessage = successMessages[Math.floor(Math.random() * successMessages.length)];
 
   return (
     <motion.div
@@ -332,11 +333,7 @@ export function NewsletterBox() {
                     </svg>
                   </div>
                   <div className="ml-3">
-                    <p className="text-sm text-lime-300 font-medium">
-                      <ClientOnly fallback="Subscription confirmed.">
-                        {successMessages[Math.floor(Math.random() * successMessages.length)]}
-                      </ClientOnly>
-                    </p>
+                    <p className="text-sm text-lime-300 font-medium">{randomSuccessMessage}</p>
                     <p className="mt-2 text-xs text-zinc-500">
                       You can unsubscribe anytime, but you will miss out on all the tech death
                       drama.

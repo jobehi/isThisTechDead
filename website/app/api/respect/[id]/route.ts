@@ -5,21 +5,14 @@ import { apiErrorHandler } from '@/lib/errors';
 // Initialize the service
 const respectService = new RespectService();
 
-// Define the correct params type for route handlers
-type RouteContextProps = {
-  params: {
-    id: string;
-  };
-};
-
 /**
  * POST /api/respect/[id]
  *
  * Add a respect entry for a tech
  */
-export async function POST(request: NextRequest, context: RouteContextProps) {
+export async function POST(request: NextRequest, { params }: { params: { id: string } }) {
   try {
-    const techId = context.params.id;
+    const techId = params.id;
 
     // Get tech name from request body
     const { techName } = await request.json();
@@ -43,9 +36,9 @@ export async function POST(request: NextRequest, context: RouteContextProps) {
  *
  * Get respect count for a tech
  */
-export async function GET(request: NextRequest, context: RouteContextProps) {
+export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
   try {
-    const techId = context.params.id;
+    const techId = params.id;
 
     // Use our domain service to get the respect count
     const response = await respectService.getRespectCount(techId);

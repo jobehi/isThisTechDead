@@ -9,7 +9,7 @@
     "prebuild": "ts-node --project tsconfig.scripts.json scripts/src/generate-og-images.ts",
     "prebuild:ci": "ts-node --project tsconfig.scripts.json scripts/src/generate-og-images-ci.ts",
     "build": "next build --turbopack",
-    "build:ci": "next build --turbopack",
+    "build:ci": "next build",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",

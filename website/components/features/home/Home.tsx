@@ -8,7 +8,6 @@ import { Pagination, FilterPanel, TechGrid } from '@/components/molecules';
 import type { SortOption as SortOptionType } from '@/components/molecules';
 import type { TechWithScore as Tech } from '@/domains';
 import { XIcon } from '@/components/atoms/icons/XIcon';
-import { ClientOnly } from '@/components/atoms';
 
 /**
  * Home feature component provides the main landing page with filterable tech cards.
@@ -278,10 +277,14 @@ const SNARKY_TAGLINES = [
 
 // Home client component
 export function Home({ initialTechs }: HomeProps) {
+  const randomTagline = useMemo(() => {
+    return SNARKY_TAGLINES[Math.floor(Math.random() * SNARKY_TAGLINES.length)];
+  }, []);
+
   const headerRightContent = (
     <div className="text-xs text-zinc-400 flex items-center">
       <span className="animate-pulse mr-2 text-red-500">●</span>
-      Last updated: <ClientOnly fallback="...">{formatDate(new Date().toISOString())}</ClientOnly>
+      Last updated: {formatDate(new Date().toISOString())}
     </div>
   );
 
@@ -297,9 +300,7 @@ export function Home({ initialTechs }: HomeProps) {
             </h1>
 
             <p className="mt-6 text-xl md:text-2xl text-zinc-400 max-w-3xl text-center font-light italic">
-              <ClientOnly fallback="Loading tagline...">
-                {SNARKY_TAGLINES[Math.floor(Math.random() * SNARKY_TAGLINES.length)]}
-              </ClientOnly>
+              {randomTagline}
             </p>
           </div>
         </div>
