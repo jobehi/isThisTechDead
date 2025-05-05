@@ -23,3 +23,4 @@ export * from './ProjectCard';
 export * from './ExternalLinkDialog';
 export * from './SocialShareButtons';
 export * from './SocialShareButtonsWrapper';
+export * from './OpenSourceBanner';
