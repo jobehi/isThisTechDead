@@ -17,6 +17,7 @@ import TechRedditSection from '@/components/organisms/TechRedditSection';
 import TechJobsSection from '@/components/organisms/TechJobsSection';
 import TechHackerNewsSection from '@/components/organisms/TechHackerNewsSection';
 import TechYoutubeSection from '@/components/organisms/TechYoutubeSection';
+import { SocialShareButtonsWrapper } from '@/components/molecules';
 export const revalidate = 86400; // One apocalyptic day
 
 export async function generateMetadata({
@@ -155,6 +156,18 @@ export default async function TechDetailPage({ params }: { params: Promise<{ slu
 
             {/* Show historical data */}
             <TechHistorySection snapshots={snapshots} />
+
+            {/* Social sharing section */}
+            <div className="mt-10 mb-4 flex justify-center">
+              <div className="bg-zinc-800/30 rounded-lg border border-zinc-700/50 p-4 flex flex-col items-center">
+                <h3 className="text-zinc-200 text-lg mb-3">Share this tech stats</h3>
+                <SocialShareButtonsWrapper
+                  url={`${config.site.url}/${tech.id}`}
+                  title={`Is ${tech.name} dead? Score: ${score.toFixed(1)}%`}
+                  summary={`Check out ${tech.name}'s deaditude score on Is This Tech Dead?`}
+                />
+              </div>
+            </div>
           </>
         ) : (
           <TechNoDataView />
