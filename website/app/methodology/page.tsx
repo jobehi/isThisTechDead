@@ -30,7 +30,7 @@ export default function MethodologyPage() {
         name: 'Is This Tech Dead?',
         logo: {
           '@type': 'ImageObject',
-          url: `${config.site.url}/is_this_tech_dead_logo_small`,
+          url: `${config.site.url}/is_this_tech_dead_logo_small_2.png`,
         },
       },
     },
