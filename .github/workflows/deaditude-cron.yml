@@ -51,6 +51,7 @@ jobs:
           # Next.js revalidation
           REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
           NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+          API_BASE_URL: ${{ secrets.API_BASE_URL }}
           # batch settings (repo vars)
           MAX_BATCH_SIZE: ${{ vars.MAX_BATCH_SIZE }}
           CHECK_THRESHOLD_DAYS: ${{ vars.CHECK_THRESHOLD_DAYS }}
