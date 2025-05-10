@@ -374,7 +374,9 @@ COLLECTORS: Dict[str, Any] = {
                                          t["name"])),
     "stackoverflow": create_throttled_collector(
         "stackoverflow",
-        lambda t: stackoverflow.collect_so_signals(t["name"])
+        lambda t: stackoverflow.collect_so_signals(
+            t["name"].replace(" ", "-").lower()
+        )
     ),
     "youtube": create_throttled_collector(
         "youtube",
