@@ -41,7 +41,7 @@ YOUNG_TECH_WEIGHTS: Dict[str, float] = {
     "hn": 0.05,
 }
 
-YOUNG_TECH_THRESHOLD = 5
+YOUNG_TECH_THRESHOLD = 2
 MATURING_TECH_THRESHOLD = 10
 
 DIMENSIONS = {
@@ -93,9 +93,9 @@ def _get_tech_age(tech_info: Optional[Dict[str, Any]]) -> int:
 def _adjust_score_by_age(score: float, tech_age: int) -> float:
     """Apply age‑based generosity multiplier (same math as original)."""
     if tech_age <= YOUNG_TECH_THRESHOLD:
-        factor = 0.85
-    elif tech_age <= MATURING_TECH_THRESHOLD:
         factor = 0.90
+    elif tech_age <= MATURING_TECH_THRESHOLD:
+        factor = 0.95
     else:
         factor = 1.0
     return score * factor
