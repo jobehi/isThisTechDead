@@ -128,6 +128,31 @@ when using legacy frameworks.
 4. **Bug Fixes**: Ensuring our obituaries are accurate and our metrics precise
 5. **Documentation**: Help others understand our monument to dying technologies
 
+### Contributing to the Tech Registry
+
+We maintain a collaborative registry of technologies in the `tech-registry` directory. This registry is the source of truth for all the technologies analyzed by our platform.
+
+#### Adding a New Technology
+
+1. **Choose the right category**: Determine if your technology is a language, framework, tool, or platform
+2. **Create a new YAML file**: Add a file in the appropriate directory (`tech-registry/technologies/[category]/[id].yaml`)
+3. **Fill in the required fields**:
+   ```yaml
+   id: your-tech-id
+   name: Your Tech Name
+   owner: github-owner  # GitHub username or org (if applicable)
+   repo: repo-name      # GitHub repository name (if applicable)
+   subreddit: related-subreddit  # without the r/ prefix
+   stackshare_slug: tech-slug    # StackShare identifier
+   creation_year: 2023           # First release year
+   category: framework           # One of: language, framework, tool, platform
+   description: A brief description of the technology  # Optional
+   ```
+4. **Validate your entry**: Run `npm run validate` in the tech-registry directory
+5. **Submit a PR**: Include your new technology entry in your pull request
+
+For more details, see the [Tech Registry README](./tech-registry/README.md).
+
 ## The Review Process
 
 Our review process is both thorough and occasionally emotionally detached:
