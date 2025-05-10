@@ -1,0 +1,47 @@
+name: Tech Registry Validation
+
+on:
+  push:
+    paths:
+      - 'tech-registry/**'
+  pull_request:
+    paths:
+      - 'tech-registry/**'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: Validate Tech Registry
+    runs-on: ubuntu-latest
+    
+    defaults:
+      run:
+        working-directory: tech-registry
+        
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: tech-registry/package-lock.json
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Validate tech registry entries
+        run: npm test
+        
+      - name: Check for deleted technologies
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch origin ${{ github.base_ref }}
+          DELETED_FILES=$(git diff --name-only --diff-filter=D origin/${{ github.base_ref }} -- 'technologies/**/*.yaml' 'technologies/**/*.yml' || echo "")
+          
+          if [ -n "$DELETED_FILES" ]; then
+            echo "::warning::The following technology entries are being deleted:"
+            echo "$DELETED_FILES"
+          fi 
