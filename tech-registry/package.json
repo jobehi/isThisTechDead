@@ -1,0 +1,31 @@
+{
+  "name": "tech-registry",
+  "version": "1.0.0",
+  "description": "Registry of technologies for Is This Tech Dead",
+  "main": "index.js",
+  "scripts": {
+    "validate": "node scripts/validate.js",
+    "import": "node scripts/import.js",
+    "import:dry": "node scripts/import.js --dry-run",
+    "import:update": "node scripts/import.js --update",
+    "export": "node scripts/export.js",
+    "export:dry": "node scripts/export.js --dry-run",
+    "test": "npm run validate"
+  },
+  "keywords": [
+    "technology",
+    "registry",
+    "deaditude"
+  ],
+  "author": "Is This Tech Dead Team",
+  "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.33.1",
+    "ajv": "^8.12.0",
+    "chalk": "^4.1.2",
+    "commander": "^9.4.1",
+    "dotenv": "^16.3.1",
+    "glob": "^8.1.0",
+    "js-yaml": "^4.1.0"
+  }
+} 
