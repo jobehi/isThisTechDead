@@ -62,5 +62,7 @@ jobs:
         run: |
           cd deaditude && python -m engine.cli --batch
 
-      - name: Generate badges for updated technologies
-        uses: ./.github/workflows/badge-update-reusable.yml
+  update-badges:
+    needs: run-analysis
+    uses: ./.github/workflows/badge-update-reusable.yml
+    secrets: inherit
