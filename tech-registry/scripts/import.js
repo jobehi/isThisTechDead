@@ -30,7 +30,7 @@ const CATEGORIES = ['languages', 'frameworks', 'tools', 'platforms'];
 
 // Database configuration from environment variables
 const SUPABASE_URL = process.env.SUPABASE_URL;
-const SUPABASE_KEY = process.env.SUPABASE_SERVICE_KEY || process.env.SUPABASE_ANON_KEY;
+const SUPABASE_KEY = process.env.SUPABASE_KEY || process.env.SUPABASE_ANON_KEY;
 const TECH_REGISTRY_TABLE = 'tech_registry';
 
 // Parse command line arguments
@@ -91,7 +91,7 @@ async function importTechnologies(technologies) {
   // Validate database configuration
   if (!SUPABASE_URL || !SUPABASE_KEY) {
     console.error(chalk.red('Error: Supabase URL and key are required.'));
-    console.error(chalk.yellow('Set SUPABASE_URL and SUPABASE_SERVICE_KEY environment variables'));
+    console.error(chalk.yellow('Set SUPABASE_URL and SUPABASE_KEY environment variables'));
     process.exit(1);
   }
   
