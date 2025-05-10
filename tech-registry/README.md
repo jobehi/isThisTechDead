@@ -63,6 +63,34 @@ cd tech-registry
 npm run validate
 ```
 
+## Continuous Integration
+
+The tech registry is automatically validated on every change through GitHub Actions. The CI process:
+
+1. Runs on every push or pull request that modifies files in the `tech-registry` directory
+2. Validates all technology entries against the schema
+3. Warns about any technology entries being deleted in pull requests
+4. Fails if any validation errors are found
+
+This ensures that all contributions maintain data integrity and adhere to the schema requirements.
+
+## Database Synchronization
+
+The tech registry is synchronized with a backend database in both directions:
+
+### DB to Repository
+- Available as a manual workflow from the GitHub Actions tab
+- Exports technologies from the database to the repository
+- Creates a pull request with any new or updated technologies
+- Requires manual review and approval of the changes
+
+### Repository to DB 
+- Runs automatically when new technologies are added to the registry on the main branch
+- Imports technologies from the repository to the database
+- Updates existing entries and adds new ones
+- Only runs if changes are detected in the tech registry files
+
+
 ## Guidelines
 
 When adding a new technology:
