@@ -1,0 +1,49 @@
+name: Reusable Badge Update
+
+on:
+  workflow_call:
+    inputs:
+      reason:
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  update-badges:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          submodules: "recursive"
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r deaditude/requirements.txt
+
+      - name: Generate badges for updated technologies
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        run: |
+          cd deaditude && python -m scripts.generate_badges
+
+      - name: Commit updated README with badges
+        env:
+          GITHUB_TOKEN: ${{ secrets.DEAD_GITHUB_PAT }}
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Crop Deaditude"
+          git add README.md
+          git commit -m "Update technology badges [skip ci]" || echo "No changes to commit"
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
+          git push origin HEAD:${{ github.ref_name }} 

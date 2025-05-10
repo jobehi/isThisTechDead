@@ -11,6 +11,7 @@ import logging
 from datetime import datetime, timedelta, timezone
 from typing import Dict, List, Any
 from packages.db.supabase import supabase
+from dateutil import parser as dtparse
 
 # Add parent directory to path for imports
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -64,8 +65,8 @@ def get_recently_updated_techs(hours: int = 2) -> List[Dict[str, Any]]:
         # Filter results to match cutoff time (not just date)
         filtered_results = []
         for record in result.data:
-            # Parse the ISO format datetime and ensure it's timezone-aware
-            created_at = datetime.fromisoformat(
+            # Parse created_at as timezone-aware using dateutil.parser.isoparse
+            created_at = dtparse.isoparse(
                 record["created_at"].replace("Z", "+00:00")
             )
             if created_at >= cutoff_time:
