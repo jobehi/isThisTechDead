@@ -1,0 +1,9 @@
+id: kubernetes
+name: Kubernetes
+description: An open-source container orchestration system for automating software deployment, scaling, and management.
+category: platform
+creation_year: 2014
+owner: kubernetes
+repo: kubernetes
+subreddit: kubernetes
+stackshare_slug: kubernetes 

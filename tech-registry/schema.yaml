@@ -1,0 +1,54 @@
+# Tech Registry Schema
+# This schema defines the required and optional fields for tech registry entries.
+# All technology entries must conform to this schema.
+
+# Root object - technology definition
+type: object
+required:
+  - id
+  - name
+properties:
+  # Required fields
+  id:
+    type: string
+    description: Unique identifier for the technology (lowercase, hyphenated)
+    pattern: ^[a-z0-9\-\.]+$
+  name:
+    type: string
+    description: Display name of the technology
+    
+  # GitHub repository information
+  owner:
+    type: string
+    description: GitHub repository owner (username or organization)
+  repo:
+    type: string
+    description: GitHub repository name
+    
+  # Search and discovery
+  subreddit:
+    type: string
+    description: Related subreddit name (without r/ prefix)
+  stackshare_slug:
+    type: string
+    description: StackShare identifier for the technology
+    
+  # Additional fields
+  description:
+    type: string
+    description: A brief description of the technology
+  creation_year:
+    type: integer
+    description: Year when the technology was first released
+  showcase_url:
+    type: string
+    description: URL for technology showcase pages on StackShare
+  their_stack_slug:
+    type: string
+    description: TheirStack slug for technology adoption tracking
+    
+  # Category - one of the following categories
+  category:
+    type: string
+    enum: [language, framework, tool, platform]
+    description: Category of the technology 

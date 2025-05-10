@@ -1,0 +1,9 @@
+id: terraform
+name: Terraform
+description: An open-source infrastructure as code software tool that enables you to safely and predictably create, change, and improve infrastructure.
+category: tool
+creation_year: 2014
+owner: hashicorp
+repo: terraform
+subreddit: terraform
+stackshare_slug: terraform 

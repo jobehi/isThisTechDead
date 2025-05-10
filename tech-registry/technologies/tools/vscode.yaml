@@ -1,0 +1,9 @@
+id: vscode
+name: Visual Studio Code
+description: A lightweight but powerful source code editor with built-in support for JavaScript, TypeScript and Node.js.
+category: tool
+creation_year: 2015
+owner: microsoft
+repo: vscode
+subreddit: vscode
+stackshare_slug: visual-studio-code 

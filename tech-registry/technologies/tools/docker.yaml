@@ -1,0 +1,9 @@
+id: docker
+name: Docker
+description: A platform for developing, shipping, and running applications in containers.
+category: tool
+creation_year: 2013
+owner: docker
+repo: docker
+subreddit: docker
+stackshare_slug: docker 

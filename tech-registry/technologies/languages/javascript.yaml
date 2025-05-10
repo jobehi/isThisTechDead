@@ -1,0 +1,9 @@
+id: javascript
+name: JavaScript
+description: A high-level, interpreted programming language that conforms to the ECMAScript specification.
+category: language
+creation_year: 1995
+owner: tc39
+repo: ecma262
+subreddit: javascript
+stackshare_slug: javascript 

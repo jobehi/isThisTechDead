@@ -1,0 +1,9 @@
+id: csharp
+name: C#
+description: A multi-paradigm programming language developed by Microsoft, widely used for enterprise applications on the .NET platform.
+category: language
+creation_year: 2000
+owner: dotnet
+repo: csharplang
+subreddit: csharp
+stackshare_slug: c-sharp 

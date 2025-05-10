@@ -1,0 +1,9 @@
+id: git
+name: Git
+description: A distributed version control system for tracking changes in source code during software development.
+category: tool
+creation_year: 2005
+owner: git
+repo: git
+subreddit: git
+stackshare_slug: git 

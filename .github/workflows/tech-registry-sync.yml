@@ -1,0 +1,142 @@
+name: Tech Registry Database Sync
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'tech-registry/technologies/**'
+  workflow_dispatch:
+    inputs:
+      sync_direction:
+        description: 'Sync direction'
+        default: 'both'
+        type: 'choice'
+        options:
+          - both
+          - db-to-repo
+          - repo-to-db
+        required: true
+
+jobs:
+  db-to-repo:
+    name: DB to Repository Sync
+    runs-on: ubuntu-latest
+    if: github.event.inputs.sync_direction == 'both' || github.event.inputs.sync_direction == 'db-to-repo'
+    
+    defaults:
+      run:
+        working-directory: tech-registry
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: tech-registry/package-lock.json
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Export from database to local YAML files
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        run: |
+          # First do a dry run to see what would change
+          npm run export:dry
+          
+          # Run the actual export with overwrite
+          npm run export -- --overwrite
+      
+      - name: Check for changes
+        id: git-check
+        run: |
+          git add technologies/
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            echo "changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "Changes detected"
+            echo "changes=true" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Create Pull Request
+        if: steps.git-check.outputs.changes == 'true'
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "[Automated] Sync technologies from database"
+          title: "[Automated] Sync technologies from database"
+          body: |
+            This PR syncs technologies from the database to the repository.
+            
+            The import was triggered by a manual dispatch.
+            
+            Please review the changes and merge if they look correct.
+          branch: automated-db-sync
+          base: main
+          labels: automated,sync,database
+  
+  repo-to-db:
+    name: Repository to DB Sync
+    runs-on: ubuntu-latest
+    if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event.inputs.sync_direction == 'both' || github.event.inputs.sync_direction == 'repo-to-db'
+    
+    defaults:
+      run:
+        working-directory: tech-registry
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: tech-registry/package-lock.json
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Check for changes in tech registry
+        id: check-changes
+        if: github.event_name == 'push'
+        run: |
+          git fetch origin
+          CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} -- 'technologies/**/*.yaml' 'technologies/**/*.yml' | wc -l)
+          if [ $CHANGED_FILES -gt 0 ]; then
+            echo "Changes detected in tech registry"
+            echo "changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "No changes detected in tech registry"
+            echo "changes=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Force changes flag for manual run
+        if: github.event_name == 'workflow_dispatch'
+        run: echo "changes=true" >> $GITHUB_OUTPUT
+        id: force-changes
+      
+      - name: Validate tech registry entries
+        run: npm test
+      
+      - name: Import from repository to database
+        if: (github.event_name == 'push' && steps.check-changes.outputs.changes == 'true') || (github.event_name == 'workflow_dispatch' && steps.force-changes.outputs.changes == 'true')
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        run: |
+          # First do a dry run to see what would change
+          npm run import:dry
+          
+          # Run the actual import with update flag to update existing entries
+          npm run import -- --update 

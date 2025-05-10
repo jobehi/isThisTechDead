@@ -1,0 +1,9 @@
+id: java
+name: Java
+description: A class-based, object-oriented programming language designed to have as few implementation dependencies as possible, with the mantra "write once, run anywhere".
+category: language
+creation_year: 1995
+owner: openjdk
+repo: jdk
+subreddit: java
+stackshare_slug: java 

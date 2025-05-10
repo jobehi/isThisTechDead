@@ -1,0 +1,9 @@
+id: dart
+name: Dart
+description: A client-optimized language for fast apps on any platform, developed by Google and primarily used with Flutter framework.
+category: language
+creation_year: 2011
+owner: dart-lang
+repo: sdk
+subreddit: dartlang
+stackshare_slug: dart 
