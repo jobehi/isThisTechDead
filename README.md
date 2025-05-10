@@ -19,7 +19,7 @@ We track the slow, painful decline of frameworks, languages, and tools that prom
 
 ## Latest Technology Updates (2025-05-10)
 
-[![Flutter: 18](https://img.shields.io/badge/Flutter-18%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/flutter) [![Go: 19](https://img.shields.io/badge/Go-19%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/go) [![Ember.js: 65](https://img.shields.io/badge/Ember.js-65%25-yellow?style=flat-square)](https://www.isthistechdead.com/emberjs) [![react: 13](https://img.shields.io/badge/react-13%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/react) [![Symfony: 37](https://img.shields.io/badge/Symfony-37%25-green?style=flat-square)](https://www.isthistechdead.com/symfony) [![PHP: 26](https://img.shields.io/badge/PHP-26%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/php) [![Firebase: 53](https://img.shields.io/badge/Firebase-53%25-yellow?style=flat-square)](https://www.isthistechdead.com/firebase) [![Svelte: 28](https://img.shields.io/badge/Svelte-28%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/svelte) [![elm: 81](https://img.shields.io/badge/elm-81%25-orange?style=flat-square)](https://www.isthistechdead.com/elm) [![Nuxt.js: 33](https://img.shields.io/badge/Nuxt.js-33%25-green?style=flat-square)](https://www.isthistechdead.com/nuxtjs) 
+*No technologies were updated in the last day.*
 ## Project Components
 
 This monorepo contains two main components:
