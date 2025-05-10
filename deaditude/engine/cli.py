@@ -36,6 +36,7 @@ import random
 import time
 import argparse
 import logging
+import re
 from typing import Dict, Any, Callable
 from engine.collectors import (
     github,
@@ -411,6 +412,18 @@ def _get_due_batch(all_techs):
         try:
             # Parse the ISO date
             date_format = last.replace("Z", "+00:00")
+            # Check if there's a microseconds component with less than 6 digits
+            microsec_pat = r'(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{1,5})'
+            date_format = re.sub(
+                microsec_pat + r'([+-])',
+                r'\1000\2',
+                date_format
+            )
+            date_format = re.sub(
+                microsec_pat + r'$',
+                r'\1000',
+                date_format
+            )
             checked_date = datetime.datetime.fromisoformat(date_format).date()
             delta = (today - checked_date).days
 
