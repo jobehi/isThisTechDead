@@ -193,19 +193,26 @@ function FilterableContent({ techs }: { techs: Tech[] }) {
             ) : filteredAndSortedTechs.length === 0 ? (
               <div className="bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-xl p-8 text-center shadow-lg">
                 <div className="mb-4 text-5xl">🤷‍♂️</div>
-                <h3 className="text-2xl font-bold text-zinc-200 mb-2">No dead tech found</h3>
+                <h3 className="text-2xl font-bold text-zinc-200 mb-2">Your tech is not found</h3>
                 <p className="text-zinc-400 max-w-lg mx-auto">
-                  Either your search is too obscure or your tech is still alive and kicking (for
-                  now). Try a different search term.
+                  Your tech is still not listed. Either your search is too obscure or your tech is
+                  still alive and kicking (for now). Try a different search term.
                   <br />
                   <br />
-                  We list techs manually currently, so if you think a tech should be listed, please
+                  We list techs manually through PRs, so if you want your tech to be listed, please
                   <a
-                    href="https://github.com/jobehi/is-this-tech-dead-front/issues"
+                    href="https://github.com/jobehi/isThisTechDead/blob/main/tech-registry/README.md#adding-a-new-technology"
                     className="text-lime-500 hover:text-lime-400 transition-colors pl-2"
                   >
-                    open an issue on GitHub
+                    open a PR on GitHub
                   </a>{' '}
+                  or
+                  <a
+                    href="https://github.com/jobehi/isThisTechDead/issues"
+                    className="text-lime-500 hover:text-lime-400 transition-colors pl-2"
+                  >
+                    open an issue{' '}
+                  </a>
                   and tell us why we should care. (We do)
                 </p>
                 <br />
