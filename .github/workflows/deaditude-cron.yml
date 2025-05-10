@@ -5,6 +5,9 @@ on:
     - cron: "0 23 * * *"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   run-analysis:
     runs-on: ubuntu-latest
@@ -57,18 +60,7 @@ jobs:
           CHECK_THRESHOLD_DAYS: ${{ vars.CHECK_THRESHOLD_DAYS }}
         run: |
           cd deaditude && python -m engine.cli --batch
-          
-      - name: Generate badges for updated technologies
-        env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
-        run: |
-          cd deaditude && python -m scripts.generate_badges
 
-      - name: Commit updated README with badges
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "Crop Deaditude"
-          git add README.md
-          git commit -m "Update technology badges [skip ci]" || echo "No changes to commit"
-          git push
+  update-badges:
+    uses: ./.github/workflows/badge-update-reusable.yml
+    secrets: inherit
