@@ -19,10 +19,10 @@ from typing import Any, Dict, Optional
 # ---------------------------------------------------------------------------
 BASE_WEIGHTS: Dict[str, float] = {
     "github": 0.20,
-    "google_jobs": 0.20,
-    "reddit": 0.15,
-    "stackshare": 0.15,
-    "youtube": 0.15,
+    "google_jobs": 0.25,
+    "reddit": 0.10,
+    "stackshare": 0.2,
+    "youtube": 0.10,
     "stackoverflow": 0.10,
     "hn": 0.05,
 }
