@@ -1,0 +1,9 @@
+id: azure
+name: Microsoft Azure
+description: A cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services.
+category: platform
+creation_year: 2010
+owner: azure
+repo: azure-sdk-for-js
+subreddit: azure
+stackshare_slug: azure 

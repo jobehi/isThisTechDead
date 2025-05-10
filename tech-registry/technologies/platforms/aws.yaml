@@ -1,0 +1,9 @@
+id: aws
+name: Amazon Web Services
+description: A comprehensive, evolving cloud computing platform provided by Amazon that includes infrastructure as a service, platform as a service, and packaged software as a service.
+category: platform
+creation_year: 2006
+owner: aws
+repo: aws-sdk-js
+subreddit: aws
+stackshare_slug: aws 
