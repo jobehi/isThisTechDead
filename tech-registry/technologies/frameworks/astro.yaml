@@ -1,0 +1,9 @@
+id: astro
+name: Astro
+description: A web framework for content-driven websites, focused on static site generation and islands architecture.
+owner: withastro
+repo: astro
+subreddit: astrojs
+stackshare_slug: astro-build
+creation_year: 2021
+category: framework
