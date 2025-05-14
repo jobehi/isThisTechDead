@@ -4,7 +4,5 @@ description: A full-stack framework for Laravel that makes building dynamic inte
 category: framework
 creation_year: 2019
 owner: livewire
-repo: livewire/livewire
-subreddit: laravel
-stackshare_slug: laravel-livewire
-
+repo: livewire
+subreddit: LaravelLivewire
