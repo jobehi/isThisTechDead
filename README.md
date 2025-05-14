@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2025-05-13)
+## Latest Technology Updates (2025-05-14)
 
-[![October CMS: 74](https://img.shields.io/badge/October%20CMS-74%25-orange?style=flat-square)](https://www.isthistechdead.com/october) [![Compose Multiplatform: 50](https://img.shields.io/badge/Compose%20Multiplatform-50%25-yellow?style=flat-square)](https://www.isthistechdead.com/compose-mp) [![Gatsby: 67](https://img.shields.io/badge/Gatsby-67%25-yellow?style=flat-square)](https://www.isthistechdead.com/gatsbyjs) [![Xamarin: 72](https://img.shields.io/badge/Xamarin-72%25-orange?style=flat-square)](https://www.isthistechdead.com/xamarin) [![laravel: 29](https://img.shields.io/badge/laravel-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/laravel) [![Silverlight: 94](https://img.shields.io/badge/Silverlight-94%25-red?style=flat-square)](https://www.isthistechdead.com/silverlight) 
+[![Express js: 63](https://img.shields.io/badge/Express%20js-63%25-yellow?style=flat-square)](https://www.isthistechdead.com/expressjs) [![Rust: 28](https://img.shields.io/badge/Rust-28%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/rust) [![Tailwind: 36](https://img.shields.io/badge/Tailwind-36%25-green?style=flat-square)](https://www.isthistechdead.com/tailwind) [![angular.js: 65](https://img.shields.io/badge/angular.js-65%25-yellow?style=flat-square)](https://www.isthistechdead.com/angularjs) [![Ionic: 37](https://img.shields.io/badge/Ionic-37%25-green?style=flat-square)](https://www.isthistechdead.com/ionic) [![Laravel Livewire: 54](https://img.shields.io/badge/Laravel%20Livewire-54%25-yellow?style=flat-square)](https://www.isthistechdead.com/laravel-livewire) 
 ## Project Components
 
 This monorepo contains two main components:
