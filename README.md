@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2025-05-10)
+## Latest Technology Updates (2025-05-12)
 
-[![Flask: 56](https://img.shields.io/badge/Flask-56%25-yellow?style=flat-square)](https://www.isthistechdead.com/flask) [![CodeIgniter: 68](https://img.shields.io/badge/CodeIgniter-68%25-yellow?style=flat-square)](https://www.isthistechdead.com/code-igniter) [![NestJS: 33](https://img.shields.io/badge/NestJS-33%25-green?style=flat-square)](https://www.isthistechdead.com/nest) [![Drupal: 40](https://img.shields.io/badge/Drupal-40%25-green?style=flat-square)](https://www.isthistechdead.com/drupal) [![Supabase: 27](https://img.shields.io/badge/Supabase-27%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/supabase) [![Lynx: 39](https://img.shields.io/badge/Lynx-39%25-green?style=flat-square)](https://www.isthistechdead.com/lynx) 
+[![Deno: 30](https://img.shields.io/badge/Deno-30%25-green?style=flat-square)](https://www.isthistechdead.com/deno) [![Ruby on Rails: 32](https://img.shields.io/badge/Ruby%20on%20Rails-32%25-green?style=flat-square)](https://www.isthistechdead.com/rails) [![jQuery: 52](https://img.shields.io/badge/jQuery-52%25-yellow?style=flat-square)](https://www.isthistechdead.com/jquery) [![Node.js: 22](https://img.shields.io/badge/Node.js-22%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/nodejs) [![Spring boot: 22](https://img.shields.io/badge/Spring%20boot-22%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/spring) [![Phoenix Framework: 66](https://img.shields.io/badge/Phoenix%20Framework-66%25-yellow?style=flat-square)](https://www.isthistechdead.com/phoenix) 
 ## Project Components
 
 This monorepo contains two main components:
