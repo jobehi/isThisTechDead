@@ -1,0 +1,9 @@
+id: postgresql
+name: PostgreSQL
+description: A powerful, open-source object-relational database system.
+category: platform
+creation_year: 1996 # Re-named from Postgres95, originally Postgres in 1986
+owner: PostgreSQL Global Development Group
+repo: postgres/postgres # GitHub mirror
+subreddit: PostgreSQL
+stackshare_slug: postgresql
