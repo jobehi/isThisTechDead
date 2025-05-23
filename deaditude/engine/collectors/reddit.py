@@ -67,8 +67,8 @@ MANUAL_MAP = {
 # ---------------------------------------------------------------------------
 MAX_SUBSCRIBERS = 1_000_000
 HIGH_SUB_COUNT = 100_000
-MED_SUB_COUNT = 20_000
-LOW_SUB_COUNT = 5_000
+MED_SUB_COUNT = 50_000
+LOW_SUB_COUNT = 10_000
 VERY_LOW_SUB_COUNT = 1_000
 
 HIGH_POST_VOLUME = 50
