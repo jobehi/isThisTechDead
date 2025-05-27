@@ -3,7 +3,7 @@ name: Orleans
 description: Orleans is a cross-platform framework for building distributed applications in .NET, using the actor model.
 owner: dotnet
 repo: orleans
-subreddit: orleans
+subreddit: dotnet
 stackshare_slug: orleans
 creation_year: 2014
 category: framework
