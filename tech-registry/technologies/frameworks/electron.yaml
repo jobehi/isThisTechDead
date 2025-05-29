@@ -1,0 +1,12 @@
+id: electron
+name: Electron
+owner: electron
+repo: electron
+subreddit: electronjs
+stackshare_slug: electron
+creation_year: 2013
+category: framework
+description: |
+  Electron is a framework for building cross-platform desktop applications using web technologies like JavaScript, HTML, and CSS. It allows developers to create native applications for Windows, macOS, and Linux with a single codebase. 
+  Electron is widely used in popular applications such as Visual Studio Code, Slack, and Discord.
+  It provides a rich set of APIs for accessing native system features and integrates well with Node.js.

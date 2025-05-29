@@ -1,0 +1,8 @@
+id: laravel-livewire
+name: Laravel Livewire
+description: A full-stack framework for Laravel that makes building dynamic interfaces simple without leaving the comfort of Laravel.
+category: framework
+creation_year: 2019
+owner: livewire
+repo: livewire
+subreddit: LaravelLivewire

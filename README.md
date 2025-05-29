@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2025-05-12)
+## Latest Technology Updates (2025-05-28)
 
-[![Deno: 30](https://img.shields.io/badge/Deno-30%25-green?style=flat-square)](https://www.isthistechdead.com/deno) [![Ruby on Rails: 32](https://img.shields.io/badge/Ruby%20on%20Rails-32%25-green?style=flat-square)](https://www.isthistechdead.com/rails) [![jQuery: 52](https://img.shields.io/badge/jQuery-52%25-yellow?style=flat-square)](https://www.isthistechdead.com/jquery) [![Node.js: 22](https://img.shields.io/badge/Node.js-22%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/nodejs) [![Spring boot: 22](https://img.shields.io/badge/Spring%20boot-22%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/spring) [![Phoenix Framework: 66](https://img.shields.io/badge/Phoenix%20Framework-66%25-yellow?style=flat-square)](https://www.isthistechdead.com/phoenix) 
+[![Angular: 29](https://img.shields.io/badge/Angular-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/angular) [![ASP.NET: 40](https://img.shields.io/badge/ASP.NET-40%25-green?style=flat-square)](https://www.isthistechdead.com/asp.net) [![Joomla! CMS: 71](https://img.shields.io/badge/Joomla!%20CMS-71%25-orange?style=flat-square)](https://www.isthistechdead.com/joomla) [![Ansible: 46](https://img.shields.io/badge/Ansible-46%25-green?style=flat-square)](https://www.isthistechdead.com/ansible) [![Avalonia: 60](https://img.shields.io/badge/Avalonia-60%25-yellow?style=flat-square)](https://www.isthistechdead.com/avalonia) [![Electron: 29](https://img.shields.io/badge/Electron-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/electron) 
 ## Project Components
 
 This monorepo contains two main components:
