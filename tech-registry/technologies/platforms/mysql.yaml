@@ -3,7 +3,7 @@ name: MySQL
 description: An open-source relational database management system (RDBMS).
 category: platform
 creation_year: 1995
-owner: Oracle Corporation
+owner: mysql
 repo: mysql/mysql-server
 subreddit: mysql
 stackshare_slug: mysql
