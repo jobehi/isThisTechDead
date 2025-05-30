@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2025-05-28)
+## Latest Technology Updates (2025-05-30)
 
-[![Angular: 29](https://img.shields.io/badge/Angular-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/angular) [![ASP.NET: 40](https://img.shields.io/badge/ASP.NET-40%25-green?style=flat-square)](https://www.isthistechdead.com/asp.net) [![Joomla! CMS: 71](https://img.shields.io/badge/Joomla!%20CMS-71%25-orange?style=flat-square)](https://www.isthistechdead.com/joomla) [![Ansible: 46](https://img.shields.io/badge/Ansible-46%25-green?style=flat-square)](https://www.isthistechdead.com/ansible) [![Avalonia: 60](https://img.shields.io/badge/Avalonia-60%25-yellow?style=flat-square)](https://www.isthistechdead.com/avalonia) [![Electron: 29](https://img.shields.io/badge/Electron-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/electron) 
+[![Vagrant: 66](https://img.shields.io/badge/Vagrant-66%25-yellow?style=flat-square)](https://www.isthistechdead.com/vagrant) [![backbonejs: 91](https://img.shields.io/badge/backbonejs-91%25-red?style=flat-square)](https://www.isthistechdead.com/backbone) [![strapi: 40](https://img.shields.io/badge/strapi-40%25-green?style=flat-square)](https://www.isthistechdead.com/strapi) [![Solar2D: 85](https://img.shields.io/badge/Solar2D-85%25-red?style=flat-square)](https://www.isthistechdead.com/solar2d) [![django: 43](https://img.shields.io/badge/django-43%25-green?style=flat-square)](https://www.isthistechdead.com/django) [![FastAPI: 39](https://img.shields.io/badge/FastAPI-39%25-green?style=flat-square)](https://www.isthistechdead.com/fastapi) 
 ## Project Components
 
 This monorepo contains two main components:
