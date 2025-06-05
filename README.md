@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2025-05-28)
+## Latest Technology Updates (2025-06-05)
 
-[![Angular: 29](https://img.shields.io/badge/Angular-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/angular) [![ASP.NET: 40](https://img.shields.io/badge/ASP.NET-40%25-green?style=flat-square)](https://www.isthistechdead.com/asp.net) [![Joomla! CMS: 71](https://img.shields.io/badge/Joomla!%20CMS-71%25-orange?style=flat-square)](https://www.isthistechdead.com/joomla) [![Ansible: 46](https://img.shields.io/badge/Ansible-46%25-green?style=flat-square)](https://www.isthistechdead.com/ansible) [![Avalonia: 60](https://img.shields.io/badge/Avalonia-60%25-yellow?style=flat-square)](https://www.isthistechdead.com/avalonia) [![Electron: 29](https://img.shields.io/badge/Electron-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/electron) 
+[![Drupal: 48](https://img.shields.io/badge/Drupal-48%25-green?style=flat-square)](https://www.isthistechdead.com/drupal) [![Supabase: 21](https://img.shields.io/badge/Supabase-21%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/supabase) [![Lynx: 49](https://img.shields.io/badge/Lynx-49%25-green?style=flat-square)](https://www.isthistechdead.com/lynx) [![Python: 26](https://img.shields.io/badge/Python-26%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/python) [![cordova: 86](https://img.shields.io/badge/cordova-86%25-red?style=flat-square)](https://www.isthistechdead.com/cordova) [![meteor: 77](https://img.shields.io/badge/meteor-77%25-orange?style=flat-square)](https://www.isthistechdead.com/meteor) 
 ## Project Components
 
 This monorepo contains two main components:
