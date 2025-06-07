@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2025-05-28)
+## Latest Technology Updates (2025-06-07)
 
-[![Angular: 29](https://img.shields.io/badge/Angular-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/angular) [![ASP.NET: 40](https://img.shields.io/badge/ASP.NET-40%25-green?style=flat-square)](https://www.isthistechdead.com/asp.net) [![Joomla! CMS: 71](https://img.shields.io/badge/Joomla!%20CMS-71%25-orange?style=flat-square)](https://www.isthistechdead.com/joomla) [![Ansible: 46](https://img.shields.io/badge/Ansible-46%25-green?style=flat-square)](https://www.isthistechdead.com/ansible) [![Avalonia: 60](https://img.shields.io/badge/Avalonia-60%25-yellow?style=flat-square)](https://www.isthistechdead.com/avalonia) [![Electron: 29](https://img.shields.io/badge/Electron-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/electron) 
+[![Node.js: 27](https://img.shields.io/badge/Node.js-27%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/nodejs) [![Spring boot: 22](https://img.shields.io/badge/Spring%20boot-22%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/spring) [![Phoenix Framework: 57](https://img.shields.io/badge/Phoenix%20Framework-57%25-yellow?style=flat-square)](https://www.isthistechdead.com/phoenix) [![Vue.js: 51](https://img.shields.io/badge/Vue.js-51%25-yellow?style=flat-square)](https://www.isthistechdead.com/vuejs) [![Cake PHP: 67](https://img.shields.io/badge/Cake%20PHP-67%25-yellow?style=flat-square)](https://www.isthistechdead.com/cakephp) [![Kotlin: 25](https://img.shields.io/badge/Kotlin-25%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/kotlin) 
 ## Project Components
 
 This monorepo contains two main components:
