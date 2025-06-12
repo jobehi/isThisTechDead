@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2025-05-28)
+## Latest Technology Updates (2025-06-12)
 
-[![Angular: 29](https://img.shields.io/badge/Angular-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/angular) [![ASP.NET: 40](https://img.shields.io/badge/ASP.NET-40%25-green?style=flat-square)](https://www.isthistechdead.com/asp.net) [![Joomla! CMS: 71](https://img.shields.io/badge/Joomla!%20CMS-71%25-orange?style=flat-square)](https://www.isthistechdead.com/joomla) [![Ansible: 46](https://img.shields.io/badge/Ansible-46%25-green?style=flat-square)](https://www.isthistechdead.com/ansible) [![Avalonia: 60](https://img.shields.io/badge/Avalonia-60%25-yellow?style=flat-square)](https://www.isthistechdead.com/avalonia) [![Electron: 29](https://img.shields.io/badge/Electron-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/electron) 
+[![Solar2D: 80](https://img.shields.io/badge/Solar2D-80%25-orange?style=flat-square)](https://www.isthistechdead.com/solar2d) [![django: 44](https://img.shields.io/badge/django-44%25-green?style=flat-square)](https://www.isthistechdead.com/django) [![FastAPI: 45](https://img.shields.io/badge/FastAPI-45%25-green?style=flat-square)](https://www.isthistechdead.com/fastapi) [![Capacitor: 49](https://img.shields.io/badge/Capacitor-49%25-green?style=flat-square)](https://www.isthistechdead.com/capacitor) [![NativeScript: 90](https://img.shields.io/badge/NativeScript-90%25-red?style=flat-square)](https://www.isthistechdead.com/nativescript) [![Typescript: 38](https://img.shields.io/badge/Typescript-38%25-green?style=flat-square)](https://www.isthistechdead.com/typescript) 
 ## Project Components
 
 This monorepo contains two main components:
