@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2025-05-28)
+## Latest Technology Updates (2025-06-23)
 
-[![Angular: 29](https://img.shields.io/badge/Angular-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/angular) [![ASP.NET: 40](https://img.shields.io/badge/ASP.NET-40%25-green?style=flat-square)](https://www.isthistechdead.com/asp.net) [![Joomla! CMS: 71](https://img.shields.io/badge/Joomla!%20CMS-71%25-orange?style=flat-square)](https://www.isthistechdead.com/joomla) [![Ansible: 46](https://img.shields.io/badge/Ansible-46%25-green?style=flat-square)](https://www.isthistechdead.com/ansible) [![Avalonia: 60](https://img.shields.io/badge/Avalonia-60%25-yellow?style=flat-square)](https://www.isthistechdead.com/avalonia) [![Electron: 29](https://img.shields.io/badge/Electron-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/electron) 
+[![Rust: 21](https://img.shields.io/badge/Rust-21%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/rust) [![Tailwind: 40](https://img.shields.io/badge/Tailwind-40%25-green?style=flat-square)](https://www.isthistechdead.com/tailwind) [![angular.js: 66](https://img.shields.io/badge/angular.js-66%25-yellow?style=flat-square)](https://www.isthistechdead.com/angularjs) [![Ionic: 46](https://img.shields.io/badge/Ionic-46%25-green?style=flat-square)](https://www.isthistechdead.com/ionic) [![Laravel Livewire: 47](https://img.shields.io/badge/Laravel%20Livewire-47%25-green?style=flat-square)](https://www.isthistechdead.com/laravel-livewire) [![Magento: 47](https://img.shields.io/badge/Magento-47%25-green?style=flat-square)](https://www.isthistechdead.com/magento) 
 ## Project Components
 
 This monorepo contains two main components:
