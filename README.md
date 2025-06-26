@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2025-05-28)
+## Latest Technology Updates (2025-06-26)
 
-[![Angular: 29](https://img.shields.io/badge/Angular-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/angular) [![ASP.NET: 40](https://img.shields.io/badge/ASP.NET-40%25-green?style=flat-square)](https://www.isthistechdead.com/asp.net) [![Joomla! CMS: 71](https://img.shields.io/badge/Joomla!%20CMS-71%25-orange?style=flat-square)](https://www.isthistechdead.com/joomla) [![Ansible: 46](https://img.shields.io/badge/Ansible-46%25-green?style=flat-square)](https://www.isthistechdead.com/ansible) [![Avalonia: 60](https://img.shields.io/badge/Avalonia-60%25-yellow?style=flat-square)](https://www.isthistechdead.com/avalonia) [![Electron: 29](https://img.shields.io/badge/Electron-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/electron) 
+[![backbonejs: 92](https://img.shields.io/badge/backbonejs-92%25-red?style=flat-square)](https://www.isthistechdead.com/backbone) [![strapi: 50](https://img.shields.io/badge/strapi-50%25-green?style=flat-square)](https://www.isthistechdead.com/strapi) [![Solar2D: 85](https://img.shields.io/badge/Solar2D-85%25-red?style=flat-square)](https://www.isthistechdead.com/solar2d) [![django: 42](https://img.shields.io/badge/django-42%25-green?style=flat-square)](https://www.isthistechdead.com/django) [![FastAPI: 26](https://img.shields.io/badge/FastAPI-26%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/fastapi) [![Capacitor: 49](https://img.shields.io/badge/Capacitor-49%25-green?style=flat-square)](https://www.isthistechdead.com/capacitor) 
 ## Project Components
 
 This monorepo contains two main components:
