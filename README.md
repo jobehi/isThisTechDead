@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2025-05-28)
+## Latest Technology Updates (2025-07-01)
 
-[![Angular: 29](https://img.shields.io/badge/Angular-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/angular) [![ASP.NET: 40](https://img.shields.io/badge/ASP.NET-40%25-green?style=flat-square)](https://www.isthistechdead.com/asp.net) [![Joomla! CMS: 71](https://img.shields.io/badge/Joomla!%20CMS-71%25-orange?style=flat-square)](https://www.isthistechdead.com/joomla) [![Ansible: 46](https://img.shields.io/badge/Ansible-46%25-green?style=flat-square)](https://www.isthistechdead.com/ansible) [![Avalonia: 60](https://img.shields.io/badge/Avalonia-60%25-yellow?style=flat-square)](https://www.isthistechdead.com/avalonia) [![Electron: 29](https://img.shields.io/badge/Electron-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/electron) 
+[![Amazon Web Services: 28](https://img.shields.io/badge/Amazon%20Web%20Services-28%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/aws) [![React Native: 23](https://img.shields.io/badge/React%20Native-23%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/react-native) [![Next.js: 16](https://img.shields.io/badge/Next.js-16%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/nextjs) [![Perl: 49](https://img.shields.io/badge/Perl-49%25-green?style=flat-square)](https://www.isthistechdead.com/perl) [![Kubernetes: 36](https://img.shields.io/badge/Kubernetes-36%25-green?style=flat-square)](https://www.isthistechdead.com/kubernetes) [![Microsoft Azure: 44](https://img.shields.io/badge/Microsoft%20Azure-44%25-green?style=flat-square)](https://www.isthistechdead.com/azure) 
 ## Project Components
 
 This monorepo contains two main components:
