@@ -1,0 +1,9 @@
+id: clojurescript
+name: ClojureScript
+description: A compiler for Clojure that targets JavaScript.
+category: language
+creation_year: 2011
+owner: clojure
+repo: clojurescript
+subreddit: clojurescript
+stackshare_slug: clojurescript
