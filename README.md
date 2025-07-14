@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2025-05-28)
+## Latest Technology Updates (2025-07-14)
 
-[![Angular: 29](https://img.shields.io/badge/Angular-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/angular) [![ASP.NET: 40](https://img.shields.io/badge/ASP.NET-40%25-green?style=flat-square)](https://www.isthistechdead.com/asp.net) [![Joomla! CMS: 71](https://img.shields.io/badge/Joomla!%20CMS-71%25-orange?style=flat-square)](https://www.isthistechdead.com/joomla) [![Ansible: 46](https://img.shields.io/badge/Ansible-46%25-green?style=flat-square)](https://www.isthistechdead.com/ansible) [![Avalonia: 60](https://img.shields.io/badge/Avalonia-60%25-yellow?style=flat-square)](https://www.isthistechdead.com/avalonia) [![Electron: 29](https://img.shields.io/badge/Electron-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/electron) 
+[![Kubernetes: 28](https://img.shields.io/badge/Kubernetes-28%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/kubernetes) [![Microsoft Azure: 46](https://img.shields.io/badge/Microsoft%20Azure-46%25-green?style=flat-square)](https://www.isthistechdead.com/azure) [![.NET: 18](https://img.shields.io/badge/.NET-18%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/dot.net) [![Visual Studio Code: 14](https://img.shields.io/badge/Visual%20Studio%20Code-14%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/vscode) [![Scala: 43](https://img.shields.io/badge/Scala-43%25-green?style=flat-square)](https://www.isthistechdead.com/scala) [![Git: 33](https://img.shields.io/badge/Git-33%25-green?style=flat-square)](https://www.isthistechdead.com/git) 
 ## Project Components
 
 This monorepo contains two main components:
