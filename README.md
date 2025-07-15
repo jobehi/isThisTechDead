@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2025-05-28)
+## Latest Technology Updates (2025-07-15)
 
-[![Angular: 29](https://img.shields.io/badge/Angular-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/angular) [![ASP.NET: 40](https://img.shields.io/badge/ASP.NET-40%25-green?style=flat-square)](https://www.isthistechdead.com/asp.net) [![Joomla! CMS: 71](https://img.shields.io/badge/Joomla!%20CMS-71%25-orange?style=flat-square)](https://www.isthistechdead.com/joomla) [![Ansible: 46](https://img.shields.io/badge/Ansible-46%25-green?style=flat-square)](https://www.isthistechdead.com/ansible) [![Avalonia: 60](https://img.shields.io/badge/Avalonia-60%25-yellow?style=flat-square)](https://www.isthistechdead.com/avalonia) [![Electron: 29](https://img.shields.io/badge/Electron-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/electron) 
+[![meteor: 77](https://img.shields.io/badge/meteor-77%25-orange?style=flat-square)](https://www.isthistechdead.com/meteor) [![.NET MAUI: 43](https://img.shields.io/badge/.NET%20MAUI-43%25-green?style=flat-square)](https://www.isthistechdead.com/maui) [![Amazon Web Services: 24](https://img.shields.io/badge/Amazon%20Web%20Services-24%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/aws) [![React Native: 27](https://img.shields.io/badge/React%20Native-27%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/react-native) [![Next.js: 20](https://img.shields.io/badge/Next.js-20%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/nextjs) [![Perl: 42](https://img.shields.io/badge/Perl-42%25-green?style=flat-square)](https://www.isthistechdead.com/perl) 
 ## Project Components
 
 This monorepo contains two main components:
