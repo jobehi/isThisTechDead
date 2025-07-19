@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2025-07-17)
+## Latest Technology Updates (2025-07-19)
 
-[![Kotlin: 36](https://img.shields.io/badge/Kotlin-36%25-green?style=flat-square)](https://www.isthistechdead.com/kotlin) [![WordPress: 35](https://img.shields.io/badge/WordPress-35%25-green?style=flat-square)](https://www.isthistechdead.com/wordpress) [![MongoDB: 37](https://img.shields.io/badge/MongoDB-37%25-green?style=flat-square)](https://www.isthistechdead.com/mongodb) [![Astro: 51](https://img.shields.io/badge/Astro-51%25-yellow?style=flat-square)](https://www.isthistechdead.com/astro) [![Flask: 30](https://img.shields.io/badge/Flask-30%25-green?style=flat-square)](https://www.isthistechdead.com/flask) [![CodeIgniter: 61](https://img.shields.io/badge/CodeIgniter-61%25-yellow?style=flat-square)](https://www.isthistechdead.com/code-igniter) 
+[![Gatsby: 69](https://img.shields.io/badge/Gatsby-69%25-yellow?style=flat-square)](https://www.isthistechdead.com/gatsbyjs) [![Xamarin: 70](https://img.shields.io/badge/Xamarin-70%25-yellow?style=flat-square)](https://www.isthistechdead.com/xamarin) [![laravel: 39](https://img.shields.io/badge/laravel-39%25-green?style=flat-square)](https://www.isthistechdead.com/laravel) [![Silverlight: 84](https://img.shields.io/badge/Silverlight-84%25-orange?style=flat-square)](https://www.isthistechdead.com/silverlight) [![Deno: 52](https://img.shields.io/badge/Deno-52%25-yellow?style=flat-square)](https://www.isthistechdead.com/deno) [![Ruby on Rails: 40](https://img.shields.io/badge/Ruby%20on%20Rails-40%25-green?style=flat-square)](https://www.isthistechdead.com/rails) 
 ## Project Components
 
 This monorepo contains two main components:
