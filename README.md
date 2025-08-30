@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2025-07-17)
+## Latest Technology Updates (2025-08-30)
 
-[![Kotlin: 36](https://img.shields.io/badge/Kotlin-36%25-green?style=flat-square)](https://www.isthistechdead.com/kotlin) [![WordPress: 35](https://img.shields.io/badge/WordPress-35%25-green?style=flat-square)](https://www.isthistechdead.com/wordpress) [![MongoDB: 37](https://img.shields.io/badge/MongoDB-37%25-green?style=flat-square)](https://www.isthistechdead.com/mongodb) [![Astro: 51](https://img.shields.io/badge/Astro-51%25-yellow?style=flat-square)](https://www.isthistechdead.com/astro) [![Flask: 30](https://img.shields.io/badge/Flask-30%25-green?style=flat-square)](https://www.isthistechdead.com/flask) [![CodeIgniter: 61](https://img.shields.io/badge/CodeIgniter-61%25-yellow?style=flat-square)](https://www.isthistechdead.com/code-igniter) 
+[![angular.js: 67](https://img.shields.io/badge/angular.js-67%25-yellow?style=flat-square)](https://www.isthistechdead.com/angularjs) [![Ionic: 46](https://img.shields.io/badge/Ionic-46%25-green?style=flat-square)](https://www.isthistechdead.com/ionic) [![Laravel Livewire: 66](https://img.shields.io/badge/Laravel%20Livewire-66%25-yellow?style=flat-square)](https://www.isthistechdead.com/laravel-livewire) [![Magento: 45](https://img.shields.io/badge/Magento-45%25-green?style=flat-square)](https://www.isthistechdead.com/magento) [![October CMS: 82](https://img.shields.io/badge/October%20CMS-82%25-orange?style=flat-square)](https://www.isthistechdead.com/october) [![Compose Multiplatform: 39](https://img.shields.io/badge/Compose%20Multiplatform-39%25-green?style=flat-square)](https://www.isthistechdead.com/compose-mp) 
 ## Project Components
 
 This monorepo contains two main components:
