@@ -9,7 +9,6 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
 
 jobs:
   update-badges:
@@ -38,15 +37,15 @@ jobs:
         run: |
           cd deaditude && python -m scripts.generate_badges
 
-      - name: Create Pull Request for README update
-        uses: peter-evans/create-pull-request@v7
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "Update technology badges [skip ci]"
-          branch: "auto/update-badges-${{ github.run_id }}"
-          title: "Automated update of technology badges"
-          body: "This PR was created automatically by GitHub Actions."
-          base: main
-          delete-branch: true
-          add-paths: README.md
-          draft: false
+      - name: Commit and push README update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update technology badges [skip ci]"
+            git push
+          fi
