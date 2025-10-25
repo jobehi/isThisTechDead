@@ -17,6 +17,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
+          # Use GITHUB_TOKEN for pushing. If main branch is protected,
+          # consider using a PAT like secrets.DEAD_GITHUB_PAT instead.
           token: ${{ secrets.GITHUB_TOKEN }}
           submodules: "recursive"
 
