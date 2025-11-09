@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2025-11-08)
+## Latest Technology Updates (2025-11-09)
 
-[![FastAPI: 36](https://img.shields.io/badge/FastAPI-36%25-green?style=flat-square)](https://www.isthistechdead.com/fastapi) [![Capacitor: 44](https://img.shields.io/badge/Capacitor-44%25-green?style=flat-square)](https://www.isthistechdead.com/capacitor) [![NativeScript: 91](https://img.shields.io/badge/NativeScript-91%25-red?style=flat-square)](https://www.isthistechdead.com/nativescript) [![Typescript: 24](https://img.shields.io/badge/Typescript-24%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/typescript) [![MySQL: 28](https://img.shields.io/badge/MySQL-28%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/mysql) [![Orleans: 72](https://img.shields.io/badge/Orleans-72%25-orange?style=flat-square)](https://www.isthistechdead.com/orleans) 
+[![Nuxt.js: 46](https://img.shields.io/badge/Nuxt.js-46%25-green?style=flat-square)](https://www.isthistechdead.com/nuxtjs) [![Vagrant: 69](https://img.shields.io/badge/Vagrant-69%25-yellow?style=flat-square)](https://www.isthistechdead.com/vagrant) [![backbonejs: 88](https://img.shields.io/badge/backbonejs-88%25-red?style=flat-square)](https://www.isthistechdead.com/backbone) [![strapi: 53](https://img.shields.io/badge/strapi-53%25-yellow?style=flat-square)](https://www.isthistechdead.com/strapi) [![Solar2D: 76](https://img.shields.io/badge/Solar2D-76%25-orange?style=flat-square)](https://www.isthistechdead.com/solar2d) [![django: 35](https://img.shields.io/badge/django-35%25-green?style=flat-square)](https://www.isthistechdead.com/django) 
 ## Project Components
 
 This monorepo contains two main components:
