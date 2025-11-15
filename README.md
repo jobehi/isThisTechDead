@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2025-11-14)
+## Latest Technology Updates (2025-11-15)
 
-[![meteor: 87](https://img.shields.io/badge/meteor-87%25-red?style=flat-square)](https://www.isthistechdead.com/meteor) [![.NET MAUI: 27](https://img.shields.io/badge/.NET%20MAUI-27%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/maui) [![Amazon Web Services: 23](https://img.shields.io/badge/Amazon%20Web%20Services-23%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/aws) [![React Native: 21](https://img.shields.io/badge/React%20Native-21%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/react-native) [![Next.js: 22](https://img.shields.io/badge/Next.js-22%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/nextjs) [![Perl: 32](https://img.shields.io/badge/Perl-32%25-green?style=flat-square)](https://www.isthistechdead.com/perl) 
+[![NestJS: 39](https://img.shields.io/badge/NestJS-39%25-green?style=flat-square)](https://www.isthistechdead.com/nest) [![Drupal: 67](https://img.shields.io/badge/Drupal-67%25-yellow?style=flat-square)](https://www.isthistechdead.com/drupal) [![Supabase: 28](https://img.shields.io/badge/Supabase-28%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/supabase) [![Lynx: 70](https://img.shields.io/badge/Lynx-70%25-yellow?style=flat-square)](https://www.isthistechdead.com/lynx) [![Python: 27](https://img.shields.io/badge/Python-27%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/python) [![cordova: 71](https://img.shields.io/badge/cordova-71%25-orange?style=flat-square)](https://www.isthistechdead.com/cordova) 
 ## Project Components
 
 This monorepo contains two main components:
