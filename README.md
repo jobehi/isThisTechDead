@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2025-11-22)
+## Latest Technology Updates (2025-11-23)
 
-[![Solar2D: 76](https://img.shields.io/badge/Solar2D-76%25-orange?style=flat-square)](https://www.isthistechdead.com/solar2d) [![django: 40](https://img.shields.io/badge/django-40%25-green?style=flat-square)](https://www.isthistechdead.com/django) [![FastAPI: 39](https://img.shields.io/badge/FastAPI-39%25-green?style=flat-square)](https://www.isthistechdead.com/fastapi) [![Capacitor: 28](https://img.shields.io/badge/Capacitor-28%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/capacitor) [![NativeScript: 72](https://img.shields.io/badge/NativeScript-72%25-orange?style=flat-square)](https://www.isthistechdead.com/nativescript) [![Typescript: 32](https://img.shields.io/badge/Typescript-32%25-green?style=flat-square)](https://www.isthistechdead.com/typescript) 
+[![Svelte: 33](https://img.shields.io/badge/Svelte-33%25-green?style=flat-square)](https://www.isthistechdead.com/svelte) [![elm: 77](https://img.shields.io/badge/elm-77%25-orange?style=flat-square)](https://www.isthistechdead.com/elm) [![Nuxt.js: 48](https://img.shields.io/badge/Nuxt.js-48%25-green?style=flat-square)](https://www.isthistechdead.com/nuxtjs) [![Vagrant: 77](https://img.shields.io/badge/Vagrant-77%25-orange?style=flat-square)](https://www.isthistechdead.com/vagrant) [![backbonejs: 100](https://img.shields.io/badge/backbonejs-100%25-red?style=flat-square)](https://www.isthistechdead.com/backbone) [![strapi: 38](https://img.shields.io/badge/strapi-38%25-green?style=flat-square)](https://www.isthistechdead.com/strapi) 
 ## Project Components
 
 This monorepo contains two main components:
