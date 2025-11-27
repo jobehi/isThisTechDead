@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2025-11-26)
+## Latest Technology Updates (2025-11-27)
 
-[![Scala: 40](https://img.shields.io/badge/Scala-40%25-green?style=flat-square)](https://www.isthistechdead.com/scala) [![Git: 31](https://img.shields.io/badge/Git-31%25-green?style=flat-square)](https://www.isthistechdead.com/git) [![Swift: 38](https://img.shields.io/badge/Swift-38%25-green?style=flat-square)](https://www.isthistechdead.com/swift) [![Docker: 25](https://img.shields.io/badge/Docker-25%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/docker) [![Terraform: 40](https://img.shields.io/badge/Terraform-40%25-green?style=flat-square)](https://www.isthistechdead.com/terraform) [![Ruby: 34](https://img.shields.io/badge/Ruby-34%25-green?style=flat-square)](https://www.isthistechdead.com/ruby) 
+[![Next.js: 20](https://img.shields.io/badge/Next.js-20%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/nextjs) [![Perl: 48](https://img.shields.io/badge/Perl-48%25-green?style=flat-square)](https://www.isthistechdead.com/perl) [![Kubernetes: 42](https://img.shields.io/badge/Kubernetes-42%25-green?style=flat-square)](https://www.isthistechdead.com/kubernetes) [![Microsoft Azure: 52](https://img.shields.io/badge/Microsoft%20Azure-52%25-yellow?style=flat-square)](https://www.isthistechdead.com/azure) [![.NET: 12](https://img.shields.io/badge/.NET-12%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/dot.net) [![Visual Studio Code: 23](https://img.shields.io/badge/Visual%20Studio%20Code-23%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/vscode) 
 ## Project Components
 
 This monorepo contains two main components:
