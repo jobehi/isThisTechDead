@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2025-11-28)
+## Latest Technology Updates (2025-11-29)
 
-[![Python: 14](https://img.shields.io/badge/Python-14%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/python) [![cordova: 77](https://img.shields.io/badge/cordova-77%25-orange?style=flat-square)](https://www.isthistechdead.com/cordova) [![meteor: 89](https://img.shields.io/badge/meteor-89%25-red?style=flat-square)](https://www.isthistechdead.com/meteor) [![.NET MAUI: 34](https://img.shields.io/badge/.NET%20MAUI-34%25-green?style=flat-square)](https://www.isthistechdead.com/maui) [![Amazon Web Services: 15](https://img.shields.io/badge/Amazon%20Web%20Services-15%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/aws) [![React Native: 22](https://img.shields.io/badge/React%20Native-22%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/react-native) 
+[![Flask: 52](https://img.shields.io/badge/Flask-52%25-yellow?style=flat-square)](https://www.isthistechdead.com/flask) [![CodeIgniter: 80](https://img.shields.io/badge/CodeIgniter-80%25-orange?style=flat-square)](https://www.isthistechdead.com/code-igniter) [![NestJS: 34](https://img.shields.io/badge/NestJS-34%25-green?style=flat-square)](https://www.isthistechdead.com/nest) [![Drupal: 60](https://img.shields.io/badge/Drupal-60%25-yellow?style=flat-square)](https://www.isthistechdead.com/drupal) [![Supabase: 32](https://img.shields.io/badge/Supabase-32%25-green?style=flat-square)](https://www.isthistechdead.com/supabase) [![Lynx: 68](https://img.shields.io/badge/Lynx-68%25-yellow?style=flat-square)](https://www.isthistechdead.com/lynx) 
 ## Project Components
 
 This monorepo contains two main components:
