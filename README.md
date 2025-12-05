@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2025-12-04)
+## Latest Technology Updates (2025-12-05)
 
-[![ASP.NET: 43](https://img.shields.io/badge/ASP.NET-43%25-green?style=flat-square)](https://www.isthistechdead.com/asp.net) [![Joomla! CMS: 69](https://img.shields.io/badge/Joomla!%20CMS-69%25-yellow?style=flat-square)](https://www.isthistechdead.com/joomla) [![Ansible: 47](https://img.shields.io/badge/Ansible-47%25-green?style=flat-square)](https://www.isthistechdead.com/ansible) [![Avalonia: 68](https://img.shields.io/badge/Avalonia-68%25-yellow?style=flat-square)](https://www.isthistechdead.com/avalonia) [![Electron: 43](https://img.shields.io/badge/Electron-43%25-green?style=flat-square)](https://www.isthistechdead.com/electron) [![Express js: 62](https://img.shields.io/badge/Express%20js-62%25-yellow?style=flat-square)](https://www.isthistechdead.com/expressjs) 
+[![NativeScript: 81](https://img.shields.io/badge/NativeScript-81%25-orange?style=flat-square)](https://www.isthistechdead.com/nativescript) [![Typescript: 38](https://img.shields.io/badge/Typescript-38%25-green?style=flat-square)](https://www.isthistechdead.com/typescript) [![MySQL: 37](https://img.shields.io/badge/MySQL-37%25-green?style=flat-square)](https://www.isthistechdead.com/mysql) [![Orleans: 52](https://img.shields.io/badge/Orleans-52%25-yellow?style=flat-square)](https://www.isthistechdead.com/orleans) [![PostgreSQL: 34](https://img.shields.io/badge/PostgreSQL-34%25-green?style=flat-square)](https://www.isthistechdead.com/postgresql) [![Angular: 23](https://img.shields.io/badge/Angular-23%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/angular) 
 ## Project Components
 
 This monorepo contains two main components:
