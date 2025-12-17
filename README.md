@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2025-12-16)
+## Latest Technology Updates (2025-12-17)
 
-[![Laravel Livewire: 66](https://img.shields.io/badge/Laravel%20Livewire-66%25-yellow?style=flat-square)](https://www.isthistechdead.com/laravel-livewire) [![Magento: 60](https://img.shields.io/badge/Magento-60%25-yellow?style=flat-square)](https://www.isthistechdead.com/magento) [![October CMS: 66](https://img.shields.io/badge/October%20CMS-66%25-yellow?style=flat-square)](https://www.isthistechdead.com/october) [![Compose Multiplatform: 52](https://img.shields.io/badge/Compose%20Multiplatform-52%25-yellow?style=flat-square)](https://www.isthistechdead.com/compose-mp) [![Gatsby: 66](https://img.shields.io/badge/Gatsby-66%25-yellow?style=flat-square)](https://www.isthistechdead.com/gatsbyjs) [![Xamarin: 70](https://img.shields.io/badge/Xamarin-70%25-orange?style=flat-square)](https://www.isthistechdead.com/xamarin) 
+[![Electron: 38](https://img.shields.io/badge/Electron-38%25-green?style=flat-square)](https://www.isthistechdead.com/electron) [![Express js: 67](https://img.shields.io/badge/Express%20js-67%25-yellow?style=flat-square)](https://www.isthistechdead.com/expressjs) [![Rust: 21](https://img.shields.io/badge/Rust-21%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/rust) [![Tailwind: 41](https://img.shields.io/badge/Tailwind-41%25-green?style=flat-square)](https://www.isthistechdead.com/tailwind) [![angular.js: 62](https://img.shields.io/badge/angular.js-62%25-yellow?style=flat-square)](https://www.isthistechdead.com/angularjs) [![Ionic: 62](https://img.shields.io/badge/Ionic-62%25-yellow?style=flat-square)](https://www.isthistechdead.com/ionic) 
 ## Project Components
 
 This monorepo contains two main components:
