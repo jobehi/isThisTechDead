@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2025-12-18)
+## Latest Technology Updates (2025-12-19)
 
-[![PostgreSQL: 42](https://img.shields.io/badge/PostgreSQL-42%25-green?style=flat-square)](https://www.isthistechdead.com/postgresql) [![Angular: 47](https://img.shields.io/badge/Angular-47%25-green?style=flat-square)](https://www.isthistechdead.com/angular) [![ASP.NET: 38](https://img.shields.io/badge/ASP.NET-38%25-green?style=flat-square)](https://www.isthistechdead.com/asp.net) [![Joomla! CMS: 77](https://img.shields.io/badge/Joomla!%20CMS-77%25-orange?style=flat-square)](https://www.isthistechdead.com/joomla) [![Ansible: 58](https://img.shields.io/badge/Ansible-58%25-yellow?style=flat-square)](https://www.isthistechdead.com/ansible) [![Avalonia: 62](https://img.shields.io/badge/Avalonia-62%25-yellow?style=flat-square)](https://www.isthistechdead.com/avalonia) 
+[![FastAPI: 30](https://img.shields.io/badge/FastAPI-30%25-green?style=flat-square)](https://www.isthistechdead.com/fastapi) [![Capacitor: 50](https://img.shields.io/badge/Capacitor-50%25-green?style=flat-square)](https://www.isthistechdead.com/capacitor) [![NativeScript: 82](https://img.shields.io/badge/NativeScript-82%25-orange?style=flat-square)](https://www.isthistechdead.com/nativescript) [![Typescript: 35](https://img.shields.io/badge/Typescript-35%25-green?style=flat-square)](https://www.isthistechdead.com/typescript) [![MySQL: 41](https://img.shields.io/badge/MySQL-41%25-green?style=flat-square)](https://www.isthistechdead.com/mysql) [![Orleans: 51](https://img.shields.io/badge/Orleans-51%25-yellow?style=flat-square)](https://www.isthistechdead.com/orleans) 
 ## Project Components
 
 This monorepo contains two main components:
