@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2025-12-23)
+## Latest Technology Updates (2025-12-24)
 
-[![Swift: 41](https://img.shields.io/badge/Swift-41%25-green?style=flat-square)](https://www.isthistechdead.com/swift) [![Docker: 32](https://img.shields.io/badge/Docker-32%25-green?style=flat-square)](https://www.isthistechdead.com/docker) [![Terraform: 32](https://img.shields.io/badge/Terraform-32%25-green?style=flat-square)](https://www.isthistechdead.com/terraform) [![Ruby: 22](https://img.shields.io/badge/Ruby-22%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/ruby) [![Elixir: 62](https://img.shields.io/badge/Elixir-62%25-yellow?style=flat-square)](https://www.isthistechdead.com/elixir) [![C#: 14](https://img.shields.io/badge/C#-14%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/csharp) 
+[![Kubernetes: 39](https://img.shields.io/badge/Kubernetes-39%25-green?style=flat-square)](https://www.isthistechdead.com/kubernetes) [![Microsoft Azure: 46](https://img.shields.io/badge/Microsoft%20Azure-46%25-green?style=flat-square)](https://www.isthistechdead.com/azure) [![.NET: 24](https://img.shields.io/badge/.NET-24%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/dot.net) [![Visual Studio Code: 36](https://img.shields.io/badge/Visual%20Studio%20Code-36%25-green?style=flat-square)](https://www.isthistechdead.com/vscode) [![Scala: 21](https://img.shields.io/badge/Scala-21%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/scala) [![Git: 32](https://img.shields.io/badge/Git-32%25-green?style=flat-square)](https://www.isthistechdead.com/git) 
 ## Project Components
 
 This monorepo contains two main components:
