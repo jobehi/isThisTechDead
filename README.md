@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2025-12-24)
+## Latest Technology Updates (2025-12-25)
 
-[![Kubernetes: 39](https://img.shields.io/badge/Kubernetes-39%25-green?style=flat-square)](https://www.isthistechdead.com/kubernetes) [![Microsoft Azure: 46](https://img.shields.io/badge/Microsoft%20Azure-46%25-green?style=flat-square)](https://www.isthistechdead.com/azure) [![.NET: 24](https://img.shields.io/badge/.NET-24%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/dot.net) [![Visual Studio Code: 36](https://img.shields.io/badge/Visual%20Studio%20Code-36%25-green?style=flat-square)](https://www.isthistechdead.com/vscode) [![Scala: 21](https://img.shields.io/badge/Scala-21%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/scala) [![Git: 32](https://img.shields.io/badge/Git-32%25-green?style=flat-square)](https://www.isthistechdead.com/git) 
+[![meteor: 84](https://img.shields.io/badge/meteor-84%25-orange?style=flat-square)](https://www.isthistechdead.com/meteor) [![.NET MAUI: 42](https://img.shields.io/badge/.NET%20MAUI-42%25-green?style=flat-square)](https://www.isthistechdead.com/maui) [![Amazon Web Services: 39](https://img.shields.io/badge/Amazon%20Web%20Services-39%25-green?style=flat-square)](https://www.isthistechdead.com/aws) [![React Native: 28](https://img.shields.io/badge/React%20Native-28%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/react-native) [![Next.js: 30](https://img.shields.io/badge/Next.js-30%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/nextjs) [![Perl: 41](https://img.shields.io/badge/Perl-41%25-green?style=flat-square)](https://www.isthistechdead.com/perl) 
 ## Project Components
 
 This monorepo contains two main components:
