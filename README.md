@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2025-12-31)
+## Latest Technology Updates (2026-01-01)
 
-[![Ansible: 59](https://img.shields.io/badge/Ansible-59%25-yellow?style=flat-square)](https://www.isthistechdead.com/ansible) [![Avalonia: 59](https://img.shields.io/badge/Avalonia-59%25-yellow?style=flat-square)](https://www.isthistechdead.com/avalonia) [![Electron: 38](https://img.shields.io/badge/Electron-38%25-green?style=flat-square)](https://www.isthistechdead.com/electron) [![Express js: 67](https://img.shields.io/badge/Express%20js-67%25-yellow?style=flat-square)](https://www.isthistechdead.com/expressjs) [![Rust: 32](https://img.shields.io/badge/Rust-32%25-green?style=flat-square)](https://www.isthistechdead.com/rust) [![Tailwind: 37](https://img.shields.io/badge/Tailwind-37%25-green?style=flat-square)](https://www.isthistechdead.com/tailwind) 
+[![MySQL: 55](https://img.shields.io/badge/MySQL-55%25-yellow?style=flat-square)](https://www.isthistechdead.com/mysql) [![Orleans: 56](https://img.shields.io/badge/Orleans-56%25-yellow?style=flat-square)](https://www.isthistechdead.com/orleans) [![PostgreSQL: 42](https://img.shields.io/badge/PostgreSQL-42%25-green?style=flat-square)](https://www.isthistechdead.com/postgresql) [![Angular: 42](https://img.shields.io/badge/Angular-42%25-green?style=flat-square)](https://www.isthistechdead.com/angular) [![ASP.NET: 47](https://img.shields.io/badge/ASP.NET-47%25-green?style=flat-square)](https://www.isthistechdead.com/asp.net) [![Joomla! CMS: 75](https://img.shields.io/badge/Joomla!%20CMS-75%25-orange?style=flat-square)](https://www.isthistechdead.com/joomla) 
 ## Project Components
 
 This monorepo contains two main components:
