@@ -31,7 +31,7 @@
     "date-fns": "^4.1.0",
     "dotenv": "^16.3.1",
     "framer-motion": "^12.9.4",
-    "next": "15.3.6",
+    "next": "15.5.9",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
