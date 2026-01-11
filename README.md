@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-01-10)
+## Latest Technology Updates (2026-01-11)
 
-[![Vue.js: 46](https://img.shields.io/badge/Vue.js-46%25-green?style=flat-square)](https://www.isthistechdead.com/vuejs) [![Cake PHP: 81](https://img.shields.io/badge/Cake%20PHP-81%25-orange?style=flat-square)](https://www.isthistechdead.com/cakephp) [![Kotlin: 44](https://img.shields.io/badge/Kotlin-44%25-green?style=flat-square)](https://www.isthistechdead.com/kotlin) [![WordPress: 33](https://img.shields.io/badge/WordPress-33%25-green?style=flat-square)](https://www.isthistechdead.com/wordpress) [![MongoDB: 26](https://img.shields.io/badge/MongoDB-26%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/mongodb) [![Astro: 53](https://img.shields.io/badge/Astro-53%25-yellow?style=flat-square)](https://www.isthistechdead.com/astro) 
+[![Deno: 51](https://img.shields.io/badge/Deno-51%25-yellow?style=flat-square)](https://www.isthistechdead.com/deno) [![Ruby on Rails: 27](https://img.shields.io/badge/Ruby%20on%20Rails-27%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/rails) [![jQuery: 67](https://img.shields.io/badge/jQuery-67%25-yellow?style=flat-square)](https://www.isthistechdead.com/jquery) [![Node.js: 34](https://img.shields.io/badge/Node.js-34%25-green?style=flat-square)](https://www.isthistechdead.com/nodejs) [![Spring boot: 25](https://img.shields.io/badge/Spring%20boot-25%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/spring) [![Phoenix Framework: 60](https://img.shields.io/badge/Phoenix%20Framework-60%25-yellow?style=flat-square)](https://www.isthistechdead.com/phoenix) 
 ## Project Components
 
 This monorepo contains two main components:
