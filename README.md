@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-01-11)
+## Latest Technology Updates (2026-01-12)
 
-[![Deno: 51](https://img.shields.io/badge/Deno-51%25-yellow?style=flat-square)](https://www.isthistechdead.com/deno) [![Ruby on Rails: 27](https://img.shields.io/badge/Ruby%20on%20Rails-27%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/rails) [![jQuery: 67](https://img.shields.io/badge/jQuery-67%25-yellow?style=flat-square)](https://www.isthistechdead.com/jquery) [![Node.js: 34](https://img.shields.io/badge/Node.js-34%25-green?style=flat-square)](https://www.isthistechdead.com/nodejs) [![Spring boot: 25](https://img.shields.io/badge/Spring%20boot-25%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/spring) [![Phoenix Framework: 60](https://img.shields.io/badge/Phoenix%20Framework-60%25-yellow?style=flat-square)](https://www.isthistechdead.com/phoenix) 
+[![October CMS: 69](https://img.shields.io/badge/October%20CMS-69%25-yellow?style=flat-square)](https://www.isthistechdead.com/october) [![Compose Multiplatform: 58](https://img.shields.io/badge/Compose%20Multiplatform-58%25-yellow?style=flat-square)](https://www.isthistechdead.com/compose-mp) [![Gatsby: 64](https://img.shields.io/badge/Gatsby-64%25-yellow?style=flat-square)](https://www.isthistechdead.com/gatsbyjs) [![Xamarin: 78](https://img.shields.io/badge/Xamarin-78%25-orange?style=flat-square)](https://www.isthistechdead.com/xamarin) [![laravel: 38](https://img.shields.io/badge/laravel-38%25-green?style=flat-square)](https://www.isthistechdead.com/laravel) [![Silverlight: 95](https://img.shields.io/badge/Silverlight-95%25-red?style=flat-square)](https://www.isthistechdead.com/silverlight) 
 ## Project Components
 
 This monorepo contains two main components:
