@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-01-21)
+## Latest Technology Updates (2026-01-22)
 
-[![Amazon Web Services: 32](https://img.shields.io/badge/Amazon%20Web%20Services-32%25-green?style=flat-square)](https://www.isthistechdead.com/aws) [![React Native: 29](https://img.shields.io/badge/React%20Native-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/react-native) [![Next.js: 26](https://img.shields.io/badge/Next.js-26%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/nextjs) [![Perl: 43](https://img.shields.io/badge/Perl-43%25-green?style=flat-square)](https://www.isthistechdead.com/perl) [![Kubernetes: 33](https://img.shields.io/badge/Kubernetes-33%25-green?style=flat-square)](https://www.isthistechdead.com/kubernetes) [![Microsoft Azure: 46](https://img.shields.io/badge/Microsoft%20Azure-46%25-green?style=flat-square)](https://www.isthistechdead.com/azure) 
+[![Supabase: 29](https://img.shields.io/badge/Supabase-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/supabase) [![Lynx: 72](https://img.shields.io/badge/Lynx-72%25-orange?style=flat-square)](https://www.isthistechdead.com/lynx) [![Python: 27](https://img.shields.io/badge/Python-27%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/python) [![cordova: 82](https://img.shields.io/badge/cordova-82%25-orange?style=flat-square)](https://www.isthistechdead.com/cordova) [![meteor: 84](https://img.shields.io/badge/meteor-84%25-orange?style=flat-square)](https://www.isthistechdead.com/meteor) [![.NET MAUI: 36](https://img.shields.io/badge/.NET%20MAUI-36%25-green?style=flat-square)](https://www.isthistechdead.com/maui) 
 ## Project Components
 
 This monorepo contains two main components:
