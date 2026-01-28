@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-01-27)
+## Latest Technology Updates (2026-01-28)
 
-[![Electron: 30](https://img.shields.io/badge/Electron-30%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/electron) [![Express js: 69](https://img.shields.io/badge/Express%20js-69%25-yellow?style=flat-square)](https://www.isthistechdead.com/expressjs) [![Rust: 36](https://img.shields.io/badge/Rust-36%25-green?style=flat-square)](https://www.isthistechdead.com/rust) [![Tailwind: 36](https://img.shields.io/badge/Tailwind-36%25-green?style=flat-square)](https://www.isthistechdead.com/tailwind) [![angular.js: 63](https://img.shields.io/badge/angular.js-63%25-yellow?style=flat-square)](https://www.isthistechdead.com/angularjs) [![Ionic: 65](https://img.shields.io/badge/Ionic-65%25-yellow?style=flat-square)](https://www.isthistechdead.com/ionic) 
+[![PostgreSQL: 23](https://img.shields.io/badge/PostgreSQL-23%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/postgresql) [![Angular: 38](https://img.shields.io/badge/Angular-38%25-green?style=flat-square)](https://www.isthistechdead.com/angular) [![ASP.NET: 31](https://img.shields.io/badge/ASP.NET-31%25-green?style=flat-square)](https://www.isthistechdead.com/asp.net) [![Joomla! CMS: 70](https://img.shields.io/badge/Joomla!%20CMS-70%25-yellow?style=flat-square)](https://www.isthistechdead.com/joomla) [![Ansible: 40](https://img.shields.io/badge/Ansible-40%25-green?style=flat-square)](https://www.isthistechdead.com/ansible) [![Avalonia: 58](https://img.shields.io/badge/Avalonia-58%25-yellow?style=flat-square)](https://www.isthistechdead.com/avalonia) 
 ## Project Components
 
 This monorepo contains two main components:
