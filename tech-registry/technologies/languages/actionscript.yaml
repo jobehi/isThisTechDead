@@ -1,0 +1,13 @@
+{
+  "id": "actionscript",
+  "name": "ActionScript",
+  "owner": "apache",
+  "repo": "royale-asjs",
+  "subreddit": "actionscript",
+  "stackshare_slug": "actionscript",
+  "description": "ActionScript is an object-oriented language developed by Macromedia (and later Adobe) used primarily for Adobe Flash applications, including animations, games, and rich web apps.",
+  "creation_year": 1998,
+  "showcase_url": "https://stackshare.io/actionscript",
+  "their_stack_slug": "actionscript",
+  "category": "language"
+}
