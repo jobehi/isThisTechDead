@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-02-10)
+## Latest Technology Updates (2026-02-11)
 
-[![Ansible: 51](https://img.shields.io/badge/Ansible-51%25-yellow?style=flat-square)](https://www.isthistechdead.com/ansible) [![Avalonia: 58](https://img.shields.io/badge/Avalonia-58%25-yellow?style=flat-square)](https://www.isthistechdead.com/avalonia) [![Electron: 36](https://img.shields.io/badge/Electron-36%25-green?style=flat-square)](https://www.isthistechdead.com/electron) [![Express js: 71](https://img.shields.io/badge/Express%20js-71%25-orange?style=flat-square)](https://www.isthistechdead.com/expressjs) [![Rust: 29](https://img.shields.io/badge/Rust-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/rust) [![Tailwind: 33](https://img.shields.io/badge/Tailwind-33%25-green?style=flat-square)](https://www.isthistechdead.com/tailwind) 
+[![MySQL: 34](https://img.shields.io/badge/MySQL-34%25-green?style=flat-square)](https://www.isthistechdead.com/mysql) [![Orleans: 40](https://img.shields.io/badge/Orleans-40%25-green?style=flat-square)](https://www.isthistechdead.com/orleans) [![PostgreSQL: 34](https://img.shields.io/badge/PostgreSQL-34%25-green?style=flat-square)](https://www.isthistechdead.com/postgresql) [![Angular: 36](https://img.shields.io/badge/Angular-36%25-green?style=flat-square)](https://www.isthistechdead.com/angular) [![ASP.NET: 43](https://img.shields.io/badge/ASP.NET-43%25-green?style=flat-square)](https://www.isthistechdead.com/asp.net) [![Joomla! CMS: 63](https://img.shields.io/badge/Joomla!%20CMS-63%25-yellow?style=flat-square)](https://www.isthistechdead.com/joomla) 
 ## Project Components
 
 This monorepo contains two main components:
