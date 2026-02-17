@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-02-16)
+## Latest Technology Updates (2026-02-17)
 
-[![Scala: 42](https://img.shields.io/badge/Scala-42%25-green?style=flat-square)](https://www.isthistechdead.com/scala) [![Git: 31](https://img.shields.io/badge/Git-31%25-green?style=flat-square)](https://www.isthistechdead.com/git) [![Swift: 29](https://img.shields.io/badge/Swift-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/swift) [![Docker: 26](https://img.shields.io/badge/Docker-26%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/docker) [![Terraform: 55](https://img.shields.io/badge/Terraform-55%25-yellow?style=flat-square)](https://www.isthistechdead.com/terraform) [![Ruby: 50](https://img.shields.io/badge/Ruby-50%25-green?style=flat-square)](https://www.isthistechdead.com/ruby) 
+[![Next.js: 34](https://img.shields.io/badge/Next.js-34%25-green?style=flat-square)](https://www.isthistechdead.com/nextjs) [![Perl: 43](https://img.shields.io/badge/Perl-43%25-green?style=flat-square)](https://www.isthistechdead.com/perl) [![Kubernetes: 36](https://img.shields.io/badge/Kubernetes-36%25-green?style=flat-square)](https://www.isthistechdead.com/kubernetes) [![Microsoft Azure: 52](https://img.shields.io/badge/Microsoft%20Azure-52%25-yellow?style=flat-square)](https://www.isthistechdead.com/azure) [![.NET: 30](https://img.shields.io/badge/.NET-30%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/dot.net) [![Visual Studio Code: 37](https://img.shields.io/badge/Visual%20Studio%20Code-37%25-green?style=flat-square)](https://www.isthistechdead.com/vscode) 
 ## Project Components
 
 This monorepo contains two main components:
