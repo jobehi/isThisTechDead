@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-02-24)
+## Latest Technology Updates (2026-02-25)
 
-[![ASP.NET: 42](https://img.shields.io/badge/ASP.NET-42%25-green?style=flat-square)](https://www.isthistechdead.com/asp.net) [![Joomla! CMS: 82](https://img.shields.io/badge/Joomla!%20CMS-82%25-orange?style=flat-square)](https://www.isthistechdead.com/joomla) [![Ansible: 53](https://img.shields.io/badge/Ansible-53%25-yellow?style=flat-square)](https://www.isthistechdead.com/ansible) [![Avalonia: 70](https://img.shields.io/badge/Avalonia-70%25-yellow?style=flat-square)](https://www.isthistechdead.com/avalonia) [![Electron: 26](https://img.shields.io/badge/Electron-26%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/electron) [![Express js: 63](https://img.shields.io/badge/Express%20js-63%25-yellow?style=flat-square)](https://www.isthistechdead.com/expressjs) 
+[![NativeScript: 68](https://img.shields.io/badge/NativeScript-68%25-yellow?style=flat-square)](https://www.isthistechdead.com/nativescript) [![Typescript: 23](https://img.shields.io/badge/Typescript-23%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/typescript) [![MySQL: 38](https://img.shields.io/badge/MySQL-38%25-green?style=flat-square)](https://www.isthistechdead.com/mysql) [![Orleans: 52](https://img.shields.io/badge/Orleans-52%25-yellow?style=flat-square)](https://www.isthistechdead.com/orleans) [![PostgreSQL: 33](https://img.shields.io/badge/PostgreSQL-33%25-green?style=flat-square)](https://www.isthistechdead.com/postgresql) [![Angular: 39](https://img.shields.io/badge/Angular-39%25-green?style=flat-square)](https://www.isthistechdead.com/angular) 
 ## Project Components
 
 This monorepo contains two main components:
