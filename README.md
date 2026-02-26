@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-02-25)
+## Latest Technology Updates (2026-02-26)
 
-[![NativeScript: 68](https://img.shields.io/badge/NativeScript-68%25-yellow?style=flat-square)](https://www.isthistechdead.com/nativescript) [![Typescript: 23](https://img.shields.io/badge/Typescript-23%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/typescript) [![MySQL: 38](https://img.shields.io/badge/MySQL-38%25-green?style=flat-square)](https://www.isthistechdead.com/mysql) [![Orleans: 52](https://img.shields.io/badge/Orleans-52%25-yellow?style=flat-square)](https://www.isthistechdead.com/orleans) [![PostgreSQL: 33](https://img.shields.io/badge/PostgreSQL-33%25-green?style=flat-square)](https://www.isthistechdead.com/postgresql) [![Angular: 39](https://img.shields.io/badge/Angular-39%25-green?style=flat-square)](https://www.isthistechdead.com/angular) 
+[![backbonejs: 89](https://img.shields.io/badge/backbonejs-89%25-red?style=flat-square)](https://www.isthistechdead.com/backbone) [![strapi: 55](https://img.shields.io/badge/strapi-55%25-yellow?style=flat-square)](https://www.isthistechdead.com/strapi) [![Solar2D: 92](https://img.shields.io/badge/Solar2D-92%25-red?style=flat-square)](https://www.isthistechdead.com/solar2d) [![django: 48](https://img.shields.io/badge/django-48%25-green?style=flat-square)](https://www.isthistechdead.com/django) [![FastAPI: 30](https://img.shields.io/badge/FastAPI-30%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/fastapi) [![Capacitor: 42](https://img.shields.io/badge/Capacitor-42%25-green?style=flat-square)](https://www.isthistechdead.com/capacitor) 
 ## Project Components
 
 This monorepo contains two main components:
