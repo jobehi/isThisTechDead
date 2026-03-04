@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-03-03)
+## Latest Technology Updates (2026-03-04)
 
-[![Amazon Web Services: 30](https://img.shields.io/badge/Amazon%20Web%20Services-30%25-green?style=flat-square)](https://www.isthistechdead.com/aws) [![React Native: 34](https://img.shields.io/badge/React%20Native-34%25-green?style=flat-square)](https://www.isthistechdead.com/react-native) [![Next.js: 28](https://img.shields.io/badge/Next.js-28%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/nextjs) [![Perl: 39](https://img.shields.io/badge/Perl-39%25-green?style=flat-square)](https://www.isthistechdead.com/perl) [![Kubernetes: 45](https://img.shields.io/badge/Kubernetes-45%25-green?style=flat-square)](https://www.isthistechdead.com/kubernetes) [![Microsoft Azure: 47](https://img.shields.io/badge/Microsoft%20Azure-47%25-green?style=flat-square)](https://www.isthistechdead.com/azure) 
+[![Supabase: 44](https://img.shields.io/badge/Supabase-44%25-green?style=flat-square)](https://www.isthistechdead.com/supabase) [![Lynx: 57](https://img.shields.io/badge/Lynx-57%25-yellow?style=flat-square)](https://www.isthistechdead.com/lynx) [![Python: 23](https://img.shields.io/badge/Python-23%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/python) [![cordova: 82](https://img.shields.io/badge/cordova-82%25-orange?style=flat-square)](https://www.isthistechdead.com/cordova) [![meteor: 79](https://img.shields.io/badge/meteor-79%25-orange?style=flat-square)](https://www.isthistechdead.com/meteor) [![.NET MAUI: 38](https://img.shields.io/badge/.NET%20MAUI-38%25-green?style=flat-square)](https://www.isthistechdead.com/maui) 
 ## Project Components
 
 This monorepo contains two main components:
