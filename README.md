@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-03-09)
+## Latest Technology Updates (2026-03-10)
 
-[![Electron: 36](https://img.shields.io/badge/Electron-36%25-green?style=flat-square)](https://www.isthistechdead.com/electron) [![Express js: 64](https://img.shields.io/badge/Express%20js-64%25-yellow?style=flat-square)](https://www.isthistechdead.com/expressjs) [![Rust: 27](https://img.shields.io/badge/Rust-27%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/rust) [![Tailwind: 39](https://img.shields.io/badge/Tailwind-39%25-green?style=flat-square)](https://www.isthistechdead.com/tailwind) [![angular.js: 70](https://img.shields.io/badge/angular.js-70%25-yellow?style=flat-square)](https://www.isthistechdead.com/angularjs) [![Ionic: 53](https://img.shields.io/badge/Ionic-53%25-yellow?style=flat-square)](https://www.isthistechdead.com/ionic) 
+[![PostgreSQL: 30](https://img.shields.io/badge/PostgreSQL-30%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/postgresql) [![Angular: 39](https://img.shields.io/badge/Angular-39%25-green?style=flat-square)](https://www.isthistechdead.com/angular) [![ASP.NET: 42](https://img.shields.io/badge/ASP.NET-42%25-green?style=flat-square)](https://www.isthistechdead.com/asp.net) [![Joomla! CMS: 74](https://img.shields.io/badge/Joomla!%20CMS-74%25-orange?style=flat-square)](https://www.isthistechdead.com/joomla) [![Ansible: 57](https://img.shields.io/badge/Ansible-57%25-yellow?style=flat-square)](https://www.isthistechdead.com/ansible) [![Avalonia: 53](https://img.shields.io/badge/Avalonia-53%25-yellow?style=flat-square)](https://www.isthistechdead.com/avalonia) 
 ## Project Components
 
 This monorepo contains two main components:
