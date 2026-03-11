@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-03-10)
+## Latest Technology Updates (2026-03-11)
 
-[![PostgreSQL: 30](https://img.shields.io/badge/PostgreSQL-30%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/postgresql) [![Angular: 39](https://img.shields.io/badge/Angular-39%25-green?style=flat-square)](https://www.isthistechdead.com/angular) [![ASP.NET: 42](https://img.shields.io/badge/ASP.NET-42%25-green?style=flat-square)](https://www.isthistechdead.com/asp.net) [![Joomla! CMS: 74](https://img.shields.io/badge/Joomla!%20CMS-74%25-orange?style=flat-square)](https://www.isthistechdead.com/joomla) [![Ansible: 57](https://img.shields.io/badge/Ansible-57%25-yellow?style=flat-square)](https://www.isthistechdead.com/ansible) [![Avalonia: 53](https://img.shields.io/badge/Avalonia-53%25-yellow?style=flat-square)](https://www.isthistechdead.com/avalonia) 
+[![FastAPI: 36](https://img.shields.io/badge/FastAPI-36%25-green?style=flat-square)](https://www.isthistechdead.com/fastapi) [![Capacitor: 46](https://img.shields.io/badge/Capacitor-46%25-green?style=flat-square)](https://www.isthistechdead.com/capacitor) [![NativeScript: 80](https://img.shields.io/badge/NativeScript-80%25-orange?style=flat-square)](https://www.isthistechdead.com/nativescript) [![Typescript: 38](https://img.shields.io/badge/Typescript-38%25-green?style=flat-square)](https://www.isthistechdead.com/typescript) [![MySQL: 48](https://img.shields.io/badge/MySQL-48%25-green?style=flat-square)](https://www.isthistechdead.com/mysql) [![Orleans: 66](https://img.shields.io/badge/Orleans-66%25-yellow?style=flat-square)](https://www.isthistechdead.com/orleans) 
 ## Project Components
 
 This monorepo contains two main components:
