@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-03-15)
+## Latest Technology Updates (2026-03-16)
 
-[![Swift: 32](https://img.shields.io/badge/Swift-32%25-green?style=flat-square)](https://www.isthistechdead.com/swift) [![Docker: 30](https://img.shields.io/badge/Docker-30%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/docker) [![Terraform: 51](https://img.shields.io/badge/Terraform-51%25-yellow?style=flat-square)](https://www.isthistechdead.com/terraform) [![Ruby: 42](https://img.shields.io/badge/Ruby-42%25-green?style=flat-square)](https://www.isthistechdead.com/ruby) [![Elixir: 56](https://img.shields.io/badge/Elixir-56%25-yellow?style=flat-square)](https://www.isthistechdead.com/elixir) [![C#: 39](https://img.shields.io/badge/C#-39%25-green?style=flat-square)](https://www.isthistechdead.com/csharp) 
+[![Kubernetes: 36](https://img.shields.io/badge/Kubernetes-36%25-green?style=flat-square)](https://www.isthistechdead.com/kubernetes) [![Microsoft Azure: 51](https://img.shields.io/badge/Microsoft%20Azure-51%25-yellow?style=flat-square)](https://www.isthistechdead.com/azure) [![.NET: 29](https://img.shields.io/badge/.NET-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/dot.net) [![Visual Studio Code: 42](https://img.shields.io/badge/Visual%20Studio%20Code-42%25-green?style=flat-square)](https://www.isthistechdead.com/vscode) [![Scala: 42](https://img.shields.io/badge/Scala-42%25-green?style=flat-square)](https://www.isthistechdead.com/scala) [![Git: 22](https://img.shields.io/badge/Git-22%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/git) 
 ## Project Components
 
 This monorepo contains two main components:
