@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-03-20)
+## Latest Technology Updates (2026-03-21)
 
-[![jQuery: 46](https://img.shields.io/badge/jQuery-46%25-green?style=flat-square)](https://www.isthistechdead.com/jquery) [![Node.js: 28](https://img.shields.io/badge/Node.js-28%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/nodejs) [![Spring boot: 34](https://img.shields.io/badge/Spring%20boot-34%25-green?style=flat-square)](https://www.isthistechdead.com/spring) [![Phoenix Framework: 46](https://img.shields.io/badge/Phoenix%20Framework-46%25-green?style=flat-square)](https://www.isthistechdead.com/phoenix) [![Vue.js: 54](https://img.shields.io/badge/Vue.js-54%25-yellow?style=flat-square)](https://www.isthistechdead.com/vuejs) [![Cake PHP: 77](https://img.shields.io/badge/Cake%20PHP-77%25-orange?style=flat-square)](https://www.isthistechdead.com/cakephp) 
+[![Gatsby: 75](https://img.shields.io/badge/Gatsby-75%25-orange?style=flat-square)](https://www.isthistechdead.com/gatsbyjs) [![Xamarin: 68](https://img.shields.io/badge/Xamarin-68%25-yellow?style=flat-square)](https://www.isthistechdead.com/xamarin) [![laravel: 29](https://img.shields.io/badge/laravel-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/laravel) [![Silverlight: 82](https://img.shields.io/badge/Silverlight-82%25-orange?style=flat-square)](https://www.isthistechdead.com/silverlight) [![Deno: 47](https://img.shields.io/badge/Deno-47%25-green?style=flat-square)](https://www.isthistechdead.com/deno) [![Ruby on Rails: 45](https://img.shields.io/badge/Ruby%20on%20Rails-45%25-green?style=flat-square)](https://www.isthistechdead.com/rails) 
 ## Project Components
 
 This monorepo contains two main components:
