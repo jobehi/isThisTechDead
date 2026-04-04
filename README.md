@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-04-03)
+## Latest Technology Updates (2026-04-04)
 
-[![Deno: 54](https://img.shields.io/badge/Deno-54%25-yellow?style=flat-square)](https://www.isthistechdead.com/deno) [![Ruby on Rails: 43](https://img.shields.io/badge/Ruby%20on%20Rails-43%25-green?style=flat-square)](https://www.isthistechdead.com/rails) [![jQuery: 57](https://img.shields.io/badge/jQuery-57%25-yellow?style=flat-square)](https://www.isthistechdead.com/jquery) [![Node.js: 35](https://img.shields.io/badge/Node.js-35%25-green?style=flat-square)](https://www.isthistechdead.com/nodejs) [![Spring boot: 23](https://img.shields.io/badge/Spring%20boot-23%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/spring) [![Phoenix Framework: 55](https://img.shields.io/badge/Phoenix%20Framework-55%25-yellow?style=flat-square)](https://www.isthistechdead.com/phoenix) 
+[![October CMS: 60](https://img.shields.io/badge/October%20CMS-60%25-yellow?style=flat-square)](https://www.isthistechdead.com/october) [![Compose Multiplatform: 59](https://img.shields.io/badge/Compose%20Multiplatform-59%25-yellow?style=flat-square)](https://www.isthistechdead.com/compose-mp) [![Gatsby: 79](https://img.shields.io/badge/Gatsby-79%25-orange?style=flat-square)](https://www.isthistechdead.com/gatsbyjs) [![Xamarin: 69](https://img.shields.io/badge/Xamarin-69%25-yellow?style=flat-square)](https://www.isthistechdead.com/xamarin) [![laravel: 34](https://img.shields.io/badge/laravel-34%25-green?style=flat-square)](https://www.isthistechdead.com/laravel) [![Silverlight: 86](https://img.shields.io/badge/Silverlight-86%25-red?style=flat-square)](https://www.isthistechdead.com/silverlight) 
 ## Project Components
 
 This monorepo contains two main components:
