@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-04-06)
+## Latest Technology Updates (2026-04-07)
 
-[![ASP.NET: 44](https://img.shields.io/badge/ASP.NET-44%25-green?style=flat-square)](https://www.isthistechdead.com/asp.net) [![Joomla! CMS: 64](https://img.shields.io/badge/Joomla!%20CMS-64%25-yellow?style=flat-square)](https://www.isthistechdead.com/joomla) [![Ansible: 59](https://img.shields.io/badge/Ansible-59%25-yellow?style=flat-square)](https://www.isthistechdead.com/ansible) [![Avalonia: 64](https://img.shields.io/badge/Avalonia-64%25-yellow?style=flat-square)](https://www.isthistechdead.com/avalonia) [![Electron: 49](https://img.shields.io/badge/Electron-49%25-green?style=flat-square)](https://www.isthistechdead.com/electron) [![Express js: 62](https://img.shields.io/badge/Express%20js-62%25-yellow?style=flat-square)](https://www.isthistechdead.com/expressjs) 
+[![NativeScript: 79](https://img.shields.io/badge/NativeScript-79%25-orange?style=flat-square)](https://www.isthistechdead.com/nativescript) [![Typescript: 30](https://img.shields.io/badge/Typescript-30%25-green?style=flat-square)](https://www.isthistechdead.com/typescript) [![MySQL: 35](https://img.shields.io/badge/MySQL-35%25-green?style=flat-square)](https://www.isthistechdead.com/mysql) [![Orleans: 47](https://img.shields.io/badge/Orleans-47%25-green?style=flat-square)](https://www.isthistechdead.com/orleans) [![PostgreSQL: 33](https://img.shields.io/badge/PostgreSQL-33%25-green?style=flat-square)](https://www.isthistechdead.com/postgresql) [![Angular: 40](https://img.shields.io/badge/Angular-40%25-green?style=flat-square)](https://www.isthistechdead.com/angular) 
 ## Project Components
 
 This monorepo contains two main components:
