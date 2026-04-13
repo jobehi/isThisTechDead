@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-04-12)
+## Latest Technology Updates (2026-04-13)
 
-[![.NET: 27](https://img.shields.io/badge/.NET-27%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/dot.net) [![Visual Studio Code: 31](https://img.shields.io/badge/Visual%20Studio%20Code-31%25-green?style=flat-square)](https://www.isthistechdead.com/vscode) [![Scala: 59](https://img.shields.io/badge/Scala-59%25-yellow?style=flat-square)](https://www.isthistechdead.com/scala) [![Git: 34](https://img.shields.io/badge/Git-34%25-green?style=flat-square)](https://www.isthistechdead.com/git) [![Swift: 35](https://img.shields.io/badge/Swift-35%25-green?style=flat-square)](https://www.isthistechdead.com/swift) [![Docker: 22](https://img.shields.io/badge/Docker-22%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/docker) 
+[![Amazon Web Services: 30](https://img.shields.io/badge/Amazon%20Web%20Services-30%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/aws) [![React Native: 29](https://img.shields.io/badge/React%20Native-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/react-native) [![Next.js: 30](https://img.shields.io/badge/Next.js-30%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/nextjs) [![Perl: 36](https://img.shields.io/badge/Perl-36%25-green?style=flat-square)](https://www.isthistechdead.com/perl) [![Kubernetes: 47](https://img.shields.io/badge/Kubernetes-47%25-green?style=flat-square)](https://www.isthistechdead.com/kubernetes) [![Microsoft Azure: 46](https://img.shields.io/badge/Microsoft%20Azure-46%25-green?style=flat-square)](https://www.isthistechdead.com/azure) 
 ## Project Components
 
 This monorepo contains two main components:
