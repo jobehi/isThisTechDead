@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-04-15)
+## Latest Technology Updates (2026-04-16)
 
-[![MongoDB: 35](https://img.shields.io/badge/MongoDB-35%25-green?style=flat-square)](https://www.isthistechdead.com/mongodb) [![Astro: 46](https://img.shields.io/badge/Astro-46%25-green?style=flat-square)](https://www.isthistechdead.com/astro) [![Flask: 54](https://img.shields.io/badge/Flask-54%25-yellow?style=flat-square)](https://www.isthistechdead.com/flask) [![CodeIgniter: 88](https://img.shields.io/badge/CodeIgniter-88%25-red?style=flat-square)](https://www.isthistechdead.com/code-igniter) [![NestJS: 35](https://img.shields.io/badge/NestJS-35%25-green?style=flat-square)](https://www.isthistechdead.com/nest) [![Drupal: 65](https://img.shields.io/badge/Drupal-65%25-yellow?style=flat-square)](https://www.isthistechdead.com/drupal) 
+[![Spring boot: 38](https://img.shields.io/badge/Spring%20boot-38%25-green?style=flat-square)](https://www.isthistechdead.com/spring) [![Phoenix Framework: 59](https://img.shields.io/badge/Phoenix%20Framework-59%25-yellow?style=flat-square)](https://www.isthistechdead.com/phoenix) [![Vue.js: 50](https://img.shields.io/badge/Vue.js-50%25-yellow?style=flat-square)](https://www.isthistechdead.com/vuejs) [![Cake PHP: 60](https://img.shields.io/badge/Cake%20PHP-60%25-yellow?style=flat-square)](https://www.isthistechdead.com/cakephp) [![Kotlin: 50](https://img.shields.io/badge/Kotlin-50%25-green?style=flat-square)](https://www.isthistechdead.com/kotlin) [![WordPress: 30](https://img.shields.io/badge/WordPress-30%25-green?style=flat-square)](https://www.isthistechdead.com/wordpress) 
 ## Project Components
 
 This monorepo contains two main components:
