@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-04-17)
+## Latest Technology Updates (2026-04-18)
 
-[![laravel: 32](https://img.shields.io/badge/laravel-32%25-green?style=flat-square)](https://www.isthistechdead.com/laravel) [![Silverlight: 84](https://img.shields.io/badge/Silverlight-84%25-orange?style=flat-square)](https://www.isthistechdead.com/silverlight) [![Deno: 46](https://img.shields.io/badge/Deno-46%25-green?style=flat-square)](https://www.isthistechdead.com/deno) [![Ruby on Rails: 56](https://img.shields.io/badge/Ruby%20on%20Rails-56%25-yellow?style=flat-square)](https://www.isthistechdead.com/rails) [![jQuery: 49](https://img.shields.io/badge/jQuery-49%25-green?style=flat-square)](https://www.isthistechdead.com/jquery) [![Node.js: 32](https://img.shields.io/badge/Node.js-32%25-green?style=flat-square)](https://www.isthistechdead.com/nodejs) 
+[![Laravel Livewire: 66](https://img.shields.io/badge/Laravel%20Livewire-66%25-yellow?style=flat-square)](https://www.isthistechdead.com/laravel-livewire) [![Magento: 58](https://img.shields.io/badge/Magento-58%25-yellow?style=flat-square)](https://www.isthistechdead.com/magento) [![October CMS: 70](https://img.shields.io/badge/October%20CMS-70%25-orange?style=flat-square)](https://www.isthistechdead.com/october) [![Compose Multiplatform: 55](https://img.shields.io/badge/Compose%20Multiplatform-55%25-yellow?style=flat-square)](https://www.isthistechdead.com/compose-mp) [![Gatsby: 70](https://img.shields.io/badge/Gatsby-70%25-yellow?style=flat-square)](https://www.isthistechdead.com/gatsbyjs) [![Xamarin: 69](https://img.shields.io/badge/Xamarin-69%25-yellow?style=flat-square)](https://www.isthistechdead.com/xamarin) 
 ## Project Components
 
 This monorepo contains two main components:
