@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-04-21)
+## Latest Technology Updates (2026-04-22)
 
-[![FastAPI: 31](https://img.shields.io/badge/FastAPI-31%25-green?style=flat-square)](https://www.isthistechdead.com/fastapi) [![Capacitor: 44](https://img.shields.io/badge/Capacitor-44%25-green?style=flat-square)](https://www.isthistechdead.com/capacitor) [![NativeScript: 84](https://img.shields.io/badge/NativeScript-84%25-orange?style=flat-square)](https://www.isthistechdead.com/nativescript) [![Typescript: 35](https://img.shields.io/badge/Typescript-35%25-green?style=flat-square)](https://www.isthistechdead.com/typescript) [![MySQL: 38](https://img.shields.io/badge/MySQL-38%25-green?style=flat-square)](https://www.isthistechdead.com/mysql) [![Orleans: 63](https://img.shields.io/badge/Orleans-63%25-yellow?style=flat-square)](https://www.isthistechdead.com/orleans) 
+[![Nuxt.js: 57](https://img.shields.io/badge/Nuxt.js-57%25-yellow?style=flat-square)](https://www.isthistechdead.com/nuxtjs) [![Vagrant: 78](https://img.shields.io/badge/Vagrant-78%25-orange?style=flat-square)](https://www.isthistechdead.com/vagrant) [![backbonejs: 84](https://img.shields.io/badge/backbonejs-84%25-orange?style=flat-square)](https://www.isthistechdead.com/backbone) [![strapi: 61](https://img.shields.io/badge/strapi-61%25-yellow?style=flat-square)](https://www.isthistechdead.com/strapi) [![Solar2D: 91](https://img.shields.io/badge/Solar2D-91%25-red?style=flat-square)](https://www.isthistechdead.com/solar2d) [![django: 44](https://img.shields.io/badge/django-44%25-green?style=flat-square)](https://www.isthistechdead.com/django) 
 ## Project Components
 
 This monorepo contains two main components:
