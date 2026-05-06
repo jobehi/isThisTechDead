@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-05-05)
+## Latest Technology Updates (2026-05-06)
 
-[![Solar2D: 92](https://img.shields.io/badge/Solar2D-92%25-red?style=flat-square)](https://www.isthistechdead.com/solar2d) [![django: 28](https://img.shields.io/badge/django-28%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/django) [![FastAPI: 48](https://img.shields.io/badge/FastAPI-48%25-green?style=flat-square)](https://www.isthistechdead.com/fastapi) [![Capacitor: 67](https://img.shields.io/badge/Capacitor-67%25-yellow?style=flat-square)](https://www.isthistechdead.com/capacitor) [![NativeScript: 79](https://img.shields.io/badge/NativeScript-79%25-orange?style=flat-square)](https://www.isthistechdead.com/nativescript) [![Typescript: 31](https://img.shields.io/badge/Typescript-31%25-green?style=flat-square)](https://www.isthistechdead.com/typescript) 
+[![Svelte: 49](https://img.shields.io/badge/Svelte-49%25-green?style=flat-square)](https://www.isthistechdead.com/svelte) [![elm: 66](https://img.shields.io/badge/elm-66%25-yellow?style=flat-square)](https://www.isthistechdead.com/elm) [![Nuxt.js: 56](https://img.shields.io/badge/Nuxt.js-56%25-yellow?style=flat-square)](https://www.isthistechdead.com/nuxtjs) [![Vagrant: 74](https://img.shields.io/badge/Vagrant-74%25-orange?style=flat-square)](https://www.isthistechdead.com/vagrant) [![backbonejs: 86](https://img.shields.io/badge/backbonejs-86%25-red?style=flat-square)](https://www.isthistechdead.com/backbone) [![strapi: 69](https://img.shields.io/badge/strapi-69%25-yellow?style=flat-square)](https://www.isthistechdead.com/strapi) 
 ## Project Components
 
 This monorepo contains two main components:
