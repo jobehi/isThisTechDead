@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-05-06)
+## Latest Technology Updates (2026-05-07)
 
-[![Svelte: 49](https://img.shields.io/badge/Svelte-49%25-green?style=flat-square)](https://www.isthistechdead.com/svelte) [![elm: 66](https://img.shields.io/badge/elm-66%25-yellow?style=flat-square)](https://www.isthistechdead.com/elm) [![Nuxt.js: 56](https://img.shields.io/badge/Nuxt.js-56%25-yellow?style=flat-square)](https://www.isthistechdead.com/nuxtjs) [![Vagrant: 74](https://img.shields.io/badge/Vagrant-74%25-orange?style=flat-square)](https://www.isthistechdead.com/vagrant) [![backbonejs: 86](https://img.shields.io/badge/backbonejs-86%25-red?style=flat-square)](https://www.isthistechdead.com/backbone) [![strapi: 69](https://img.shields.io/badge/strapi-69%25-yellow?style=flat-square)](https://www.isthistechdead.com/strapi) 
+[![Go: 27](https://img.shields.io/badge/Go-27%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/go) [![Ember.js: 72](https://img.shields.io/badge/Ember.js-72%25-orange?style=flat-square)](https://www.isthistechdead.com/emberjs) [![React: 35](https://img.shields.io/badge/React-35%25-green?style=flat-square)](https://www.isthistechdead.com/react) [![Symfony: 59](https://img.shields.io/badge/Symfony-59%25-yellow?style=flat-square)](https://www.isthistechdead.com/symfony) [![PHP: 32](https://img.shields.io/badge/PHP-32%25-green?style=flat-square)](https://www.isthistechdead.com/php) [![Firebase: 46](https://img.shields.io/badge/Firebase-46%25-green?style=flat-square)](https://www.isthistechdead.com/firebase) 
 ## Project Components
 
 This monorepo contains two main components:
