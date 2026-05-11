@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-05-10)
+## Latest Technology Updates (2026-05-11)
 
-[![Next.js: 40](https://img.shields.io/badge/Next.js-40%25-green?style=flat-square)](https://www.isthistechdead.com/nextjs) [![Perl: 36](https://img.shields.io/badge/Perl-36%25-green?style=flat-square)](https://www.isthistechdead.com/perl) [![Kubernetes: 39](https://img.shields.io/badge/Kubernetes-39%25-green?style=flat-square)](https://www.isthistechdead.com/kubernetes) [![Microsoft Azure: 57](https://img.shields.io/badge/Microsoft%20Azure-57%25-yellow?style=flat-square)](https://www.isthistechdead.com/azure) [![.NET: 38](https://img.shields.io/badge/.NET-38%25-green?style=flat-square)](https://www.isthistechdead.com/dot.net) [![Visual Studio Code: 44](https://img.shields.io/badge/Visual%20Studio%20Code-44%25-green?style=flat-square)](https://www.isthistechdead.com/vscode) 
+[![Python: 28](https://img.shields.io/badge/Python-28%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/python) [![cordova: 61](https://img.shields.io/badge/cordova-61%25-yellow?style=flat-square)](https://www.isthistechdead.com/cordova) [![meteor: 72](https://img.shields.io/badge/meteor-72%25-orange?style=flat-square)](https://www.isthistechdead.com/meteor) [![.NET MAUI: 37](https://img.shields.io/badge/.NET%20MAUI-37%25-green?style=flat-square)](https://www.isthistechdead.com/maui) [![Amazon Web Services: 39](https://img.shields.io/badge/Amazon%20Web%20Services-39%25-green?style=flat-square)](https://www.isthistechdead.com/aws) [![React Native: 12](https://img.shields.io/badge/React%20Native-12%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/react-native) 
 ## Project Components
 
 This monorepo contains two main components:
