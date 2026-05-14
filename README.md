@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-05-13)
+## Latest Technology Updates (2026-05-14)
 
-[![Vue.js: 54](https://img.shields.io/badge/Vue.js-54%25-yellow?style=flat-square)](https://www.isthistechdead.com/vuejs) [![Cake PHP: 72](https://img.shields.io/badge/Cake%20PHP-72%25-orange?style=flat-square)](https://www.isthistechdead.com/cakephp) [![Kotlin: 38](https://img.shields.io/badge/Kotlin-38%25-green?style=flat-square)](https://www.isthistechdead.com/kotlin) [![WordPress: 31](https://img.shields.io/badge/WordPress-31%25-green?style=flat-square)](https://www.isthistechdead.com/wordpress) [![MongoDB: 40](https://img.shields.io/badge/MongoDB-40%25-green?style=flat-square)](https://www.isthistechdead.com/mongodb) [![Astro: 46](https://img.shields.io/badge/Astro-46%25-green?style=flat-square)](https://www.isthistechdead.com/astro) 
+[![Deno: 52](https://img.shields.io/badge/Deno-52%25-yellow?style=flat-square)](https://www.isthistechdead.com/deno) [![Ruby on Rails: 45](https://img.shields.io/badge/Ruby%20on%20Rails-45%25-green?style=flat-square)](https://www.isthistechdead.com/rails) [![jQuery: 78](https://img.shields.io/badge/jQuery-78%25-orange?style=flat-square)](https://www.isthistechdead.com/jquery) [![Node.js: 31](https://img.shields.io/badge/Node.js-31%25-green?style=flat-square)](https://www.isthistechdead.com/nodejs) [![Spring boot: 32](https://img.shields.io/badge/Spring%20boot-32%25-green?style=flat-square)](https://www.isthistechdead.com/spring) [![Phoenix Framework: 49](https://img.shields.io/badge/Phoenix%20Framework-49%25-green?style=flat-square)](https://www.isthistechdead.com/phoenix) 
 ## Project Components
 
 This monorepo contains two main components:
