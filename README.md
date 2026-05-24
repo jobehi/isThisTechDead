@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-05-23)
+## Latest Technology Updates (2026-05-24)
 
-[![.NET: 31](https://img.shields.io/badge/.NET-31%25-green?style=flat-square)](https://www.isthistechdead.com/dot.net) [![Visual Studio Code: 35](https://img.shields.io/badge/Visual%20Studio%20Code-35%25-green?style=flat-square)](https://www.isthistechdead.com/vscode) [![Scala: 49](https://img.shields.io/badge/Scala-49%25-green?style=flat-square)](https://www.isthistechdead.com/scala) [![Git: 32](https://img.shields.io/badge/Git-32%25-green?style=flat-square)](https://www.isthistechdead.com/git) [![Swift: 40](https://img.shields.io/badge/Swift-40%25-green?style=flat-square)](https://www.isthistechdead.com/swift) [![Docker: 36](https://img.shields.io/badge/Docker-36%25-green?style=flat-square)](https://www.isthistechdead.com/docker) 
+[![Amazon Web Services: 41](https://img.shields.io/badge/Amazon%20Web%20Services-41%25-green?style=flat-square)](https://www.isthistechdead.com/aws) [![React Native: 36](https://img.shields.io/badge/React%20Native-36%25-green?style=flat-square)](https://www.isthistechdead.com/react-native) [![Next.js: 26](https://img.shields.io/badge/Next.js-26%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/nextjs) [![Perl: 42](https://img.shields.io/badge/Perl-42%25-green?style=flat-square)](https://www.isthistechdead.com/perl) [![Kubernetes: 34](https://img.shields.io/badge/Kubernetes-34%25-green?style=flat-square)](https://www.isthistechdead.com/kubernetes) [![Microsoft Azure: 57](https://img.shields.io/badge/Microsoft%20Azure-57%25-yellow?style=flat-square)](https://www.isthistechdead.com/azure) 
 ## Project Components
 
 This monorepo contains two main components:
