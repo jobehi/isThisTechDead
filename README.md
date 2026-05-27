@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-05-26)
+## Latest Technology Updates (2026-05-27)
 
-[![MongoDB: 49](https://img.shields.io/badge/MongoDB-49%25-green?style=flat-square)](https://www.isthistechdead.com/mongodb) [![Astro: 53](https://img.shields.io/badge/Astro-53%25-yellow?style=flat-square)](https://www.isthistechdead.com/astro) [![Flask: 37](https://img.shields.io/badge/Flask-37%25-green?style=flat-square)](https://www.isthistechdead.com/flask) [![CodeIgniter: 90](https://img.shields.io/badge/CodeIgniter-90%25-red?style=flat-square)](https://www.isthistechdead.com/code-igniter) [![NestJS: 36](https://img.shields.io/badge/NestJS-36%25-green?style=flat-square)](https://www.isthistechdead.com/nest) [![Drupal: 66](https://img.shields.io/badge/Drupal-66%25-yellow?style=flat-square)](https://www.isthistechdead.com/drupal) 
+[![Spring boot: 36](https://img.shields.io/badge/Spring%20boot-36%25-green?style=flat-square)](https://www.isthistechdead.com/spring) [![Phoenix Framework: 50](https://img.shields.io/badge/Phoenix%20Framework-50%25-yellow?style=flat-square)](https://www.isthistechdead.com/phoenix) [![Vue.js: 44](https://img.shields.io/badge/Vue.js-44%25-green?style=flat-square)](https://www.isthistechdead.com/vuejs) [![Cake PHP: 69](https://img.shields.io/badge/Cake%20PHP-69%25-yellow?style=flat-square)](https://www.isthistechdead.com/cakephp) [![Kotlin: 43](https://img.shields.io/badge/Kotlin-43%25-green?style=flat-square)](https://www.isthistechdead.com/kotlin) [![WordPress: 35](https://img.shields.io/badge/WordPress-35%25-green?style=flat-square)](https://www.isthistechdead.com/wordpress) 
 ## Project Components
 
 This monorepo contains two main components:
