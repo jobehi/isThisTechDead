@@ -75,7 +75,7 @@ typing-inspection==0.4.0
 typing_extensions==4.13.2
 update-checker==0.18.0
 uritemplate==4.1.1
-urllib3==2.4.0
+urllib3==2.6.3
 websocket-client==1.8.0
 websockets==14.2
 yarg==0.1.10
