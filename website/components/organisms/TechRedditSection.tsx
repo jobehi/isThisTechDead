@@ -16,16 +16,18 @@ interface RedditSectionProps {
 export default function TechRedditSection({ tech, last_snapshot }: RedditSectionProps) {
   const [showAllPosts, setShowAllPosts] = useState(false);
   const [showScoreInfo, setShowScoreInfo] = useState(false);
-  const redditMetrics = last_snapshot.reddit_metrics;
-  const redditPosts = redditMetrics.raw.posts || [];
-  const growthRate = last_snapshot.reddit_trend_growth_rate || 0;
+
+  // Defensively extracting metrics with optional chaining to prevent runtime crashes
+  const redditMetrics = last_snapshot?.reddit_metrics;
+  const redditPosts = redditMetrics?.raw?.posts || [];
+  const growthRate = last_snapshot?.reddit_trend_growth_rate || 0;
   const trendDirection = growthRate > 0 ? 'up' : growthRate < 0 ? 'down' : 'stable';
-  const subscribers = redditMetrics.subreddit_metrics?.subscribers || 0;
-  const activeUsers = redditMetrics.subreddit_metrics?.active_users || 0;
-  const migrationMentions = redditMetrics.migration_mentions || 0;
+  const subscribers = redditMetrics?.subreddit_metrics?.subscribers || 0;
+  const activeUsers = redditMetrics?.subreddit_metrics?.active_users || 0;
+  const migrationMentions = redditMetrics?.migration_mentions || 0;
 
   // Calculate how dead this tech is on Reddit
-  const deadnessLevel = redditMetrics.deaditude_score;
+  const deadnessLevel = redditMetrics?.deaditude_score || 0;
 
   // Get some snark based on metrics
   const getSnark = () => {
@@ -40,7 +42,7 @@ export default function TechRedditSection({ tech, last_snapshot }: RedditSection
 
   // Get a color class based on sentiment
   const getSentimentColorClass = () => {
-    const sentiment = redditMetrics.avg_sentiment || 0;
+    const sentiment = redditMetrics?.avg_sentiment || 0;
     if (sentiment > 0.3) return 'text-green-400';
     if (sentiment > 0) return 'text-lime-400';
     if (sentiment > -0.3) return 'text-orange-400';
@@ -188,13 +190,13 @@ export default function TechRedditSection({ tech, last_snapshot }: RedditSection
             <div className="grid grid-cols-2 gap-3 mb-4">
               <div>
                 <div className="text-2xl font-bold text-lime-400">
-                  {last_snapshot.reddit_post_count?.toLocaleString() || '0'}
+                  {last_snapshot?.reddit_post_count?.toLocaleString() || '0'}
                 </div>
                 <div className="text-xs text-zinc-500">Posts</div>
               </div>
               <div>
                 <div className="text-2xl font-bold text-lime-400">
-                  {last_snapshot.reddit_avg_upvotes?.toFixed(1) || '0'}
+                  {last_snapshot?.reddit_avg_upvotes?.toFixed(1) || '0'}
                 </div>
                 <div className="text-xs text-zinc-500">Avg. Upvotes</div>
               </div>
@@ -295,12 +297,12 @@ export default function TechRedditSection({ tech, last_snapshot }: RedditSection
 
           <div className="bg-zinc-900/40 p-4 rounded-lg">
             <h3 className="text-xs font-medium text-zinc-400 mb-2">Community Sentiment</h3>
-            {redditMetrics.avg_sentiment !== undefined ? (
+            {redditMetrics?.avg_sentiment !== undefined ? (
               <div>
                 <div className="w-full bg-zinc-700 rounded-full h-2.5 mb-2">
                   <div
                     className="h-full rounded-full bg-gradient-to-r from-red-500 via-yellow-500 to-green-500"
-                    style={{ width: `${(redditMetrics.avg_sentiment + 1) * 50}%` }}
+                    style={{ width: `${((redditMetrics?.avg_sentiment || 0) + 1) * 50}%` }}
                   ></div>
                 </div>
                 <div className="flex justify-between text-xs text-zinc-500">

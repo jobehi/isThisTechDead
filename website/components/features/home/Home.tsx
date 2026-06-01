@@ -284,14 +284,28 @@ const SNARKY_TAGLINES = [
 
 // Home client component
 export function Home({ initialTechs }: HomeProps) {
-  const randomTagline = useMemo(() => {
-    return SNARKY_TAGLINES[Math.floor(Math.random() * SNARKY_TAGLINES.length)];
+  const [isMounted, setIsMounted] = useState(false);
+  const [randomTagline, setRandomTagline] = useState('');
+
+  // Hydration-safe setup to prevent server/client rendering mismatch
+  // Hydration-safe setup to prevent server/client rendering mismatch
+  // Hydration-safe setup to prevent server/client rendering mismatch
+  useEffect(() => {
+    setIsMounted(true);
+    // Select tagline safely on client-side only after mounting
+    // Doğrudan tırnak içinde string yazdığımız için TypeScript bunun kesinlikle bir metin olduğunu anlar
+    const text =
+      SNARKY_TAGLINES[Math.floor(Math.random() * SNARKY_TAGLINES.length)] ||
+      'Where hopes, dreams, and frameworks come to die';
+    setRandomTagline(text);
   }, []);
 
   const headerRightContent = (
     <div className="text-xs text-zinc-400 flex items-center">
       <span className="animate-pulse mr-2 text-red-500">●</span>
-      Last updated: {formatDate(new Date().toISOString())}
+      Last updated:{' '}
+      {/* Dynamic date is client-only to ensure it doesn't mismatch during SSR hydration */}
+      {isMounted ? formatDate(new Date().toISOString()) : 'Loading...'}
     </div>
   );
 

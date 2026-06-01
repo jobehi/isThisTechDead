@@ -145,7 +145,7 @@ export function StackOverflowSection({ last_snapshot }: StackOverflowProps) {
         </div>
 
         {/* Recent Questions - only show if we have data */}
-        {so_metrics.raw.questions && so_metrics.raw.questions.length > 0 && (
+        {so_metrics?.raw?.questions && so_metrics?.raw?.questions?.length > 0 && (
           <div className="mt-6 bg-zinc-900/40 p-4 rounded-lg">
             <h3 className="text-sm font-medium text-zinc-300 mb-3">Recent Questions</h3>
 
