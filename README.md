@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-05-31)
+## Latest Technology Updates (2026-06-01)
 
-[![PostgreSQL: 26](https://img.shields.io/badge/PostgreSQL-26%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/postgresql) [![Angular: 41](https://img.shields.io/badge/Angular-41%25-green?style=flat-square)](https://www.isthistechdead.com/angular) [![ASP.NET: 48](https://img.shields.io/badge/ASP.NET-48%25-green?style=flat-square)](https://www.isthistechdead.com/asp.net) [![Joomla! CMS: 68](https://img.shields.io/badge/Joomla!%20CMS-68%25-yellow?style=flat-square)](https://www.isthistechdead.com/joomla) [![Ansible: 58](https://img.shields.io/badge/Ansible-58%25-yellow?style=flat-square)](https://www.isthistechdead.com/ansible) [![Avalonia: 61](https://img.shields.io/badge/Avalonia-61%25-yellow?style=flat-square)](https://www.isthistechdead.com/avalonia) 
+[![FastAPI: 44](https://img.shields.io/badge/FastAPI-44%25-green?style=flat-square)](https://www.isthistechdead.com/fastapi) [![Capacitor: 60](https://img.shields.io/badge/Capacitor-60%25-yellow?style=flat-square)](https://www.isthistechdead.com/capacitor) [![NativeScript: 91](https://img.shields.io/badge/NativeScript-91%25-red?style=flat-square)](https://www.isthistechdead.com/nativescript) [![Typescript: 24](https://img.shields.io/badge/Typescript-24%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/typescript) [![MySQL: 39](https://img.shields.io/badge/MySQL-39%25-green?style=flat-square)](https://www.isthistechdead.com/mysql) [![Orleans: 58](https://img.shields.io/badge/Orleans-58%25-yellow?style=flat-square)](https://www.isthistechdead.com/orleans) 
 ## Project Components
 
 This monorepo contains two main components:
