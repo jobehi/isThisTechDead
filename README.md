@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-06-01)
+## Latest Technology Updates (2026-06-02)
 
-[![FastAPI: 44](https://img.shields.io/badge/FastAPI-44%25-green?style=flat-square)](https://www.isthistechdead.com/fastapi) [![Capacitor: 60](https://img.shields.io/badge/Capacitor-60%25-yellow?style=flat-square)](https://www.isthistechdead.com/capacitor) [![NativeScript: 91](https://img.shields.io/badge/NativeScript-91%25-red?style=flat-square)](https://www.isthistechdead.com/nativescript) [![Typescript: 24](https://img.shields.io/badge/Typescript-24%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/typescript) [![MySQL: 39](https://img.shields.io/badge/MySQL-39%25-green?style=flat-square)](https://www.isthistechdead.com/mysql) [![Orleans: 58](https://img.shields.io/badge/Orleans-58%25-yellow?style=flat-square)](https://www.isthistechdead.com/orleans) 
+[![Nuxt.js: 45](https://img.shields.io/badge/Nuxt.js-45%25-green?style=flat-square)](https://www.isthistechdead.com/nuxtjs) [![Vagrant: 74](https://img.shields.io/badge/Vagrant-74%25-orange?style=flat-square)](https://www.isthistechdead.com/vagrant) [![backbonejs: 90](https://img.shields.io/badge/backbonejs-90%25-red?style=flat-square)](https://www.isthistechdead.com/backbone) [![strapi: 67](https://img.shields.io/badge/strapi-67%25-yellow?style=flat-square)](https://www.isthistechdead.com/strapi) [![Solar2D: 87](https://img.shields.io/badge/Solar2D-87%25-red?style=flat-square)](https://www.isthistechdead.com/solar2d) [![django: 28](https://img.shields.io/badge/django-28%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/django) 
 ## Project Components
 
 This monorepo contains two main components:
