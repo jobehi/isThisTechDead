@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-06-02)
+## Latest Technology Updates (2026-06-03)
 
-[![Nuxt.js: 45](https://img.shields.io/badge/Nuxt.js-45%25-green?style=flat-square)](https://www.isthistechdead.com/nuxtjs) [![Vagrant: 74](https://img.shields.io/badge/Vagrant-74%25-orange?style=flat-square)](https://www.isthistechdead.com/vagrant) [![backbonejs: 90](https://img.shields.io/badge/backbonejs-90%25-red?style=flat-square)](https://www.isthistechdead.com/backbone) [![strapi: 67](https://img.shields.io/badge/strapi-67%25-yellow?style=flat-square)](https://www.isthistechdead.com/strapi) [![Solar2D: 87](https://img.shields.io/badge/Solar2D-87%25-red?style=flat-square)](https://www.isthistechdead.com/solar2d) [![django: 28](https://img.shields.io/badge/django-28%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/django) 
+[![React: 35](https://img.shields.io/badge/React-35%25-green?style=flat-square)](https://www.isthistechdead.com/react) [![Symfony: 51](https://img.shields.io/badge/Symfony-51%25-yellow?style=flat-square)](https://www.isthistechdead.com/symfony) [![PHP: 39](https://img.shields.io/badge/PHP-39%25-green?style=flat-square)](https://www.isthistechdead.com/php) [![Firebase: 41](https://img.shields.io/badge/Firebase-41%25-green?style=flat-square)](https://www.isthistechdead.com/firebase) [![Svelte: 45](https://img.shields.io/badge/Svelte-45%25-green?style=flat-square)](https://www.isthistechdead.com/svelte) [![elm: 62](https://img.shields.io/badge/elm-62%25-yellow?style=flat-square)](https://www.isthistechdead.com/elm) 
 ## Project Components
 
 This monorepo contains two main components:
