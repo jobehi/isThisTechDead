@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-06-14)
+## Latest Technology Updates (2026-06-15)
 
-[![MySQL: 36](https://img.shields.io/badge/MySQL-36%25-green?style=flat-square)](https://www.isthistechdead.com/mysql) [![Orleans: 58](https://img.shields.io/badge/Orleans-58%25-yellow?style=flat-square)](https://www.isthistechdead.com/orleans) [![PostgreSQL: 22](https://img.shields.io/badge/PostgreSQL-22%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/postgresql) [![Angular: 37](https://img.shields.io/badge/Angular-37%25-green?style=flat-square)](https://www.isthistechdead.com/angular) [![ASP.NET: 45](https://img.shields.io/badge/ASP.NET-45%25-green?style=flat-square)](https://www.isthistechdead.com/asp.net) [![Joomla! CMS: 76](https://img.shields.io/badge/Joomla!%20CMS-76%25-orange?style=flat-square)](https://www.isthistechdead.com/joomla) 
+[![Solar2D: 86](https://img.shields.io/badge/Solar2D-86%25-red?style=flat-square)](https://www.isthistechdead.com/solar2d) [![django: 30](https://img.shields.io/badge/django-30%25-green?style=flat-square)](https://www.isthistechdead.com/django) [![FastAPI: 48](https://img.shields.io/badge/FastAPI-48%25-green?style=flat-square)](https://www.isthistechdead.com/fastapi) [![Capacitor: 46](https://img.shields.io/badge/Capacitor-46%25-green?style=flat-square)](https://www.isthistechdead.com/capacitor) [![NativeScript: 92](https://img.shields.io/badge/NativeScript-92%25-red?style=flat-square)](https://www.isthistechdead.com/nativescript) [![Typescript: 42](https://img.shields.io/badge/Typescript-42%25-green?style=flat-square)](https://www.isthistechdead.com/typescript) 
 ## Project Components
 
 This monorepo contains two main components:
