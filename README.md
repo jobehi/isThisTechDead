@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-06-19)
+## Latest Technology Updates (2026-06-20)
 
-[![Scala: 52](https://img.shields.io/badge/Scala-52%25-yellow?style=flat-square)](https://www.isthistechdead.com/scala) [![Git: 29](https://img.shields.io/badge/Git-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/git) [![Swift: 35](https://img.shields.io/badge/Swift-35%25-green?style=flat-square)](https://www.isthistechdead.com/swift) [![Docker: 30](https://img.shields.io/badge/Docker-30%25-green?style=flat-square)](https://www.isthistechdead.com/docker) [![Terraform: 52](https://img.shields.io/badge/Terraform-52%25-yellow?style=flat-square)](https://www.isthistechdead.com/terraform) [![Ruby: 50](https://img.shields.io/badge/Ruby-50%25-green?style=flat-square)](https://www.isthistechdead.com/ruby) 
+[![Next.js: 42](https://img.shields.io/badge/Next.js-42%25-green?style=flat-square)](https://www.isthistechdead.com/nextjs) [![Perl: 41](https://img.shields.io/badge/Perl-41%25-green?style=flat-square)](https://www.isthistechdead.com/perl) [![Kubernetes: 32](https://img.shields.io/badge/Kubernetes-32%25-green?style=flat-square)](https://www.isthistechdead.com/kubernetes) [![Microsoft Azure: 54](https://img.shields.io/badge/Microsoft%20Azure-54%25-yellow?style=flat-square)](https://www.isthistechdead.com/azure) [![.NET: 26](https://img.shields.io/badge/.NET-26%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/dot.net) [![Visual Studio Code: 32](https://img.shields.io/badge/Visual%20Studio%20Code-32%25-green?style=flat-square)](https://www.isthistechdead.com/vscode) 
 ## Project Components
 
 This monorepo contains two main components:
