@@ -19,10 +19,10 @@ from typing import Any, Dict, Optional
 # ---------------------------------------------------------------------------
 BASE_WEIGHTS: Dict[str, float] = {
     "github": 0.20,
-    "google_jobs": 0.20,
-    "reddit": 0.15,
-    "stackshare": 0.15,
-    "youtube": 0.15,
+    "google_jobs": 0.25,
+    "reddit": 0.10,
+    "stackshare": 0.2,
+    "youtube": 0.10,
     "stackoverflow": 0.10,
     "hn": 0.05,
 }
@@ -41,7 +41,7 @@ YOUNG_TECH_WEIGHTS: Dict[str, float] = {
     "hn": 0.05,
 }
 
-YOUNG_TECH_THRESHOLD = 5
+YOUNG_TECH_THRESHOLD = 2
 MATURING_TECH_THRESHOLD = 10
 
 DIMENSIONS = {
@@ -93,9 +93,9 @@ def _get_tech_age(tech_info: Optional[Dict[str, Any]]) -> int:
 def _adjust_score_by_age(score: float, tech_age: int) -> float:
     """Apply age‑based generosity multiplier (same math as original)."""
     if tech_age <= YOUNG_TECH_THRESHOLD:
-        factor = 0.85
-    elif tech_age <= MATURING_TECH_THRESHOLD:
         factor = 0.90
+    elif tech_age <= MATURING_TECH_THRESHOLD:
+        factor = 0.95
     else:
         factor = 1.0
     return score * factor
