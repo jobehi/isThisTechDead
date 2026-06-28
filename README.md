@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
 
-## Latest Technology Updates (2026-06-27)
+## Latest Technology Updates (2026-06-28)
 
-[![ASP.NET: 36](https://img.shields.io/badge/ASP.NET-36%25-green?style=flat-square)](https://www.isthistechdead.com/asp.net) [![Joomla! CMS: 77](https://img.shields.io/badge/Joomla!%20CMS-77%25-orange?style=flat-square)](https://www.isthistechdead.com/joomla) [![Ansible: 49](https://img.shields.io/badge/Ansible-49%25-green?style=flat-square)](https://www.isthistechdead.com/ansible) [![Avalonia: 65](https://img.shields.io/badge/Avalonia-65%25-yellow?style=flat-square)](https://www.isthistechdead.com/avalonia) [![Electron: 42](https://img.shields.io/badge/Electron-42%25-green?style=flat-square)](https://www.isthistechdead.com/electron) [![Express js: 64](https://img.shields.io/badge/Express%20js-64%25-yellow?style=flat-square)](https://www.isthistechdead.com/expressjs) 
+[![NativeScript: 92](https://img.shields.io/badge/NativeScript-92%25-red?style=flat-square)](https://www.isthistechdead.com/nativescript) [![Typescript: 38](https://img.shields.io/badge/Typescript-38%25-green?style=flat-square)](https://www.isthistechdead.com/typescript) [![MySQL: 42](https://img.shields.io/badge/MySQL-42%25-green?style=flat-square)](https://www.isthistechdead.com/mysql) [![Orleans: 61](https://img.shields.io/badge/Orleans-61%25-yellow?style=flat-square)](https://www.isthistechdead.com/orleans) [![PostgreSQL: 35](https://img.shields.io/badge/PostgreSQL-35%25-green?style=flat-square)](https://www.isthistechdead.com/postgresql) [![Angular: 39](https://img.shields.io/badge/Angular-39%25-green?style=flat-square)](https://www.isthistechdead.com/angular) 
 ## Project Components
 
 This monorepo contains two main components:
