@@ -985,34 +985,34 @@ table.appendix-table tr:last-child td {
    HOME PAGE: BOOKTABS TABLE
 ------------------------------------- */
 
-.booktabs-table {
+table.booktabs-table {
   width: 100%;
   border-collapse: collapse;
   margin: 2rem 0;
 }
 
-.booktabs-table th {
+table.booktabs-table th {
   border-top: var(--border-width-thick) solid var(--table-border-color);
   border-bottom: var(--border-width-thin) solid var(--table-border-color);
   font-weight: bold;
 }
 
-.booktabs-table th, .booktabs-table td {
-  padding: 0.5rem 0;
+table.booktabs-table th, table.booktabs-table td {
+  padding: 0.75rem 1rem;
 }
 
-.booktabs-table tr:last-child td {
+table.booktabs-table tr:last-child td {
   border-bottom: var(--border-width-thick) solid var(--table-border-color);
 }
 
-.booktabs-table .tech-row {
+table.booktabs-table .tech-row {
   transition: background-color 0.2s ease;
 }
 
-.booktabs-table .tech-row:hover {
+table.booktabs-table .tech-row:hover {
   background-color: rgba(0, 0, 0, 0.03);
 }
 
-.latex-dark .booktabs-table .tech-row:hover {
+.latex-dark table.booktabs-table .tech-row:hover {
   background-color: rgba(255, 255, 255, 0.05);
 }
