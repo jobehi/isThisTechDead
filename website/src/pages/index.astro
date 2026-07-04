@@ -6,9 +6,43 @@ const techs = await TechService.getAllTechs();
 
 const title = "Is This Tech Dead?";
 const abstract = "This document presents an ongoing, highly scientific, and definitely unbiased analysis of various technologies to determine their level of relevance, or 'Deaditude'. We examine numerous extremely objective indicators to provide a definitive score. Below is the current registry of technologies and their respective existential statuses.";
+
+// Calculate scatter plot data
+const currentYear = new Date().getFullYear();
+const scatterData = techs.map(tech => {
+  const score = tech.latest_score !== null ? tech.latest_score : 50; // default 50% for N/A
+  const year = tech.creation_year || 2010;
+  const age = Math.max(0, currentYear - year); // non-negative age
+  
+  // Use a Square Root scale for age (X-axis) as a perfect compromise 
+  // between linear and log, without any hard capping.
+  // We use maxAge = 55 (approx age of C/Unix) for the top end of the scale.
+  const maxAge = 55;
+  const maxSqrt = Math.sqrt(maxAge);
+  const ageSqrt = Math.sqrt(age);
+  
+  let xPos = (ageSqrt / maxSqrt) * 100;
+  xPos = Math.max(0, Math.min(100, xPos)); // clamp outliers above 55 just in case
+  
+  // Y axis is score (0% to 100%)
+  const yPos = score;
+  
+  return {
+    ...tech,
+    xPos,
+    yPos,
+    age,
+    scoreFormatted: tech.latest_score !== null ? `${tech.latest_score.toFixed(1)}%` : 'N/A'
+  };
+});
 ---
 
 <AcademicLayout title={title} abstract={abstract}>
+  <div class="author">
+    Published by: The Open Source Community<br />
+    <em>Journal of Deprecated Technologies</em>
+  </div>
+
   <section>
     <h2>1. Introduction</h2>
     <p>
@@ -20,7 +54,33 @@ const abstract = "This document presents an ongoing, highly scientific, and defi
   </section>
 
   <section>
-    <h2>2. Registry of Technologies</h2>
+    <h2>2. Global Existential Matrix</h2>
+    <p>
+      Figure 1 plots the Deaditude score against the age of the technology (years since initial release). 
+      This matrix visually demonstrates the correlation between a framework's lifespan and its eventual deprecation dread.
+    </p>
+
+    <div class="scatter-container">
+      <div class="scatter-plot">
+        <div class="scatter-axis-y">Deaditude Score (%)</div>
+        {scatterData.map(tech => (
+          <div class="scatter-dot" style={`left: ${tech.xPos}%; bottom: ${tech.yPos}%;`}>
+            <div class="scatter-tooltip">
+              <strong>{tech.name}</strong><br />
+              Age: {tech.age} yrs | Score: {tech.scoreFormatted}
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="scatter-axis-x">
+        <span class="scatter-axis-label">Technology Age (Years)</span>
+      </div>
+      <figcaption>Figure 1: Scatter plot of existential dread. Older technologies tend to either stabilize or decay rapidly.</figcaption>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. Registry of Technologies</h2>
     <p>
       The following table presents the current assessment of technologies under review. A higher Deaditude Score indicates 
       a greater likelihood that your resume needs updating.
@@ -43,12 +103,12 @@ const abstract = "This document presents an ongoing, highly scientific, and defi
       </select>
     </div>
     
-    <table id="tech-table">
+    <table id="tech-table" class="booktabs-table">
       <thead>
         <tr>
           <th>Technology</th>
           <th>Category</th>
-          <th>Deaditude Score</th>
+          <th style="text-align: right;">Deaditude</th>
           <th>Assessment</th>
         </tr>
       </thead>
@@ -57,7 +117,7 @@ const abstract = "This document presents an ongoing, highly scientific, and defi
           <tr class="tech-row" data-name={tech.name.toLowerCase()} data-category={tech.category.toLowerCase()} data-score={tech.latest_score !== null ? tech.latest_score : -1}>
             <td><a href={`/${tech.id}`}><strong>{tech.name}</strong></a></td>
             <td style="text-transform: capitalize;">{tech.category}</td>
-            <td>{tech.latest_score !== null ? `${tech.latest_score}%` : 'N/A'}</td>
+            <td style="text-align: right; font-family: monospace;">{tech.latest_score !== null ? `${tech.latest_score.toFixed(1)}%` : 'N/A'}</td>
             <td>{tech.latest_score !== null ? TechService.getRatingLabel(tech.latest_score) : 'Awaiting Data'}</td>
           </tr>
         ))}
@@ -66,7 +126,7 @@ const abstract = "This document presents an ongoing, highly scientific, and defi
   </section>
 
   <section>
-    <h2>3. Contributions</h2>
+    <h2>4. Contributions</h2>
     <p>
       The community is encouraged to contribute data points to our analysis. If you are currently maintaining a project 
       built with a technology listed here (bless your heart), you may submit it for peer review on the respective technology's page.
@@ -130,8 +190,9 @@ const abstract = "This document presents an ongoing, highly scientific, and defi
   .controls-container input, .controls-container select {
     padding: 0.5rem;
     font-family: inherit;
-    border: 1px solid #ccc;
-    background: #fafafa;
+    border: 1px solid var(--body-color);
+    background: var(--body-bg-color);
+    color: var(--body-color);
     font-size: 1rem;
     flex: 1;
     min-width: 200px;

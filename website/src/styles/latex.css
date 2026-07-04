@@ -908,3 +908,111 @@ table.appendix-table tr:last-child td {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/* ----------------------------------
+   HOME PAGE: GLOBAL EXISTENTIAL MATRIX
+------------------------------------- */
+
+.scatter-container {
+  margin: 3rem 0;
+}
+
+.scatter-plot {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  border-left: var(--border-width-thick) solid var(--body-color);
+  border-bottom: var(--border-width-thick) solid var(--body-color);
+  background-image: 
+    linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
+    linear-gradient(to top, rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size: 10% 10%;
+}
+
+.scatter-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: var(--body-color);
+  border-radius: 50%;
+  transform: translate(-50%, 50%);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.scatter-dot:hover {
+  transform: translate(-50%, 50%) scale(2);
+  background-color: var(--link-visited);
+}
+
+.scatter-tooltip {
+  position: absolute;
+  bottom: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--body-color);
+  color: var(--body-bg-color);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75em;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.scatter-dot:hover .scatter-tooltip {
+  opacity: 1;
+}
+
+.scatter-axis-label {
+  font-size: 0.8em;
+  font-style: italic;
+  font-variant-caps: small-caps;
+}
+.scatter-axis-x {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+.scatter-axis-y {
+  position: absolute;
+  left: -2.5rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: center;
+}
+
+/* ----------------------------------
+   HOME PAGE: BOOKTABS TABLE
+------------------------------------- */
+
+.booktabs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+}
+
+.booktabs-table th {
+  border-top: var(--border-width-thick) solid var(--table-border-color);
+  border-bottom: var(--border-width-thin) solid var(--table-border-color);
+  font-weight: bold;
+}
+
+.booktabs-table th, .booktabs-table td {
+  padding: 0.5rem 0;
+}
+
+.booktabs-table tr:last-child td {
+  border-bottom: var(--border-width-thick) solid var(--table-border-color);
+}
+
+.booktabs-table .tech-row {
+  transition: background-color 0.2s ease;
+}
+
+.booktabs-table .tech-row:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.latex-dark .booktabs-table .tech-row:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
