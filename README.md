@@ -19,7 +19,7 @@ We track the slow, painful decline of frameworks, languages, and tools that prom
 
 ## Latest Technology Updates (2026-07-04)
 
-[![Supabase: 35](https://img.shields.io/badge/Supabase-35%25-green?style=flat-square)](https://www.isthistechdead.com/supabase) [![Lynx: 55](https://img.shields.io/badge/Lynx-55%25-yellow?style=flat-square)](https://www.isthistechdead.com/lynx) [![Python: 22](https://img.shields.io/badge/Python-22%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/python) [![cordova: 83](https://img.shields.io/badge/cordova-83%25-orange?style=flat-square)](https://www.isthistechdead.com/cordova) [![meteor: 67](https://img.shields.io/badge/meteor-67%25-yellow?style=flat-square)](https://www.isthistechdead.com/meteor) [![.NET MAUI: 45](https://img.shields.io/badge/.NET%20MAUI-45%25-green?style=flat-square)](https://www.isthistechdead.com/maui) 
+[![MongoDB: 39](https://img.shields.io/badge/MongoDB-39%25-green?style=flat-square)](https://www.isthistechdead.com/mongodb) [![Astro: 36](https://img.shields.io/badge/Astro-36%25-green?style=flat-square)](https://www.isthistechdead.com/astro) [![Flask: 52](https://img.shields.io/badge/Flask-52%25-yellow?style=flat-square)](https://www.isthistechdead.com/flask) [![CodeIgniter: 76](https://img.shields.io/badge/CodeIgniter-76%25-orange?style=flat-square)](https://www.isthistechdead.com/code-igniter) [![NestJS: 43](https://img.shields.io/badge/NestJS-43%25-green?style=flat-square)](https://www.isthistechdead.com/nest) [![Drupal: 65](https://img.shields.io/badge/Drupal-65%25-yellow?style=flat-square)](https://www.isthistechdead.com/drupal) 
 ## Project Components
 
 This monorepo contains two main components:
