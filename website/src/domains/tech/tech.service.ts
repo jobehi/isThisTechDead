@@ -20,16 +20,26 @@ export class TechService {
     // Transform to include scores and metrics - doing this in parallel for better performance
     const techsWithScores = await Promise.all(
       techs.map(async tech => {
-        // Get latest snapshot, respect count, and project count in parallel
-        const [latestSnapshot, respectCount, projectCount] = await Promise.all([
-          TechRepository.getLatestSnapshotByTechId(tech.id),
+        // Get optimized snapshots (just scores/dates), respect count, and project count in parallel
+        const [snapshots, respectCount, projectCount] = await Promise.all([
+          TechRepository.getRecentSnapshotsByTechId(tech.id, 2),
           TechRepository.getRespectCount(tech.id),
           TechRepository.getProjectCountByTechId(tech.id),
         ]);
+        
+        const latestSnapshot = snapshots[0] || null;
+        const previousSnapshot = snapshots[1] || null;
+        
+        let score_momentum: number | null = null;
+        if (latestSnapshot?.deaditude_score !== undefined && previousSnapshot?.deaditude_score !== undefined) {
+          score_momentum = latestSnapshot.deaditude_score - previousSnapshot.deaditude_score;
+        }
 
         return {
           ...tech,
-          latest_score: latestSnapshot?.deaditude_score || null,
+          latest_score: latestSnapshot?.deaditude_score ?? null,
+          previous_score: previousSnapshot?.deaditude_score ?? null,
+          score_momentum,
           latest_snapshot_date: latestSnapshot?.snapshot_date || null,
           respect_count: respectCount,
           project_count: projectCount,

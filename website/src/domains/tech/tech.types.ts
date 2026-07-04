@@ -28,6 +28,8 @@ export interface Tech {
  */
 export interface TechWithScore extends Tech {
   latest_score: number | null;
+  previous_score: number | null;
+  score_momentum: number | null;
   latest_snapshot_date: string | null;
   respect_count: number;
   project_count: number;

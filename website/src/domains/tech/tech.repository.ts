@@ -71,6 +71,26 @@ export class TechRepository {
   }
 
   /**
+   * Get optimized recent snapshots for a tech (for list views)
+   */
+  static async getRecentSnapshotsByTechId(techId: string, limit: number = 2): Promise<Partial<Snapshot>[]> {
+    try {
+      const { data, error } = await supabase
+        .from(DB_TABLES.TECH_SNAPSHOTS)
+        .select('deaditude_score, snapshot_date')
+        .eq('tech_id', techId)
+        .order('snapshot_date', { ascending: false })
+        .limit(limit);
+
+      if (error) throw error;
+      return data || [];
+    } catch (error) {
+      handleSupabaseError(error, 'Get recent snapshots by tech id');
+      return [];
+    }
+  }
+
+  /**
    * Get the latest snapshot for a tech
    */
   static async getLatestSnapshotByTechId(techId: string): Promise<Snapshot | null> {

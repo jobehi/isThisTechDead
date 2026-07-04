@@ -117,7 +117,14 @@ const scatterData = techs.map(tech => {
           <tr class="tech-row" data-name={tech.name.toLowerCase()} data-category={tech.category.toLowerCase()} data-score={tech.latest_score !== null ? tech.latest_score : -1}>
             <td><a href={`/${tech.id}`}><strong>{tech.name}</strong></a></td>
             <td style="text-transform: capitalize;">{tech.category}</td>
-            <td style="text-align: right; font-family: monospace;">{tech.latest_score !== null ? `${tech.latest_score.toFixed(1)}%` : 'N/A'}</td>
+            <td style="text-align: right; font-family: monospace; white-space: nowrap;">
+              {tech.latest_score !== null ? `${tech.latest_score.toFixed(1)}%` : 'N/A'}
+              {tech.score_momentum !== null && tech.score_momentum !== 0 && (
+                <span style={`color: ${tech.score_momentum > 0 ? '#d32f2f' : '#2e7d32'}; font-size: 0.85em; margin-left: 0.5rem;`} title="Momentum since last snapshot">
+                  {tech.score_momentum > 0 ? '▲ +' : '▼ '}{tech.score_momentum.toFixed(1)}%
+                </span>
+              )}
+            </td>
             <td>{tech.latest_score !== null ? TechService.getRatingLabel(tech.latest_score) : 'Awaiting Data'}</td>
           </tr>
         ))}

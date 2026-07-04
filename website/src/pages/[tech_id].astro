@@ -41,6 +41,66 @@ const points = historicalSnapshots.map((snap, i) => {
   return `${x},${y}`;
 }).join(' ');
 
+// 1. Momentum
+const previousSnapshot = historicalSnapshots.length >= 2 ? historicalSnapshots[historicalSnapshots.length - 2] : null;
+const score_momentum = previousSnapshot && latestSnapshot ? (latestSnapshot.deaditude_score - previousSnapshot.deaditude_score) : null;
+
+// 2. ETD (Estimated Time of Death) Linear Regression
+let etdText = "Prognosis: Insufficient Data";
+if (historicalSnapshots.length >= 2) {
+  let sumX = 0, sumY = 0, sumXY = 0, sumXX = 0;
+  const n = historicalSnapshots.length;
+  const startTime = new Date(historicalSnapshots[0].snapshot_date).getTime();
+  const msPerYear = 1000 * 60 * 60 * 24 * 365.25;
+
+  historicalSnapshots.forEach(snap => {
+    const x = (new Date(snap.snapshot_date).getTime() - startTime) / msPerYear;
+    const y = snap.deaditude_score;
+    sumX += x;
+    sumY += y;
+    sumXY += x * y;
+    sumXX += x * x;
+  });
+
+  const denominator = (n * sumXX - sumX * sumX);
+  if (denominator !== 0) {
+    const m = (n * sumXY - sumX * sumY) / denominator;
+    const b = (sumY - m * sumX) / n;
+    
+    if (m > 0) {
+      const yearsTo100 = (100 - b) / m;
+      const dateAt100 = new Date(startTime + yearsTo100 * msPerYear);
+      // Cap at year 9999 to avoid crazy large numbers if slope is tiny
+      const yearStr = dateAt100.getFullYear() > 9999 ? '> 9999' : dateAt100.getFullYear().toString();
+      etdText = `Prognosis: ETD ${yearStr}`;
+    } else {
+      etdText = `Prognosis: Stable / Immortal`;
+    }
+  }
+}
+
+// 3. Radar Chart (Existential Footprint) Math
+const radarRadius = 80;
+const radarCenter = 120;
+const radarSize = 240;
+const angleStep = (Math.PI * 2) / allComponents.length;
+
+const radarPoints = allComponents.map((c, i) => {
+  const r = (c.score / 100) * radarRadius;
+  const theta = i * angleStep - Math.PI / 2;
+  const x = radarCenter + r * Math.cos(theta);
+  const y = radarCenter + r * Math.sin(theta);
+  return `${x},${y}`;
+}).join(' ');
+
+const radarGrid = [25, 50, 75, 100].map(pct => {
+  const r = (pct / 100) * radarRadius;
+  return allComponents.map((_, i) => {
+    const theta = i * angleStep - Math.PI / 2;
+    return `${radarCenter + r * Math.cos(theta)},${radarCenter + r * Math.sin(theta)}`;
+  }).join(' ');
+});
+
 const title = `${tech.name}`;
 const abstract = `An in-depth empirical analysis of the remaining vitality of ${tech.name}. This document explores historical data points, community despair, and residual hype to determine its true existential status.`;
 ---
@@ -59,8 +119,19 @@ const abstract = `An in-depth empirical analysis of the remaining vitality of ${
 
     <div style="text-align: center; margin: 3rem 0;">
       <div style="font-size: 5rem; font-weight: bold; line-height: 1;">{score !== null ? `${score.toFixed(1)}%` : 'N/A'}</div>
+      
+      {score_momentum !== null && score_momentum !== 0 && (
+        <div style={`font-size: 1.5rem; font-weight: bold; color: ${score_momentum > 0 ? '#d32f2f' : '#2e7d32'}; margin-top: 0.5rem;`}>
+          {score_momentum > 0 ? '▲ Worsening' : '▼ Improving'} ({score_momentum > 0 ? '+' : ''}{score_momentum.toFixed(1)}% since last check)
+        </div>
+      )}
+
       <div style="font-size: 1.2rem; font-variant-caps: small-caps; margin-top: 0.5rem; color: var(--body-color);">
         Current Deaditude Score &mdash; {score !== null ? TechService.formatTechScore(score) : 'Awaiting Data'}
+      </div>
+
+      <div style="font-size: 1.2rem; font-weight: bold; font-variant-caps: small-caps; margin-top: 0.5rem; color: var(--body-color);">
+        {etdText}
       </div>
       
       {allComponents.length > 0 && (
@@ -94,18 +165,62 @@ const abstract = `An in-depth empirical analysis of the remaining vitality of ${
 
     {allComponents.length > 0 && (
       <div class="figure-chart" style="margin-top: 2rem;">
-        <h4 style="text-align: center; margin-top: 0; font-variant-caps: small-caps;">Figure 1: Deaditude Component Analysis</h4>
-        {allComponents.map(c => (
-          <div class="css-bar-container">
-            <div class="css-bar-label" style="text-transform: capitalize;">{c.name}</div>
-            <div class="css-bar-track">
-              <div class="css-bar-fill" style={`width: ${Math.min(100, Math.max(0, c.score))}%;`}></div>
-            </div>
-            <div class="css-bar-value">{c.score.toFixed(1)}%</div>
-          </div>
-        ))}
+        <h4 style="text-align: center; margin-top: 0; font-variant-caps: small-caps;">Figure 1: Existential Footprint</h4>
+        
+        <div style="display: flex; justify-content: center; align-items: center; padding: 2rem 0;">
+          <svg viewBox={`0 0 ${radarSize} ${radarSize}`} style="width: 100%; max-width: 400px; height: auto; overflow: visible; font-family: monospace;">
+            <!-- Grid -->
+            {radarGrid.map(pts => (
+              <polygon points={pts} fill="none" stroke="var(--kbd-border-color)" stroke-dasharray="2" />
+            ))}
+            
+            <!-- Axes -->
+            {allComponents.map((_, i) => {
+              const theta = i * angleStep - Math.PI / 2;
+              return (
+                <line 
+                  x1={radarCenter} y1={radarCenter} 
+                  x2={radarCenter + radarRadius * Math.cos(theta)} 
+                  y2={radarCenter + radarRadius * Math.sin(theta)} 
+                  stroke="var(--kbd-border-color)" 
+                />
+              );
+            })}
+            
+            <!-- Data Polygon -->
+            <polygon points={radarPoints} fill="rgba(211, 47, 47, 0.3)" stroke="#d32f2f" stroke-width="2" />
+            
+            <!-- Data Points & Labels -->
+            {allComponents.map((c, i) => {
+              const r = (c.score / 100) * radarRadius;
+              const theta = i * angleStep - Math.PI / 2;
+              const x = radarCenter + r * Math.cos(theta);
+              const y = radarCenter + r * Math.sin(theta);
+              
+              // Label position (slightly outside the max radius)
+              const labelR = radarRadius + 30;
+              const labelX = radarCenter + labelR * Math.cos(theta);
+              const labelY = radarCenter + labelR * Math.sin(theta);
+              
+              // Anchor text based on side
+              let anchor = "middle";
+              if (Math.cos(theta) > 0.1) anchor = "start";
+              if (Math.cos(theta) < -0.1) anchor = "end";
+              
+              return (
+                <g>
+                  <circle cx={x} cy={y} r="4" fill="#d32f2f" />
+                  <text x={labelX} y={labelY + 4} text-anchor={anchor} fill="currentColor" font-size="12" font-weight="bold">
+                    {c.key} ({c.score.toFixed(0)}%)
+                  </text>
+                </g>
+              );
+            })}
+          </svg>
+        </div>
+        
         <div class="figure-caption">
-          Visual representation of existential threat by vector. 
+          Radar analysis mapping the six distinct vectors of existential threat.
         </div>
       </div>
     )}
