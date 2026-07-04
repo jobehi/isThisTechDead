@@ -115,7 +115,7 @@ const scatterData = techs.map(tech => {
       <tbody>
         {techs.map(tech => (
           <tr class="tech-row" data-name={tech.name.toLowerCase()} data-category={tech.category.toLowerCase()} data-score={tech.latest_score !== null ? tech.latest_score : -1}>
-            <td><a href={`/${tech.id}`}><strong>{tech.name}</strong></a></td>
+            <td><a href={`${import.meta.env.BASE_URL}${tech.id}`}><strong>{tech.name}</strong></a></td>
             <td style="text-transform: capitalize;">{tech.category}</td>
             <td style="text-align: right; font-family: monospace; white-space: nowrap;">
               {tech.latest_score !== null ? `${tech.latest_score.toFixed(1)}%` : 'N/A'}

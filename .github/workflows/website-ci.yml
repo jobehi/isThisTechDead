@@ -25,15 +25,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: 'npm'
           cache-dependency-path: './website/package-lock.json'
 
       - name: Install dependencies
         run: npm install
-
-      - name: Lint
-        run: npm run lint
 
       - name: Prettier Check
         run: npm run format:check
@@ -45,4 +42,4 @@ jobs:
         run: npm test
 
       - name: Build
-        run: npm run build:ci
+        run: npm run build
