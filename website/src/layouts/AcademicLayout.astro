@@ -24,16 +24,25 @@ const { title, author = ' An Empirical Analysis of Technological Relevance', dat
   <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
   <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  
   <style>
     /* Additional custom overrides to match the LaTeX aesthetic perfectly */
-    body {
-      max-width: 800px;
+    html, :root {
+      font-size: 19px !important; /* A comfortable, readable size for serifs on screens */
+    }
+    body, body.libertinus {
+      font-family: 'Lora', 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
+      max-width: 850px; 
       margin: 0 auto;
-      padding: 2rem 1rem;
+      padding: 2rem 1.5rem;
+      line-height: 1.8;
     }
     .title-block {
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
     }
     .title-block h1 {
       margin-bottom: 0.5rem;

@@ -370,68 +370,68 @@ const snapshotDate = latestSnapshot ? new Date(latestSnapshot.snapshot_date).toL
           <div class="metric-card">
             <h4>Codebase Vitality (GitHub)</h4>
             <ul>
-              <li><strong>Stars:</strong> {latestSnapshot.github_stars?.toLocaleString() || 'N/A'}</li>
-              <li><strong>Forks:</strong> {latestSnapshot.github_forks?.toLocaleString() || 'N/A'}</li>
-              <li><strong>Open Issues:</strong> {latestSnapshot.github_issues_open?.toLocaleString() || 'N/A'}</li>
-              <li><strong>Issues Closed Ratio:</strong> {latestSnapshot.github_issues_closed_ratio !== undefined ? `${(latestSnapshot.github_issues_closed_ratio * 100).toFixed(1)}%` : 'N/A'}</li>
-              <li><strong>Recent Commits (last month):</strong> {latestSnapshot.github_commits_last_month?.toLocaleString() || '0'}</li>
-              <li><strong>Days Since Last Commit:</strong> {latestSnapshot.github_days_since_last_commit?.toLocaleString() || 'N/A'}</li>
-              <li><strong>Contributors Count:</strong> {latestSnapshot.github_contributors_count?.toLocaleString() || 'N/A'}</li>
-              <li><strong>Trend Direction:</strong> {latestSnapshot.github_trend_direction || 'N/A'}</li>
-              <li><strong>Trend Growth Rate:</strong> {latestSnapshot.github_trend_growth_rate !== undefined ? `${(latestSnapshot.github_trend_growth_rate * 100).toFixed(1)}%` : 'N/A'}</li>
+              <li><strong>Stars:</strong> {latestSnapshot.github_stars?.toLocaleString() ?? 'N/A'}</li>
+              <li><strong>Forks:</strong> {latestSnapshot.github_forks?.toLocaleString() ?? 'N/A'}</li>
+              <li><strong>Open Issues:</strong> {latestSnapshot.github_issues_open?.toLocaleString() ?? 'N/A'}</li>
+              <li><strong>Issues Closed Ratio:</strong> {latestSnapshot.github_issues_closed_ratio != null ? `${(latestSnapshot.github_issues_closed_ratio * 100).toFixed(1)}%` : 'N/A'}</li>
+              <li><strong>Recent Commits (last month):</strong> {latestSnapshot.github_commits_last_month?.toLocaleString() ?? '0'}</li>
+              <li><strong>Days Since Last Commit:</strong> {latestSnapshot.github_days_since_last_commit?.toLocaleString() ?? 'N/A'}</li>
+              <li><strong>Contributors Count:</strong> {latestSnapshot.github_contributors_count?.toLocaleString() ?? 'N/A'}</li>
+              <li><strong>Trend Direction:</strong> {latestSnapshot.github_trend_direction ?? 'N/A'}</li>
+              <li><strong>Trend Growth Rate:</strong> {latestSnapshot.github_trend_growth_rate != null ? `${(latestSnapshot.github_trend_growth_rate * 100).toFixed(1)}%` : 'N/A'}</li>
             </ul>
           </div>
 
           <div class="metric-card">
             <h4>Community Cry for Help (StackOverflow)</h4>
             <ul>
-              <li><strong>Total Questions (recent):</strong> {latestSnapshot.so_total_questions?.toLocaleString() || 'N/A'}</li>
-              <li><strong>Answered Ratio:</strong> {latestSnapshot.so_answered_ratio !== undefined ? `${(latestSnapshot.so_answered_ratio * 100).toFixed(1)}%` : 'N/A'}</li>
-              <li><strong>Accepted Ratio:</strong> {latestSnapshot.so_accepted_ratio !== undefined ? `${(latestSnapshot.so_accepted_ratio * 100).toFixed(1)}%` : 'N/A'}</li>
-              <li><strong>Zero Answer Ratio:</strong> {latestSnapshot.so_zero_answer_ratio !== undefined ? `${(latestSnapshot.so_zero_answer_ratio * 100).toFixed(1)}%` : 'N/A'}</li>
-              <li><strong>Median Response Time (hr):</strong> {latestSnapshot.so_median_response_hr?.toLocaleString() || 'N/A'}</li>
-              <li><strong>Days Since Last Activity:</strong> {latestSnapshot.so_last_activity_days?.toLocaleString() || 'N/A'}</li>
-              <li><strong>Trend Direction:</strong> {latestSnapshot.so_trend_direction || 'N/A'}</li>
+              <li><strong>Total Questions (recent):</strong> {latestSnapshot.so_total_questions?.toLocaleString() ?? 'N/A'}</li>
+              <li><strong>Answered Ratio:</strong> {latestSnapshot.so_answered_ratio != null ? `${(latestSnapshot.so_answered_ratio * 100).toFixed(1)}%` : 'N/A'}</li>
+              <li><strong>Accepted Ratio:</strong> {latestSnapshot.so_accepted_ratio != null ? `${(latestSnapshot.so_accepted_ratio * 100).toFixed(1)}%` : 'N/A'}</li>
+              <li><strong>Zero Answer Ratio:</strong> {latestSnapshot.so_zero_answer_ratio != null ? `${(latestSnapshot.so_zero_answer_ratio * 100).toFixed(1)}%` : 'N/A'}</li>
+              <li><strong>Median Response Time (hr):</strong> {latestSnapshot.so_median_response_hr?.toLocaleString() ?? 'N/A'}</li>
+              <li><strong>Days Since Last Activity:</strong> {latestSnapshot.so_last_activity_days?.toLocaleString() ?? 'N/A'}</li>
+              <li><strong>Trend Direction:</strong> {latestSnapshot.so_trend_direction ?? 'N/A'}</li>
             </ul>
           </div>
 
           <div class="metric-card">
             <h4>Hype & Propaganda (YouTube)</h4>
             <ul>
-              <li><strong>Recent Videos:</strong> {latestSnapshot.youtube_video_count?.toLocaleString() || 'N/A'}</li>
-              <li><strong>Average Views:</strong> {latestSnapshot.youtube_avg_views?.toLocaleString() || 'N/A'}</li>
+              <li><strong>Recent Videos:</strong> {latestSnapshot.youtube_video_count?.toLocaleString() ?? 'N/A'}</li>
+              <li><strong>Average Views:</strong> {latestSnapshot.youtube_avg_views?.toLocaleString() ?? 'N/A'}</li>
             </ul>
           </div>
 
           <div class="metric-card">
             <h4>Despair & Existential Dread (Reddit)</h4>
             <ul>
-              <li><strong>Reddit Posts (recent):</strong> {latestSnapshot.reddit_post_count?.toLocaleString() || 'N/A'}</li>
-              <li><strong>Average Upvotes:</strong> {latestSnapshot.reddit_avg_upvotes !== undefined ? latestSnapshot.reddit_avg_upvotes.toFixed(1) : 'N/A'}</li>
-              <li><strong>Trend Direction:</strong> {latestSnapshot.reddit_trend_direction || 'N/A'}</li>
-              <li><strong>Trend Growth Rate:</strong> {latestSnapshot.reddit_trend_growth_rate !== undefined ? `${(latestSnapshot.reddit_trend_growth_rate * 100).toFixed(1)}%` : 'N/A'}</li>
+              <li><strong>Reddit Posts (recent):</strong> {latestSnapshot.reddit_post_count?.toLocaleString() ?? 'N/A'}</li>
+              <li><strong>Average Upvotes:</strong> {latestSnapshot.reddit_avg_upvotes != null ? latestSnapshot.reddit_avg_upvotes.toFixed(1) : 'N/A'}</li>
+              <li><strong>Trend Direction:</strong> {latestSnapshot.reddit_trend_direction ?? 'N/A'}</li>
+              <li><strong>Trend Growth Rate:</strong> {latestSnapshot.reddit_trend_growth_rate != null ? `${(latestSnapshot.reddit_trend_growth_rate * 100).toFixed(1)}%` : 'N/A'}</li>
             </ul>
           </div>
 
           <div class="metric-card">
             <h4>Intellectual Discourse (Hacker News)</h4>
             <ul>
-              <li><strong>Mentions (recent):</strong> {latestSnapshot.hn_post_count?.toLocaleString() || 'N/A'}</li>
-              <li><strong>Average Points:</strong> {latestSnapshot.hn_avg_points !== undefined ? latestSnapshot.hn_avg_points.toFixed(1) : 'N/A'}</li>
-              <li><strong>Days Since Last Post:</strong> {latestSnapshot.hn_days_since_last?.toLocaleString() || 'N/A'}</li>
+              <li><strong>Mentions (recent):</strong> {latestSnapshot.hn_post_count?.toLocaleString() ?? 'N/A'}</li>
+              <li><strong>Average Points:</strong> {latestSnapshot.hn_avg_points != null ? latestSnapshot.hn_avg_points.toFixed(1) : 'N/A'}</li>
+              <li><strong>Days Since Last Post:</strong> {latestSnapshot.hn_days_since_last?.toLocaleString() ?? 'N/A'}</li>
             </ul>
           </div>
 
           <div class="metric-card">
             <h4>Corporate Adoption (StackShare & Jobs)</h4>
             <ul>
-              <li><strong>Stacks Using It:</strong> {latestSnapshot.stackshare_stacks_count?.toLocaleString() || 'N/A'}</li>
-              <li><strong>StackShare Followers:</strong> {latestSnapshot.stackshare_followers?.toLocaleString() || 'N/A'}</li>
-              <li><strong>StackShare Upvotes:</strong> {latestSnapshot.stackshare_upvotes?.toLocaleString() || 'N/A'}</li>
-              <li><strong>StackShare Mentions:</strong> {latestSnapshot.stackshare_mentions?.toLocaleString() || 'N/A'}</li>
-              <li><strong>Open Job Postings:</strong> {latestSnapshot.google_jobs_count?.toLocaleString() || 'N/A'}</li>
-              <li><strong>Jobs Trend Direction:</strong> {latestSnapshot.google_jobs_trend_direction || 'N/A'}</li>
-              <li><strong>Jobs Trend Growth Rate:</strong> {latestSnapshot.google_jobs_trend_growth_rate !== undefined ? `${(latestSnapshot.google_jobs_trend_growth_rate * 100).toFixed(1)}%` : 'N/A'}</li>
+              <li><strong>Stacks Using It:</strong> {latestSnapshot.stackshare_stacks_count?.toLocaleString() ?? 'N/A'}</li>
+              <li><strong>StackShare Followers:</strong> {latestSnapshot.stackshare_followers?.toLocaleString() ?? 'N/A'}</li>
+              <li><strong>StackShare Upvotes:</strong> {latestSnapshot.stackshare_upvotes?.toLocaleString() ?? 'N/A'}</li>
+              <li><strong>StackShare Mentions:</strong> {latestSnapshot.stackshare_mentions?.toLocaleString() ?? 'N/A'}</li>
+              <li><strong>Open Job Postings:</strong> {latestSnapshot.google_jobs_count?.toLocaleString() ?? 'N/A'}</li>
+              <li><strong>Jobs Trend Direction:</strong> {latestSnapshot.google_jobs_trend_direction ?? 'N/A'}</li>
+              <li><strong>Jobs Trend Growth Rate:</strong> {latestSnapshot.google_jobs_trend_growth_rate != null ? `${(latestSnapshot.google_jobs_trend_growth_rate * 100).toFixed(1)}%` : 'N/A'}</li>
             </ul>
           </div>
         </div>

@@ -62,7 +62,7 @@ jobs:
           BASE_PATH: "/${{ github.event.repository.name }}/"
           BUILD_TECHS: ${{ inputs.tech_ids || github.event.client_payload.tech_ids || '' }}
       - name: Bypass Jekyll
-        run: touch website/dist/.nojekyll
+        run: touch dist/.nojekyll
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:

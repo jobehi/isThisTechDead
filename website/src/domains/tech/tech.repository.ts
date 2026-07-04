@@ -46,7 +46,7 @@ export class TechRepository {
 
       if (error) throw error;
 
-      return data;
+      return data as unknown as Tech[];
     } catch (error) {
       handleSupabaseError(error, 'Get all techs');
     }

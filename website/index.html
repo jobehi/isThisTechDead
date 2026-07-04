@@ -1,0 +1,1150 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-iezfjbsl><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Is This Tech Dead? - Is This Tech Dead?</title><meta name="description" content="This document presents an ongoing, highly scientific, and definitely unbiased analysis of various technologies to determine their level of relevance, or 'Deaditude'. We examine numerous extremely objective indicators to provide a definitive score. Below is the current registry of technologies and their respective existential statuses."><link rel="preconnect" href="https://scripts.simpleanalyticscdn.com"><link rel="preconnect" href="https://static.simpleanalyticscdn.com"><script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script><noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" data-astro-cid-iezfjbsl></noscript><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet"><style data-vite-dev-id="/Users/youssef/Desktop/Dev/isThisTechDead/website/src/styles/latex.css">/*!
+ * LaTeX.css (https://latex.vercel.app/)
+ *
+ * Source: https://github.com/vincentdoerig/latex-css
+ * Licensed under MIT (https://github.com/vincentdoerig/latex-css/blob/master/LICENSE)
+*/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Base Variables with Enhanced UI Variables */
+:root {
+  --body-color: hsl(0, 5%, 10%);
+  --body-bg-color: hsl(0, 0%, 99%);
+  --link-visited: hsl(0, 100%, 33%);
+  --link-focus-outline: hsl(220, 90%, 52%);
+  --pre-bg-color: hsl(210, 28%, 93%);
+  --kbd-bg-color: hsl(210, 5%, 100%);
+  --kbd-border-color: hsl(210, 5%, 70%);
+  --table-border-color: black;
+  --border-width-thin: 1.36px;
+  --border-width-thick: 2.27px;
+  --sidenote-target-border-color: hsl(55, 55%, 70%);
+  --footnotes-border-color: hsl(0, 0%, 39%);
+
+  /* Premium UI Enhancements */
+  --premium-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --premium-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --premium-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --hover-bg: rgba(0, 0, 0, 0.03);
+  --card-bg: #ffffff;
+  --transition-fast: 0.15s ease;
+  --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  --text-indent-size: 1.463rem; /* In 12pt [Latin Modern font] LaTeX article
+  \parindent =~ 17.625pt; taking also into account the ratio
+  1pt[LaTeX] = (72 / 72.27) * 1pt[HTML], with default 12pt/1rem LaTeX.css font
+  size, the identation value in rem CSS units is:
+  \parindent =~ 17.625 * (72 / 72.27) / 12 = 1.463rem. */
+}
+
+.latex-dark {
+  --body-color: hsl(0, 0%, 86%);
+  --body-bg-color: hsl(0, 0%, 12%);
+  --link-visited: hsl(196 80% 77%);
+  --link-focus-outline: hsl(215, 63%, 73%);
+  --pre-bg-color: hsl(0, 1%, 18%);
+  --kbd-bg-color: hsl(0, 0%, 16%);
+  --kbd-border-color: hsl(210, 5%, 70%);
+  --table-border-color: white;
+  --sidenote-target-border-color: hsl(0, 0%, 59%);
+  --footnotes-border-color: hsl(0, 0%, 59%);
+  --proof-symbol-filter: invert(80%);
+
+  --hover-bg: rgba(255, 255, 255, 0.05);
+  --card-bg: hsl(0, 0%, 15%);
+  --premium-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
+  --premium-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
+  --premium-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  .latex-dark-auto {
+    --body-color: hsl(0, 0%, 86%);
+    --body-bg-color: hsl(0, 0%, 12%);
+    --link-visited: hsl(196 80% 77%);
+    --link-focus-outline: hsl(215, 63%, 73%);
+    --pre-bg-color: hsl(0, 1%, 18%);
+    --kbd-bg-color: hsl(0, 0%, 16%);
+    --kbd-border-color: hsl(210, 5%, 70%);
+    --table-border-color: white;
+    --sidenote-target-border-color: hsl(0, 0%, 59%);
+    --footnotes-border-color: hsl(0, 0%, 59%);
+    --proof-symbol-filter: invert(80%);
+
+    --hover-bg: rgba(255, 255, 255, 0.05);
+    --card-bg: hsl(0, 0%, 15%);
+    --premium-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
+    --premium-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
+    --premium-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+  }
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Make default font-size 1rem and add smooth scrolling to anchors */
+html {
+  font-size: 1rem;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body.libertinus {
+  font-family: 'Libertinus', Georgia, Cambria, 'Times New Roman', Times, serif;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+body {
+  font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
+  line-height: 1.8;
+
+  max-width: 80ch;
+  min-height: 100vh;
+  overflow-x: hidden;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+
+  counter-reset: theorem definition sidenote-counter;
+
+  color: var(--body-color);
+  background-color: var(--body-bg-color);
+
+  text-rendering: optimizeLegibility;
+
+  /* Allow automatic hyphenation for all text in the document */
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+}
+
+p {
+  margin-top: 1rem;
+}
+
+/* Indents paragraphs like in LaTeX documents*/
+.indent-pars p {
+  text-indent: var(--text-indent-size);
+}
+
+.indent-pars p.no-indent,
+p.no-indent {
+  text-indent: 0;
+}
+
+.indent-pars ol p,
+.indent-pars ul p {
+  text-indent: 0;
+}
+
+.indent-pars h2 + p,
+.indent-pars h3 + p,
+.indent-pars h4 + p {
+  text-indent: 0;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make links red */
+a,
+a:visited {
+  color: var(--link-visited);
+}
+
+a:focus {
+  outline-offset: 2px;
+  outline: 2px solid var(--link-focus-outline);
+}
+
+/* Allow line breaks between any two characters */
+.break-all {
+  /*
+    NOTE: Whith `break-all` value no hyphens are shown, even if the word breaks
+    at a hyphenation point
+  */
+  word-break: break-all;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Prevent textarea from overflowing */
+textarea {
+  width: 100%;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Styles for inline code or code snippets */
+code,
+pre,
+kbd {
+  font-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  font-size: 85%;
+  hyphens: none;
+}
+pre {
+  padding: 1rem 1.4rem;
+  max-width: 100%;
+  overflow: auto;
+  border-radius: 4px;
+  background: var(--pre-bg-color);
+}
+pre code {
+  font-size: 95%;
+  position: relative;
+}
+kbd {
+  background: var(--kbd-bg-color);
+  border: 1px solid var(--kbd-border-color);
+  border-radius: 2px;
+  padding: 2px 4px;
+  font-size: 75%;
+}
+
+/* Better tables */
+table:not(.borders-custom) {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: auto;
+  max-width: 100%;
+  border-top: var(--border-width-thick) solid var(--table-border-color);
+  border-bottom: var(--border-width-thick) solid var(--table-border-color);
+  /* display: block; */
+  overflow-x: auto; /* does not work because element is not block */
+  /* white-space: nowrap; */
+  counter-increment: caption;
+}
+/* add bottom border on column table headings  */
+table:not(.borders-custom) tr > th[scope='col'] {
+  border-bottom: var(--border-width-thin) solid var(--table-border-color);
+}
+/* add right border on row table headings  */
+table:not(.borders-custom) tr > th[scope='row'] {
+  border-right: var(--border-width-thin) solid var(--table-border-color);
+}
+table:not(.borders-custom) > tbody > tr:first-child > td,
+table:not(.borders-custom) > tbody > tr:first-child > th {
+  border-top: var(--border-width-thin) solid var(--table-border-color);
+}
+table:not(.borders-custom) > tbody > tr:last-child > td,
+table:not(.borders-custom) > tbody > tr:last-child > th {
+  border-bottom: var(--border-width-thin) solid var(--table-border-color);
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.5rem;
+  line-height: 1.1;
+}
+/* Table caption */
+caption {
+  text-align: left;
+  font-size: 0.923em;
+  /* border-bottom: 2pt solid #000; */
+  padding: 0 0.25em 0.25em;
+  width: 100%;
+  margin-left: 0;
+}
+
+caption::before {
+  content: 'Table ' counter(caption) '. ';
+  font-weight: bold;
+}
+
+/* allow scroll on the x-axis */
+.scroll-wrapper {
+  overflow-x: auto;
+}
+
+/* if a table is wrapped in a scroll wrapper,
+  the table cells shouldn't wrap */
+.scroll-wrapper > table td {
+  white-space: nowrap;
+}
+
+/* Table custom borders */
+table.borders-custom {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: auto;
+  max-width: 100%;
+  overflow-x: auto;
+  counter-increment: caption;
+}
+
+.border-top-thick {
+  border-top: var(--border-width-thick) solid var(--table-border-color);
+}
+.border-right-thick {
+  border-right: var(--border-width-thick) solid var(--table-border-color);
+}
+.border-bottom-thick {
+  border-bottom: var(--border-width-thick) solid var(--table-border-color);
+}
+.border-left-thick {
+  border-left: var(--border-width-thick) solid var(--table-border-color);
+}
+
+.border-top-thin {
+  border-top: var(--border-width-thin) solid var(--table-border-color);
+}
+.border-right-thin {
+  border-right: var(--border-width-thin) solid var(--table-border-color);
+}
+.border-bottom-thin {
+  border-bottom: var(--border-width-thin) solid var(--table-border-color);
+}
+.border-left-thin {
+  border-left: var(--border-width-thin) solid var(--table-border-color);
+}
+
+/* Table column alignment */
+.col-1-l tr > :nth-child(1),
+.col-2-l tr > :nth-child(2),
+.col-3-l tr > :nth-child(3),
+.col-4-l tr > :nth-child(4),
+.col-5-l tr > :nth-child(5),
+.col-6-l tr > :nth-child(6),
+.col-7-l tr > :nth-child(7),
+.col-8-l tr > :nth-child(8),
+.col-9-l tr > :nth-child(9),
+.col-10-l tr > :nth-child(10),
+.col-11-l tr > :nth-child(11),
+.col-12-l tr > :nth-child(12) {
+  text-align: left;
+}
+.col-1-c tr > :nth-child(1),
+.col-2-c tr > :nth-child(2),
+.col-3-c tr > :nth-child(3),
+.col-4-c tr > :nth-child(4),
+.col-5-c tr > :nth-child(5),
+.col-6-c tr > :nth-child(6),
+.col-7-c tr > :nth-child(7),
+.col-8-c tr > :nth-child(8),
+.col-9-c tr > :nth-child(9),
+.col-10-c tr > :nth-child(10),
+.col-11-c tr > :nth-child(11),
+.col-12-c tr > :nth-child(12) {
+  text-align: center;
+}
+.col-1-r tr > :nth-child(1),
+.col-2-r tr > :nth-child(2),
+.col-3-r tr > :nth-child(3),
+.col-4-r tr > :nth-child(4),
+.col-5-r tr > :nth-child(5),
+.col-6-r tr > :nth-child(6),
+.col-7-r tr > :nth-child(7),
+.col-8-r tr > :nth-child(8),
+.col-9-r tr > :nth-child(9),
+.col-10-r tr > :nth-child(10),
+.col-11-r tr > :nth-child(11),
+.col-12-r tr > :nth-child(12) {
+  text-align: right;
+}
+
+/* Format figure captions (based on table captions) */
+figure {
+  counter-increment: figcaption;
+}
+figcaption {
+  text-align: left;
+  font-size: 0.923em;
+  padding: 0.25em 0.25em 0;
+  width: 100%;
+  margin-left: 0;
+}
+figcaption::before {
+  content: 'Figure ' counter(figcaption) '. ';
+  font-weight: bold;
+}
+
+/* Center align the title */
+h1:first-child {
+  text-align: center;
+}
+
+/* Nested ordered list for ToC */
+nav ol {
+  counter-reset: item;
+  padding-left: 2rem;
+}
+nav ol > li {
+  display: block;
+}
+nav ol > li::before {
+  content: counters(item, '.') ' ';
+  counter-increment: item;
+  padding-right: 0.85rem;
+}
+
+/* Center definitions (most useful for display equations) */
+dl dd {
+  text-align: center;
+}
+
+/* Theorem */
+.theorem {
+  counter-increment: theorem;
+  display: block;
+  margin: 12px 0;
+  font-style: italic;
+}
+.theorem::before {
+  content: 'Theorem ' counter(theorem) '. ';
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Lemma */
+.lemma {
+  counter-increment: theorem;
+  display: block;
+  margin: 12px 0;
+  font-style: italic;
+}
+.lemma::before {
+  content: 'Lemma ' counter(theorem) '. ';
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Proof */
+.proof {
+  display: block;
+  margin: 12px 0;
+  font-style: normal;
+  position: relative;
+}
+.proof::before {
+  content: 'Proof. ' attr(title);
+  font-style: italic;
+}
+.proof::after {
+  content: '◾️';
+  filter: var(--proof-symbol-filter);
+  position: absolute;
+  right: -12px;
+  bottom: -2px;
+}
+
+/* Definition */
+.definition {
+  counter-increment: definition;
+  display: block;
+  margin: 12px 0;
+  font-style: normal;
+}
+.definition::before {
+  content: 'Definition ' counter(definition) '. ';
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Center align author name, use small caps and add vertical spacing  */
+.author {
+  margin: 0.85rem 0;
+  font-variant-caps: small-caps;
+  text-align: center;
+}
+
+/* Sidenotes */
+
+.sidenote {
+  font-size: 0.8rem;
+  float: right;
+  clear: right;
+  width: 18vw;
+  margin-right: -20vw;
+  margin-bottom: 1em;
+  text-indent: 0;
+  /* Right sidenotes explicitly aligned to left for wide screens */
+  text-align: left;
+}
+
+.sidenote.left {
+  float: left;
+  margin-left: -20vw;
+  margin-bottom: 1em;
+  text-indent: 0;
+  /* Left sidenotes explicitly aligned to right for wide screens */
+  text-align: right;
+}
+
+/* Justify all sidenotes for wide screens when `text-justify` class is used */
+body.text-justify .sidenote,
+body.text-justify .sidenote.left {
+  text-align: justify;
+}
+
+/* (WIP) add border when a sidenote is clicked on */
+.sidenote:target {
+  border: var(--sidenote-target-border-color) 1.5px solid;
+  padding: 0 0.5rem;
+  scroll-margin-block-start: 10rem;
+}
+
+/* sidenote counter */
+.sidenote-number {
+  counter-increment: sidenote-counter;
+}
+
+.sidenote-number::after,
+.sidenote::before {
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* add number in main content */
+.sidenote-number::after {
+  content: counter(sidenote-counter);
+  font-size: 0.7rem;
+  top: -0.5rem;
+  left: 0.1rem;
+}
+
+/* add number in front of the sidenote */
+.sidenote-number ~ .sidenote::before {
+  content: counter(sidenote-counter) ' ';
+  font-size: 0.7rem;
+  top: -0.5rem;
+}
+
+label.sidenote-toggle:not(.sidenote-number) {
+  display: none;
+}
+
+/* sidenotes inside blockquotes are indented more */
+blockquote .sidenote {
+  margin-right: -24vw;
+  width: 18vw;
+}
+
+label.sidenote-toggle {
+  display: inline;
+  cursor: pointer;
+}
+
+input.sidenote-toggle {
+  display: none;
+}
+
+@media (max-width: 1050px) {
+  label.sidenote-toggle:not(.sidenote-number) {
+    display: inline;
+  }
+  .sidenote {
+    display: none;
+  }
+  .sidenote-toggle:checked + .sidenote {
+    display: block;
+    margin: 0.5rem 1.25rem 1rem 0.5rem;
+    float: left;
+    left: 1rem;
+    clear: both;
+    width: 95%;
+  }
+
+  /* All sidenotes explicitly aligned to left for narrow screens */
+  .sidenote-toggle:checked + .sidenote.left {
+    text-align: left;
+  }
+
+  /* Justify all sidenotes for narrow screens when `text-justify` class is used */
+  body.text-justify .sidenote-toggle:checked + .sidenote.left {
+    text-align: justify;
+  }
+
+  /* tweak indentation of sidenote inside a blockquote */
+  blockquote .sidenote {
+    margin-right: -25vw;
+    width: 16vw;
+  }
+}
+
+/* Make footnote text smaller */
+.footnotes p {
+  line-height: 1.5;
+  font-size: 85%;
+  margin-bottom: 0.4rem;
+}
+.footnotes {
+  border-top: 1px solid var(--footnotes-border-color);
+}
+
+/* Center title and paragraph */
+.abstract,
+.abstract p {
+  text-align: center;
+  margin-top: 0;
+}
+.abstract {
+  margin: 2.25rem 0;
+}
+.abstract > h2 {
+  font-size: 1rem;
+  margin-bottom: -0.2rem;
+}
+
+/* Format the LaTeX symbol correctly (a higher up, e lower) */
+.latex span:nth-child(1) {
+  text-transform: uppercase;
+  font-size: 0.75em;
+  vertical-align: 0.28em;
+  margin-left: -0.48em;
+  margin-right: -0.15em;
+  line-height: 1ex;
+}
+
+.latex span:nth-child(2) {
+  text-transform: uppercase;
+  vertical-align: -0.5ex;
+  margin-left: -0.1667em;
+  margin-right: -0.125em;
+  line-height: 1ex;
+}
+
+/* Prevent line breaks inside an element */
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
+/* Heading typography */
+h1 {
+  font-size: 2.5rem;
+  line-height: 3.25rem;
+  margin-bottom: 1.625rem;
+}
+
+h2 {
+  font-size: 1.7rem;
+  line-height: 2rem;
+  margin-top: 3rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+  margin-top: 2.5rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+h5 {
+  font-size: 1rem;
+  margin-top: 1.8rem;
+}
+
+h6 {
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: normal;
+  margin-top: 2.5rem;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.625rem;
+}
+
+h1 + h2 {
+  margin-top: 1.625rem;
+}
+
+h2 + h3,
+h3 + h4,
+h4 + h5 {
+  margin-top: 0.8rem;
+}
+
+h5 + h6 {
+  margin-top: -0.8rem;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.8rem;
+}
+
+/* ----------------------------------
+   CUSTOM UI / UX ENHANCEMENTS 
+   (Academic PhD Paper Aesthetics)
+------------------------------------- */
+
+/* Black & white academic figures */
+.bw-figure {
+  filter: grayscale(100%) contrast(120%);
+  border: var(--border-width-thin) solid var(--body-color);
+  max-width: 150px;
+  height: auto;
+  display: block;
+  transition:
+    filter var(--transition-smooth),
+    transform var(--transition-smooth),
+    box-shadow var(--transition-smooth);
+}
+
+.bw-figure:hover {
+  filter: grayscale(0%) contrast(100%);
+  transform: scale(1.02);
+  box-shadow: var(--premium-shadow-md);
+}
+
+/* Premium Animations */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tech Table Enhancements */
+#tech-table tbody tr {
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
+  will-change: transform;
+}
+
+#tech-table tbody tr:hover {
+  background-color: var(--hover-bg);
+  transform: translateX(4px);
+  cursor: pointer;
+}
+
+/* Metric Cards */
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.metric-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--kbd-border-color);
+  border-radius: 6px;
+  padding: 1.5rem;
+  box-shadow: var(--premium-shadow-sm);
+  transition:
+    transform var(--transition-smooth),
+    box-shadow var(--transition-smooth);
+  animation: fadeInSlideUp 0.5s ease-out backwards;
+}
+
+.metric-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.metric-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.metric-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.metric-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.metric-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.metric-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--premium-shadow-lg);
+  border-color: var(--body-color);
+}
+
+.metric-card h4 {
+  margin-top: 0;
+  border-bottom: var(--border-width-thin) solid var(--kbd-border-color);
+  padding-bottom: 0.5rem;
+  font-variant-caps: small-caps;
+}
+
+.metric-card ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.metric-card li {
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Historical Chart Styles */
+.historical-dot {
+  transition: r var(--transition-fast);
+}
+
+.historical-dot:hover {
+  r: 6;
+  fill: var(--link-visited);
+}
+
+/* Tooltip Enhancements */
+.scatter-tooltip {
+  position: absolute;
+  background: var(--body-color);
+  color: var(--body-bg-color);
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -10px);
+  transition:
+    opacity var(--transition-fast),
+    transform var(--transition-fast);
+  box-shadow: var(--premium-shadow-md);
+  z-index: 10;
+}
+
+.scatter-dot:hover .scatter-tooltip {
+  opacity: 1;
+  transform: translate(-50%, -25px);
+}
+
+/* Metric Multi-column Grid */
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.metric-card {
+  border: var(--border-width-thin) solid var(--body-color);
+  padding: 1rem;
+}
+
+.metric-card h4 {
+  margin-top: 0;
+  border-bottom: var(--border-width-thin) solid var(--body-color);
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
+  font-variant-caps: small-caps;
+}
+
+.metric-card ul {
+  padding-left: 1.2rem;
+  margin: 0;
+  font-size: 0.9em;
+}
+
+/* Academic CSS Chart */
+.figure-chart {
+  border: var(--border-width-thick) solid var(--body-color);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  background-color: var(--body-bg-color);
+}
+
+.figure-caption {
+  font-style: italic;
+  font-size: 0.9em;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.css-bar-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  font-size: 0.9em;
+}
+
+.css-bar-label {
+  width: 140px;
+  flex-shrink: 0;
+  font-weight: bold;
+}
+
+.css-bar-track {
+  flex-grow: 1;
+  height: 1.2rem;
+  border: var(--border-width-thin) solid var(--body-color);
+  background-color: transparent;
+  position: relative;
+}
+
+.css-bar-fill {
+  height: 100%;
+  background-color: var(--body-color);
+  /* Use a diagonal hatch pattern for a "printed" look */
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 2px,
+    var(--body-bg-color) 2px,
+    var(--body-bg-color) 4px
+  );
+}
+
+.css-bar-value {
+  width: 50px;
+  text-align: right;
+  flex-shrink: 0;
+  font-family: monospace;
+}
+
+/* Table refinements for Appendices */
+table.appendix-table {
+  width: 100%;
+  table-layout: fixed;
+  font-size: 0.85em;
+  margin-bottom: 2rem;
+}
+
+table.appendix-table th,
+table.appendix-table td {
+  padding: 0.5rem;
+  vertical-align: top;
+  border-bottom: var(--border-width-thin) solid var(--body-color);
+}
+
+table.appendix-table th {
+  border-bottom: var(--border-width-thick) solid var(--body-color);
+}
+
+table.appendix-table tr:last-child td {
+  border-bottom: none;
+}
+
+.truncate-cell {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ----------------------------------
+   HOME PAGE: GLOBAL EXISTENTIAL MATRIX
+------------------------------------- */
+
+.scatter-container {
+  margin: 3rem 0;
+}
+
+.scatter-plot {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  border-left: var(--border-width-thick) solid var(--body-color);
+  border-bottom: var(--border-width-thick) solid var(--body-color);
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to top, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 10% 10%;
+}
+
+.scatter-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: var(--body-color);
+  border-radius: 50%;
+  transform: translate(-50%, 50%);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.scatter-dot:hover {
+  transform: translate(-50%, 50%) scale(2);
+  background-color: var(--link-visited);
+}
+
+.scatter-tooltip {
+  position: absolute;
+  bottom: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--body-color);
+  color: var(--body-bg-color);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75em;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.scatter-dot:hover .scatter-tooltip {
+  opacity: 1;
+}
+
+.scatter-axis-label {
+  font-size: 0.8em;
+  font-style: italic;
+  font-variant-caps: small-caps;
+}
+.scatter-axis-x {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+.scatter-axis-y {
+  position: absolute;
+  left: -2.5rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: center;
+}
+
+/* ----------------------------------
+   HOME PAGE: BOOKTABS TABLE
+------------------------------------- */
+
+table.booktabs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+}
+
+table.booktabs-table th {
+  border-top: var(--border-width-thick) solid var(--table-border-color);
+  border-bottom: var(--border-width-thin) solid var(--table-border-color);
+  font-weight: bold;
+}
+
+table.booktabs-table th,
+table.booktabs-table td {
+  padding: 0.75rem 1rem;
+}
+
+table.booktabs-table tr:last-child td {
+  border-bottom: var(--border-width-thick) solid var(--table-border-color);
+}
+
+table.booktabs-table .tech-row {
+  transition: background-color 0.2s ease;
+}
+
+table.booktabs-table .tech-row:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.latex-dark table.booktabs-table .tech-row:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+</style><style data-vite-dev-id="/Users/youssef/Desktop/Dev/isThisTechDead/website/src/layouts/AcademicLayout.astro?astro&amp;type=style&amp;index=0&amp;lang.css">html, :root {
+  font-size: 19px !important;
+}
+
+body, body.libertinus {
+  font-family: Lora, Latin Modern, Georgia, Cambria, Times New Roman, Times, serif;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  line-height: 1.8;
+}
+
+.title-block[data-astro-cid-iezfjbsl] {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.title-block[data-astro-cid-iezfjbsl] h1[data-astro-cid-iezfjbsl] {
+  margin-bottom: .5rem;
+  font-size: 4em;
+  margin-top: 2rem;
+}
+
+.title-block[data-astro-cid-iezfjbsl] .author[data-astro-cid-iezfjbsl] {
+  font-size: 1.1rem;
+  margin-bottom: .5rem;
+}
+
+.title-block[data-astro-cid-iezfjbsl] .date[data-astro-cid-iezfjbsl] {
+  font-style: italic;
+}
+
+.abstract[data-astro-cid-iezfjbsl] {
+  margin: 2rem 10%;
+  font-size: .9rem;
+}
+
+.abstract[data-astro-cid-iezfjbsl] h2[data-astro-cid-iezfjbsl] {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+</style><style data-vite-dev-id="/Users/youssef/Desktop/Dev/isThisTechDead/website/src/pages/index.astro?astro&amp;type=style&amp;index=0&amp;lang.css">.controls-container[data-astro-cid-lcdefpme] {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.controls-container[data-astro-cid-lcdefpme] input[data-astro-cid-lcdefpme], .controls-container[data-astro-cid-lcdefpme] select[data-astro-cid-lcdefpme] {
+  padding: .5rem;
+  font-family: inherit;
+  border: 1px solid var(--body-color);
+  background: var(--body-bg-color);
+  color: var(--body-color);
+  font-size: 1rem;
+  flex: 1;
+  min-width: 200px;
+}
+</style><script type="module" src="/@vite/client"></script><script type="module" src="/@id/astro/runtime/client/dev-toolbar/entrypoint.js"></script><script>window.__astro_dev_toolbar__ = {"root":"/Users/youssef/Desktop/Dev/isThisTechDead/website/","version":"7.0.6","debugInfo":"Astro                    v7.0.6\nNode                     v25.5.0\nSystem                   macOS (arm64)\nPackage Manager          npm\nOutput                   static\nAdapter                  none\nIntegrations             none"}</script><script type="module" src="/src/styles/latex.css"></script><script type="module" src="/src/layouts/AcademicLayout.astro?astro&type=style&index=0&lang.css"></script><script type="module" src="/src/pages/index.astro?astro&type=style&index=0&lang.css"></script></head><body class="libertinus" data-astro-cid-iezfjbsl><header class="title-block" data-astro-cid-iezfjbsl><h1 data-astro-cid-iezfjbsl>Is This Tech Dead?</h1><div class="author" data-astro-cid-iezfjbsl> An Empirical Analysis of Technological Relevance</div><div class="date" data-astro-cid-iezfjbsl>7/4/2026</div></header><div class="abstract" data-astro-cid-iezfjbsl><h2 data-astro-cid-iezfjbsl>Abstract</h2><p data-astro-cid-iezfjbsl>This document presents an ongoing, highly scientific, and definitely unbiased analysis of various technologies to determine their level of relevance, or &#39;Deaditude&#39;. We examine numerous extremely objective indicators to provide a definitive score. Below is the current registry of technologies and their respective existential statuses.</p></div><main data-astro-cid-iezfjbsl><div class="author" data-astro-cid-lcdefpme><p class="published-by" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Published by: </strong><span data-astro-cid-lcdefpme><a href="https://github.com/jobehi" target="_blank" style="font-size: 2.0074074074074075rem; transition: font-size 0.2s ease; text-decoration: none;" data-astro-cid-lcdefpme>jobehi</a>, </span><span data-astro-cid-lcdefpme><a href="https://github.com/danielmeza" target="_blank" style="font-size: 0.9722222222222222rem; transition: font-size 0.2s ease; text-decoration: none;" data-astro-cid-lcdefpme>danielmeza</a>, </span><span data-astro-cid-lcdefpme><a href="https://github.com/anttironty" target="_blank" style="font-size: 0.924074074074074rem; transition: font-size 0.2s ease; text-decoration: none;" data-astro-cid-lcdefpme>anttironty</a>, </span><span data-astro-cid-lcdefpme><a href="https://github.com/BenoitPrmt" target="_blank" style="font-size: 0.924074074074074rem; transition: font-size 0.2s ease; text-decoration: none;" data-astro-cid-lcdefpme>BenoitPrmt</a>, </span><span data-astro-cid-lcdefpme><a href="https://github.com/shakib04" target="_blank" style="font-size: 0.924074074074074rem; transition: font-size 0.2s ease; text-decoration: none;" data-astro-cid-lcdefpme>shakib04</a>, </span><span data-astro-cid-lcdefpme><a href="https://github.com/tyrann0us" target="_blank" style="font-size: 0.924074074074074rem; transition: font-size 0.2s ease; text-decoration: none;" data-astro-cid-lcdefpme>tyrann0us</a>, </span><span data-astro-cid-lcdefpme><a href="https://github.com/kalaniscott" target="_blank" style="font-size: 0.924074074074074rem; transition: font-size 0.2s ease; text-decoration: none;" data-astro-cid-lcdefpme>kalaniscott</a></span></p>& The Open Source Community</div><section data-astro-cid-lcdefpme><h2 data-astro-cid-lcdefpme>1. Introduction</h2><p data-astro-cid-lcdefpme>In the rapidly evolving landscape of software engineering, tools and frameworks frequently fall out of favor, leaving developers stranded with deprecated APIs and existential dread. This research aims to quantify this phenomenon so you can finally win arguments on Hacker News. For details on our flawless methodology, please refer to the<a href="/isThisTechDead/methodology" data-astro-cid-lcdefpme>Methodology Section</a>.</p></section><section data-astro-cid-lcdefpme><h2 data-astro-cid-lcdefpme>2. Global Existential Matrix</h2><p data-astro-cid-lcdefpme>Figure 1 plots the Deaditude score against the age of the technology (years since initial release). This matrix visually demonstrates the correlation between a framework's lifespan and its eventual deprecation dread.</p><div class="scatter-container" data-astro-cid-lcdefpme><div class="scatter-plot" data-astro-cid-lcdefpme><div class="scatter-axis-y" data-astro-cid-lcdefpme>Deaditude Score (%)</div><a href="/isThisTechDead/silverlight" class="scatter-dot" style="left: 58.77538136452587%; bottom: 94.6%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Silverlight</strong><br data-astro-cid-lcdefpme>Age: 19 yrs | Score: 94.6%</div></a><a href="/isThisTechDead/nativescript" class="scatter-dot" style="left: 46.70993664969137%; bottom: 91.5%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>NativeScript</strong><br data-astro-cid-lcdefpme>Age: 12 yrs | Score: 91.5%</div></a><a href="/isThisTechDead/backbone" class="scatter-dot" style="left: 53.93598899705937%; bottom: 87.6%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>backbonejs</strong><br data-astro-cid-lcdefpme>Age: 16 yrs | Score: 87.6%</div></a><a href="/isThisTechDead/solar2d" class="scatter-dot" style="left: 55.59594491425693%; bottom: 87.3%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Solar2D</strong><br data-astro-cid-lcdefpme>Age: 17 yrs | Score: 87.3%</div></a><a href="/isThisTechDead/vagrant" class="scatter-dot" style="left: 53.93598899705937%; bottom: 85.7%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Vagrant</strong><br data-astro-cid-lcdefpme>Age: 16 yrs | Score: 85.7%</div></a><a href="/isThisTechDead/emberjs" class="scatter-dot" style="left: 52.22329678670935%; bottom: 85.5%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Ember.js</strong><br data-astro-cid-lcdefpme>Age: 15 yrs | Score: 85.5%</div></a><a href="/isThisTechDead/xamarin" class="scatter-dot" style="left: 52.22329678670935%; bottom: 84.3%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Xamarin</strong><br data-astro-cid-lcdefpme>Age: 15 yrs | Score: 84.3%</div></a><a href="/isThisTechDead/cordova" class="scatter-dot" style="left: 55.59594491425693%; bottom: 83.2%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>cordova</strong><br data-astro-cid-lcdefpme>Age: 17 yrs | Score: 83.2%</div></a><a href="/isThisTechDead/gatsbyjs" class="scatter-dot" style="left: 44.721359549995796%; bottom: 77.3%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Gatsby</strong><br data-astro-cid-lcdefpme>Age: 11 yrs | Score: 77.3%</div></a><a href="/isThisTechDead/joomla" class="scatter-dot" style="left: 61.79143806533246%; bottom: 76.7%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Joomla! CMS</strong><br data-astro-cid-lcdefpme>Age: 21 yrs | Score: 76.7%</div></a><a href="/isThisTechDead/code-igniter" class="scatter-dot" style="left: 60.30226891555272%; bottom: 76.5%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>CodeIgniter</strong><br data-astro-cid-lcdefpme>Age: 20 yrs | Score: 76.5%</div></a><a href="/isThisTechDead/magento" class="scatter-dot" style="left: 57.20775535473553%; bottom: 70.5%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Magento</strong><br data-astro-cid-lcdefpme>Age: 18 yrs | Score: 70.5%</div></a><a href="/isThisTechDead/october" class="scatter-dot" style="left: 46.70993664969137%; bottom: 68.6%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>October CMS</strong><br data-astro-cid-lcdefpme>Age: 12 yrs | Score: 68.6%</div></a><a href="/isThisTechDead/cakephp" class="scatter-dot" style="left: 61.79143806533246%; bottom: 68.2%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Cake PHP</strong><br data-astro-cid-lcdefpme>Age: 21 yrs | Score: 68.2%</div></a><a href="/isThisTechDead/meteor" class="scatter-dot" style="left: 50.4524979109513%; bottom: 67.1%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>meteor</strong><br data-astro-cid-lcdefpme>Age: 14 yrs | Score: 67.1%</div></a><a href="/isThisTechDead/ionic" class="scatter-dot" style="left: 48.61724348043977%; bottom: 66.9%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Ionic</strong><br data-astro-cid-lcdefpme>Age: 13 yrs | Score: 66.9%</div></a><a href="/isThisTechDead/ruby" class="scatter-dot" style="left: 75.07571935295483%; bottom: 65.7%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Ruby</strong><br data-astro-cid-lcdefpme>Age: 31 yrs | Score: 65.7%</div></a><a href="/isThisTechDead/laravel-livewire" class="scatter-dot" style="left: 35.67530340063379%; bottom: 65.4%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Laravel Livewire</strong><br data-astro-cid-lcdefpme>Age: 7 yrs | Score: 65.4%</div></a><a href="/isThisTechDead/drupal" class="scatter-dot" style="left: 67.4199862463242%; bottom: 65.3%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Drupal</strong><br data-astro-cid-lcdefpme>Age: 25 yrs | Score: 65.3%</div></a><a href="/isThisTechDead/avalonia" class="scatter-dot" style="left: 48.61724348043977%; bottom: 64.7%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Avalonia</strong><br data-astro-cid-lcdefpme>Age: 13 yrs | Score: 64.7%</div></a><a href="/isThisTechDead/symfony" class="scatter-dot" style="left: 61.79143806533246%; bottom: 64.2%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Symfony</strong><br data-astro-cid-lcdefpme>Age: 21 yrs | Score: 64.2%</div></a><a href="/isThisTechDead/expressjs" class="scatter-dot" style="left: 53.93598899705937%; bottom: 63.9%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Express js</strong><br data-astro-cid-lcdefpme>Age: 16 yrs | Score: 63.9%</div></a><a href="/isThisTechDead/capacitor" class="scatter-dot" style="left: 33.028912953790815%; bottom: 62.3%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Capacitor</strong><br data-astro-cid-lcdefpme>Age: 6 yrs | Score: 62.3%</div></a><a href="/isThisTechDead/jquery" class="scatter-dot" style="left: 60.30226891555272%; bottom: 62%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>jQuery</strong><br data-astro-cid-lcdefpme>Age: 20 yrs | Score: 62.0%</div></a><a href="/isThisTechDead/angularjs" class="scatter-dot" style="left: 53.93598899705937%; bottom: 61.6%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>angular.js</strong><br data-astro-cid-lcdefpme>Age: 16 yrs | Score: 61.6%</div></a><a href="/isThisTechDead/orleans" class="scatter-dot" style="left: 46.70993664969137%; bottom: 61.1%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Orleans</strong><br data-astro-cid-lcdefpme>Age: 12 yrs | Score: 61.1%</div></a><a href="/isThisTechDead/scala" class="scatter-dot" style="left: 63.245553203367585%; bottom: 60.4%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Scala</strong><br data-astro-cid-lcdefpme>Age: 22 yrs | Score: 60.4%</div></a><a href="/isThisTechDead/elm" class="scatter-dot" style="left: 50.4524979109513%; bottom: 57.6%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>elm</strong><br data-astro-cid-lcdefpme>Age: 14 yrs | Score: 57.6%</div></a><a href="/isThisTechDead/phoenix" class="scatter-dot" style="left: 46.70993664969137%; bottom: 56.9%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Phoenix Framework</strong><br data-astro-cid-lcdefpme>Age: 12 yrs | Score: 56.9%</div></a><a href="/isThisTechDead/nuxtjs" class="scatter-dot" style="left: 42.640143271122085%; bottom: 56%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Nuxt.js</strong><br data-astro-cid-lcdefpme>Age: 10 yrs | Score: 56.0%</div></a><a href="/isThisTechDead/vuejs" class="scatter-dot" style="left: 46.70993664969137%; bottom: 55.9%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Vue.js</strong><br data-astro-cid-lcdefpme>Age: 12 yrs | Score: 55.9%</div></a><a href="/isThisTechDead/strapi" class="scatter-dot" style="left: 44.721359549995796%; bottom: 55.6%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>strapi</strong><br data-astro-cid-lcdefpme>Age: 11 yrs | Score: 55.6%</div></a><a href="/isThisTechDead/lynx" class="scatter-dot" style="left: 13.483997249264842%; bottom: 55.4%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Lynx</strong><br data-astro-cid-lcdefpme>Age: 1 yrs | Score: 55.4%</div></a><a href="/isThisTechDead/elixir" class="scatter-dot" style="left: 52.22329678670935%; bottom: 54.2%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Elixir</strong><br data-astro-cid-lcdefpme>Age: 15 yrs | Score: 54.2%</div></a><a href="/isThisTechDead/deno" class="scatter-dot" style="left: 38.1385035698237%; bottom: 53.7%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Deno</strong><br data-astro-cid-lcdefpme>Age: 8 yrs | Score: 53.7%</div></a><a href="/isThisTechDead/flask" class="scatter-dot" style="left: 53.93598899705937%; bottom: 51.5%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Flask</strong><br data-astro-cid-lcdefpme>Age: 16 yrs | Score: 51.5%</div></a><a href="/isThisTechDead/perl" class="scatter-dot" style="left: 84.20753583206844%; bottom: 49.9%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Perl</strong><br data-astro-cid-lcdefpme>Age: 39 yrs | Score: 49.9%</div></a><a href="/isThisTechDead/compose-mp" class="scatter-dot" style="left: 33.028912953790815%; bottom: 49.7%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Compose Multiplatform</strong><br data-astro-cid-lcdefpme>Age: 6 yrs | Score: 49.7%</div></a><a href="/isThisTechDead/ansible" class="scatter-dot" style="left: 50.4524979109513%; bottom: 49.2%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Ansible</strong><br data-astro-cid-lcdefpme>Age: 14 yrs | Score: 49.2%</div></a><a href="/isThisTechDead/rails" class="scatter-dot" style="left: 61.79143806533246%; bottom: 48.7%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Ruby on Rails</strong><br data-astro-cid-lcdefpme>Age: 21 yrs | Score: 48.7%</div></a><a href="/isThisTechDead/aws" class="scatter-dot" style="left: 60.30226891555272%; bottom: 47.5%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Amazon Web Services</strong><br data-astro-cid-lcdefpme>Age: 20 yrs | Score: 47.5%</div></a><a href="/isThisTechDead/svelte" class="scatter-dot" style="left: 42.640143271122085%; bottom: 46.8%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Svelte</strong><br data-astro-cid-lcdefpme>Age: 10 yrs | Score: 46.8%</div></a><a href="/isThisTechDead/terraform" class="scatter-dot" style="left: 46.70993664969137%; bottom: 46.2%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Terraform</strong><br data-astro-cid-lcdefpme>Age: 12 yrs | Score: 46.2%</div></a><a href="/isThisTechDead/maui" class="scatter-dot" style="left: 30.15113445777636%; bottom: 45.4%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>.NET MAUI</strong><br data-astro-cid-lcdefpme>Age: 5 yrs | Score: 45.4%</div></a><a href="/isThisTechDead/tailwind" class="scatter-dot" style="left: 40.45199174779452%; bottom: 44.9%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Tailwind</strong><br data-astro-cid-lcdefpme>Age: 9 yrs | Score: 44.9%</div></a><a href="/isThisTechDead/django" class="scatter-dot" style="left: 61.79143806533246%; bottom: 44.4%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>django</strong><br data-astro-cid-lcdefpme>Age: 21 yrs | Score: 44.4%</div></a><a href="/isThisTechDead/azure" class="scatter-dot" style="left: 53.93598899705937%; bottom: 44.4%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Microsoft Azure</strong><br data-astro-cid-lcdefpme>Age: 16 yrs | Score: 44.4%</div></a><a href="/isThisTechDead/nodejs" class="scatter-dot" style="left: 55.59594491425693%; bottom: 43.8%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Node.js</strong><br data-astro-cid-lcdefpme>Age: 17 yrs | Score: 43.8%</div></a><a href="/isThisTechDead/kotlin" class="scatter-dot" style="left: 52.22329678670935%; bottom: 43%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Kotlin</strong><br data-astro-cid-lcdefpme>Age: 15 yrs | Score: 43.0%</div></a><a href="/isThisTechDead/nest" class="scatter-dot" style="left: 40.45199174779452%; bottom: 42.8%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>NestJS</strong><br data-astro-cid-lcdefpme>Age: 9 yrs | Score: 42.8%</div></a><a href="/isThisTechDead/mysql" class="scatter-dot" style="left: 75.07571935295483%; bottom: 42.4%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>MySQL</strong><br data-astro-cid-lcdefpme>Age: 31 yrs | Score: 42.4%</div></a><a href="/isThisTechDead/electron" class="scatter-dot" style="left: 48.61724348043977%; bottom: 42.2%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Electron</strong><br data-astro-cid-lcdefpme>Age: 13 yrs | Score: 42.2%</div></a><a href="/isThisTechDead/php" class="scatter-dot" style="left: 75.07571935295483%; bottom: 41.4%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>PHP</strong><br data-astro-cid-lcdefpme>Age: 31 yrs | Score: 41.4%</div></a><a href="/isThisTechDead/vscode" class="scatter-dot" style="left: 44.721359549995796%; bottom: 41.3%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Visual Studio Code</strong><br data-astro-cid-lcdefpme>Age: 11 yrs | Score: 41.3%</div></a><a href="/isThisTechDead/flutter" class="scatter-dot" style="left: 40.45199174779452%; bottom: 40.2%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Flutter</strong><br data-astro-cid-lcdefpme>Age: 9 yrs | Score: 40.2%</div></a><a href="/isThisTechDead/laravel" class="scatter-dot" style="left: 52.22329678670935%; bottom: 40%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>laravel</strong><br data-astro-cid-lcdefpme>Age: 15 yrs | Score: 40.0%</div></a><a href="/isThisTechDead/docker" class="scatter-dot" style="left: 48.61724348043977%; bottom: 39.9%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Docker</strong><br data-astro-cid-lcdefpme>Age: 13 yrs | Score: 39.9%</div></a><a href="/isThisTechDead/swift" class="scatter-dot" style="left: 46.70993664969137%; bottom: 39.4%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Swift</strong><br data-astro-cid-lcdefpme>Age: 12 yrs | Score: 39.4%</div></a><a href="/isThisTechDead/mongodb" class="scatter-dot" style="left: 55.59594491425693%; bottom: 39.3%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>MongoDB</strong><br data-astro-cid-lcdefpme>Age: 17 yrs | Score: 39.3%</div></a><a href="/isThisTechDead/angular" class="scatter-dot" style="left: 53.93598899705937%; bottom: 38.7%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Angular</strong><br data-astro-cid-lcdefpme>Age: 16 yrs | Score: 38.7%</div></a><a href="/isThisTechDead/typescript" class="scatter-dot" style="left: 50.4524979109513%; bottom: 38.4%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Typescript</strong><br data-astro-cid-lcdefpme>Age: 14 yrs | Score: 38.4%</div></a><a href="/isThisTechDead/asp.net" class="scatter-dot" style="left: 66.05782590758163%; bottom: 36.5%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>ASP.NET</strong><br data-astro-cid-lcdefpme>Age: 24 yrs | Score: 36.5%</div></a><a href="/isThisTechDead/astro" class="scatter-dot" style="left: 30.15113445777636%; bottom: 36.4%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Astro</strong><br data-astro-cid-lcdefpme>Age: 5 yrs | Score: 36.4%</div></a><a href="/isThisTechDead/postgresql" class="scatter-dot" style="left: 73.85489458759965%; bottom: 34.9%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>PostgreSQL</strong><br data-astro-cid-lcdefpme>Age: 30 yrs | Score: 34.9%</div></a><a href="/isThisTechDead/supabase" class="scatter-dot" style="left: 33.028912953790815%; bottom: 34.8%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Supabase</strong><br data-astro-cid-lcdefpme>Age: 6 yrs | Score: 34.8%</div></a><a href="/isThisTechDead/dart" class="scatter-dot" style="left: 52.22329678670935%; bottom: 34%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Dart</strong><br data-astro-cid-lcdefpme>Age: 15 yrs | Score: 34.0%</div></a><a href="/isThisTechDead/java" class="scatter-dot" style="left: 75.07571935295483%; bottom: 34%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Java</strong><br data-astro-cid-lcdefpme>Age: 31 yrs | Score: 34.0%</div></a><a href="/isThisTechDead/react" class="scatter-dot" style="left: 48.61724348043977%; bottom: 32.4%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>React</strong><br data-astro-cid-lcdefpme>Age: 13 yrs | Score: 32.4%</div></a><a href="/isThisTechDead/csharp" class="scatter-dot" style="left: 68.75516509523287%; bottom: 32.1%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>C#</strong><br data-astro-cid-lcdefpme>Age: 26 yrs | Score: 32.1%</div></a><a href="/isThisTechDead/spring" class="scatter-dot" style="left: 64.66697906828632%; bottom: 31.8%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Spring boot</strong><br data-astro-cid-lcdefpme>Age: 23 yrs | Score: 31.8%</div></a><a href="/isThisTechDead/fastapi" class="scatter-dot" style="left: 38.1385035698237%; bottom: 30.8%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>FastAPI</strong><br data-astro-cid-lcdefpme>Age: 8 yrs | Score: 30.8%</div></a><a href="/isThisTechDead/dot.net" class="scatter-dot" style="left: 66.05782590758163%; bottom: 30.6%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>.NET</strong><br data-astro-cid-lcdefpme>Age: 24 yrs | Score: 30.6%</div></a><a href="/isThisTechDead/git" class="scatter-dot" style="left: 61.79143806533246%; bottom: 28.9%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Git</strong><br data-astro-cid-lcdefpme>Age: 21 yrs | Score: 28.9%</div></a><a href="/isThisTechDead/wordpress" class="scatter-dot" style="left: 64.66697906828632%; bottom: 28.3%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>WordPress</strong><br data-astro-cid-lcdefpme>Age: 23 yrs | Score: 28.3%</div></a><a href="/isThisTechDead/firebase" class="scatter-dot" style="left: 52.22329678670935%; bottom: 28.1%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Firebase</strong><br data-astro-cid-lcdefpme>Age: 15 yrs | Score: 28.1%</div></a><a href="/isThisTechDead/javascript" class="scatter-dot" style="left: 75.07571935295483%; bottom: 26.7%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>JavaScript</strong><br data-astro-cid-lcdefpme>Age: 31 yrs | Score: 26.7%</div></a><a href="/isThisTechDead/react-native" class="scatter-dot" style="left: 44.721359549995796%; bottom: 25.7%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>React Native</strong><br data-astro-cid-lcdefpme>Age: 11 yrs | Score: 25.7%</div></a><a href="/isThisTechDead/rust" class="scatter-dot" style="left: 53.93598899705937%; bottom: 23%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Rust</strong><br data-astro-cid-lcdefpme>Age: 16 yrs | Score: 23.0%</div></a><a href="/isThisTechDead/python" class="scatter-dot" style="left: 79.77240352174655%; bottom: 22.2%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Python</strong><br data-astro-cid-lcdefpme>Age: 35 yrs | Score: 22.2%</div></a><a href="/isThisTechDead/go" class="scatter-dot" style="left: 55.59594491425693%; bottom: 21.6%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Go</strong><br data-astro-cid-lcdefpme>Age: 17 yrs | Score: 21.6%</div></a><a href="/isThisTechDead/nextjs" class="scatter-dot" style="left: 42.640143271122085%; bottom: 19.4%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Next.js</strong><br data-astro-cid-lcdefpme>Age: 10 yrs | Score: 19.4%</div></a><a href="/isThisTechDead/kubernetes" class="scatter-dot" style="left: 46.70993664969137%; bottom: 15.7%;" data-astro-cid-lcdefpme><div class="scatter-tooltip" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Kubernetes</strong><br data-astro-cid-lcdefpme>Age: 12 yrs | Score: 15.7%</div></a></div><div class="scatter-axis-x" data-astro-cid-lcdefpme><span class="scatter-axis-label" data-astro-cid-lcdefpme>Technology Age (Years)</span></div><figcaption data-astro-cid-lcdefpme>Figure 1: Scatter plot of existential dread. Older technologies tend to either stabilize or decay rapidly.</figcaption></div></section><section data-astro-cid-lcdefpme><h2 data-astro-cid-lcdefpme>3. Registry of Technologies</h2><p data-astro-cid-lcdefpme>The following table presents the current assessment of technologies under review. A higher Deaditude Score indicates a greater likelihood that your resume needs updating.</p><div class="controls-container" data-astro-cid-lcdefpme><input type="text" id="search-input" placeholder="Search by name... (e.g. jQuery)" data-astro-cid-lcdefpme><select id="category-filter" data-astro-cid-lcdefpme><option value="all" data-astro-cid-lcdefpme>All Categories</option><option value="frontend" data-astro-cid-lcdefpme>Frontend</option><option value="backend" data-astro-cid-lcdefpme>Backend</option><option value="database" data-astro-cid-lcdefpme>Database</option><option value="language" data-astro-cid-lcdefpme>Language</option><option value="other" data-astro-cid-lcdefpme>Other</option></select><select id="sort-select" data-astro-cid-lcdefpme><option value="name-asc" data-astro-cid-lcdefpme>Sort by Name (A-Z)</option><option value="score-desc" data-astro-cid-lcdefpme>Sort by Deaditude (Highest First)</option><option value="score-asc" data-astro-cid-lcdefpme>Sort by Deaditude (Lowest First)</option></select></div><table id="tech-table" class="booktabs-table" data-astro-cid-lcdefpme><thead data-astro-cid-lcdefpme><tr data-astro-cid-lcdefpme><th data-astro-cid-lcdefpme>Technology</th><th data-astro-cid-lcdefpme>Category</th><th style="text-align: right;" data-astro-cid-lcdefpme>Deaditude</th><th data-astro-cid-lcdefpme>Assessment</th></tr></thead><tbody data-astro-cid-lcdefpme><tr class="tech-row" onclick="window.location.href='/isThisTechDead/silverlight'" data-name="silverlight" data-category="framework" data-score="94.6" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/silverlight" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Silverlight</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>94.6%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +1.2%</span></td><td data-astro-cid-lcdefpme>Dead</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/nativescript'" data-name="nativescript" data-category="framework" data-score="91.5" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/nativescript" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>NativeScript</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>91.5%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -0.1%</span></td><td data-astro-cid-lcdefpme>Dead</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/backbone'" data-name="backbonejs" data-category="framework" data-score="87.6" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/backbone" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>backbonejs</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>87.6%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -1.1%</span></td><td data-astro-cid-lcdefpme>Dead</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/solar2d'" data-name="solar2d" data-category="framework" data-score="87.3" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/solar2d" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Solar2D</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>87.3%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +1.5%</span></td><td data-astro-cid-lcdefpme>Dead</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/vagrant'" data-name="vagrant" data-category="tool" data-score="85.7" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/vagrant" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Vagrant</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>tool</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>85.7%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +9.5%</span></td><td data-astro-cid-lcdefpme>Dead</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/emberjs'" data-name="ember.js" data-category="framework" data-score="85.5" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/emberjs" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Ember.js</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>85.5%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +8.9%</span></td><td data-astro-cid-lcdefpme>Dead</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/xamarin'" data-name="xamarin" data-category="framework" data-score="84.3" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/xamarin" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Xamarin</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>84.3%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +4.5%</span></td><td data-astro-cid-lcdefpme>Certified Zombie</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/cordova'" data-name="cordova" data-category="framework" data-score="83.2" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/cordova" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>cordova</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>83.2%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -0.4%</span></td><td data-astro-cid-lcdefpme>Certified Zombie</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/gatsbyjs'" data-name="gatsby" data-category="framework" data-score="77.3" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/gatsbyjs" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Gatsby</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>77.3%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -0.7%</span></td><td data-astro-cid-lcdefpme>Certified Zombie</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/joomla'" data-name="joomla! cms" data-category="framework" data-score="76.7" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/joomla" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Joomla! CMS</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>76.7%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +0.8%</span></td><td data-astro-cid-lcdefpme>Certified Zombie</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/code-igniter'" data-name="codeigniter" data-category="framework" data-score="76.5" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/code-igniter" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>CodeIgniter</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>76.5%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -6.1%</span></td><td data-astro-cid-lcdefpme>Certified Zombie</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/magento'" data-name="magento" data-category="framework" data-score="70.5" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/magento" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Magento</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>70.5%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +13.7%</span></td><td data-astro-cid-lcdefpme>Dying Slowly</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/october'" data-name="october cms" data-category="framework" data-score="68.6" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/october" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>October CMS</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>68.6%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -3.2%</span></td><td data-astro-cid-lcdefpme>Dying Slowly</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/cakephp'" data-name="cake php" data-category="framework" data-score="68.2" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/cakephp" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Cake PHP</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>68.2%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +6.5%</span></td><td data-astro-cid-lcdefpme>Dying Slowly</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/meteor'" data-name="meteor" data-category="framework" data-score="67.1" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/meteor" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>meteor</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>67.1%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -6.6%</span></td><td data-astro-cid-lcdefpme>Dying Slowly</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/ionic'" data-name="ionic" data-category="framework" data-score="66.9" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/ionic" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Ionic</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>66.9%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +12.4%</span></td><td data-astro-cid-lcdefpme>Dying Slowly</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/ruby'" data-name="ruby" data-category="language" data-score="65.7" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/ruby" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Ruby</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>language</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>65.7%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +16.0%</span></td><td data-astro-cid-lcdefpme>Dying Slowly</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/laravel-livewire'" data-name="laravel livewire" data-category="framework" data-score="65.4" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/laravel-livewire" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Laravel Livewire</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>65.4%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +0.5%</span></td><td data-astro-cid-lcdefpme>Dying Slowly</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/drupal'" data-name="drupal" data-category="framework" data-score="65.3" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/drupal" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Drupal</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>65.3%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -4.5%</span></td><td data-astro-cid-lcdefpme>Dying Slowly</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/avalonia'" data-name="avalonia" data-category="framework" data-score="64.7" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/avalonia" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Avalonia</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>64.7%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +8.4%</span></td><td data-astro-cid-lcdefpme>Dying Slowly</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/symfony'" data-name="symfony" data-category="framework" data-score="64.2" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/symfony" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Symfony</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>64.2%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +4.2%</span></td><td data-astro-cid-lcdefpme>Dying Slowly</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/expressjs'" data-name="express js" data-category="framework" data-score="63.9" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/expressjs" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Express js</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>63.9%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +0.8%</span></td><td data-astro-cid-lcdefpme>Dying Slowly</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/capacitor'" data-name="capacitor" data-category="framework" data-score="62.3" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/capacitor" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Capacitor</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>62.3%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +15.9%</span></td><td data-astro-cid-lcdefpme>Dying Slowly</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/jquery'" data-name="jquery" data-category="tool" data-score="62" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/jquery" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>jQuery</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>tool</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>62.0%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +7.8%</span></td><td data-astro-cid-lcdefpme>Dying Slowly</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/angularjs'" data-name="angular.js" data-category="framework" data-score="61.6" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/angularjs" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>angular.js</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>61.6%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -1.7%</span></td><td data-astro-cid-lcdefpme>Dying Slowly</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/orleans'" data-name="orleans" data-category="framework" data-score="61.1" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/orleans" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Orleans</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>61.1%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +2.7%</span></td><td data-astro-cid-lcdefpme>Dying Slowly</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/scala'" data-name="scala" data-category="language" data-score="60.4" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/scala" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Scala</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>language</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>60.4%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +8.1%</span></td><td data-astro-cid-lcdefpme>Dying Slowly</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/elm'" data-name="elm" data-category="language" data-score="57.6" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/elm" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>elm</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>language</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>57.6%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -8.5%</span></td><td data-astro-cid-lcdefpme>Dying Slowly</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/phoenix'" data-name="phoenix framework" data-category="framework" data-score="56.9" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/phoenix" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Phoenix Framework</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>56.9%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +2.2%</span></td><td data-astro-cid-lcdefpme>Dying Slowly</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/nuxtjs'" data-name="nuxt.js" data-category="framework" data-score="56" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/nuxtjs" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Nuxt.js</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>56.0%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -1.9%</span></td><td data-astro-cid-lcdefpme>Dying Slowly</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/vuejs'" data-name="vue.js" data-category="framework" data-score="55.9" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/vuejs" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Vue.js</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>55.9%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +7.0%</span></td><td data-astro-cid-lcdefpme>Dying Slowly</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/strapi'" data-name="strapi" data-category="tool" data-score="55.6" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/strapi" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>strapi</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>tool</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>55.6%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -7.3%</span></td><td data-astro-cid-lcdefpme>Dying Slowly</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/lynx'" data-name="lynx" data-category="framework" data-score="55.4" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/lynx" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Lynx</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>55.4%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -21.2%</span></td><td data-astro-cid-lcdefpme>Dying Slowly</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/elixir'" data-name="elixir" data-category="language" data-score="54.2" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/elixir" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Elixir</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>language</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>54.2%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +4.1%</span></td><td data-astro-cid-lcdefpme>Dying Slowly</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/deno'" data-name="deno" data-category="platform" data-score="53.7" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/deno" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Deno</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>platform</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>53.7%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -2.9%</span></td><td data-astro-cid-lcdefpme>Dying Slowly</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/flask'" data-name="flask" data-category="framework" data-score="51.5" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/flask" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Flask</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>51.5%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +9.5%</span></td><td data-astro-cid-lcdefpme>Dying Slowly</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/perl'" data-name="perl" data-category="language" data-score="49.9" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/perl" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Perl</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>language</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>49.9%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +8.9%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/compose-mp'" data-name="compose multiplatform" data-category="framework" data-score="49.7" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/compose-mp" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Compose Multiplatform</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>49.7%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -8.6%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/ansible'" data-name="ansible" data-category="platform" data-score="49.2" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/ansible" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Ansible</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>platform</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>49.2%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -8.2%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/rails'" data-name="ruby on rails" data-category="framework" data-score="48.7" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/rails" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Ruby on Rails</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>48.7%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -5.9%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/aws'" data-name="amazon web services" data-category="platform" data-score="47.5" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/aws" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Amazon Web Services</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>platform</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>47.5%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +15.7%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/svelte'" data-name="svelte" data-category="framework" data-score="46.8" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/svelte" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Svelte</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>46.8%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +5.1%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/terraform'" data-name="terraform" data-category="tool" data-score="46.2" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/terraform" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Terraform</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>tool</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>46.2%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -5.4%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/maui'" data-name=".net maui" data-category="framework" data-score="45.4" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/maui" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>.NET MAUI</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>45.4%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +12.8%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/tailwind'" data-name="tailwind" data-category="framework" data-score="44.9" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/tailwind" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Tailwind</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>44.9%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -1.0%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/django'" data-name="django" data-category="framework" data-score="44.4" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/django" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>django</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>44.4%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +14.3%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/azure'" data-name="microsoft azure" data-category="platform" data-score="44.4" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/azure" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Microsoft Azure</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>platform</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>44.4%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -9.8%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/nodejs'" data-name="node.js" data-category="framework" data-score="43.8" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/nodejs" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Node.js</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>43.8%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +3.4%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/kotlin'" data-name="kotlin" data-category="language" data-score="43" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/kotlin" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Kotlin</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>language</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>43.0%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -2.6%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/nest'" data-name="nestjs" data-category="framework" data-score="42.8" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/nest" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>NestJS</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>42.8%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -12.9%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/mysql'" data-name="mysql" data-category="platform" data-score="42.4" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/mysql" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>MySQL</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>platform</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>42.4%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +6.9%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/electron'" data-name="electron" data-category="framework" data-score="42.2" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/electron" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Electron</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>42.2%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +5.9%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/php'" data-name="php" data-category="language" data-score="41.4" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/php" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>PHP</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>language</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>41.4%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +0.1%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/vscode'" data-name="visual studio code" data-category="tool" data-score="41.3" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/vscode" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Visual Studio Code</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>tool</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>41.3%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +8.9%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/flutter'" data-name="flutter" data-category="framework" data-score="40.2" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/flutter" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Flutter</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>40.2%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +7.5%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/laravel'" data-name="laravel" data-category="framework" data-score="40" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/laravel" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>laravel</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>40.0%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -5.7%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/docker'" data-name="docker" data-category="tool" data-score="39.9" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/docker" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Docker</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>tool</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>39.9%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +9.9%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/swift'" data-name="swift" data-category="language" data-score="39.4" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/swift" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Swift</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>language</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>39.4%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +4.6%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/mongodb'" data-name="mongodb" data-category="platform" data-score="39.3" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/mongodb" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>MongoDB</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>platform</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>39.3%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -0.5%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/angular'" data-name="angular" data-category="framework" data-score="38.7" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/angular" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Angular</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>38.7%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +1.4%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/typescript'" data-name="typescript" data-category="language" data-score="38.4" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/typescript" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Typescript</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>language</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>38.4%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -3.8%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/asp.net'" data-name="asp.net" data-category="framework" data-score="36.5" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/asp.net" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>ASP.NET</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>36.5%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -8.9%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/astro'" data-name="astro" data-category="framework" data-score="36.4" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/astro" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Astro</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>36.4%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -18.3%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/postgresql'" data-name="postgresql" data-category="platform" data-score="34.9" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/postgresql" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>PostgreSQL</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>platform</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>34.9%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +12.8%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/supabase'" data-name="supabase" data-category="tool" data-score="34.8" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/supabase" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Supabase</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>tool</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>34.8%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -10.7%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/dart'" data-name="dart" data-category="language" data-score="34" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/dart" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Dart</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>language</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>34.0%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -12.1%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/java'" data-name="java" data-category="language" data-score="34" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/java" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Java</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>language</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>34.0%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -4.1%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/react'" data-name="react" data-category="framework" data-score="32.4" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/react" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>React</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>32.4%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -7.7%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/csharp'" data-name="c#" data-category="language" data-score="32.1" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/csharp" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>C#</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>language</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>32.1%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -0.5%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/spring'" data-name="spring boot" data-category="framework" data-score="31.8" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/spring" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Spring boot</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>31.8%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -14.0%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/fastapi'" data-name="fastapi" data-category="framework" data-score="30.8" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/fastapi" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>FastAPI</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>30.8%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -16.7%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/dot.net'" data-name=".net" data-category="platform" data-score="30.6" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/dot.net" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>.NET</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>platform</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>30.6%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +4.5%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/git'" data-name="git" data-category="tool" data-score="28.9" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/git" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Git</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>tool</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>28.9%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +0.2%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/wordpress'" data-name="wordpress" data-category="tool" data-score="28.3" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/wordpress" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>WordPress</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>tool</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>28.3%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +8.1%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/firebase'" data-name="firebase" data-category="platform" data-score="28.1" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/firebase" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Firebase</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>platform</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>28.1%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -22.5%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/javascript'" data-name="javascript" data-category="language" data-score="26.7" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/javascript" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>JavaScript</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>language</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>26.7%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -0.1%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/react-native'" data-name="react native" data-category="framework" data-score="25.7" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/react-native" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>React Native</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>25.7%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -10.4%</span></td><td data-astro-cid-lcdefpme>Stable &amp; Mature</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/rust'" data-name="rust" data-category="language" data-score="23" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/rust" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Rust</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>language</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>23.0%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +2.1%</span></td><td data-astro-cid-lcdefpme>Accidentally Alive</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/python'" data-name="python" data-category="language" data-score="22.2" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/python" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Python</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>language</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>22.2%<span style="color: #d32f2f; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▲ +3.5%</span></td><td data-astro-cid-lcdefpme>Accidentally Alive</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/go'" data-name="go" data-category="language" data-score="21.6" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/go" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Go</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>language</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>21.6%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -2.9%</span></td><td data-astro-cid-lcdefpme>Accidentally Alive</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/nextjs'" data-name="next.js" data-category="framework" data-score="19.4" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/nextjs" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Next.js</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>framework</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>19.4%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -23.1%</span></td><td data-astro-cid-lcdefpme>Accidentally Alive</td></tr><tr class="tech-row" onclick="window.location.href='/isThisTechDead/kubernetes'" data-name="kubernetes" data-category="platform" data-score="15.7" data-astro-cid-lcdefpme><td data-astro-cid-lcdefpme><a href="/isThisTechDead/kubernetes" data-astro-cid-lcdefpme><strong data-astro-cid-lcdefpme>Kubernetes</strong></a></td><td style="text-transform: capitalize;" data-astro-cid-lcdefpme>platform</td><td style="text-align: right; font-family: monospace; white-space: nowrap;" data-astro-cid-lcdefpme>15.7%<span style="color: #2e7d32; font-size: 0.85em; margin-left: 0.5rem;" title="Momentum since last snapshot" data-astro-cid-lcdefpme>▼ -16.7%</span></td><td data-astro-cid-lcdefpme>Accidentally Alive</td></tr></tbody></table></section><section data-astro-cid-lcdefpme><h2 data-astro-cid-lcdefpme>4. Contributions</h2><p data-astro-cid-lcdefpme>The community is encouraged to contribute data points to our analysis. If you are currently maintaining a project built with a technology listed here (bless your heart), you may submit it for peer review on the respective technology's page.</p></section></main><hr data-astro-cid-iezfjbsl><footer data-astro-cid-iezfjbsl><p data-astro-cid-iezfjbsl><small data-astro-cid-iezfjbsl><strong data-astro-cid-iezfjbsl>Is This Tech Dead?</strong> A rigorous, objective, and entirely scientific analysis of technology relevance.<br data-astro-cid-iezfjbsl><a href="/isThisTechDead" data-astro-cid-iezfjbsl>Home</a> | <a href="/isThisTechDead/methodology" data-astro-cid-iezfjbsl>Methodology</a> | <a href="/isThisTechDead/terms" data-astro-cid-iezfjbsl>Terms</a> |<a href="https://github.com/jobehi/isThisTechDead" target="_blank" data-astro-cid-iezfjbsl>Source Code</a></small></p></footer></body></html><script type="module" src="/src/pages/index.astro?astro&type=script&index=0&lang.ts"></script>

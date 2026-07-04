@@ -10,7 +10,11 @@ import path from 'path';
 import dotenv from 'dotenv';
 import chalk from 'chalk';
 
+import { fileURLToPath } from 'url';
+
 // Load .env files
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, '../..');
 dotenv.config({ path: path.resolve(rootDir, '.env') });
 const envLocalPath = path.resolve(rootDir, '.env.local');
