@@ -662,6 +662,11 @@ def run_batch(techTest=None, analyzers=None):
                                     metrics,
                                     score_data)
                     update_last_checked(tech["id"])
+                    
+                    # Track for GITHUB_OUTPUT
+                    if "updated_techs" not in locals():
+                        updated_techs = []
+                    updated_techs.append(tech["id"])
                 except Exception as e:
                     logger.error(f"Failed to save {tech['name']} to database:"
                                  f" {e}")
@@ -691,6 +696,14 @@ def run_batch(techTest=None, analyzers=None):
         except Exception as e:
             logger.error(f"Scoring failed for {tech['name']}: {e}")
             print(f"❌ Scoring failed for {tech['name']}: {e}")
+
+    # Write the updated techs to GITHUB_OUTPUT for the Genius Hack
+    if not DRY_RUN and "GITHUB_OUTPUT" in os.environ and "updated_techs" in locals() and updated_techs:
+        try:
+            with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                f.write(f"updated_techs={','.join(updated_techs)}\n")
+        except Exception as e:
+            logger.error(f"Failed to write to GITHUB_OUTPUT: {e}")
 
 
 def parse_args():

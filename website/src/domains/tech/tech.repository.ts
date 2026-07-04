@@ -169,6 +169,25 @@ export class TechRepository {
   }
 
   /**
+   * Get optimized lightweight snapshots for a tech (for charts)
+   */
+  static async getLightweightSnapshotsByTechId(techId: string): Promise<Partial<Snapshot>[]> {
+    try {
+      const { data, error } = await supabase
+        .from(DB_TABLES.TECH_SNAPSHOTS)
+        .select('id, tech_id, snapshot_date, deaditude_score')
+        .eq('tech_id', techId)
+        .order('snapshot_date', { ascending: false });
+
+      if (error) throw error;
+      return data || [];
+    } catch (error) {
+      handleSupabaseError(error, 'Get lightweight snapshots by tech id');
+      return [];
+    }
+  }
+
+  /**
    * Get all details for a tech by ID
    */
   static async getTechDetails(techId: string): Promise<TechDetails> {
@@ -178,11 +197,23 @@ export class TechRepository {
       return { tech: null, snapshots: [], projects: [] };
     }
 
-    // Parallel fetching for better performance
-    const [snapshots, projects] = await Promise.all([
-      this.getSnapshotsByTechId(tech.id),
+    // Fetch the full latest snapshot, lightweight history, and projects in parallel
+    const [latestSnapshot, lightweightSnapshots, projects] = await Promise.all([
+      this.getLatestSnapshotByTechId(tech.id),
+      this.getLightweightSnapshotsByTechId(tech.id),
       this.getProjectsByTechId(tech.id),
     ]);
+
+    // Construct the snapshots array where index 0 has FULL data, and the rest are lightweight
+    const snapshots: Snapshot[] = [];
+    if (latestSnapshot) {
+      snapshots.push(latestSnapshot);
+      // Append historical snapshots, filtering out the latest one to avoid duplicates
+      const others = lightweightSnapshots.filter(s => s.id !== latestSnapshot.id);
+      snapshots.push(...(others as Snapshot[]));
+    } else {
+      snapshots.push(...(lightweightSnapshots as Snapshot[]));
+    }
 
     return { tech, snapshots, projects };
   }

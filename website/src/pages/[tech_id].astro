@@ -4,7 +4,18 @@ import { TechService } from '../domains/tech/tech.service';
 
 export async function getStaticPaths() {
   const techs = await TechService.getAllTechs();
-  return techs.map(tech => ({
+  
+  // The Genius Hack: Only build specifically requested techs if BUILD_TECHS is passed
+  let filteredTechs = techs;
+  const buildTechs = import.meta.env.BUILD_TECHS || process.env.BUILD_TECHS;
+  
+  if (buildTechs && buildTechs !== '') {
+    const idsToBuild = buildTechs.split(',').map(id => id.trim());
+    filteredTechs = techs.filter(t => idsToBuild.includes(t.id));
+    console.log(`[GENIUS HACK] Partial build activated! Building ${filteredTechs.length} specific tech pages instead of all ${techs.length}.`);
+  }
+
+  return filteredTechs.map(tech => ({
     params: { tech_id: tech.id },
     props: { tech },
   }));

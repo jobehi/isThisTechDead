@@ -3,7 +3,7 @@
  */
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { loadEnvVars } from './env-loader';
-import { TechWithScore } from '@/domains/tech/tech.types';
+import { TechWithScore } from '../../src/domains/tech/tech.types';
 
 // Initialize environment
 const env = loadEnvVars();

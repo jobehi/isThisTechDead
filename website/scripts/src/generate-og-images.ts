@@ -5,8 +5,8 @@
  * and saving the results as static files. It's designed to be run as part of
  * the build process to ensure all OG images are pre-generated.
  */
-import { calculateDeaditudeScore } from '../../lib/shared';
-import { generateFallbackOGImage, generateTechOGImage } from '../../lib/shared/server';
+import { calculateDeaditudeScore } from '../../src/lib/shared';
+import { generateFallbackOGImage, generateTechOGImage } from '../../src/lib/shared/server';
 import { loadEnvVars } from './env-loader';
 import { getAllTechs } from './api';
 

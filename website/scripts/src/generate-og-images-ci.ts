@@ -4,7 +4,7 @@
  * CI version of the OG image generator
  * Only generates the fallback image to speed up CI builds
  */
-import { generateFallbackOGImage } from '../../lib/shared/server';
+import { generateFallbackOGImage } from '../../src/lib/shared/server';
 import { loadEnvVars } from './env-loader';
 
 // Load environment variables
