@@ -26,6 +26,7 @@ export function getScoreColor(score: number | null | undefined): string {
     return '#22c55e'; // Default green
   }
 
+  if (score >= 85) return '#7f1d1d'; // Dark red (Dead)
   if (score >= 75) return '#ef4444'; // Red (certified zombie tech)
   if (score >= 50) return '#f97316'; // Orange (putting the "meh" in momentum)
   if (score >= 25) return '#3b82f6'; // Blue (stable and mature)
@@ -42,6 +43,7 @@ export function getScoreColorClass(score: number | null | undefined): string {
     return 'text-green-500'; // Default green
   }
 
+  if (score >= 85) return 'text-red-900'; // Dark red (Dead)
   if (score >= 75) return 'text-red-500'; // Red (certified zombie tech)
   if (score >= 50) return 'text-orange-500'; // Orange (putting the "meh" in momentum)
   if (score >= 25) return 'text-blue-500'; // Blue (stable and mature)
@@ -58,6 +60,7 @@ export function getRatingLabel(score: number | null | undefined): string {
     return 'Unknown';
   }
 
+  if (score >= 85) return 'Dead';
   if (score >= 75) return 'Certified Zombie';
   if (score >= 50) return 'Dying Slowly';
   if (score >= 25) return 'Stable & Mature';

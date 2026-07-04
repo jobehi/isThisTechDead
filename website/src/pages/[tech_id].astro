@@ -79,8 +79,8 @@ if (historicalSnapshots.length > 1) {
     const b = (sumY - m * sumX) / n;
     
     if (m > 0) {
-      const daysTo100 = (100 - b) / m;
-      const extinctionMs = startMs + daysTo100 * (1000 * 60 * 60 * 24);
+      const daysTo85 = (85 - b) / m;
+      const extinctionMs = startMs + daysTo85 * (1000 * 60 * 60 * 24);
       expectedExtinction = new Date(extinctionMs);
     }
     
@@ -133,10 +133,10 @@ if (historicalSnapshots.length >= 2) {
     const b = (sumY - m * sumX) / n;
     
     if (m > 0) {
-      const yearsTo100 = (100 - b) / m;
-      const dateAt100 = new Date(startTime + yearsTo100 * msPerYear);
+      const yearsTo85 = (85 - b) / m;
+      const dateAt85 = new Date(startTime + yearsTo85 * msPerYear);
       // Cap at year 9999 to avoid crazy large numbers if slope is tiny
-      const yearStr = dateAt100.getFullYear() > 9999 ? '> 9999' : dateAt100.getFullYear().toString();
+      const yearStr = dateAt85.getFullYear() > 9999 ? '> 9999' : dateAt85.getFullYear().toString();
       etdText = `Prognosis: ETD ${yearStr}`;
     } else {
       etdText = `Prognosis: Stable / Immortal`;
@@ -199,12 +199,6 @@ const snapshotDate = latestSnapshot ? new Date(latestSnapshot.snapshot_date).toL
       <div style="font-size: 1.2rem; font-weight: bold; font-variant-caps: small-caps; margin-top: 0.5rem; color: var(--body-color);">
         {etdText}
       </div>
-      
-      {expectedExtinction && (
-        <div style="font-size: 1.1rem; font-weight: bold; font-variant-caps: small-caps; margin-top: 0.5rem; color: #d32f2f;">
-          Expected Extinction Date (Approximation): {expectedExtinction.toLocaleDateString(undefined, {month: 'long', year: 'numeric'})}
-        </div>
-      )}
       
       {allComponents.length > 0 && (
         <div class="equation-container" style="margin-top: 1.5rem; font-family: 'Times New Roman', serif; font-size: 1.3rem;">
@@ -338,6 +332,17 @@ const snapshotDate = latestSnapshot ? new Date(latestSnapshot.snapshot_date).toL
             );
           })}
         </svg>
+        <div style="text-align: center; margin-top: 1rem;">
+          {expectedExtinction !== null ? (
+            <div style="font-size: 1.1rem; font-weight: bold; font-variant-caps: small-caps; color: #d32f2f;">
+              Expected Extinction Date (Approximation): {expectedExtinction.toLocaleDateString(undefined, {month: 'long', year: 'numeric'})}
+            </div>
+          ) : (
+            <div style="font-size: 1.1rem; font-weight: bold; font-variant-caps: small-caps; color: #666;">
+              Expected Extinction Date (Approximation): {historicalSnapshots.length > 1 ? 'Immortal / Stable' : 'Insufficient Data'}
+            </div>
+          )}
+        </div>
         <div class="figure-caption">Chronological evolution of existential threat.</div>
       </div>
     )}
