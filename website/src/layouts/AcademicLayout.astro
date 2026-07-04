@@ -1,0 +1,88 @@
+---
+import '../styles/latex.css';
+
+interface Props {
+  title: string;
+  author?: string;
+  date?: string;
+  abstract?: string;
+}
+
+const { title, author = ' An Empirical Analysis of Technological Relevance', date = new Date().toLocaleDateString(), abstract } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} - Is This Tech Dead?</title>
+  <meta name="description" content={abstract || title} />
+  
+  <style>
+    /* Additional custom overrides to match the LaTeX aesthetic perfectly */
+    body {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    .title-block {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .title-block h1 {
+      margin-bottom: 0.5rem;
+      font-size: 4em;
+      margin-top: 2rem;
+    }
+    .title-block .author {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .title-block .date {
+      font-style: italic;
+    }
+    .abstract {
+      margin: 2rem 10%;
+      font-size: 0.9rem;
+    }
+    .abstract h2 {
+      text-align: center;
+      font-size: 1rem;
+      margin-top: 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body class="libertinus">
+  <header class="title-block">
+    <h1>{title}</h1>
+    <div class="author">{author}</div>
+    <div class="date">{date}</div>
+  </header>
+
+  {abstract && (
+    <div class="abstract">
+      <h2>Abstract</h2>
+      <p>{abstract}</p>
+    </div>
+  )}
+
+  <main>
+    <slot />
+  </main>
+  
+  <hr />
+  <footer>
+    <p>
+      <small>
+        <strong>Is This Tech Dead?</strong> A rigorous, objective, and entirely scientific analysis of technology relevance. 
+        <br />
+        <a href="/">Home</a> | <a href="/methodology">Methodology</a> | <a href="/terms">Terms</a> | 
+        <a href="https://github.com/isthistechdead/isthistechdead" target="_blank">Source Code</a>
+      </small>
+    </p>
+  </footer>
+</body>
+</html>

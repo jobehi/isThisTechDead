@@ -1,0 +1,51 @@
+---
+import AcademicLayout from '../layouts/AcademicLayout.astro';
+
+const title = "Methodology: The Calculus of 'Deaditude'";
+const abstract = "This document outlines the rigorous mathematical and statistical models utilized to calculate the Deaditude Score of software technologies.";
+---
+
+<AcademicLayout title={title} abstract={abstract}>
+  <section>
+    <h2>1. Introduction</h2>
+    <p>
+      Determining whether a technology is "dead" requires moving beyond subjective developer opinions, Reddit 
+      flamewars, and Hacker News echo chambers into empirical data analysis. Our engine aggregates multiple signals 
+      to compute a unified score so you don't have to rely on that one guy who says "X is dying" every week.
+    </p>
+  </section>
+
+  <section>
+    <h2>2. Data Sources</h2>
+    <ul>
+      <li><strong>GitHub Activity:</strong> Stars, forks, commit frequency, and issue resolution time (or lack thereof).</li>
+      <li><strong>NPM Registry:</strong> Weekly download velocity and dependency inclusion rates.</li>
+      <li><strong>StackOverflow:</strong> Question volume and answer latency (the "despair index").</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>3. The Deaditude Formula</h2>
+    <p>
+      The core equation relies on a weighted average of normalized metric decay over time. Given a time $t$, 
+      the Deaditude $D(t)$ is expressed as:
+    </p>
+    <div style="text-align: center; margin: 2rem 0; font-size: 1.2rem;">
+      <i>D(t) = α(1 - G<sub>v</sub>) + β(1 - N<sub>v</sub>) + γ(S<sub>v</sub>)</i>
+    </div>
+    <p>
+      Where: <br/>
+      $G_v$ = Normalized GitHub Velocity <br/>
+      $N_v$ = Normalized NPM Velocity <br/>
+      $S_v$ = StackOverflow Despair Index (Unanswered Questions)
+    </p>
+  </section>
+
+  <section>
+    <h2>4. Peer Review</h2>
+    <p>
+      All data points and snapshots are stored in our open-source repository and are subject to public 
+      scrutiny. Re-evaluations occur on a bi-weekly basis.
+    </p>
+  </section>
+</AcademicLayout>

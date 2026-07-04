@@ -1,0 +1,139 @@
+---
+import AcademicLayout from '../layouts/AcademicLayout.astro';
+import { TechService } from '../domains/tech/tech.service';
+
+const techs = await TechService.getAllTechs();
+
+const title = "Is This Tech Dead?";
+const abstract = "This document presents an ongoing, highly scientific, and definitely unbiased analysis of various technologies to determine their level of relevance, or 'Deaditude'. We examine numerous extremely objective indicators to provide a definitive score. Below is the current registry of technologies and their respective existential statuses.";
+---
+
+<AcademicLayout title={title} abstract={abstract}>
+  <section>
+    <h2>1. Introduction</h2>
+    <p>
+      In the rapidly evolving landscape of software engineering, tools and frameworks frequently fall out of favor, 
+      leaving developers stranded with deprecated APIs and existential dread. This research aims to quantify this phenomenon 
+      so you can finally win arguments on Hacker News. For details on our flawless methodology, please refer to the 
+      <a href="/methodology">Methodology Section</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2>2. Registry of Technologies</h2>
+    <p>
+      The following table presents the current assessment of technologies under review. A higher Deaditude Score indicates 
+      a greater likelihood that your resume needs updating.
+    </p>
+
+    <div class="controls-container">
+      <input type="text" id="search-input" placeholder="Search by name... (e.g. jQuery)" />
+      <select id="category-filter">
+        <option value="all">All Categories</option>
+        <option value="frontend">Frontend</option>
+        <option value="backend">Backend</option>
+        <option value="database">Database</option>
+        <option value="language">Language</option>
+        <option value="other">Other</option>
+      </select>
+      <select id="sort-select">
+        <option value="name-asc">Sort by Name (A-Z)</option>
+        <option value="score-desc">Sort by Deaditude (Highest First)</option>
+        <option value="score-asc">Sort by Deaditude (Lowest First)</option>
+      </select>
+    </div>
+    
+    <table id="tech-table">
+      <thead>
+        <tr>
+          <th>Technology</th>
+          <th>Category</th>
+          <th>Deaditude Score</th>
+          <th>Assessment</th>
+        </tr>
+      </thead>
+      <tbody>
+        {techs.map(tech => (
+          <tr class="tech-row" data-name={tech.name.toLowerCase()} data-category={tech.category.toLowerCase()} data-score={tech.latest_score !== null ? tech.latest_score : -1}>
+            <td><a href={`/${tech.id}`}><strong>{tech.name}</strong></a></td>
+            <td style="text-transform: capitalize;">{tech.category}</td>
+            <td>{tech.latest_score !== null ? `${tech.latest_score}%` : 'N/A'}</td>
+            <td>{tech.latest_score !== null ? TechService.getRatingLabel(tech.latest_score) : 'Awaiting Data'}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>3. Contributions</h2>
+    <p>
+      The community is encouraged to contribute data points to our analysis. If you are currently maintaining a project 
+      built with a technology listed here (bless your heart), you may submit it for peer review on the respective technology's page.
+    </p>
+  </section>
+</AcademicLayout>
+
+<script>
+  const searchInput = document.getElementById('search-input') as HTMLInputElement;
+  const categoryFilter = document.getElementById('category-filter') as HTMLSelectElement;
+  const sortSelect = document.getElementById('sort-select') as HTMLSelectElement;
+  const tbody = document.querySelector('#tech-table tbody') as HTMLElement;
+  const rows = Array.from(tbody.querySelectorAll('.tech-row')) as HTMLElement[];
+
+  function renderTable() {
+    const query = searchInput.value.toLowerCase();
+    const category = categoryFilter.value.toLowerCase();
+    const sortValue = sortSelect.value;
+
+    let filtered = rows.filter(row => {
+      const name = row.getAttribute('data-name') || '';
+      const cat = row.getAttribute('data-category') || '';
+      const matchesSearch = name.includes(query);
+      const matchesCat = category === 'all' || cat === category;
+      return matchesSearch && matchesCat;
+    });
+
+    filtered.sort((a, b) => {
+      if (sortValue === 'name-asc') {
+        return (a.getAttribute('data-name') || '').localeCompare(b.getAttribute('data-name') || '');
+      } else if (sortValue === 'score-desc') {
+        return parseFloat(b.getAttribute('data-score') || '-1') - parseFloat(a.getAttribute('data-score') || '-1');
+      } else if (sortValue === 'score-asc') {
+        const scoreA = parseFloat(a.getAttribute('data-score') || '-1');
+        const scoreB = parseFloat(b.getAttribute('data-score') || '-1');
+        if (scoreA === -1 && scoreB !== -1) return 1;
+        if (scoreB === -1 && scoreA !== -1) return -1;
+        return scoreA - scoreB;
+      }
+      return 0;
+    });
+
+    tbody.innerHTML = '';
+    filtered.forEach(row => tbody.appendChild(row));
+  }
+
+  if (searchInput && categoryFilter && sortSelect) {
+    searchInput.addEventListener('input', renderTable);
+    categoryFilter.addEventListener('change', renderTable);
+    sortSelect.addEventListener('change', renderTable);
+  }
+</script>
+
+<style>
+  .controls-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .controls-container input, .controls-container select {
+    padding: 0.5rem;
+    font-family: inherit;
+    border: 1px solid #ccc;
+    background: #fafafa;
+    font-size: 1rem;
+    flex: 1;
+    min-width: 200px;
+  }
+</style>

@@ -1,0 +1,408 @@
+---
+import AcademicLayout from '../layouts/AcademicLayout.astro';
+import { TechService } from '../domains/tech/tech.service';
+import PayRespects from '../components/PayRespects.astro';
+import ProjectSubmission from '../components/ProjectSubmission.astro';
+
+export async function getStaticPaths() {
+  const techs = await TechService.getAllTechs();
+  return techs.map(tech => ({
+    params: { tech_id: tech.id },
+    props: { tech },
+  }));
+}
+
+const { tech } = Astro.props;
+const details = await TechService.getTechDetails(tech.id);
+console.log("DETAILS LENGTH:", details.snapshots?.length);
+const latestSnapshot = TechService.getLatestSnapshot(details.snapshots);
+const score = latestSnapshot?.deaditude_score ?? null;
+
+const historicalSnapshots = [...(details.snapshots || [])].sort((a, b) => new Date(a.snapshot_date).getTime() - new Date(b.snapshot_date).getTime());
+
+const allComponents = [
+  { key: 'GH', name: 'GitHub', score: latestSnapshot?.github_metrics?.deaditude_score ?? 50.0 }, // Backend defaults to 5.0 (50%) when missing
+  { key: 'SO', name: 'StackOverflow', score: (latestSnapshot?.so_metrics?.deaditude_score ?? 5.0) * 10 },
+  { key: 'RE', name: 'Reddit', score: (latestSnapshot?.reddit_metrics?.deaditude_score ?? 5.0) * 10 },
+  { key: 'HN', name: 'Hacker News', score: (latestSnapshot?.hn_metrics?.deaditude_score ?? 5.0) * 10 },
+  { key: 'YT', name: 'YouTube', score: (latestSnapshot?.youtube_metrics?.deaditude_score ?? 5.0) * 10 },
+  { key: 'JB', name: 'Jobs', score: (latestSnapshot?.google_jobs?.deaditude_score ?? 5.0) * 10 }
+];
+
+const chartWidth = 800;
+const chartHeight = 200;
+const minScore = 0;
+const maxScore = 100;
+const padding = 25;
+
+const points = historicalSnapshots.map((snap, i) => {
+  const x = padding + (i / Math.max(1, historicalSnapshots.length - 1)) * (chartWidth - 2 * padding);
+  const y = chartHeight - padding - ((snap.deaditude_score - minScore) / (maxScore - minScore)) * (chartHeight - 2 * padding);
+  return `${x},${y}`;
+}).join(' ');
+
+const title = `${tech.name}`;
+const abstract = `An in-depth empirical analysis of the remaining vitality of ${tech.name}. This document explores historical data points, community despair, and residual hype to determine its true existential status.`;
+---
+
+<AcademicLayout title={title} abstract={abstract}>
+  <section>
+    <h2>1. Executive Summary</h2>
+    <p>
+      <strong>Technology:</strong> {tech.name} <br/>
+      <strong>Classification:</strong> {tech.category} <br/>
+      <strong>Age:</strong> {tech.creation_year ? `${new Date().getFullYear() - tech.creation_year} years (est. ${tech.creation_year})` : 'Unknown'} <br/>
+    </p>
+
+    <div style="text-align: center; margin: 3rem 0;">
+      <div style="font-size: 5rem; font-weight: bold; line-height: 1;">{score !== null ? `${score.toFixed(1)}%` : 'N/A'}</div>
+      <div style="font-size: 1.2rem; font-variant-caps: small-caps; margin-top: 0.5rem; color: var(--body-color);">
+        Current Deaditude Score &mdash; {score !== null ? TechService.formatTechScore(score) : 'Awaiting Data'}
+      </div>
+      
+      {allComponents.length > 0 && (
+        <div class="equation-container" style="margin-top: 1.5rem; font-family: 'Times New Roman', serif; font-size: 1.3rem;">
+          <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
+            <span style="font-style: italic; font-size: 1.5rem;">D</span> = 
+            <span style="font-style: italic;">f</span><sub>age</sub> &times; &sum;<sub>i=1</sub><sup>n</sup> 
+            <span style="display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; font-size: 1rem; margin: 0 0.2rem;">
+              <span style="border-bottom: 1px solid currentColor; padding: 0 0.2rem;">
+                <span style="font-style: italic;">W</span><sub>base,i</sub> &middot; <span style="font-style: italic;">q</span><sub>i</sub>
+              </span>
+              <span style="padding: 0 0.2rem;">
+                &sum; <span style="font-style: italic;">W</span><sub>base,j</sub> &middot; <span style="font-style: italic;">q</span><sub>j</sub>
+              </span>
+            </span>
+            <span style="font-style: italic;">C</span><sub>i</sub>
+          </div>
+          <div style="font-size: 1.1rem; margin-top: 1rem;">
+            Where <span style="font-style: italic;">C</span><sub>i</sub> &isin; &#123; 
+            {allComponents.map((c, i) => (
+              <span key={c.key}>
+                <span class="hover-variable" title={`${c.name}: ${c.score.toFixed(1)}% (Default 50% if missing)`} style="cursor: help; border-bottom: 1px dotted currentColor; font-weight: bold;">{c.key}</span>
+                {i < allComponents.length - 1 ? ', ' : ''}
+              </span>
+            ))}
+            &#125;
+          </div>
+        </div>
+      )}
+    </div>
+
+    {allComponents.length > 0 && (
+      <div class="figure-chart" style="margin-top: 2rem;">
+        <h4 style="text-align: center; margin-top: 0; font-variant-caps: small-caps;">Figure 1: Deaditude Component Analysis</h4>
+        {allComponents.map(c => (
+          <div class="css-bar-container">
+            <div class="css-bar-label" style="text-transform: capitalize;">{c.name}</div>
+            <div class="css-bar-track">
+              <div class="css-bar-fill" style={`width: ${Math.min(100, Math.max(0, c.score))}%;`}></div>
+            </div>
+            <div class="css-bar-value">{c.score.toFixed(1)}%</div>
+          </div>
+        ))}
+        <div class="figure-caption">
+          Visual representation of existential threat by vector. 
+        </div>
+      </div>
+    )}
+
+    {historicalSnapshots.length > 1 && (
+      <div class="figure-chart" style="margin-top: 2rem;">
+        <h4 style="text-align: center; margin-top: 0; font-variant-caps: small-caps;">Figure 2: Historical Deaditude Evolution</h4>
+        <svg viewBox={`0 0 ${chartWidth} ${chartHeight}`} style="width: 100%; height: auto; display: block; overflow: visible;">
+          <!-- Grid lines -->
+          <line x1={padding} y1={padding} x2={chartWidth - padding} y2={padding} stroke="var(--kbd-border-color)" stroke-dasharray="4" />
+          <line x1={padding} y1={chartHeight / 2} x2={chartWidth - padding} y2={chartHeight / 2} stroke="var(--kbd-border-color)" stroke-dasharray="4" />
+          <line x1={padding} y1={chartHeight - padding} x2={chartWidth - padding} y2={chartHeight - padding} stroke="var(--kbd-border-color)" stroke-dasharray="4" />
+          
+          <!-- Y-axis labels -->
+          <text x={padding - 5} y={padding + 4} font-size="12" text-anchor="end" fill="currentColor">100</text>
+          <text x={padding - 5} y={chartHeight / 2 + 4} font-size="12" text-anchor="end" fill="currentColor">50</text>
+          <text x={padding - 5} y={chartHeight - padding + 4} font-size="12" text-anchor="end" fill="currentColor">0</text>
+
+          <!-- X-axis labels (Dates) -->
+          <text x={padding} y={chartHeight + 5} font-size="11" text-anchor="middle" fill="currentColor">
+            {new Date(historicalSnapshots[0].snapshot_date).toLocaleDateString(undefined, {month: 'short', year: 'numeric'})}
+          </text>
+          <text x={chartWidth - padding} y={chartHeight + 5} font-size="11" text-anchor="middle" fill="currentColor">
+            {new Date(historicalSnapshots[historicalSnapshots.length - 1].snapshot_date).toLocaleDateString(undefined, {month: 'short', year: 'numeric'})}
+          </text>
+
+          <!-- Data line -->
+          <polyline fill="none" stroke="currentColor" stroke-width="2" points={points} />
+          
+          <!-- Data points -->
+          {historicalSnapshots.map((snap, i) => {
+            const x = padding + (i / Math.max(1, historicalSnapshots.length - 1)) * (chartWidth - 2 * padding);
+            const y = chartHeight - padding - ((snap.deaditude_score - minScore) / (maxScore - minScore)) * (chartHeight - 2 * padding);
+            return (
+              <circle cx={x} cy={y} r="4" fill="var(--body-bg-color)" stroke="currentColor" stroke-width="2">
+                <title>{new Date(snap.snapshot_date).toLocaleDateString()}: {snap.deaditude_score.toFixed(1)}%</title>
+              </circle>
+            );
+          })}
+        </svg>
+        <div class="figure-caption">Chronological evolution of existential threat.</div>
+      </div>
+    )}
+  </section>
+
+  <section>
+    <h2>2. Clinical Analysis</h2>
+    <p>{tech.description}</p>
+    
+    {latestSnapshot && (
+      <div>
+        <h3>2.1 Diagnostic Metrics</h3>
+        <p>The following objective indicators have been collected to determine the existential status of this technology:</p>
+        
+        <div class="metric-grid">
+          <div class="metric-card">
+            <h4>Codebase Vitality (GitHub)</h4>
+            <ul>
+              <li><strong>Stars:</strong> {latestSnapshot.github_stars?.toLocaleString() || 'N/A'}</li>
+              <li><strong>Forks:</strong> {latestSnapshot.github_forks?.toLocaleString() || 'N/A'}</li>
+              <li><strong>Open Issues:</strong> {latestSnapshot.github_issues_open?.toLocaleString() || 'N/A'}</li>
+              <li><strong>Issues Closed Ratio:</strong> {latestSnapshot.github_issues_closed_ratio !== undefined ? `${(latestSnapshot.github_issues_closed_ratio * 100).toFixed(1)}%` : 'N/A'}</li>
+              <li><strong>Recent Commits (last month):</strong> {latestSnapshot.github_commits_last_month?.toLocaleString() || '0'}</li>
+              <li><strong>Days Since Last Commit:</strong> {latestSnapshot.github_days_since_last_commit?.toLocaleString() || 'N/A'}</li>
+              <li><strong>Contributors Count:</strong> {latestSnapshot.github_contributors_count?.toLocaleString() || 'N/A'}</li>
+              <li><strong>Trend Direction:</strong> {latestSnapshot.github_trend_direction || 'N/A'}</li>
+              <li><strong>Trend Growth Rate:</strong> {latestSnapshot.github_trend_growth_rate !== undefined ? `${(latestSnapshot.github_trend_growth_rate * 100).toFixed(1)}%` : 'N/A'}</li>
+            </ul>
+          </div>
+
+          <div class="metric-card">
+            <h4>Community Cry for Help (StackOverflow)</h4>
+            <ul>
+              <li><strong>Total Questions (recent):</strong> {latestSnapshot.so_total_questions?.toLocaleString() || 'N/A'}</li>
+              <li><strong>Answered Ratio:</strong> {latestSnapshot.so_answered_ratio !== undefined ? `${(latestSnapshot.so_answered_ratio * 100).toFixed(1)}%` : 'N/A'}</li>
+              <li><strong>Accepted Ratio:</strong> {latestSnapshot.so_accepted_ratio !== undefined ? `${(latestSnapshot.so_accepted_ratio * 100).toFixed(1)}%` : 'N/A'}</li>
+              <li><strong>Zero Answer Ratio:</strong> {latestSnapshot.so_zero_answer_ratio !== undefined ? `${(latestSnapshot.so_zero_answer_ratio * 100).toFixed(1)}%` : 'N/A'}</li>
+              <li><strong>Median Response Time (hr):</strong> {latestSnapshot.so_median_response_hr?.toLocaleString() || 'N/A'}</li>
+              <li><strong>Days Since Last Activity:</strong> {latestSnapshot.so_last_activity_days?.toLocaleString() || 'N/A'}</li>
+              <li><strong>Trend Direction:</strong> {latestSnapshot.so_trend_direction || 'N/A'}</li>
+            </ul>
+          </div>
+
+          <div class="metric-card">
+            <h4>Hype & Propaganda (YouTube)</h4>
+            <ul>
+              <li><strong>Recent Videos:</strong> {latestSnapshot.youtube_video_count?.toLocaleString() || 'N/A'}</li>
+              <li><strong>Average Views:</strong> {latestSnapshot.youtube_avg_views?.toLocaleString() || 'N/A'}</li>
+            </ul>
+          </div>
+
+          <div class="metric-card">
+            <h4>Despair & Existential Dread (Reddit)</h4>
+            <ul>
+              <li><strong>Reddit Posts (recent):</strong> {latestSnapshot.reddit_post_count?.toLocaleString() || 'N/A'}</li>
+              <li><strong>Average Upvotes:</strong> {latestSnapshot.reddit_avg_upvotes !== undefined ? latestSnapshot.reddit_avg_upvotes.toFixed(1) : 'N/A'}</li>
+              <li><strong>Trend Direction:</strong> {latestSnapshot.reddit_trend_direction || 'N/A'}</li>
+              <li><strong>Trend Growth Rate:</strong> {latestSnapshot.reddit_trend_growth_rate !== undefined ? `${(latestSnapshot.reddit_trend_growth_rate * 100).toFixed(1)}%` : 'N/A'}</li>
+            </ul>
+          </div>
+
+          <div class="metric-card">
+            <h4>Intellectual Discourse (Hacker News)</h4>
+            <ul>
+              <li><strong>Mentions (recent):</strong> {latestSnapshot.hn_post_count?.toLocaleString() || 'N/A'}</li>
+              <li><strong>Average Points:</strong> {latestSnapshot.hn_avg_points !== undefined ? latestSnapshot.hn_avg_points.toFixed(1) : 'N/A'}</li>
+              <li><strong>Days Since Last Post:</strong> {latestSnapshot.hn_days_since_last?.toLocaleString() || 'N/A'}</li>
+            </ul>
+          </div>
+
+          <div class="metric-card">
+            <h4>Corporate Adoption (StackShare & Jobs)</h4>
+            <ul>
+              <li><strong>Stacks Using It:</strong> {latestSnapshot.stackshare_stacks_count?.toLocaleString() || 'N/A'}</li>
+              <li><strong>StackShare Followers:</strong> {latestSnapshot.stackshare_followers?.toLocaleString() || 'N/A'}</li>
+              <li><strong>StackShare Upvotes:</strong> {latestSnapshot.stackshare_upvotes?.toLocaleString() || 'N/A'}</li>
+              <li><strong>StackShare Mentions:</strong> {latestSnapshot.stackshare_mentions?.toLocaleString() || 'N/A'}</li>
+              <li><strong>Open Job Postings:</strong> {latestSnapshot.google_jobs_count?.toLocaleString() || 'N/A'}</li>
+              <li><strong>Jobs Trend Direction:</strong> {latestSnapshot.google_jobs_trend_direction || 'N/A'}</li>
+              <li><strong>Jobs Trend Growth Rate:</strong> {latestSnapshot.google_jobs_trend_growth_rate !== undefined ? `${(latestSnapshot.google_jobs_trend_growth_rate * 100).toFixed(1)}%` : 'N/A'}</li>
+            </ul>
+          </div>
+        </div>
+
+
+
+        <p><em>Data retrieved at: {new Date(latestSnapshot.snapshot_date).toLocaleDateString()}</em></p>
+      </div>
+    )}
+
+    {latestSnapshot?.youtube_metrics?.raw?.videos && latestSnapshot.youtube_metrics.raw.videos.length > 0 && (
+      <div>
+        <h3>Appendix A: Recent YouTube Propaganda</h3>
+        <table class="appendix-table borders-custom">
+          <caption>Recent YouTube activity related to the subject.</caption>
+          <thead>
+            <tr>
+              <th style="width: 150px;">Thumbnail</th>
+              <th>Video Details</th>
+              <th style="width: 100px;">Views</th>
+            </tr>
+          </thead>
+          <tbody>
+          {latestSnapshot.youtube_metrics.raw.videos.slice(0, 5).map(video => (
+            <tr>
+              <td>
+                <a href={`https://youtube.com/watch?v=${video.id}`} target="_blank">
+                  <img src={video.snippet.thumbnails?.medium?.url} alt="Thumbnail" class="bw-figure" />
+                </a>
+              </td>
+              <td>
+                <strong><a href={`https://youtube.com/watch?v=${video.id}`} target="_blank">{video.snippet.title}</a></strong><br/>
+                <small>Channel: {video.snippet.channelTitle}</small>
+              </td>
+              <td>{video.statistics.viewCount?.toLocaleString() || 0}</td>
+            </tr>
+          ))}
+          </tbody>
+        </table>
+      </div>
+    )}
+
+    {latestSnapshot?.reddit_metrics?.raw?.posts && latestSnapshot.reddit_metrics.raw.posts.length > 0 && (
+      <div>
+        <h3>Appendix B: Reddit Despair Logs</h3>
+        <table class="appendix-table borders-custom">
+          <caption>Sampled Reddit discourse demonstrating community sentiment.</caption>
+          <thead>
+            <tr>
+              <th>Post Title</th>
+              <th style="width: 80px;">Score</th>
+              <th style="width: 100px;">Comments</th>
+            </tr>
+          </thead>
+          <tbody>
+          {latestSnapshot.reddit_metrics.raw.posts.slice(0, 5).map(post => (
+            <tr>
+              <td class="truncate-cell" title={post.title}>
+                <a href={post.url} target="_blank">{post.title}</a>
+              </td>
+              <td>{post.score}</td>
+              <td>{post.num_comments}</td>
+            </tr>
+          ))}
+          </tbody>
+        </table>
+      </div>
+    )}
+
+    {latestSnapshot?.hn_metrics?.raw?.hits && latestSnapshot.hn_metrics.raw.hits.length > 0 && (
+      <div>
+        <h3>Appendix C: Hacker News Discourse</h3>
+        <table class="appendix-table borders-custom">
+          <caption>Recent intellectual debates and mentions on Hacker News.</caption>
+          <thead>
+            <tr>
+              <th>Topic</th>
+              <th style="width: 80px;">Points</th>
+              <th style="width: 100px;">Comments</th>
+            </tr>
+          </thead>
+          <tbody>
+          {latestSnapshot.hn_metrics.raw.hits.slice(0, 5).map(hit => (
+            <tr>
+              <td class="truncate-cell" title={hit.title}>
+                <a href={`https://news.ycombinator.com/item?id=${hit.url ? hit.url.split('id=')[1] : ''}`} target="_blank">{hit.title}</a>
+              </td>
+              <td>{hit.points}</td>
+              <td>{hit.num_comments}</td>
+            </tr>
+          ))}
+          </tbody>
+        </table>
+      </div>
+    )}
+
+    {latestSnapshot?.so_metrics?.raw?.questions && latestSnapshot.so_metrics.raw.questions.length > 0 && (
+      <div>
+        <h3>Appendix D: StackOverflow Pleas for Help</h3>
+        <table class="appendix-table borders-custom">
+          <caption>Recent questions demonstrating developer struggles.</caption>
+          <thead>
+            <tr>
+              <th>Question Title</th>
+              <th style="width: 80px;">Views</th>
+              <th style="width: 150px;">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+          {latestSnapshot.so_metrics.raw.questions.slice(0, 5).map(q => (
+            <tr>
+              <td class="truncate-cell" title={q.title}>
+                <a href={q.link} target="_blank">{q.title}</a>
+              </td>
+              <td>{q.view_count}</td>
+              <td>{q.is_answered ? 'Answered' : 'Unanswered'} ({q.answer_count} ans)</td>
+            </tr>
+          ))}
+          </tbody>
+        </table>
+      </div>
+    )}
+
+    {historicalSnapshots.length > 0 && (
+      <div>
+        <h3>Appendix E: Historical Deaditude Scores</h3>
+        <table class="appendix-table borders-custom">
+          <caption>Chronological record of the technology's vitality.</caption>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th style="width: 150px;">Deaditude Score</th>
+              <th style="width: 200px;">Verdict</th>
+            </tr>
+          </thead>
+          <tbody>
+          {historicalSnapshots.slice().reverse().map(snap => (
+            <tr>
+              <td>{new Date(snap.snapshot_date).toLocaleDateString()}</td>
+              <td>{snap.deaditude_score.toFixed(1)}%</td>
+              <td>{TechService.getRatingLabel(snap.deaditude_score)}</td>
+            </tr>
+          ))}
+          </tbody>
+        </table>
+      </div>
+    )}
+  </section>
+
+  <section>
+    <h2>3. Community Sentiment (Press F)</h2>
+    <p>
+      Observational data indicates the community's emotional state regarding this technology. You may contribute to this metric below.
+    </p>
+    <PayRespects techId={tech.id} techName={tech.name} initialCount={tech.respect_count} />
+  </section>
+
+  <section>
+    <h2>4. Exhibited Artifacts (Projects)</h2>
+    <p>
+      The following projects have been submitted by researchers as evidence of this technology's continued existence (or demise).
+    </p>
+    
+    {details?.projects?.length > 0 ? (
+      <ul>
+        {details.projects.map(project => (
+          <li>
+            <strong>{project.name}</strong> 
+            {project.url && <a href={project.url} target="_blank">[View]</a>}
+            {project.github_url && <a href={project.github_url} target="_blank">[Source]</a>}
+            <br/>
+            <em>"{project.description}"</em> - <strong>Self Roast:</strong> {project.self_roast}
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p><em>No artifacts have been submitted yet.</em></p>
+    )}
+
+    <h3>4.1 Submit an Artifact</h3>
+    <ProjectSubmission techId={tech.id} techName={tech.name} />
+  </section>
+</AcademicLayout>
