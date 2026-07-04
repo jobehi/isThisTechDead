@@ -100,9 +100,10 @@
   box-sizing: border-box;
 }
 
+/* Base Variables with Enhanced UI Variables */
 :root {
   --body-color: hsl(0, 5%, 10%);
-  --body-bg-color: hsl(210, 20%, 98%);
+  --body-bg-color: hsl(0, 0%, 99%);
   --link-visited: hsl(0, 100%, 33%);
   --link-focus-outline: hsl(220, 90%, 52%);
   --pre-bg-color: hsl(210, 28%, 93%);
@@ -113,6 +114,16 @@
   --border-width-thick: 2.27px;
   --sidenote-target-border-color: hsl(55, 55%, 70%);
   --footnotes-border-color: hsl(0, 0%, 39%);
+  
+  /* Premium UI Enhancements */
+  --premium-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --premium-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --premium-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --hover-bg: rgba(0,0,0,0.03);
+  --card-bg: #ffffff;
+  --transition-fast: 0.15s ease;
+  --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
   --text-indent-size: 1.463rem; /* In 12pt [Latin Modern font] LaTeX article
   \parindent =~ 17.625pt; taking also into account the ratio
   1pt[LaTeX] = (72 / 72.27) * 1pt[HTML], with default 12pt/1rem LaTeX.css font
@@ -122,31 +133,43 @@
 
 .latex-dark {
   --body-color: hsl(0, 0%, 86%);
-  --body-bg-color: hsl(0, 0%, 16%);
+  --body-bg-color: hsl(0, 0%, 12%);
   --link-visited: hsl(196 80% 77%);
   --link-focus-outline: hsl(215, 63%, 73%);
-  --pre-bg-color: hsl(0, 1%, 25%);
+  --pre-bg-color: hsl(0, 1%, 18%);
   --kbd-bg-color: hsl(0, 0%, 16%);
   --kbd-border-color: hsl(210, 5%, 70%);
   --table-border-color: white;
   --sidenote-target-border-color: hsl(0, 0%, 59%);
   --footnotes-border-color: hsl(0, 0%, 59%);
   --proof-symbol-filter: invert(80%);
+  
+  --hover-bg: rgba(255,255,255,0.05);
+  --card-bg: hsl(0, 0%, 15%);
+  --premium-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
+  --premium-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
+  --premium-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
 }
 
 @media (prefers-color-scheme: dark) {
    .latex-dark-auto {
     --body-color: hsl(0, 0%, 86%);
-    --body-bg-color: hsl(0, 0%, 16%);
+    --body-bg-color: hsl(0, 0%, 12%);
     --link-visited: hsl(196 80% 77%);
     --link-focus-outline: hsl(215, 63%, 73%);
-    --pre-bg-color: hsl(0, 1%, 25%);
+    --pre-bg-color: hsl(0, 1%, 18%);
     --kbd-bg-color: hsl(0, 0%, 16%);
     --kbd-border-color: hsl(210, 5%, 70%);
     --table-border-color: white;
     --sidenote-target-border-color: hsl(0, 0%, 59%);
     --footnotes-border-color: hsl(0, 0%, 59%);
     --proof-symbol-filter: invert(80%);
+
+    --hover-bg: rgba(255,255,255,0.05);
+    --card-bg: hsl(0, 0%, 15%);
+    --premium-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
+    --premium-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
+    --premium-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
   }
 }
 
@@ -796,6 +819,114 @@ h6 {
   max-width: 150px;
   height: auto;
   display: block;
+  transition: filter var(--transition-smooth), transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.bw-figure:hover {
+  filter: grayscale(0%) contrast(100%);
+  transform: scale(1.02);
+  box-shadow: var(--premium-shadow-md);
+}
+
+/* Premium Animations */
+@keyframes fadeInSlideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tech Table Enhancements */
+#tech-table tbody tr {
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  will-change: transform;
+}
+
+#tech-table tbody tr:hover {
+  background-color: var(--hover-bg);
+  transform: translateX(4px);
+  cursor: pointer;
+}
+
+/* Metric Cards */
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.metric-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--kbd-border-color);
+  border-radius: 6px;
+  padding: 1.5rem;
+  box-shadow: var(--premium-shadow-sm);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  animation: fadeInSlideUp 0.5s ease-out backwards;
+}
+
+.metric-card:nth-child(1) { animation-delay: 0.1s; }
+.metric-card:nth-child(2) { animation-delay: 0.2s; }
+.metric-card:nth-child(3) { animation-delay: 0.3s; }
+.metric-card:nth-child(4) { animation-delay: 0.4s; }
+.metric-card:nth-child(5) { animation-delay: 0.5s; }
+.metric-card:nth-child(6) { animation-delay: 0.6s; }
+
+.metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--premium-shadow-lg);
+  border-color: var(--body-color);
+}
+
+.metric-card h4 {
+  margin-top: 0;
+  border-bottom: var(--border-width-thin) solid var(--kbd-border-color);
+  padding-bottom: 0.5rem;
+  font-variant-caps: small-caps;
+}
+
+.metric-card ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.metric-card li {
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Historical Chart Styles */
+.historical-dot {
+  transition: r var(--transition-fast);
+}
+
+.historical-dot:hover {
+  r: 6;
+  fill: var(--link-visited);
+}
+
+/* Tooltip Enhancements */
+.scatter-tooltip {
+  position: absolute;
+  background: var(--body-color);
+  color: var(--body-bg-color);
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -10px);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+  box-shadow: var(--premium-shadow-md);
+  z-index: 10;
+}
+
+.scatter-dot:hover .scatter-tooltip {
+  opacity: 1;
+  transform: translate(-50%, -25px);
 }
 
 /* Metric Multi-column Grid */

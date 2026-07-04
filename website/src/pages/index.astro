@@ -11,7 +11,8 @@ try {
     headers: { 'User-Agent': 'Astro-Build' }
   });
   if (res.ok) {
-    contributors = await res.json();
+    let allContributors = await res.json();
+    contributors = allContributors.filter(c => c.type !== 'Bot' && !c.login.toLowerCase().includes('bot'));
   }
 } catch (e) {
   console.error("Failed to fetch contributors", e);
@@ -137,7 +138,7 @@ const scatterData = techs.map(tech => {
       </thead>
       <tbody>
         {techs.map(tech => (
-          <tr class="tech-row" data-name={tech.name.toLowerCase()} data-category={tech.category.toLowerCase()} data-score={tech.latest_score !== null ? tech.latest_score : -1}>
+          <tr class="tech-row" onclick={`window.location.href='${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}${tech.id}'`} data-name={tech.name.toLowerCase()} data-category={tech.category.toLowerCase()} data-score={tech.latest_score !== null ? tech.latest_score : -1}>
             <td><a href={`${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}${tech.id}`}><strong>{tech.name}</strong></a></td>
             <td style="text-transform: capitalize;">{tech.category}</td>
             <td style="text-align: right; font-family: monospace; white-space: nowrap;">

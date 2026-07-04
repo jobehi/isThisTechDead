@@ -30,9 +30,75 @@ const allComponents = [
 
 const chartWidth = 800;
 const chartHeight = 200;
-const minScore = 0;
-const maxScore = 100;
 const padding = 25;
+
+let minScore = 0;
+let maxScore = 100;
+
+if (historicalSnapshots.length > 0) {
+  const scores = historicalSnapshots.map(s => s.deaditude_score);
+  const dataMin = Math.min(...scores);
+  const dataMax = Math.max(...scores);
+  
+  // Pad by 2%, bound to 0-100
+  minScore = Math.max(0, dataMin - 2);
+  maxScore = Math.min(100, dataMax + 2);
+  
+  // Prevent division by zero if all scores are identical
+  if (minScore === maxScore) {
+    minScore = Math.max(0, minScore - 10);
+    maxScore = Math.min(100, maxScore + 10);
+  }
+}
+
+let expectedExtinction: Date | null = null;
+let trendPoints = "";
+
+if (historicalSnapshots.length > 1) {
+  const startMs = new Date(historicalSnapshots[0].snapshot_date).getTime();
+  
+  const data = historicalSnapshots.map(s => {
+    return {
+      x: (new Date(s.snapshot_date).getTime() - startMs) / (1000 * 60 * 60 * 24),
+      y: s.deaditude_score
+    };
+  });
+  
+  const n = data.length;
+  let sumX = 0, sumY = 0, sumXY = 0, sumXX = 0;
+  for (let i = 0; i < n; i++) {
+    sumX += data[i].x;
+    sumY += data[i].y;
+    sumXY += data[i].x * data[i].y;
+    sumXX += data[i].x * data[i].x;
+  }
+  
+  const denominator = (n * sumXX - sumX * sumX);
+  if (denominator !== 0) {
+    const m = (n * sumXY - sumX * sumY) / denominator;
+    const b = (sumY - m * sumX) / n;
+    
+    if (m > 0) {
+      const daysTo100 = (100 - b) / m;
+      const extinctionMs = startMs + daysTo100 * (1000 * 60 * 60 * 24);
+      expectedExtinction = new Date(extinctionMs);
+    }
+    
+    const firstX = data[0].x;
+    const lastX = data[data.length - 1].x;
+    
+    const yFirst = m * firstX + b;
+    const yLast = m * lastX + b;
+    
+    const svgXFirst = padding;
+    const svgXLast = chartWidth - padding;
+    
+    const svgYFirst = chartHeight - padding - ((yFirst - minScore) / (maxScore - minScore)) * (chartHeight - 2 * padding);
+    const svgYLast = chartHeight - padding - ((yLast - minScore) / (maxScore - minScore)) * (chartHeight - 2 * padding);
+    
+    trendPoints = `${svgXFirst},${svgYFirst} ${svgXLast},${svgYLast}`;
+  }
+}
 
 const points = historicalSnapshots.map((snap, i) => {
   const x = padding + (i / Math.max(1, historicalSnapshots.length - 1)) * (chartWidth - 2 * padding);
@@ -133,6 +199,12 @@ const snapshotDate = latestSnapshot ? new Date(latestSnapshot.snapshot_date).toL
       <div style="font-size: 1.2rem; font-weight: bold; font-variant-caps: small-caps; margin-top: 0.5rem; color: var(--body-color);">
         {etdText}
       </div>
+      
+      {expectedExtinction && (
+        <div style="font-size: 1.1rem; font-weight: bold; font-variant-caps: small-caps; margin-top: 0.5rem; color: #d32f2f;">
+          Expected Extinction Date (Approximation): {expectedExtinction.toLocaleDateString(undefined, {month: 'long', year: 'numeric'})}
+        </div>
+      )}
       
       {allComponents.length > 0 && (
         <div class="equation-container" style="margin-top: 1.5rem; font-family: 'Times New Roman', serif; font-size: 1.3rem;">
@@ -235,9 +307,9 @@ const snapshotDate = latestSnapshot ? new Date(latestSnapshot.snapshot_date).toL
           <line x1={padding} y1={chartHeight - padding} x2={chartWidth - padding} y2={chartHeight - padding} stroke="var(--kbd-border-color)" stroke-dasharray="4" />
           
           <!-- Y-axis labels -->
-          <text x={padding - 5} y={padding + 4} font-size="12" text-anchor="end" fill="currentColor">100</text>
-          <text x={padding - 5} y={chartHeight / 2 + 4} font-size="12" text-anchor="end" fill="currentColor">50</text>
-          <text x={padding - 5} y={chartHeight - padding + 4} font-size="12" text-anchor="end" fill="currentColor">0</text>
+          <text x={padding - 5} y={padding + 4} font-size="12" text-anchor="end" fill="currentColor">{maxScore.toFixed(1)}</text>
+          <text x={padding - 5} y={chartHeight / 2 + 4} font-size="12" text-anchor="end" fill="currentColor">{((minScore + maxScore) / 2).toFixed(1)}</text>
+          <text x={padding - 5} y={chartHeight - padding + 4} font-size="12" text-anchor="end" fill="currentColor">{minScore.toFixed(1)}</text>
 
           <!-- X-axis labels (Dates) -->
           <text x={padding} y={chartHeight + 5} font-size="11" text-anchor="middle" fill="currentColor">
@@ -248,14 +320,19 @@ const snapshotDate = latestSnapshot ? new Date(latestSnapshot.snapshot_date).toL
           </text>
 
           <!-- Data line -->
-          <polyline fill="none" stroke="currentColor" stroke-width="2" points={points} />
+          <polyline class="historical-line" fill="none" stroke="currentColor" stroke-width="2" points={points} />
+          
+          <!-- Trend line (Approximation) -->
+          {trendPoints && (
+            <polyline fill="none" stroke="#d32f2f" stroke-width="2" stroke-dasharray="4" points={trendPoints} />
+          )}
           
           <!-- Data points -->
           {historicalSnapshots.map((snap, i) => {
             const x = padding + (i / Math.max(1, historicalSnapshots.length - 1)) * (chartWidth - 2 * padding);
             const y = chartHeight - padding - ((snap.deaditude_score - minScore) / (maxScore - minScore)) * (chartHeight - 2 * padding);
             return (
-              <circle cx={x} cy={y} r="4" fill="var(--body-bg-color)" stroke="currentColor" stroke-width="2">
+              <circle class="historical-dot" cx={x} cy={y} r="4" fill="var(--body-bg-color)" stroke="currentColor" stroke-width="2">
                 <title>{new Date(snap.snapshot_date).toLocaleDateString()}: {snap.deaditude_score.toFixed(1)}%</title>
               </circle>
             );
