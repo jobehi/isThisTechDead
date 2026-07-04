@@ -58,8 +58,8 @@ jobs:
         env:
           PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
-          SITE_URL: "https://${{ github.repository_owner }}.github.io"
-          BASE_PATH: "/${{ github.event.repository.name }}/"
+          SITE_URL: "https://isthistechdead.com"
+          BASE_PATH: "/"
           BUILD_TECHS: ${{ inputs.tech_ids || github.event.client_payload.tech_ids || '' }}
       - name: Bypass Jekyll
         run: touch dist/.nojekyll
@@ -69,3 +69,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./website/dist
           keep_files: true
+          cname: isthistechdead.com
