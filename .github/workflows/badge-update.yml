@@ -1,9 +1,0 @@
-name: Manual Badge Update
-
-on:
-  workflow_dispatch:
-
-jobs:
-  update-badges:
-    uses: ./.github/workflows/badge-update-reusable.yml
-    secrets: inherit 
