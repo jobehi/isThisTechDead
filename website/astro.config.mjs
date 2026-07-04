@@ -2,7 +2,8 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: process.env.NEXT_PUBLIC_SITE_URL || 'https://isthistechdead.com',
+  site: process.env.SITE_URL || 'https://jobehi.github.io',
+  base: process.env.BASE_PATH || '/isThisTechDead',
   outDir: './dist',
   trailingSlash: 'never',
 });
