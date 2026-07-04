@@ -10,7 +10,7 @@
     "preview": "astro preview",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "type-check": "tsc --noEmit && tsc -p tsconfig.scripts.json --noEmit",
+    "type-check": "astro check && tsc --noEmit && tsc -p tsconfig.scripts.json --noEmit",
     "test": "vitest run",
     "prepare": "husky",
     "clean": "rm -rf dist .astro",
@@ -24,6 +24,7 @@
     "zod": "^3.24.3"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.9",
     "@eslint/eslintrc": "^3",
     "@types/node": "^26.1.0",
     "eslint": "^9.25.1",
