@@ -26,12 +26,15 @@ export class TechService {
           TechRepository.getRespectCount(tech.id),
           TechRepository.getProjectCountByTechId(tech.id),
         ]);
-        
+
         const latestSnapshot = snapshots[0] || null;
         const previousSnapshot = snapshots[1] || null;
-        
+
         let score_momentum: number | null = null;
-        if (latestSnapshot?.deaditude_score !== undefined && previousSnapshot?.deaditude_score !== undefined) {
+        if (
+          latestSnapshot?.deaditude_score !== undefined &&
+          previousSnapshot?.deaditude_score !== undefined
+        ) {
           score_momentum = latestSnapshot.deaditude_score - previousSnapshot.deaditude_score;
         }
 
