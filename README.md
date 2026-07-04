@@ -26,7 +26,7 @@ This monorepo contains two main components:
 
 ### 1. 🌐 Frontend (website/)
 
-A Next.js 15 powered obituary service with a responsive UI that works on all devices, except Windows phones (and we're not apologizing for that).
+An Astro-powered obituary service with a responsive, LaTeX-inspired Academic UI that works on all devices, except Windows phones (and we're not apologizing for that).
 
 ### 2. 🧠 Deaditude Engine (deaditude/)
 
@@ -92,11 +92,12 @@ python -m engine.cli analyze react facebook
 
 ```
 isthistechdead/
-├── website/            # Frontend Next.js application
-│   ├── app/            # Next.js app router
-│   ├── components/     # React components
-│   ├── domains/        # Business domains organized by feature
-│   └── lib/            # Shared utilities and configuration
+├── website/            # Frontend Astro application
+│   ├── src/            # Source code
+│   │   ├── pages/      # Astro pages and routing
+│   │   ├── layouts/    # Global layout templates
+│   │   ├── domains/    # Business domains organized by feature
+│   │   └── lib/        # Shared utilities and configuration
 │
 ├── deaditude/          # Analysis engine
 │   ├── engine/         # Core analysis modules
@@ -114,12 +115,10 @@ isthistechdead/
 ## Tech Stack
 
 ### Frontend
-- **Next.js 15**: Because someone told us server components would fix everything
-- **React 19**: For when plain HTML would be too straightforward
+- **Astro**: Because shipping 2MB of React for a static text site is exactly the kind of bloat we make fun of
 - **TypeScript**: So we can feel superior about our error messages
-- **Tailwind CSS 4**: For people who hate writing actual CSS
+- **Vanilla CSS**: Because Tailwind was getting too main-stream
 - **Supabase**: Because we're too lazy to build our own backend
-- **Framer Motion**: For animations that distract from the existential dread
 
 ### Backend
 - **Python 3.10+**: A language that refuses to die, ironically

@@ -181,7 +181,7 @@ Each domain has its own:
 - **Types**: Domain models and interfaces
 - **Repository**: Data access layer
 - **Service**: Business logic
-- **Hooks**: React hooks for components
+- **Components**: UI components specific to the domain
 
 Current domains:
 
@@ -191,12 +191,11 @@ Current domains:
 
 ### Component Architecture
 
-We follow the Atomic Design pattern:
+We use a simple, academic-style layout built with Astro:
 
-- **Atoms**: Basic UI building blocks
-- **Molecules**: Simple combinations of atoms
-- **Organisms**: Complex UI sections
-- **Features**: Domain-specific components
+- **Layouts**: Global HTML shells (e.g. `AcademicLayout.astro`)
+- **Pages**: Top-level routes (e.g. `index.astro`, `[tech_id].astro`)
+- **Vanilla CSS**: Global styles (`latex.css`) because Tailwind is for people who fear raw CSS.
 
 ### Adding New Features
 
