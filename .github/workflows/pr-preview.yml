@@ -44,6 +44,10 @@ jobs:
           SITE_URL: "https://${{ github.repository_owner }}.github.io"
           BASE_PATH: "/${{ github.event.repository.name }}/pr-preview/pr-${{ github.event.number }}/"
 
+      - name: Bypass Jekyll
+        if: github.event.action != 'closed'
+        run: touch website/dist/.nojekyll
+
       - name: Deploy PR Preview
         uses: rossjrw/pr-preview-action@v1
         with:
