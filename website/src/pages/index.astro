@@ -91,7 +91,7 @@ const scatterData = techs.map(tech => {
       <div class="scatter-plot">
         <div class="scatter-axis-y">Deaditude Score (%)</div>
         {scatterData.map(tech => (
-          <a href={`${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}${tech.id}`} class="scatter-dot" style={`left: ${tech.xPos}%; bottom: ${tech.yPos}%;`}>
+          <a href={`${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}${tech.id}`} class="scatter-dot" style={`left: ${tech.xPos}%; bottom: ${tech.yPos}%;`} aria-label={`View details for ${tech.name}`}>
             <div class="scatter-tooltip">
               <strong>{tech.name}</strong><br />
               Age: {tech.age} yrs | Score: {tech.scoreFormatted}
