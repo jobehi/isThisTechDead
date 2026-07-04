@@ -64,12 +64,12 @@ const scatterData = techs.map(tech => {
       <div class="scatter-plot">
         <div class="scatter-axis-y">Deaditude Score (%)</div>
         {scatterData.map(tech => (
-          <div class="scatter-dot" style={`left: ${tech.xPos}%; bottom: ${tech.yPos}%;`}>
+          <a href={`/${tech.id}`} class="scatter-dot" style={`left: ${tech.xPos}%; bottom: ${tech.yPos}%;`}>
             <div class="scatter-tooltip">
               <strong>{tech.name}</strong><br />
               Age: {tech.age} yrs | Score: {tech.scoreFormatted}
             </div>
-          </div>
+          </a>
         ))}
       </div>
       <div class="scatter-axis-x">
