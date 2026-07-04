@@ -14,7 +14,6 @@ export async function getStaticPaths() {
 
 const { tech } = Astro.props;
 const details = await TechService.getTechDetails(tech.id);
-console.log("DETAILS LENGTH:", details.snapshots?.length);
 const latestSnapshot = TechService.getLatestSnapshot(details.snapshots);
 const score = latestSnapshot?.deaditude_score ?? null;
 
@@ -103,9 +102,10 @@ const radarGrid = [25, 50, 75, 100].map(pct => {
 
 const title = `${tech.name}`;
 const abstract = `An in-depth empirical analysis of the remaining vitality of ${tech.name}. This document explores historical data points, community despair, and residual hype to determine its true existential status.`;
+const snapshotDate = latestSnapshot ? new Date(latestSnapshot.snapshot_date).toLocaleDateString() : new Date().toLocaleDateString();
 ---
 
-<AcademicLayout title={title} abstract={abstract}>
+<AcademicLayout title={title} date={snapshotDate} abstract={abstract}>
   <div style="margin-bottom: 2rem;">
     <a href={`${import.meta.env.BASE_URL}`} style="text-decoration: none; font-variant-caps: small-caps;">&larr; Return to Global Registry</a>
   </div>
@@ -496,31 +496,5 @@ const abstract = `An in-depth empirical analysis of the remaining vitality of ${
       Observational data indicates the community's emotional state regarding this technology. You may contribute to this metric below.
     </p>
     <PayRespects techId={tech.id} techName={tech.name} initialCount={tech.respect_count} />
-  </section>
-
-  <section>
-    <h2>4. Exhibited Artifacts (Projects)</h2>
-    <p>
-      The following projects have been submitted by researchers as evidence of this technology's continued existence (or demise).
-    </p>
-    
-    {details?.projects?.length > 0 ? (
-      <ul>
-        {details.projects.map(project => (
-          <li>
-            <strong>{project.name}</strong> 
-            {project.url && <a href={project.url} target="_blank">[View]</a>}
-            {project.github_url && <a href={project.github_url} target="_blank">[Source]</a>}
-            <br/>
-            <em>"{project.description}"</em> - <strong>Self Roast:</strong> {project.self_roast}
-          </li>
-        ))}
-      </ul>
-    ) : (
-      <p><em>No artifacts have been submitted yet.</em></p>
-    )}
-
-    <h3>4.1 Submit an Artifact</h3>
-    <ProjectSubmission techId={tech.id} techName={tech.name} />
   </section>
 </AcademicLayout>

@@ -4,6 +4,19 @@ import { TechService } from '../domains/tech/tech.service';
 
 const techs = await TechService.getAllTechs();
 
+// Fetch contributors dynamically
+let contributors = [];
+try {
+  const res = await fetch('https://api.github.com/repos/jobehi/isThisTechDead/contributors', {
+    headers: { 'User-Agent': 'Astro-Build' }
+  });
+  if (res.ok) {
+    contributors = await res.json();
+  }
+} catch (e) {
+  console.error("Failed to fetch contributors", e);
+}
+
 const title = "Is This Tech Dead?";
 const abstract = "This document presents an ongoing, highly scientific, and definitely unbiased analysis of various technologies to determine their level of relevance, or 'Deaditude'. We examine numerous extremely objective indicators to provide a definitive score. Below is the current registry of technologies and their respective existential statuses.";
 
@@ -39,8 +52,18 @@ const scatterData = techs.map(tech => {
 
 <AcademicLayout title={title} abstract={abstract}>
   <div class="author">
-    Published by: The Open Source Community<br />
-    <em>Journal of Deprecated Technologies</em>
+    Published by: 
+    {contributors.length > 0 ? (
+      contributors.map((c, i) => (
+        <span>
+          <a href={c.html_url} target="_blank" style="font-weight: bold; text-decoration: none;">{c.login}</a>{i < contributors.length - 1 ? ', ' : ''}
+        </span>
+      ))
+    ) : (
+      <a href="https://github.com/jobehi" target="_blank" style="font-weight: bold; text-decoration: none;">jobehi</a>
+    )}
+    <br />
+    & The Open Source Community
   </div>
 
   <section>
