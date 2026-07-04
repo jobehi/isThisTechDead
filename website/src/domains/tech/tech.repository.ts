@@ -73,7 +73,10 @@ export class TechRepository {
   /**
    * Get optimized recent snapshots for a tech (for list views)
    */
-  static async getRecentSnapshotsByTechId(techId: string, limit: number = 2): Promise<Partial<Snapshot>[]> {
+  static async getRecentSnapshotsByTechId(
+    techId: string,
+    limit: number = 2
+  ): Promise<Partial<Snapshot>[]> {
     try {
       const { data, error } = await supabase
         .from(DB_TABLES.TECH_SNAPSHOTS)

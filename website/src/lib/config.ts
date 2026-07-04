@@ -88,7 +88,8 @@ export function getBoolEnv(name: string, defaultValue = true): boolean {
 }
 
 // Determine the current environment
-const nodeEnv = (typeof process !== 'undefined' && process.env.NODE_ENV) ? process.env.NODE_ENV : 'development';
+const nodeEnv =
+  typeof process !== 'undefined' && process.env.NODE_ENV ? process.env.NODE_ENV : 'development';
 
 /**
  * Application configuration
@@ -105,8 +106,14 @@ export const config: AppConfig = {
   },
 
   supabase: {
-    url: (import.meta as any).env?.PUBLIC_SUPABASE_URL || (import.meta as any).env?.NEXT_PUBLIC_SUPABASE_URL || getEnv('PUBLIC_SUPABASE_URL', getEnv('NEXT_PUBLIC_SUPABASE_URL', '')),
-    anonKey: (import.meta as any).env?.PUBLIC_SUPABASE_ANON_KEY || (import.meta as any).env?.NEXT_PUBLIC_SUPABASE_ANON_KEY || getEnv('PUBLIC_SUPABASE_ANON_KEY', getEnv('NEXT_PUBLIC_SUPABASE_ANON_KEY', '')),
+    url:
+      (import.meta as any).env?.PUBLIC_SUPABASE_URL ||
+      (import.meta as any).env?.NEXT_PUBLIC_SUPABASE_URL ||
+      getEnv('PUBLIC_SUPABASE_URL', getEnv('NEXT_PUBLIC_SUPABASE_URL', '')),
+    anonKey:
+      (import.meta as any).env?.PUBLIC_SUPABASE_ANON_KEY ||
+      (import.meta as any).env?.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+      getEnv('PUBLIC_SUPABASE_ANON_KEY', getEnv('NEXT_PUBLIC_SUPABASE_ANON_KEY', '')),
   },
 
   site: {
@@ -115,21 +122,29 @@ export const config: AppConfig = {
     description: 'Find out if your favorite technologies are dying with data-driven insights.',
     ogImage: '/is_this_tech_dead_cover.png',
     githubUrl: 'https://github.com/jobehi/is-this-tech-dead-front',
-    ethicalAdsId: (import.meta as any).env?.ETHICAL_ADS_ID || getEnv('ETHICAL_ADS_ID', 'isthistechdeadcom'),
+    ethicalAdsId:
+      (import.meta as any).env?.ETHICAL_ADS_ID || getEnv('ETHICAL_ADS_ID', 'isthistechdeadcom'),
   },
 
   features: {
-    enableProjectSubmission: getBoolEnv('PUBLIC_ENABLE_PROJECT_SUBMISSION') ?? getBoolEnv('NEXT_PUBLIC_ENABLE_PROJECT_SUBMISSION', true),
-    enablePressF: getBoolEnv('PUBLIC_ENABLE_PRESS_F') ?? getBoolEnv('NEXT_PUBLIC_ENABLE_PRESS_F', true),
+    enableProjectSubmission:
+      getBoolEnv('PUBLIC_ENABLE_PROJECT_SUBMISSION') ??
+      getBoolEnv('NEXT_PUBLIC_ENABLE_PROJECT_SUBMISSION', true),
+    enablePressF:
+      getBoolEnv('PUBLIC_ENABLE_PRESS_F') ?? getBoolEnv('NEXT_PUBLIC_ENABLE_PRESS_F', true),
   },
 
   recaptcha: {
-    siteKey: (import.meta as any).env?.PUBLIC_RECAPTCHA_SITE_KEY || getEnv('PUBLIC_RECAPTCHA_SITE_KEY', getEnv('NEXT_PUBLIC_RECAPTCHA_SITE_KEY', '')),
+    siteKey:
+      (import.meta as any).env?.PUBLIC_RECAPTCHA_SITE_KEY ||
+      getEnv('PUBLIC_RECAPTCHA_SITE_KEY', getEnv('NEXT_PUBLIC_RECAPTCHA_SITE_KEY', '')),
     secretKey: (import.meta as any).env?.RECAPTCHA_SECRET_KEY || getEnv('RECAPTCHA_SECRET_KEY', ''),
   },
 
   newsletter: {
-    apiKey: (import.meta as any).env?.PUBLIC_BUTTONDOWN_API_KEY || getEnv('PUBLIC_BUTTONDOWN_API_KEY', getEnv('NEXT_PUBLIC_BUTTONDOWN_API_KEY', '')),
+    apiKey:
+      (import.meta as any).env?.PUBLIC_BUTTONDOWN_API_KEY ||
+      getEnv('PUBLIC_BUTTONDOWN_API_KEY', getEnv('NEXT_PUBLIC_BUTTONDOWN_API_KEY', '')),
   },
 
   security: {
@@ -142,10 +157,10 @@ export const config: AppConfig = {
         windowMs: 60 * 60 * 1000, // 1 hour in milliseconds
       },
     },
-    revalidationSecret: (import.meta as any).env?.REVALIDATION_SECRET || getEnv('REVALIDATION_SECRET', ''),
+    revalidationSecret:
+      (import.meta as any).env?.REVALIDATION_SECRET || getEnv('REVALIDATION_SECRET', ''),
   },
 };
-
 
 /**
  * Log warnings for missing configurations (development only)
