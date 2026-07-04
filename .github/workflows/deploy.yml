@@ -11,6 +11,14 @@ on:
   repository_dispatch:
     types: [rebuild_site]
 
+  # Allows this workflow to be called by other workflows
+  workflow_call:
+    inputs:
+      tech_ids:
+        description: 'Comma separated list of tech IDs to rebuild'
+        required: false
+        type: string
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -52,7 +60,7 @@ jobs:
           PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           SITE_URL: "https://${{ github.repository_owner }}.github.io"
           BASE_PATH: "/${{ github.event.repository.name }}/"
-          BUILD_TECHS: ${{ github.event.client_payload.tech_ids || '' }}
+          BUILD_TECHS: ${{ inputs.tech_ids || github.event.client_payload.tech_ids || '' }}
       - name: Bypass Jekyll
         run: touch website/dist/.nojekyll
       - name: Deploy to GitHub Pages
