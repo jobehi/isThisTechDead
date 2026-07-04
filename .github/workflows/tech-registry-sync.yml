@@ -40,7 +40,7 @@ jobs:
           cache-dependency-path: tech-registry/package-lock.json
       
       - name: Install dependencies
-        run: npm ci
+        run: npm install
       
       - name: Export from database to local YAML files
         env:
@@ -105,7 +105,7 @@ jobs:
           cache-dependency-path: tech-registry/package-lock.json
       
       - name: Install dependencies
-        run: npm ci
+        run: npm install
       
       - name: Check for changes in tech registry
         id: check-changes
