@@ -1,8 +1,6 @@
 ---
 import AcademicLayout from '../layouts/AcademicLayout.astro';
 import { TechService } from '../domains/tech/tech.service';
-import PayRespects from '../components/PayRespects.astro';
-import ProjectSubmission from '../components/ProjectSubmission.astro';
 
 export async function getStaticPaths() {
   const techs = await TechService.getAllTechs();
@@ -572,11 +570,4 @@ const snapshotDate = latestSnapshot ? new Date(latestSnapshot.snapshot_date).toL
     )}
   </section>
 
-  <section>
-    <h2>3. Community Sentiment (Press F)</h2>
-    <p>
-      Observational data indicates the community's emotional state regarding this technology. You may contribute to this metric below.
-    </p>
-    <PayRespects techId={tech.id} techName={tech.name} initialCount={tech.respect_count} />
-  </section>
 </AcademicLayout>
