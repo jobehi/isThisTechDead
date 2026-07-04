@@ -506,7 +506,7 @@ const snapshotDate = latestSnapshot ? new Date(latestSnapshot.snapshot_date).toL
           {latestSnapshot.hn_metrics.raw.hits.slice(0, 5).map(hit => (
             <tr>
               <td class="truncate-cell" title={hit.title}>
-                <a href={`https://news.ycombinator.com/item?id=${hit.url ? hit.url.split('id=')[1] : ''}`} target="_blank">{hit.title}</a>
+                <a href={hit.url || `https://news.ycombinator.com/item?id=${hit.objectID}`} target="_blank">{hit.title}</a>
               </td>
               <td>{hit.points}</td>
               <td>{hit.num_comments}</td>
