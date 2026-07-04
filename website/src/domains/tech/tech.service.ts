@@ -1,0 +1,132 @@
+import { TechRepository } from './tech.repository';
+import { Snapshot, Tech, TechDetails, TechWithScore } from './tech.types';
+import { MetaBuilder } from '@/lib/shared';
+import { getRatingLabel } from '@/lib/shared/ratings';
+
+/**
+ * Tech Service
+ *
+ * Manages business logic for the tech domain.
+ */
+export class TechService {
+  private static metaBuilder = new MetaBuilder();
+
+  /**
+   * Get a list of all technologies with their scores
+   */
+  static async getAllTechs(): Promise<TechWithScore[]> {
+    const techs = await TechRepository.getAllTechs();
+
+    // Transform to include scores and metrics - doing this in parallel for better performance
+    const techsWithScores = await Promise.all(
+      techs.map(async tech => {
+        // Get optimized snapshots (just scores/dates), respect count, and project count in parallel
+        const [snapshots, respectCount, projectCount] = await Promise.all([
+          TechRepository.getRecentSnapshotsByTechId(tech.id, 2),
+          TechRepository.getRespectCount(tech.id),
+          TechRepository.getProjectCountByTechId(tech.id),
+        ]);
+        
+        const latestSnapshot = snapshots[0] || null;
+        const previousSnapshot = snapshots[1] || null;
+        
+        let score_momentum: number | null = null;
+        if (latestSnapshot?.deaditude_score !== undefined && previousSnapshot?.deaditude_score !== undefined) {
+          score_momentum = latestSnapshot.deaditude_score - previousSnapshot.deaditude_score;
+        }
+
+        return {
+          ...tech,
+          latest_score: latestSnapshot?.deaditude_score ?? null,
+          previous_score: previousSnapshot?.deaditude_score ?? null,
+          score_momentum,
+          latest_snapshot_date: latestSnapshot?.snapshot_date || null,
+          respect_count: respectCount,
+          project_count: projectCount,
+        };
+      })
+    );
+
+    // Sort by deaditude score (most dead first)
+    return techsWithScores.sort((a, b) => {
+      if (a.latest_score === null && b.latest_score === null) return 0;
+      if (a.latest_score === null) return 1;
+      if (b.latest_score === null) return -1;
+      return b.latest_score - a.latest_score;
+    });
+  }
+
+  /**
+   * Get the complete details for a technology by ID
+   */
+  static async getTechDetails(techId: string): Promise<TechDetails> {
+    try {
+      const details = await TechRepository.getTechDetails(techId);
+
+      // Simply return the details, even if tech is null
+      return details;
+    } catch {
+      // Return empty details structure instead of throwing
+      return {
+        tech: null,
+        snapshots: [],
+        projects: [],
+      };
+    }
+  }
+
+  /**
+   * Get the latest snapshot for a tech
+   */
+  static getLatestSnapshot(snapshots: Snapshot[]): Snapshot | null {
+    if (!snapshots || snapshots.length === 0) {
+      return null;
+    }
+    return snapshots[0]!;
+  }
+
+  /**
+   * Format a tech score for display
+   */
+  static formatTechScore(score: number): string {
+    return this.metaBuilder.formatTechScore(score);
+  }
+
+  /**
+   * Get rating label for a tech score
+   */
+  static getRatingLabel(score: number): string {
+    return getRatingLabel(score);
+  }
+
+  /**
+   * Generate metadata content for a tech page
+   */
+  static generateMetadataContent(
+    tech: Tech | null,
+    score: number
+  ): {
+    title: string;
+    description: string;
+    ogImage: string;
+  } {
+    return this.metaBuilder.generateMetadataContent(tech, score);
+  }
+
+  /**
+   * Generate structured data for SEO
+   */
+  static generateStructuredData(
+    tech: Tech,
+    score: number,
+    latestSnapshot: Snapshot | null,
+    slug: string
+  ): Record<string, unknown> {
+    return this.metaBuilder.generateStructuredData(
+      tech,
+      score,
+      latestSnapshot?.created_at || null,
+      slug
+    );
+  }
+}

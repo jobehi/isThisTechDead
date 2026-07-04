@@ -1,0 +1,110 @@
+---
+import AcademicLayout from '../layouts/AcademicLayout.astro';
+
+const title = "Methodology: The Calculus of 'Deaditude'";
+const abstract = "This document outlines the rigorous mathematical and statistical models utilized to calculate the Deaditude Score of software technologies.";
+---
+
+<AcademicLayout title={title} abstract={abstract}>
+  <section>
+    <h2>1. Introduction</h2>
+    <p>
+      Determining whether a technology is "dead" requires moving beyond subjective developer opinions, Reddit 
+      flamewars, and Hacker News echo chambers into empirical data analysis. Our engine aggregates multiple signals 
+      to compute a unified score so you don't have to rely on that one guy who says "X is dying" every week.
+    </p>
+  </section>
+
+  <section>
+    <h2>2. Data Sources</h2>
+    <ul>
+      <li><strong>GitHub Activity:</strong> Stars, forks, commit frequency, and issue resolution time (or lack thereof).</li>
+      <li><strong>NPM Registry:</strong> Weekly download velocity and dependency inclusion rates.</li>
+      <li><strong>StackOverflow:</strong> Question volume and answer latency (the "despair index").</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>3. The Deaditude Formula</h2>
+    <p>
+      The core equation relies on a weighted average of normalized metric decay over time. Given a time $t$, 
+      the Deaditude $D(t)$ is expressed as:
+    </p>
+    <div style="text-align: center; margin: 2rem 0; font-size: 1.2rem;">
+      <i>D(t) = α(1 - G<sub>v</sub>) + β(1 - N<sub>v</sub>) + γ(S<sub>v</sub>)</i>
+    </div>
+    <p>
+      Where: <br/>
+      $G_v$ = Normalized GitHub Velocity <br/>
+      $N_v$ = Normalized NPM Velocity <br/>
+      $S_v$ = StackOverflow Despair Index (Unanswered Questions)
+    </p>
+    
+    <h3>3.1 Mathematical Implementation (Code snippet)</h3>
+    <p>In practice, our Python-based calculation engine adjusts these weights dynamically based on the age of the technology and normalises the variance based on data quality:</p>
+    <pre is:raw style="margin-bottom: 2rem;"><code>def calculate_deaditude_score(
+    metrics: Dict[str, Dict[str, float]],
+    tech_info: Optional[Dict[str, Any]] = None,
+) -> Dict[str, Any]:
+    tech_age = _get_tech_age(tech_info)
+    weights = YOUNG_TECH_WEIGHTS if tech_age <= YOUNG_TECH_THRESHOLD else BASE_WEIGHTS
+
+    eff_w: Dict[str, float] = {}
+    sigmas: Dict[str, float] = {}
+    explanations: list[str] = []
+
+    # Effective weights & per-source σ
+    for src, base_w in weights.items():
+        m = metrics.get(src) or {}
+        q = _quality(m)
+        eff_w[src] = base_w * q
+        sigmas[src] = _sigma_for_quality(q)
+
+    # Renormalise
+    total_w = sum(eff_w.values()) or 1.0
+    for src in eff_w:
+        eff_w[src] /= total_w
+
+    # Weighted mean (0-10)
+    overall = sum(
+        eff_w[s] * metrics.get(s, {}).get("deaditude_score", 5.0) 
+        for s in eff_w
+    )
+    adjusted_overall = _adjust_score_by_age(overall, tech_age)
+    
+    # ... calculates Confidence Interval and returns 0-100 score
+    pct = adjusted_overall * 10
+    return { "overall_score": round(pct, 1) }</code></pre>
+
+    <h3>3.2 Data Collection Example (GitHub)</h3>
+    <p>We query the GitHub GraphQL API to fetch exact, high-fidelity metrics, defaulting gracefully to REST when rate limited:</p>
+    <pre is:raw><code>def _calculate_deaditude(metrics: Dict[str, Any]) -> float:
+    score = BASE_SCORE # Starts at neutral 5.0
+
+    # Negative signals (penalize inactivity)
+    commits_30d = metrics.get("commits_last_30d") or 0
+    if commits_30d == COMMITS_NONE_THRESHOLD:
+        score += COMMITS_NONE_PENALTY
+    elif commits_30d < COMMITS_LOW_THRESHOLD:
+        score += COMMITS_LOW_PENALTY
+
+    pr_age = metrics.get("pr_age_metrics", {}).get("avg", 0) or 0
+    if pr_age > PR_OLD_THRESHOLD:
+        score += PR_OLD_PENALTY
+
+    # Positive signals (reward popularity)
+    stars = metrics.get("stars", 0)
+    if stars > STARS_VERY_HIGH_THRESHOLD:
+        score -= STARS_VERY_HIGH_BONUS
+
+    return max(0, min(10, score))</code></pre>
+  </section>
+
+  <section>
+    <h2>4. Peer Review</h2>
+    <p>
+      All data points and snapshots are stored in our open-source repository and are subject to public 
+      scrutiny. Re-evaluations occur on a bi-weekly basis.
+    </p>
+  </section>
+</AcademicLayout>

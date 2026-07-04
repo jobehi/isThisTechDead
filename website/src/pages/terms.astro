@@ -1,0 +1,32 @@
+---
+import AcademicLayout from '../layouts/AcademicLayout.astro';
+
+const title = "Terms of Use & Academic Integrity";
+const abstract = "By participating in this research via artifact submission or sentiment tracking, you agree to the following protocols.";
+---
+
+<AcademicLayout title={title} abstract={abstract}>
+  <section>
+    <h2>1. Data Collection</h2>
+    <p>
+      We collect minimal data required to process artifact submissions. All submitted artifacts are subject to 
+      public display within the registry. Do not submit proprietary or confidential artifacts.
+    </p>
+  </section>
+
+  <section>
+    <h2>2. Respect Protocol</h2>
+    <p>
+      The "Press F to Pay Respects" function is an anonymized counter. No personally identifiable information 
+      is stored during this interaction.
+    </p>
+  </section>
+
+  <section>
+    <h2>3. Modification</h2>
+    <p>
+      The primary investigators reserve the right to remove or alter any artifacts that violate academic integrity 
+      or contain malicious content.
+    </p>
+  </section>
+</AcademicLayout>
