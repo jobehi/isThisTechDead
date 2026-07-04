@@ -114,8 +114,8 @@ const scatterData = techs.map(tech => {
     </p>
 
     <div class="controls-container">
-      <input type="text" id="search-input" placeholder="Search by name... (e.g. jQuery)" />
-      <select id="category-filter">
+      <input type="text" id="search-input" placeholder="Search by name... (e.g. jQuery)" aria-label="Search technologies by name" />
+      <select id="category-filter" aria-label="Filter technologies by category">
         <option value="all">All Categories</option>
         <option value="frontend">Frontend</option>
         <option value="backend">Backend</option>
@@ -123,7 +123,7 @@ const scatterData = techs.map(tech => {
         <option value="language">Language</option>
         <option value="other">Other</option>
       </select>
-      <select id="sort-select">
+      <select id="sort-select" aria-label="Sort technologies by name or score">
         <option value="name-asc">Sort by Name (A-Z)</option>
         <option value="score-desc">Sort by Deaditude (Highest First)</option>
         <option value="score-asc">Sort by Deaditude (Lowest First)</option>

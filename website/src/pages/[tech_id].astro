@@ -459,7 +459,7 @@ const snapshotDate = latestSnapshot ? new Date(latestSnapshot.snapshot_date).toL
             <tr>
               <td>
                 <a href={`https://youtube.com/watch?v=${video.id}`} target="_blank">
-                  <img src={video.snippet.thumbnails?.medium?.url} alt="Thumbnail" class="bw-figure" />
+                  <img src={video.snippet.thumbnails?.medium?.url} alt={video.snippet.title || "Video thumbnail"} class="bw-figure" />
                 </a>
               </td>
               <td>
