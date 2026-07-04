@@ -15,7 +15,7 @@ Where we monitor tech's vital signs, calculate time of death, and prepare the fu
 
 A digital hospice for technologies that were once the darlings of LinkedIn influencers but are now being kept alive by Stack Overflow questions from 2017. We're the WebMD for your tech stack, except our diagnosis is always "it's probably dying."
 
-We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety. Our data-driven approach combines the precision of a coroner with the bedside manner of a Twitter thread.
+We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety.
 
 ## Latest Technology Updates (2026-07-04)
 
