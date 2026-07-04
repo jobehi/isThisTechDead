@@ -4,6 +4,8 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   site: process.env.SITE_URL || 'https://jobehi.github.io',
   base: process.env.BASE_PATH || '/isThisTechDead',
-  outDir: './dist',
-  trailingSlash: 'never',
+  build: {
+    assets: 'assets'
+  },
+  outDir: './dist'
 });

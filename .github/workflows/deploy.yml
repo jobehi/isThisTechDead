@@ -52,7 +52,7 @@ jobs:
           PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           SITE_URL: "https://${{ github.repository_owner }}.github.io"
-          BASE_PATH: "/${{ github.event.repository.name }}"
+          BASE_PATH: "/${{ github.event.repository.name }}/"
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:

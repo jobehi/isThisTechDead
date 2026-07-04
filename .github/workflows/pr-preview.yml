@@ -42,7 +42,7 @@ jobs:
           PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           SITE_URL: "https://${{ github.repository_owner }}.github.io"
-          BASE_PATH: "/${{ github.event.repository.name }}/pr-preview/pr-${{ github.event.number }}"
+          BASE_PATH: "/${{ github.event.repository.name }}/pr-preview/pr-${{ github.event.number }}/"
 
       - name: Deploy PR Preview
         uses: rossjrw/pr-preview-action@v1
