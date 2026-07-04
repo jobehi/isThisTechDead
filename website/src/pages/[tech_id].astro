@@ -369,7 +369,9 @@ const snapshotDate = latestSnapshot ? new Date(latestSnapshot.snapshot_date).toL
         <div class="metric-grid">
           <div class="metric-card">
             <h4>Codebase Vitality (GitHub)</h4>
-            <ul>
+            {latestSnapshot.github_stars > 0 ? (
+              <ul>
+                <li><strong>Stars:</strong> {latestSnapshot.github_stars.toLocaleString()}</li>
               <li><strong>Stars:</strong> {latestSnapshot.github_stars?.toLocaleString() ?? 'N/A'}</li>
               <li><strong>Forks:</strong> {latestSnapshot.github_forks?.toLocaleString() ?? 'N/A'}</li>
               <li><strong>Open Issues:</strong> {latestSnapshot.github_issues_open?.toLocaleString() ?? 'N/A'}</li>
@@ -380,6 +382,11 @@ const snapshotDate = latestSnapshot ? new Date(latestSnapshot.snapshot_date).toL
               <li><strong>Trend Direction:</strong> {latestSnapshot.github_trend_direction ?? 'N/A'}</li>
               <li><strong>Trend Growth Rate:</strong> {latestSnapshot.github_trend_growth_rate != null ? `${(latestSnapshot.github_trend_growth_rate * 100).toFixed(1)}%` : 'N/A'}</li>
             </ul>
+            ) : (
+              <p style="color: var(--text-color); opacity: 0.8; font-style: italic; font-size: 0.9em;">
+                Not available due to technical difficulties (i.e. we couldn't afford the API quota to analyze 10,000 new JS frameworks this month).
+              </p>
+            )}
           </div>
 
           <div class="metric-card">
