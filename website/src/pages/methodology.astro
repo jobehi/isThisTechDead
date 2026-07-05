@@ -1,5 +1,6 @@
 ---
 import AcademicLayout from '../layouts/AcademicLayout.astro';
+import { Code } from 'astro:components';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -114,8 +115,32 @@ try {
 
   <section>
     <h2>4. Engine Implementation (Live Code)</h2>
-    <p>For full transparency, here is the exact <b>live, auto-synced</b> algorithm running in the backend Python engine right now that computes the final percentage and confidence bounds:</p>
-    <pre style="margin-bottom: 2rem;"><code>{engineSnippet}</code></pre>
+    <p>For full transparency, here is the exact <b>live, auto-synced</b> algorithm running in the backend Python engine right now that computes the final percentage and confidence bounds. Click the code below to view the full source file on GitHub:</p>
+    <a 
+      href="https://github.com/jobehi/isThisTechDead/blob/main/deaditude/engine/scoring/scoring.py" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="text-decoration: none; color: inherit; display: block; transition: transform 0.2s ease, box-shadow 0.2s ease;"
+      onmouseover="this.style.transform='translateY(-2px)';" 
+      onmouseout="this.style.transform='translateY(0)';"
+      title="View scoring.py on GitHub"
+    >
+      <Code code={engineSnippet} lang="python" theme="github-dark" wrap={false} class="methodology-code" />
+    </a>
   </section>
+
+  <style>
+    .methodology-code {
+      margin-bottom: 2rem;
+      cursor: pointer;
+      border-radius: 8px !important;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      padding: 1.5rem !important;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-top: 0 !important;
+    }
+  </style>
 
 </AcademicLayout>

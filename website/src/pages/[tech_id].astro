@@ -361,7 +361,6 @@ const snapshotDate = latestSnapshot ? new Date(latestSnapshot.snapshot_date).toL
             <h4>Codebase Vitality (GitHub)</h4>
             {latestSnapshot.github_stars > 0 ? (
               <ul>
-                <li><strong>Stars:</strong> {latestSnapshot.github_stars.toLocaleString()}</li>
               <li><strong>Stars:</strong> {latestSnapshot.github_stars?.toLocaleString() ?? 'N/A'}</li>
               <li><strong>Forks:</strong> {latestSnapshot.github_forks?.toLocaleString() ?? 'N/A'}</li>
               <li><strong>Open Issues:</strong> {latestSnapshot.github_issues_open?.toLocaleString() ?? 'N/A'}</li>
