@@ -67,9 +67,34 @@ const { title, author = ' An Empirical Analysis of Technological Relevance', dat
       text-transform: uppercase;
       letter-spacing: 1px;
     }
+    .academic-top-nav {
+      text-align: center;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 2rem;
+      color: #555;
+    }
+    .academic-top-nav a {
+      color: inherit;
+      text-decoration: none;
+      margin: 0 0.5rem;
+      border-bottom: 1px dotted transparent;
+      transition: border-color 0.2s;
+    }
+    .academic-top-nav a:hover {
+      border-bottom-color: #555;
+    }
   </style>
 </head>
 <body class="libertinus">
+  <nav class="academic-top-nav">
+    <a href={`${import.meta.env.BASE_URL}`}>Home</a> &bull; 
+    <a href={`${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}methodology`}>Methodology</a> &bull; 
+    <a href={`${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}terms`}>Terms</a> &bull; 
+    <a href="https://github.com/jobehi/isThisTechDead" target="_blank">Source Code</a>
+  </nav>
+
   <header class="title-block">
     <h1>{title}</h1>
     <div class="author">{author}</div>
