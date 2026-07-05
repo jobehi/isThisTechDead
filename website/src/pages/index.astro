@@ -181,7 +181,7 @@ const scatterData = techs.map(tech => {
         <option value="all">All Categories</option>
         {
           categories.map(cat => (
-            <option value={cat.toLowerCase()} style="text-transform: capitalize;">
+            <option value={cat?.toLowerCase() || ''} style="text-transform: capitalize;">
               {cat}
             </option>
           ))
@@ -211,7 +211,7 @@ const scatterData = techs.map(tech => {
                 class="tech-row"
                 onclick={`window.location.href='${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}${tech.id}'`}
                 data-name={tech.name.toLowerCase()}
-                data-category={tech.category.toLowerCase()}
+                data-category={tech.category?.toLowerCase() || ''}
                 data-score={tech.latest_score !== null ? tech.latest_score : -1}
               >
                 <td>
@@ -309,7 +309,7 @@ const scatterData = techs.map(tech => {
   const scatterDots = document.querySelectorAll('.scatter-dot');
   if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
     scatterDots.forEach(dot => {
-      dot.addEventListener('click', function (e) {
+      dot.addEventListener('click', function (this: HTMLElement, e: Event) {
         if (!this.classList.contains('active-tooltip')) {
           e.preventDefault(); // Stop navigation on first tap
           // Close other active tooltips

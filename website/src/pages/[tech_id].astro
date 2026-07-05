@@ -72,7 +72,7 @@ let expectedExtinction: Date | null = null;
 let trendPoints = '';
 
 if (historicalSnapshots.length > 1) {
-  const startMs = new Date(historicalSnapshots[0].snapshot_date).getTime();
+  const startMs = new Date(historicalSnapshots[0]!.snapshot_date).getTime();
 
   const data = historicalSnapshots.map(s => {
     return {
@@ -87,10 +87,11 @@ if (historicalSnapshots.length > 1) {
     sumXY = 0,
     sumXX = 0;
   for (let i = 0; i < n; i++) {
-    sumX += data[i].x;
-    sumY += data[i].y;
-    sumXY += data[i].x * data[i].y;
-    sumXX += data[i].x * data[i].x;
+    const d = data[i]!;
+    sumX += d.x;
+    sumY += d.y;
+    sumXY += d.x * d.y;
+    sumXX += d.x * d.x;
   }
 
   const denominator = n * sumXX - sumX * sumX;
@@ -104,8 +105,8 @@ if (historicalSnapshots.length > 1) {
       expectedExtinction = new Date(extinctionMs);
     }
 
-    const firstX = data[0].x;
-    const lastX = data[data.length - 1].x;
+    const firstX = data[0]!.x;
+    const lastX = data[data.length - 1]!.x;
 
     const yFirst = m * firstX + b;
     const yLast = m * lastX + b;
@@ -146,42 +147,7 @@ const score_momentum =
     ? latestSnapshot.deaditude_score - previousSnapshot.deaditude_score
     : null;
 
-// 2. ETD (Estimated Time of Death) Linear Regression
-let etdText = 'Prognosis: Insufficient Data';
-if (historicalSnapshots.length >= 2) {
-  let sumX = 0,
-    sumY = 0,
-    sumXY = 0,
-    sumXX = 0;
-  const n = historicalSnapshots.length;
-  const startTime = new Date(historicalSnapshots[0].snapshot_date).getTime();
-  const msPerYear = 1000 * 60 * 60 * 24 * 365.25;
-
-  historicalSnapshots.forEach(snap => {
-    const x = (new Date(snap.snapshot_date).getTime() - startTime) / msPerYear;
-    const y = snap.deaditude_score;
-    sumX += x;
-    sumY += y;
-    sumXY += x * y;
-    sumXX += x * x;
-  });
-
-  const denominator = n * sumXX - sumX * sumX;
-  if (denominator !== 0) {
-    const m = (n * sumXY - sumX * sumY) / denominator;
-    const b = (sumY - m * sumX) / n;
-
-    if (m > 0) {
-      const yearsTo85 = (85 - b) / m;
-      const dateAt85 = new Date(startTime + yearsTo85 * msPerYear);
-      // Cap at year 9999 to avoid crazy large numbers if slope is tiny
-      const yearStr = dateAt85.getFullYear() > 9999 ? '> 9999' : dateAt85.getFullYear().toString();
-      etdText = `Prognosis: ETD ${yearStr}`;
-    } else {
-      etdText = `Prognosis: Stable / Immortal`;
-    }
-  }
-}
+// 2. ETD (Estimated Time of Death) Linear Regression removed as it was unused
 
 // 3. Radar Chart (Existential Footprint) Math
 const radarRadius = 80;
@@ -348,7 +314,7 @@ const ogImageUrl = `${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWi
             </>{' '}
             &isin; &#123;
             {allComponents.map((c, i) => (
-              <span key={c.key}>
+              <span>
                 <span
                   class="hover-variable"
                   title={`${c.name}: ${c.score.toFixed(1)}% (Default 50% if missing)`}
@@ -525,7 +491,7 @@ const ogImageUrl = `${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWi
               text-anchor="middle"
               fill="currentColor"
             >
-              {new Date(historicalSnapshots[0].snapshot_date).toLocaleDateString(undefined, {
+              {new Date(historicalSnapshots[0]!.snapshot_date).toLocaleDateString(undefined, {
                 month: 'short',
                 year: 'numeric',
               })}
@@ -538,7 +504,7 @@ const ogImageUrl = `${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWi
               fill="currentColor"
             >
               {new Date(
-                historicalSnapshots[historicalSnapshots.length - 1].snapshot_date
+                historicalSnapshots[historicalSnapshots.length - 1]!.snapshot_date
               ).toLocaleDateString(undefined, { month: 'short', year: 'numeric' })}
             </text>
 
@@ -628,7 +594,7 @@ const ogImageUrl = `${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWi
           <div class="metric-grid">
             <div class="metric-card">
               <h4>Codebase Vitality (GitHub)</h4>
-              {latestSnapshot.github_stars > 0 ? (
+              {(latestSnapshot.github_stars ?? 0) > 0 ? (
                 <ul>
                   <li>
                     <strong>Stars:</strong> {latestSnapshot.github_stars?.toLocaleString() ?? 'N/A'}

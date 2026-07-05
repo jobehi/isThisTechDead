@@ -6,9 +6,3 @@
 
 // Export types
 export * from './project.types';
-
-// Export repository
-export * from './project.repository';
-
-// Export service
-export * from './project.service';

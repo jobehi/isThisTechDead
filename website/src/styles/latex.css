@@ -703,7 +703,7 @@ input.sidenote-toggle {
 .bw-figure {
   filter: grayscale(100%) contrast(120%);
   border: var(--border-width-thin) solid var(--body-color);
-  max-width: 150px;
+  max-width: 100%;
   height: auto;
   display: block;
   transition:
@@ -910,9 +910,12 @@ table.appendix-table {
 
 table.appendix-table th,
 table.appendix-table td {
-  padding: 0.5rem;
+  padding: 0.75rem 1rem;
   vertical-align: top;
   border-bottom: var(--border-width-thin) solid var(--body-color);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal !important;
 }
 
 table.appendix-table th {
