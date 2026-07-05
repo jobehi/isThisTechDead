@@ -168,65 +168,108 @@ const radarGrid = [25, 50, 75, 100].map(pct => {
 const title = `${tech.name}`;
 const abstract = `An in-depth empirical analysis of the remaining vitality of ${tech.name}. This document explores historical data points, community despair, and residual hype to determine its true existential status.`;
 const snapshotDate = latestSnapshot ? new Date(latestSnapshot.snapshot_date).toLocaleDateString() : new Date().toLocaleDateString();
+
+import roastsData from '../data/roasts.json';
+
+function getRandomRoast(score) {
+  if (score === null) {
+    const roasts = roastsData["no_data"];
+    return roasts[Math.floor(Math.random() * roasts.length)];
+  }
+  
+  let category = "";
+  if (score < 20) category = "0_20";
+  else if (score < 40) category = "20_40";
+  else if (score < 60) category = "40_60";
+  else if (score < 80) category = "60_80";
+  else category = "80_100";
+  
+  const roasts = roastsData[category];
+  return roasts[Math.floor(Math.random() * roasts.length)];
+}
+
+const randomRoast = getRandomRoast(score);
+
 ---
 
 <AcademicLayout title={title} date={snapshotDate} abstract={abstract}>
-  <div style="margin-bottom: 2rem;">
-    <a href={`${import.meta.env.BASE_URL}`} style="text-decoration: none; font-variant-caps: small-caps;">&larr; Return to Global Registry</a>
-  </div>
 
   <section>
     <h2>1. Executive Summary</h2>
-    <p>
-      <strong>Classification:</strong> {tech.category} <br/>
-      <strong>Age:</strong> {tech.creation_year ? `${new Date().getFullYear() - tech.creation_year} years (est. ${tech.creation_year})` : 'Unknown'} <br/>
-    </p>
-
-    <div style="text-align: center; margin: 3rem 0;">
-      <div style="font-size: 5rem; font-weight: bold; line-height: 1;">{score !== null ? `${score.toFixed(1)}%` : 'N/A'}</div>
+    
+    <div style="text-align: center; margin: 2rem 0;">
+      <div style="font-size: 5rem; font-weight: bold; line-height: 1; display: inline-block; position: relative;">
+        {score !== null ? `${score.toFixed(1)}%` : 'N/A'}
+        <span style="font-size: 1.5rem; color: #666; position: absolute; right: 0; top: 50%; transform: translate(calc(100% + 0.5rem), -50%); text-transform: uppercase;">Dead</span>
+      </div>
       
       {score_momentum !== null && score_momentum !== 0 && (
-        <div style={`font-size: 1.5rem; font-weight: bold; color: ${score_momentum > 0 ? '#d32f2f' : '#2e7d32'}; margin-top: 0.5rem;`}>
+        <div style={`font-size: 0.8rem; font-weight: bold; color: ${score_momentum > 0 ? '#d32f2f' : '#2e7d32'}; margin-top: 0.5rem;`}>
           {score_momentum > 0 ? '▲ Worsening' : '▼ Improving'} ({score_momentum > 0 ? '+' : ''}{score_momentum.toFixed(1)}% since last check)
         </div>
       )}
-
-      <div style="font-size: 1.2rem; font-variant-caps: small-caps; margin-top: 0.5rem; color: var(--body-color);">
-        Current Deaditude Score &mdash; {score !== null ? TechService.formatTechScore(score) : 'Awaiting Data'}
-      </div>
-
-      <div style="font-size: 1.2rem; font-weight: bold; font-variant-caps: small-caps; margin-top: 0.5rem; color: var(--body-color);">
-        {etdText}
-      </div>
-      
-      {allComponents.length > 0 && (
-        <div class="equation-container" style="margin-top: 1.5rem; font-family: 'Times New Roman', serif; font-size: 1.3rem;">
-          <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
-            <span style="font-style: italic; font-size: 1.5rem;">D</span> = 
-            <span style="font-style: italic;">f</span><sub>age</sub> &times; &sum;<sub>i=1</sub><sup>n</sup> 
-            <span style="display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; font-size: 1rem; margin: 0 0.2rem;">
-              <span style="border-bottom: 1px solid currentColor; padding: 0 0.2rem;">
-                <span style="font-style: italic;">W</span><sub>base,i</sub> &middot; <span style="font-style: italic;">q</span><sub>i</sub>
-              </span>
-              <span style="padding: 0 0.2rem;">
-                &sum; <span style="font-style: italic;">W</span><sub>base,j</sub> &middot; <span style="font-style: italic;">q</span><sub>j</sub>
-              </span>
-            </span>
-            <span style="font-style: italic;">C</span><sub>i</sub>
-          </div>
-          <div style="font-size: 1.1rem; margin-top: 1rem;">
-            Where <span style="font-style: italic;">C</span><sub>i</sub> &isin; &#123; 
-            {allComponents.map((c, i) => (
-              <span key={c.key}>
-                <span class="hover-variable" title={`${c.name}: ${c.score.toFixed(1)}% (Default 50% if missing)`} style="cursor: help; border-bottom: 1px dotted currentColor; font-weight: bold;">{c.key}</span>
-                {i < allComponents.length - 1 ? ', ' : ''}
-              </span>
-            ))}
-            &#125;
-          </div>
-        </div>
-      )}
     </div>
+
+    <table style="width: 100%; max-width: 600px; margin: 2rem auto; border-collapse: collapse; text-align: left; font-size: 0.95rem;">
+      <caption style="caption-side: top; text-align: center; margin-bottom: 0.5rem; font-variant-caps: small-caps; font-weight: bold;">Table 1: Subject Demographics & Prognosis</caption>
+      <thead>
+        <tr style="border-top: 2px solid #000; border-bottom: 1px solid #000;">
+          <th style="padding: 0.5rem; font-weight: bold; width: 40%;">Metric</th>
+          <th style="padding: 0.5rem; font-weight: bold;">Value</th>
+        </tr>
+      </thead>
+      <tbody style="border-bottom: 2px solid #000;">        
+        <tr>
+          <td style="padding: 0.5rem;">Clinical Notes</td>
+          <td style="padding: 0.5rem; font-style: italic; color: #444;">"{randomRoast}"</td>
+        </tr>
+        <tr>
+          <td style="padding: 0.5rem;">Classification</td>
+          <td style="padding: 0.5rem;">{tech.category}</td>
+        </tr>
+        <tr>
+          <td style="padding: 0.5rem;">Age</td>
+          <td style="padding: 0.5rem;">{tech.creation_year ? `${new Date().getFullYear() - tech.creation_year} years (est. ${tech.creation_year})` : 'Unknown'}</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>2. Algorithmic Evaluation</h2>
+    <p>
+      The following mathematical model was applied to evaluate the existential footprint of {tech.name}. 
+      The deaditude score is heavily influenced by the components listed below.
+    </p>
+
+    {allComponents.length > 0 && (
+      <div class="equation-container" style="margin: 2rem 0; font-family: 'Times New Roman', serif; font-size: 1.3rem;">
+        <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
+          <span style="font-style: italic; font-size: 1.5rem;">D</span> = 
+          <span style="font-style: italic;">f</span><sub>age</sub> &times; &sum;<sub>i=1</sub><sup>n</sup> 
+          <span style="display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; font-size: 1rem; margin: 0 0.2rem;">
+            <span style="border-bottom: 1px solid currentColor; padding: 0 0.2rem;">
+              <span style="font-style: italic;">W</span><sub>base,i</sub> &middot; <span style="font-style: italic;">q</span><sub>i</sub>
+            </span>
+            <span style="padding: 0 0.2rem;">
+              &sum; <span style="font-style: italic;">W</span><sub>base,j</sub> &middot; <span style="font-style: italic;">q</span><sub>j</sub>
+            </span>
+          </span>
+          <span style="font-style: italic;">C</span><sub>i</sub>
+        </div>
+        <div style="font-size: 1.1rem; margin-top: 1rem; text-align: center;">
+          Where <span style="font-style: italic;">C</span><sub>i</sub> &isin; &#123; 
+          {allComponents.map((c, i) => (
+            <span key={c.key}>
+              <span class="hover-variable" title={`${c.name}: ${c.score.toFixed(1)}% (Default 50% if missing)`} style="cursor: help; border-bottom: 1px dotted currentColor; font-weight: bold;">{c.key}</span>
+              {i < allComponents.length - 1 ? ', ' : ''}
+            </span>
+          ))}
+          &#125;
+        </div>
+      </div>
+    )}
 
     {allComponents.length > 0 && (
       <div class="figure-chart" style="margin-top: 2rem;">
