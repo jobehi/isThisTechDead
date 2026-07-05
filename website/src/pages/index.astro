@@ -3,6 +3,7 @@ import AcademicLayout from '../layouts/AcademicLayout.astro';
 import { TechService } from '../domains/tech/tech.service';
 
 const techs = await TechService.getAllTechs();
+const categories = [...new Set(techs.map(tech => tech.category))].filter(Boolean).sort();
 
 // Fetch contributors dynamically
 let contributors = [];
@@ -117,11 +118,9 @@ const scatterData = techs.map(tech => {
       <input type="text" id="search-input" placeholder="Search by name... (e.g. jQuery)" aria-label="Search technologies by name" />
       <select id="category-filter" aria-label="Filter technologies by category">
         <option value="all">All Categories</option>
-        <option value="frontend">Frontend</option>
-        <option value="backend">Backend</option>
-        <option value="database">Database</option>
-        <option value="language">Language</option>
-        <option value="other">Other</option>
+        {categories.map(cat => (
+          <option value={cat.toLowerCase()} style="text-transform: capitalize;">{cat}</option>
+        ))}
       </select>
       <select id="sort-select" aria-label="Sort technologies by name or score">
         <option value="name-asc">Sort by Name (A-Z)</option>
