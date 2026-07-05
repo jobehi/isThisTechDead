@@ -121,6 +121,7 @@ export interface HackerNewsMetrics {
       points: number;
       url?: string;
       created_at_i: number;
+      objectID: string;
     }>;
   };
 }

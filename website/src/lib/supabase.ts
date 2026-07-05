@@ -47,7 +47,7 @@ function getSupabaseClient(): SupabaseClient {
 
 // Create a lazy-loaded Supabase client
 export const supabase = new Proxy({} as SupabaseClient, {
-  get: (target, prop) => {
+  get: (_target, prop) => {
     // Only initialize the client when methods are actually called
     const client = getSupabaseClient();
     const value = client[prop as keyof SupabaseClient];
