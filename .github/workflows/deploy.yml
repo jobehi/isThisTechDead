@@ -60,7 +60,6 @@ jobs:
           PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           SITE_URL: "https://isthistechdead.com"
           BASE_PATH: "/"
-          BUILD_TECHS: ${{ inputs.tech_ids || github.event.client_payload.tech_ids || '' }}
       - name: Bypass Jekyll
         run: touch dist/.nojekyll
       - name: Upload artifact
