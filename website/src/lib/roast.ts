@@ -164,11 +164,7 @@ export function getSarcasticCommentary(score: number | undefined | null): string
 
   // Calculate roast level, ensuring it's between 0 and 4
   const roastLevel = Math.min(4, Math.max(0, Math.floor(normalizedScore / 25))) as
-    | 0
-    | 1
-    | 2
-    | 3
-    | 4;
+    0 | 1 | 2 | 3 | 4;
 
   // Ensure the selected roast level exists, default to level 0 if not
   const roastsForLevel = roastLevels[roastLevel] || roastLevels[0];

@@ -15,7 +15,7 @@
 /* Base Variables with Enhanced UI Variables */
 :root {
   /* Subtle off-white paper aesthetic */
-  --body-color: #2b2a29; 
+  --body-color: #2b2a29;
   --body-bg-color: #f9f8f6;
   --link-visited: hsl(0, 100%, 33%);
   --link-focus-outline: hsl(220, 90%, 52%);
