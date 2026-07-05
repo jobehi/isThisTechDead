@@ -442,7 +442,8 @@ const snapshotDate = latestSnapshot ? new Date(latestSnapshot.snapshot_date).toL
     {latestSnapshot?.youtube_metrics?.raw?.videos && latestSnapshot.youtube_metrics.raw.videos.length > 0 && (
       <div>
         <h3>Appendix A: Recent YouTube Propaganda</h3>
-        <table class="appendix-table borders-custom">
+        <div class="scroll-wrapper">
+          <table class="appendix-table borders-custom">
           <caption>Recent YouTube activity related to the subject.</caption>
           <thead>
             <tr>
@@ -467,14 +468,16 @@ const snapshotDate = latestSnapshot ? new Date(latestSnapshot.snapshot_date).toL
             </tr>
           ))}
           </tbody>
-        </table>
+          </table>
+        </div>
       </div>
     )}
 
     {latestSnapshot?.reddit_metrics?.raw?.posts && latestSnapshot.reddit_metrics.raw.posts.length > 0 && (
       <div>
         <h3>Appendix B: Reddit Despair Logs</h3>
-        <table class="appendix-table borders-custom">
+        <div class="scroll-wrapper">
+          <table class="appendix-table borders-custom">
           <caption>Sampled Reddit discourse demonstrating community sentiment.</caption>
           <thead>
             <tr>
@@ -494,14 +497,16 @@ const snapshotDate = latestSnapshot ? new Date(latestSnapshot.snapshot_date).toL
             </tr>
           ))}
           </tbody>
-        </table>
+          </table>
+        </div>
       </div>
     )}
 
     {latestSnapshot?.hn_metrics?.raw?.hits && latestSnapshot.hn_metrics.raw.hits.length > 0 && (
       <div>
         <h3>Appendix C: Hacker News Discourse</h3>
-        <table class="appendix-table borders-custom">
+        <div class="scroll-wrapper">
+          <table class="appendix-table borders-custom">
           <caption>Recent intellectual debates and mentions on Hacker News.</caption>
           <thead>
             <tr>
@@ -521,14 +526,16 @@ const snapshotDate = latestSnapshot ? new Date(latestSnapshot.snapshot_date).toL
             </tr>
           ))}
           </tbody>
-        </table>
+          </table>
+        </div>
       </div>
     )}
 
     {latestSnapshot?.so_metrics?.raw?.questions && latestSnapshot.so_metrics.raw.questions.length > 0 && (
       <div>
         <h3>Appendix D: StackOverflow Pleas for Help</h3>
-        <table class="appendix-table borders-custom">
+        <div class="scroll-wrapper">
+          <table class="appendix-table borders-custom">
           <caption>Recent questions demonstrating developer struggles.</caption>
           <thead>
             <tr>
@@ -548,14 +555,16 @@ const snapshotDate = latestSnapshot ? new Date(latestSnapshot.snapshot_date).toL
             </tr>
           ))}
           </tbody>
-        </table>
+          </table>
+        </div>
       </div>
     )}
 
     {historicalSnapshots.length > 0 && (
       <div>
         <h3>Appendix E: Historical Deaditude Scores</h3>
-        <table class="appendix-table borders-custom">
+        <div class="scroll-wrapper">
+          <table class="appendix-table borders-custom">
           <caption>Chronological record of the technology's vitality.</caption>
           <thead>
             <tr>
@@ -573,7 +582,8 @@ const snapshotDate = latestSnapshot ? new Date(latestSnapshot.snapshot_date).toL
             </tr>
           ))}
           </tbody>
-        </table>
+          </table>
+        </div>
       </div>
     )}
   </section>
