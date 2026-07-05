@@ -60,7 +60,7 @@ const scatterData = techs.map(tech => {
       <strong>Published by: </strong>
       {contributors.length > 0 ? contributors.map((c, i) => {
         const percentage = totalContributions > 0 ? (c.contributions / totalContributions) : 0;
-        const fontSize = 0.9 + Math.min(percentage * 1.3, 1.3); // Caps out at +1.3rem for 100% contributions
+        const fontSize = 1 + Math.min(percentage * 1.1, 1.1); // Caps out at +1.1rem for 100% contributions
         return (
           <span>
             <a href={`https://github.com/${c.login}`} target="_blank" style={`font-size: ${fontSize}rem; transition: font-size 0.2s ease; text-decoration: none;`}>{c.login}</a>{i < contributors.length - 1 ? ', ' : ''}
@@ -68,7 +68,7 @@ const scatterData = techs.map(tech => {
         );
       }) : <a href="https://github.com/jobehi" target="_blank" style="font-weight: bold; text-decoration: none;">jobehi</a>}
     </p>
-    & The Open Source Community
+    <a href="https://github.com/jobehi/isThisTechDead" target="_blank" style="text-decoration: none;">& The Open Source Community</a>
   </div>
 
   <section>
@@ -93,7 +93,10 @@ const scatterData = techs.map(tech => {
         <div class="scatter-axis-y">Deaditude Score (%)</div>
         {scatterData.map(tech => (
           <a href={`${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}${tech.id}`} class="scatter-dot" style={`left: ${tech.xPos}%; bottom: ${tech.yPos}%;`} aria-label={`View details for ${tech.name}`}>
-            <div class="scatter-tooltip">
+            <div 
+              class="scatter-tooltip" 
+              style={tech.xPos > 80 ? "left: auto; right: 0; transform: none;" : tech.xPos < 20 ? "left: 0; transform: none;" : ""}
+            >
               <strong>{tech.name}</strong><br />
               Age: {tech.age} yrs | Score: {tech.scoreFormatted}
             </div>
@@ -129,33 +132,35 @@ const scatterData = techs.map(tech => {
       </select>
     </div>
     
-    <table id="tech-table" class="booktabs-table">
-      <thead>
-        <tr>
-          <th>Technology</th>
-          <th>Category</th>
-          <th style="text-align: right;">Deaditude</th>
-          <th>Assessment</th>
-        </tr>
-      </thead>
-      <tbody>
-        {techs.map(tech => (
-          <tr class="tech-row" onclick={`window.location.href='${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}${tech.id}'`} data-name={tech.name.toLowerCase()} data-category={tech.category.toLowerCase()} data-score={tech.latest_score !== null ? tech.latest_score : -1}>
-            <td><a href={`${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}${tech.id}`}><strong>{tech.name}</strong></a></td>
-            <td style="text-transform: capitalize;">{tech.category}</td>
-            <td style="text-align: right; font-family: monospace; white-space: nowrap;">
-              {tech.latest_score !== null ? `${tech.latest_score.toFixed(1)}%` : 'N/A'}
-              {tech.score_momentum !== null && tech.score_momentum !== 0 && (
-                <span style={`color: ${tech.score_momentum > 0 ? '#d32f2f' : '#2e7d32'}; font-size: 0.85em; margin-left: 0.5rem;`} title="Momentum since last snapshot">
-                  {tech.score_momentum > 0 ? '▲ +' : '▼ '}{tech.score_momentum.toFixed(1)}%
-                </span>
-              )}
-            </td>
-            <td>{tech.latest_score !== null ? TechService.getRatingLabel(tech.latest_score) : 'Awaiting Data'}</td>
+    <div class="scroll-wrapper">
+      <table id="tech-table" class="booktabs-table">
+        <thead>
+          <tr>
+            <th>Technology</th>
+            <th>Category</th>
+            <th style="text-align: right;">Deaditude</th>
+            <th>Assessment</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {techs.map(tech => (
+            <tr class="tech-row" onclick={`window.location.href='${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}${tech.id}'`} data-name={tech.name.toLowerCase()} data-category={tech.category.toLowerCase()} data-score={tech.latest_score !== null ? tech.latest_score : -1}>
+              <td><a href={`${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}${tech.id}`}><strong>{tech.name}</strong></a></td>
+              <td style="text-transform: capitalize;">{tech.category}</td>
+              <td style="text-align: right; font-family: monospace; white-space: nowrap;">
+                {tech.latest_score !== null ? `${tech.latest_score.toFixed(1)}%` : 'N/A'}
+                {tech.score_momentum !== null && tech.score_momentum !== 0 && (
+                  <span style={`color: ${tech.score_momentum > 0 ? '#d32f2f' : '#2e7d32'}; font-size: 0.85em; margin-left: 0.5rem;`} title="Momentum since last snapshot">
+                    {tech.score_momentum > 0 ? '▲ +' : '▼ '}{tech.score_momentum.toFixed(1)}%
+                  </span>
+                )}
+              </td>
+              <td>{tech.latest_score !== null ? TechService.getRatingLabel(tech.latest_score) : 'Awaiting Data'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <section>
@@ -211,6 +216,31 @@ const scatterData = techs.map(tech => {
     categoryFilter.addEventListener('change', renderTable);
     sortSelect.addEventListener('change', renderTable);
   }
+
+  // Mobile scatter plot tooltip interaction
+  const scatterDots = document.querySelectorAll('.scatter-dot');
+  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+    scatterDots.forEach(dot => {
+      dot.addEventListener('click', function(e) {
+        if (!this.classList.contains('active-tooltip')) {
+          e.preventDefault(); // Stop navigation on first tap
+          // Close other active tooltips
+          document.querySelectorAll('.scatter-dot.active-tooltip').forEach(d => {
+            if (d !== this) d.classList.remove('active-tooltip');
+          });
+          this.classList.add('active-tooltip');
+        }
+      });
+    });
+
+    // Tap outside to close tooltips
+    document.addEventListener('click', function(e) {
+      const target = e.target as HTMLElement;
+      if (!target.closest('.scatter-dot')) {
+        document.querySelectorAll('.scatter-dot.active-tooltip').forEach(d => d.classList.remove('active-tooltip'));
+      }
+    });
+  }
 </script>
 
 <style>
@@ -229,6 +259,16 @@ const scatterData = techs.map(tech => {
     font-size: 1rem;
     flex: 1;
     min-width: 200px;
+  }
+  @media (max-width: 768px) {
+    .controls-container {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .controls-container input, .controls-container select {
+      min-width: 100%;
+      width: 100%;
+    }
   }
 </style>
  

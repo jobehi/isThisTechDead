@@ -126,7 +126,6 @@ body {
 
   max-width: 80ch;
   min-height: 100vh;
-  overflow-x: hidden;
   margin: 0 auto;
   padding: 2rem 1.25rem;
 
@@ -141,6 +140,46 @@ body {
   hyphens: auto;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem 0.75rem;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+}
+
+h2 {
+  font-size: clamp(1.6rem, 4vw, 2rem);
+  margin-top: 3rem;
+}
+
+h3 {
+  font-size: clamp(1.3rem, 3.5vw, 1.75rem);
+  margin-top: 2.5rem;
+}
+
+h4 {
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  margin-top: 2rem;
+}
+
+h5 {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  margin-top: 1.5rem;
 }
 
 p {
@@ -869,7 +908,7 @@ h6 {
 /* Metric Multi-column Grid */
 .metric-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 1.5rem;
   margin: 1.5rem 0;
 }
@@ -952,6 +991,7 @@ h6 {
 /* Table refinements for Appendices */
 table.appendix-table {
   width: 100%;
+  min-width: 600px;
   table-layout: fixed;
   font-size: 0.85em;
   margin-bottom: 2rem;
@@ -1007,11 +1047,14 @@ table.appendix-table tr:last-child td {
   transform: translate(-50%, 50%);
   cursor: pointer;
   transition: all 0.2s ease;
+  z-index: 1;
 }
 
-.scatter-dot:hover {
+.scatter-dot:hover,
+.scatter-dot.active-tooltip {
   transform: translate(-50%, 50%) scale(2);
   background-color: var(--link-visited);
+  z-index: 10;
 }
 
 .scatter-tooltip {
@@ -1029,8 +1072,10 @@ table.appendix-table tr:last-child td {
   transition: opacity 0.2s ease;
 }
 
-.scatter-dot:hover .scatter-tooltip {
+.scatter-dot:hover .scatter-tooltip,
+.scatter-dot.active-tooltip .scatter-tooltip {
   opacity: 1;
+  pointer-events: auto;
 }
 
 .scatter-axis-label {
@@ -1050,12 +1095,28 @@ table.appendix-table tr:last-child td {
   transform-origin: center;
 }
 
+@media (max-width: 768px) {
+  .scatter-axis-y {
+    position: absolute;
+    top: -2rem;
+    left: 0;
+    transform: none;
+    font-size: 0.8em;
+    font-style: italic;
+    font-variant-caps: small-caps;
+  }
+  .scatter-plot {
+    margin-top: 2.5rem;
+  }
+}
+
 /* ----------------------------------
    HOME PAGE: BOOKTABS TABLE
 ------------------------------------- */
 
 table.booktabs-table {
   width: 100%;
+  min-width: 600px;
   border-collapse: collapse;
   margin: 2rem 0;
 }
