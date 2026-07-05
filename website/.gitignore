@@ -19,13 +19,6 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# Next.js
-.next/
-out/
-next-env.d.ts
-.vercel
-.turbo
-.swc/
 
 # Testing
 coverage/

@@ -21,6 +21,7 @@ export interface Tech {
   updated_at?: string;
   creation_year?: number;
   subreddit?: string;
+  category?: string;
 }
 
 /**

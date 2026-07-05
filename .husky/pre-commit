@@ -1,2 +1,2 @@
 # Run lint-staged for linting and formatting checks
-cd ./website && npx lint-staged -c lint-staged.config.js
+cd ./website && npx lint-staged --no-stash -c lint-staged.config.js

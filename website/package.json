@@ -11,8 +11,9 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "type-check": "astro check && tsc --noEmit && tsc -p tsconfig.scripts.json --noEmit",
+    "lint": "eslint .",
     "test": "vitest run",
-    "prepare": "husky",
+    "prepare": "cd .. && husky",
     "clean": "rm -rf dist .astro",
     "build:fresh": "npm run clean && npm run build"
   },
@@ -34,11 +35,16 @@
     "@types/node": "^26.1.0",
     "eslint": "^9.25.1",
     "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-astro": "^1.7.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "globals": "^17.7.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.1",
     "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1",
     "ts-node": "^10.9.2",
     "typescript": "^5",
+    "typescript-eslint": "^8.62.1",
     "vitest": "^3.1.2"
   }
 }

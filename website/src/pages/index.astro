@@ -6,23 +6,26 @@ const techs = await TechService.getAllTechs();
 const categories = [...new Set(techs.map(tech => tech.category))].filter(Boolean).sort();
 
 // Fetch contributors dynamically
-let contributors = [];
+let contributors: any[] = [];
 let totalContributions = 0;
 try {
   const res = await fetch(`https://api.github.com/repos/jobehi/isThisTechDead/contributors`, {
-    headers: { 'User-Agent': 'Astro-Build' }
+    headers: { 'User-Agent': 'Astro-Build' },
   });
   if (res.ok) {
     let allContributors = await res.json();
-    contributors = allContributors.filter(c => c.type !== 'Bot' && !c.login.toLowerCase().includes('bot'));
-    totalContributions = contributors.reduce((sum, c) => sum + c.contributions, 0);
+    contributors = allContributors.filter(
+      (c: any) => c.type !== 'Bot' && !c.login.toLowerCase().includes('bot')
+    );
+    totalContributions = contributors.reduce((sum: number, c: any) => sum + c.contributions, 0);
   }
 } catch (e) {
-  console.error("Failed to fetch contributors", e);
+  console.error('Failed to fetch contributors', e);
 }
 
-const title = "Is This Tech Dead?";
-const abstract = "This document presents an ongoing, highly scientific, and definitely unemotional analysis of various technologies to determine their 'Deaditude'. We examine numerous extremely objective indicators to provide a definitive score. Below is the current registry of technologies and their respective existential statuses. Read it and weep.";
+const title = 'Is This Tech Dead?';
+const abstract =
+  "This document presents an ongoing, highly scientific, and definitely unemotional analysis of various technologies to determine their 'Deaditude'. We examine numerous extremely objective indicators to provide a definitive score. Below is the current registry of technologies and their respective existential statuses. Read it and weep.";
 
 // Calculate scatter plot data
 const currentYear = new Date().getFullYear();
@@ -30,26 +33,26 @@ const scatterData = techs.map(tech => {
   const score = tech.latest_score !== null ? tech.latest_score : 50; // default 50% for N/A
   const year = tech.creation_year || 2010;
   const age = Math.max(0, currentYear - year); // non-negative age
-  
-  // Use a Square Root scale for age (X-axis) as a perfect compromise 
+
+  // Use a Square Root scale for age (X-axis) as a perfect compromise
   // between linear and log, without any hard capping.
   // We use maxAge = 55 (approx age of C/Unix) for the top end of the scale.
   const maxAge = 55;
   const maxSqrt = Math.sqrt(maxAge);
   const ageSqrt = Math.sqrt(age);
-  
+
   let xPos = (ageSqrt / maxSqrt) * 100;
   xPos = Math.max(0, Math.min(100, xPos)); // clamp outliers above 55 just in case
-  
+
   // Y axis is score (0% to 100%)
   const yPos = score;
-  
+
   return {
     ...tech,
     xPos,
     yPos,
     age,
-    scoreFormatted: tech.latest_score !== null ? `${tech.latest_score.toFixed(1)}%` : 'N/A'
+    scoreFormatted: tech.latest_score !== null ? `${tech.latest_score.toFixed(1)}%` : 'N/A',
   };
 });
 ---
@@ -58,72 +61,131 @@ const scatterData = techs.map(tech => {
   <div class="author">
     <p class="published-by">
       <strong>Published by: </strong>
-      {contributors.length > 0 ? contributors.map((c, i) => {
-        const percentage = totalContributions > 0 ? (c.contributions / totalContributions) : 0;
-        const fontSize = 1 + Math.min(percentage * 1.1, 1.1); // Caps out at +1.1rem for 100% contributions
-        return (
-          <span>
-            <a href={`https://github.com/${c.login}`} target="_blank" style={`font-size: ${fontSize}rem; transition: font-size 0.2s ease; text-decoration: none;`}>{c.login}</a>{i < contributors.length - 1 ? ', ' : ''}
-          </span>
-        );
-      }) : <a href="https://github.com/jobehi" target="_blank" style="font-weight: bold; text-decoration: none;">jobehi</a>}
+      {
+        contributors.length > 0 ? (
+          contributors.map((c: any, i: number) => {
+            const percentage = totalContributions > 0 ? c.contributions / totalContributions : 0;
+            const fontSize = 1 + Math.min(percentage * 1.1, 1.1); // Caps out at +1.1rem for 100% contributions
+            return (
+              <span>
+                <a
+                  href={`https://github.com/${c.login}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={`font-size: ${fontSize}rem; transition: font-size 0.2s ease; text-decoration: none;`}
+                >
+                  {c.login}
+                </a>
+                {i < contributors.length - 1 ? ', ' : ''}
+              </span>
+            );
+          })
+        ) : (
+          <a
+            href="https://github.com/jobehi"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="font-weight: bold; text-decoration: none;"
+          >
+            jobehi
+          </a>
+        )
+      }
     </p>
-    <a href="https://github.com/jobehi/isThisTechDead" target="_blank" style="text-decoration: none;">& The Open Source Community</a>
+    <a
+      href="https://github.com/jobehi/isThisTechDead"
+      target="_blank"
+      rel="noopener noreferrer"
+      style="text-decoration: none;">& The Open Source Community</a
+    >
   </div>
 
   <section>
     <h2>1. Introduction</h2>
     <p>
-      In the rapidly evolving landscape of software engineering, tools and frameworks frequently fall out of favor, 
-      leaving developers stranded with deprecated APIs and existential dread. This research aims to quantify this phenomenon 
-      so you can finally win arguments on Hacker News. For details on our flawless methodology, please refer to the 
-      <a href={`${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}methodology`}>Methodology Section</a>.
+      In the rapidly evolving landscape of software engineering, tools and frameworks frequently
+      fall out of favor, leaving developers stranded with deprecated APIs and existential dread.
+      This research aims to quantify this phenomenon so you can finally win arguments on Hacker
+      News. For details on our flawless methodology, please refer to the
+      <a
+        href={`${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}methodology`}
+        >Methodology Section</a
+      >.
     </p>
   </section>
 
   <section>
     <h2>2. Global Existential Matrix</h2>
     <p>
-      Figure 1 plots the Deaditude score against the age of the technology (years since initial release). 
-      This matrix visually demonstrates the correlation between a framework's lifespan and its eventual deprecation dread.
+      Figure 1 plots the Deaditude score against the age of the technology (years since initial
+      release). This matrix visually demonstrates the correlation between a framework's lifespan and
+      its eventual deprecation dread.
     </p>
 
     <div class="scatter-container">
       <div class="scatter-plot">
         <div class="scatter-axis-y">Deaditude Score (%)</div>
-        {scatterData.map(tech => (
-          <a href={`${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}${tech.id}`} class="scatter-dot" style={`left: ${tech.xPos}%; bottom: ${tech.yPos}%;`} aria-label={`View details for ${tech.name}`}>
-            <div 
-              class="scatter-tooltip" 
-              style={tech.xPos > 80 ? "left: auto; right: 0; transform: none;" : tech.xPos < 20 ? "left: 0; transform: none;" : ""}
+        {
+          scatterData.map(tech => (
+            <a
+              href={`${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}${tech.id}`}
+              class="scatter-dot"
+              style={`left: ${tech.xPos}%; bottom: ${tech.yPos}%;`}
+              aria-label={`View details for ${tech.name}`}
             >
-              <strong>{tech.name}</strong><br />
-              Age: {tech.age} yrs | Score: {tech.scoreFormatted}
-            </div>
-          </a>
-        ))}
+              <div
+                class="scatter-tooltip"
+                style={
+                  tech.xPos > 80
+                    ? 'left: auto; right: 0; transform: none;'
+                    : tech.xPos < 20
+                      ? 'left: 0; transform: none;'
+                      : ''
+                }
+              >
+                <>
+                  <strong>{tech.name}</strong>
+                  <br />
+                </>
+                Age: {tech.age} yrs | Score: {tech.scoreFormatted}
+              </div>
+            </a>
+          ))
+        }
       </div>
       <div class="scatter-axis-x">
         <span class="scatter-axis-label">Technology Age (Years)</span>
       </div>
-      <figcaption>Figure 1: Scatter plot of existential dread. Older technologies tend to either stabilize or decay rapidly.</figcaption>
+      <figcaption>
+        Figure 1: Scatter plot of existential dread. Older technologies tend to either stabilize or
+        decay rapidly.
+      </figcaption>
     </div>
   </section>
 
   <section>
     <h2>3. Registry of Technologies</h2>
     <p>
-      The following table presents the current assessment of technologies under review. A higher Deaditude Score indicates 
-      a greater likelihood that your resume needs updating.
+      The following table presents the current assessment of technologies under review. A higher
+      Deaditude Score indicates a greater likelihood that your resume needs updating.
     </p>
 
     <div class="controls-container">
-      <input type="text" id="search-input" placeholder="Search by name... (e.g. jQuery)" aria-label="Search technologies by name" />
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Search by name... (e.g. jQuery)"
+        aria-label="Search technologies by name"
+      />
       <select id="category-filter" aria-label="Filter technologies by category">
         <option value="all">All Categories</option>
-        {categories.map(cat => (
-          <option value={cat.toLowerCase()} style="text-transform: capitalize;">{cat}</option>
-        ))}
+        {
+          categories.map(cat => (
+            <option value={cat.toLowerCase()} style="text-transform: capitalize;">
+              {cat}
+            </option>
+          ))
+        }
       </select>
       <select id="sort-select" aria-label="Sort technologies by name or score">
         <option value="name-asc">Sort by Name (A-Z)</option>
@@ -131,7 +193,7 @@ const scatterData = techs.map(tech => {
         <option value="score-asc">Sort by Deaditude (Lowest First)</option>
       </select>
     </div>
-    
+
     <div class="scroll-wrapper">
       <table id="tech-table" class="booktabs-table">
         <thead>
@@ -143,21 +205,43 @@ const scatterData = techs.map(tech => {
           </tr>
         </thead>
         <tbody>
-          {techs.map(tech => (
-            <tr class="tech-row" onclick={`window.location.href='${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}${tech.id}'`} data-name={tech.name.toLowerCase()} data-category={tech.category.toLowerCase()} data-score={tech.latest_score !== null ? tech.latest_score : -1}>
-              <td><a href={`${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}${tech.id}`}><strong>{tech.name}</strong></a></td>
-              <td style="text-transform: capitalize;">{tech.category}</td>
-              <td style="text-align: right; font-family: monospace; white-space: nowrap;">
-                {tech.latest_score !== null ? `${tech.latest_score.toFixed(1)}%` : 'N/A'}
-                {tech.score_momentum !== null && tech.score_momentum !== 0 && (
-                  <span style={`color: ${tech.score_momentum > 0 ? '#d32f2f' : '#2e7d32'}; font-size: 0.85em; margin-left: 0.5rem;`} title="Momentum since last snapshot">
-                    {tech.score_momentum > 0 ? '▲ +' : '▼ '}{tech.score_momentum.toFixed(1)}%
-                  </span>
-                )}
-              </td>
-              <td>{tech.latest_score !== null ? TechService.getRatingLabel(tech.latest_score) : 'Awaiting Data'}</td>
-            </tr>
-          ))}
+          {
+            techs.map(tech => (
+              <tr
+                class="tech-row"
+                onclick={`window.location.href='${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}${tech.id}'`}
+                data-name={tech.name.toLowerCase()}
+                data-category={tech.category.toLowerCase()}
+                data-score={tech.latest_score !== null ? tech.latest_score : -1}
+              >
+                <td>
+                  <a
+                    href={`${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}${tech.id}`}
+                  >
+                    <strong>{tech.name}</strong>
+                  </a>
+                </td>
+                <td style="text-transform: capitalize;">{tech.category}</td>
+                <td style="text-align: right; font-family: monospace; white-space: nowrap;">
+                  {tech.latest_score !== null ? `${tech.latest_score.toFixed(1)}%` : 'N/A'}
+                  {tech.score_momentum !== null && tech.score_momentum !== 0 && (
+                    <span
+                      style={`color: ${tech.score_momentum > 0 ? '#d32f2f' : '#2e7d32'}; font-size: 0.85em; margin-left: 0.5rem;`}
+                      title="Momentum since last snapshot"
+                    >
+                      {tech.score_momentum > 0 ? '▲ +' : '▼ '}
+                      {tech.score_momentum.toFixed(1)}%
+                    </span>
+                  )}
+                </td>
+                <td>
+                  {tech.latest_score !== null
+                    ? TechService.getRatingLabel(tech.latest_score)
+                    : 'Awaiting Data'}
+                </td>
+              </tr>
+            ))
+          }
         </tbody>
       </table>
     </div>
@@ -166,8 +250,9 @@ const scatterData = techs.map(tech => {
   <section>
     <h2>4. Contributions</h2>
     <p>
-      The community is encouraged to contribute data points to our analysis. If you are currently maintaining a project 
-      built with a technology listed here (bless your heart), you may submit it for peer review on the respective technology's page.
+      The community is encouraged to contribute data points to our analysis. If you are currently
+      maintaining a project built with a technology listed here (bless your heart), you may submit
+      it for peer review on the respective technology's page.
     </p>
   </section>
 </AcademicLayout>
@@ -196,7 +281,10 @@ const scatterData = techs.map(tech => {
       if (sortValue === 'name-asc') {
         return (a.getAttribute('data-name') || '').localeCompare(b.getAttribute('data-name') || '');
       } else if (sortValue === 'score-desc') {
-        return parseFloat(b.getAttribute('data-score') || '-1') - parseFloat(a.getAttribute('data-score') || '-1');
+        return (
+          parseFloat(b.getAttribute('data-score') || '-1') -
+          parseFloat(a.getAttribute('data-score') || '-1')
+        );
       } else if (sortValue === 'score-asc') {
         const scoreA = parseFloat(a.getAttribute('data-score') || '-1');
         const scoreB = parseFloat(b.getAttribute('data-score') || '-1');
@@ -221,7 +309,7 @@ const scatterData = techs.map(tech => {
   const scatterDots = document.querySelectorAll('.scatter-dot');
   if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
     scatterDots.forEach(dot => {
-      dot.addEventListener('click', function(e) {
+      dot.addEventListener('click', function (e) {
         if (!this.classList.contains('active-tooltip')) {
           e.preventDefault(); // Stop navigation on first tap
           // Close other active tooltips
@@ -234,10 +322,12 @@ const scatterData = techs.map(tech => {
     });
 
     // Tap outside to close tooltips
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
       const target = e.target as HTMLElement;
       if (!target.closest('.scatter-dot')) {
-        document.querySelectorAll('.scatter-dot.active-tooltip').forEach(d => d.classList.remove('active-tooltip'));
+        document
+          .querySelectorAll('.scatter-dot.active-tooltip')
+          .forEach(d => d.classList.remove('active-tooltip'));
       }
     });
   }
@@ -250,7 +340,8 @@ const scatterData = techs.map(tech => {
     margin-bottom: 1.5rem;
     flex-wrap: wrap;
   }
-  .controls-container input, .controls-container select {
+  .controls-container input,
+  .controls-container select {
     padding: 0.5rem;
     font-family: inherit;
     border: 1px solid var(--body-color);
@@ -265,11 +356,10 @@ const scatterData = techs.map(tech => {
       flex-direction: column;
       gap: 0.5rem;
     }
-    .controls-container input, .controls-container select {
+    .controls-container input,
+    .controls-container select {
       min-width: 100%;
       width: 100%;
     }
   }
 </style>
- 
-<!-- Cache bust 1783200694 -->

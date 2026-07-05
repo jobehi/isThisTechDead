@@ -89,7 +89,6 @@ export class TechRepository {
       return data || [];
     } catch (error) {
       handleSupabaseError(error, 'Get recent snapshots by tech id');
-      return [];
     }
   }
 
@@ -183,7 +182,6 @@ export class TechRepository {
       return data || [];
     } catch (error) {
       handleSupabaseError(error, 'Get lightweight snapshots by tech id');
-      return [];
     }
   }
 
