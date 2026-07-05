@@ -14,14 +14,15 @@
 
 /* Base Variables with Enhanced UI Variables */
 :root {
-  --body-color: hsl(0, 5%, 10%);
-  --body-bg-color: hsl(0, 0%, 99%);
+  /* Subtle off-white paper aesthetic */
+  --body-color: #2b2a29; 
+  --body-bg-color: #f9f8f6;
   --link-visited: hsl(0, 100%, 33%);
   --link-focus-outline: hsl(220, 90%, 52%);
-  --pre-bg-color: hsl(210, 28%, 93%);
+  --pre-bg-color: #f0eee9;
   --kbd-bg-color: hsl(210, 5%, 100%);
   --kbd-border-color: hsl(210, 5%, 70%);
-  --table-border-color: black;
+  --table-border-color: #2b2a29;
   --border-width-thin: 1.36px;
   --border-width-thick: 2.27px;
   --sidenote-target-border-color: hsl(55, 55%, 70%);
@@ -31,8 +32,8 @@
   --premium-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --premium-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --premium-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --hover-bg: rgba(0, 0, 0, 0.03);
-  --card-bg: #ffffff;
+  --hover-bg: rgba(43, 42, 41, 0.04);
+  --card-bg: transparent;
   --transition-fast: 0.15s ease;
   --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -44,20 +45,21 @@
 }
 
 .latex-dark {
-  --body-color: hsl(0, 0%, 86%);
-  --body-bg-color: hsl(0, 0%, 12%);
+  /* Subtle warm dark mode to match */
+  --body-color: #e2e1e0;
+  --body-bg-color: #191a1b;
   --link-visited: hsl(196 80% 77%);
   --link-focus-outline: hsl(215, 63%, 73%);
-  --pre-bg-color: hsl(0, 1%, 18%);
+  --pre-bg-color: #222324;
   --kbd-bg-color: hsl(0, 0%, 16%);
   --kbd-border-color: hsl(210, 5%, 70%);
-  --table-border-color: white;
+  --table-border-color: #e2e1e0;
   --sidenote-target-border-color: hsl(0, 0%, 59%);
   --footnotes-border-color: hsl(0, 0%, 59%);
   --proof-symbol-filter: invert(80%);
 
-  --hover-bg: rgba(255, 255, 255, 0.05);
-  --card-bg: hsl(0, 0%, 15%);
+  --hover-bg: rgba(255, 255, 255, 0.04);
+  --card-bg: transparent;
   --premium-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
   --premium-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
   --premium-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
@@ -65,8 +67,8 @@
 
 @media (prefers-color-scheme: dark) {
   .latex-dark-auto {
-    --body-color: hsl(0, 0%, 86%);
-    --body-bg-color: hsl(0, 0%, 12%);
+    --body-color: hsl(0, 0%, 82%);
+    --body-bg-color: hsl(210, 5%, 16%);
     --link-visited: hsl(196 80% 77%);
     --link-focus-outline: hsl(215, 63%, 73%);
     --pre-bg-color: hsl(0, 1%, 18%);
