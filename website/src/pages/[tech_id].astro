@@ -190,9 +190,11 @@ function getRandomRoast(score) {
 
 const randomRoast = getRandomRoast(score);
 
+const ogImageUrl = `${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}og/${tech.id}.png`;
+
 ---
 
-<AcademicLayout title={title} date={snapshotDate} abstract={abstract}>
+<AcademicLayout title={title} date={snapshotDate} abstract={abstract} image={ogImageUrl}>
 
   <section>
     <h2>1. Executive Summary</h2>
