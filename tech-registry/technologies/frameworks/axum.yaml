@@ -1,0 +1,9 @@
+id: axum
+name: Axum
+description: An ergonomic and modular web framework for Rust, built with Tokio, Tower and Hyper.
+owner: tokio-rs
+repo: axum
+subreddit: rust
+stackshare_slug: axum
+creation_year: 2021
+category: framework
