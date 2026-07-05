@@ -1,0 +1,9 @@
+id: actix-web
+name: Actix Web
+description: A powerful, pragmatic and extremely fast web framework for Rust.
+owner: actix
+repo: actix-web
+subreddit: rust
+stackshare_slug: actix
+creation_year: 2017
+category: framework
