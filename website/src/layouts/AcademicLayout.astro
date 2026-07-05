@@ -9,179 +9,266 @@ interface Props {
   image?: string;
 }
 
-const { 
-  title, 
-  author = ' An Empirical Analysis of Technological Relevance', 
-  date = new Date().toLocaleDateString(), 
+const {
+  title,
+  author = ' An Empirical Analysis of Technological Relevance',
+  date = new Date().toLocaleDateString(),
   abstract,
-  image = '/is_this_tech_dead_cover.png'
+  image = '/is_this_tech_dead_cover.png',
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://isthistechdead.com');
 const imageUrl = new URL(image, Astro.site || 'https://isthistechdead.com');
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{title} - Is This Tech Dead?</title>
-  <meta name="description" content={abstract || "An ongoing, highly scientific analysis of various technologies to determine their 'Deaditude'."} />
-  <meta name="keywords" content="technology trends, software engineering, is this tech dead, developer tools, framework fatigue" />
-  <link rel="canonical" href={canonicalURL} />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} - Is This Tech Dead?</title>
+    <meta
+      name="description"
+      content={abstract ||
+        "An ongoing, highly scientific analysis of various technologies to determine their 'Deaditude'."}
+    />
+    <meta
+      name="keywords"
+      content="technology trends, software engineering, is this tech dead, developer tools, framework fatigue"
+    />
+    <link rel="canonical" href={canonicalURL} />
 
-  <!-- Favicons -->
-  <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}favicon.svg`} />
-  <link rel="apple-touch-icon" href={`${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}is_this_tech_dead_logo_small_2.png`} />
+    <!-- Favicons -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href={`${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}favicon.svg`}
+    />
+    <link
+      rel="apple-touch-icon"
+      href={`${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}is_this_tech_dead_logo_small_2.png`}
+    />
 
-  <!-- OpenGraph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content={canonicalURL} />
-  <meta property="og:title" content={`${title} - Is This Tech Dead?`} />
-  <meta property="og:description" content={abstract || "An ongoing, highly scientific analysis of various technologies to determine their 'Deaditude'."} />
-  <meta property="og:image" content={imageUrl} />
+    <!-- OpenGraph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={`${title} - Is This Tech Dead?`} />
+    <meta
+      property="og:description"
+      content={abstract ||
+        "An ongoing, highly scientific analysis of various technologies to determine their 'Deaditude'."}
+    />
+    <meta property="og:image" content={imageUrl} />
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content={canonicalURL} />
-  <meta property="twitter:title" content={`${title} - Is This Tech Dead?`} />
-  <meta property="twitter:description" content={abstract || "An ongoing, highly scientific analysis of various technologies to determine their 'Deaditude'."} />
-  <meta property="twitter:image" content={imageUrl} />
-  
-  <link rel="preconnect" href="https://scripts.simpleanalyticscdn.com" />
-  <link rel="preconnect" href="https://static.simpleanalyticscdn.com" />
-  <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-  <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
-  
-  <style>
-    /* Additional custom overrides to match the LaTeX aesthetic perfectly */
-    html, :root {
-      font-size: 19px !important; /* A comfortable, readable size for serifs on screens */
-    }
-    body, body.libertinus {
-      font-family: 'Lora', 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
-      max-width: 850px; 
-      margin: 0 auto;
-      padding: 2rem 1.5rem;
-      line-height: 1.8;
-    }
-    .title-block {
-      text-align: center;
-      margin-bottom: 2.5rem;
-    }
-    .title-block h1 {
-      margin-bottom: 0.5rem;
-      font-size: 4em;
-      margin-top: 2rem;
-    }
-    .title-block .author {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-    }
-    .title-block .date {
-      font-style: italic;
-    }
-    .abstract {
-      margin: 2rem 10%;
-      font-size: 0.9rem;
-    }
-    .abstract h2 {
-      text-align: center;
-      font-size: 1rem;
-      margin-top: 0;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    .academic-top-nav {
-      text-align: center;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 2rem;
-      color: #555;
-    }
-    .academic-top-nav a, .academic-top-nav button {
-      color: inherit;
-      text-decoration: none;
-      margin: 0 0.5rem;
-      border-bottom: 1px dotted transparent;
-      transition: border-color 0.2s;
-      background: none;
-      border-top: none;
-      border-left: none;
-      border-right: none;
-      font: inherit;
-      cursor: pointer;
-      padding: 0;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    .academic-top-nav a:hover, .academic-top-nav button:hover {
-      border-bottom-color: #555;
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={`${title} - Is This Tech Dead?`} />
+    <meta
+      property="twitter:description"
+      content={abstract ||
+        "An ongoing, highly scientific analysis of various technologies to determine their 'Deaditude'."}
+    />
+    <meta property="twitter:image" content={imageUrl} />
+
+    <link rel="preconnect" href="https://scripts.simpleanalyticscdn.com" />
+    <link rel="preconnect" href="https://static.simpleanalyticscdn.com" />
+    <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+    <noscript
+      ><img
+        src="https://queue.simpleanalyticscdn.com/noscript.gif"
+        alt=""
+        referrerpolicy="no-referrer-when-downgrade"
+      /></noscript
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Additional custom overrides to match the LaTeX aesthetic perfectly */
+      html,
+      :root {
+        font-size: 19px !important; /* A comfortable, readable size for serifs on screens */
+      }
+      body,
+      body.libertinus {
+        font-family: 'Lora', 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
+        max-width: 850px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+        line-height: 1.8;
+      }
+      .title-block {
+        text-align: center;
+        margin-bottom: 2.5rem;
+      }
+      .title-block h1 {
+        margin-bottom: 0.5rem;
+        font-size: 4em;
+        margin-top: 2rem;
+      }
+      .title-block .author {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
+      .title-block .date {
+        font-style: italic;
+      }
+      .abstract {
+        margin: 2rem 10%;
+        font-size: 0.9rem;
+      }
+      .abstract h2 {
+        text-align: center;
+        font-size: 1rem;
+        margin-top: 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .academic-top-nav {
+        text-align: center;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 2rem;
+        color: #555;
+      }
+      .academic-top-nav a,
+      .academic-top-nav button {
+        color: inherit;
+        text-decoration: none;
+        margin: 0 0.5rem;
+        border-bottom: 1px dotted transparent;
+        transition: border-color 0.2s;
+        background: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        font: inherit;
+        cursor: pointer;
+        padding: 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .academic-top-nav a:hover,
+      .academic-top-nav button:hover {
+        border-bottom-color: #555;
+      }
+
+      /* Dialog Backdrop Styling */
+      dialog::backdrop {
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(2px);
+      }
+    </style>
+  </head>
+  <body class="libertinus">
+    <nav
+      class="academic-top-nav"
+      style="display: flex; align-items: center; justify-content: center;"
+    >
+      <a href={`${import.meta.env.BASE_URL}`}>Home</a> &bull;
+      <a
+        href={`${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}methodology`}
+        >Methodology</a
+      > &bull;
+      <a
+        href={`${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}terms`}
+        >Terms</a
+      > &bull;
+      <a href="https://github.com/jobehi/isThisTechDead" target="_blank" rel="noopener noreferrer"
+        >Source Code</a
+      > &bull;
+      <button
+        onclick="document.getElementById('dark-mode-dialog').showModal()"
+        title="Dark Mode"
+        aria-label="Dark Mode"
+        style="border-bottom: none;"
+      >
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          style="vertical-align: middle;"
+        >
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </nav>
+
+    <dialog
+      id="dark-mode-dialog"
+      style="padding: 2.5rem; border: 2px solid var(--table-border-color); border-radius: 8px; background-color: var(--body-bg-color); color: var(--body-color); max-width: 450px; text-align: center; font-family: inherit; box-shadow: var(--premium-shadow-lg);"
+    >
+      <h3
+        style="margin-top: 0; font-variant-caps: small-caps; border-bottom: 1px solid var(--kbd-border-color); padding-bottom: 0.5rem;"
+      >
+        A dark mode ?
+      </h3>
+      <p style="margin-bottom: 2rem;">
+        Oh, sweet summer child.<br /><br />
+        We are a highly rigorous academic journal, not a trendy Silicon Valley IDE. We care deeply about
+        your intellectual enlightenment, but regrettably, your retinas are on their own.<br /><br />
+        <i>Please enjoy our carefully curated vintage contrast.</i>
+      </p>
+      <button
+        onclick="document.getElementById('dark-mode-dialog').close()"
+        style="background: var(--body-color); color: var(--body-bg-color); border: none; padding: 0.5rem 1.5rem; border-radius: 4px; cursor: pointer; font: inherit; font-variant-caps: small-caps; transition: opacity 0.2s;"
+        onmouseover="this.style.opacity='0.8'"
+        onmouseout="this.style.opacity='1'">I Understand</button
+      >
+    </dialog>
+
+    <header class="title-block">
+      <h1>{title}</h1>
+      <div class="author">{author}</div>
+      <div class="date">{date}</div>
+    </header>
+
+    {
+      abstract && (
+        <div class="abstract">
+          <h2>Abstract</h2>
+          <p>{abstract}</p>
+        </div>
+      )
     }
 
-    /* Dialog Backdrop Styling */
-    dialog::backdrop {
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(2px);
-    }
-  </style>
-</head>
-<body class="libertinus">
-  <nav class="academic-top-nav" style="display: flex; align-items: center; justify-content: center;">
-    <a href={`${import.meta.env.BASE_URL}`}>Home</a> &bull; 
-    <a href={`${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}methodology`}>Methodology</a> &bull; 
-    <a href={`${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}terms`}>Terms</a> &bull; 
-    <a href="https://github.com/jobehi/isThisTechDead" target="_blank">Source Code</a> &bull;
-    <button onclick="document.getElementById('dark-mode-dialog').showModal()" title="Dark Mode" aria-label="Dark Mode" style="border-bottom: none;">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-      </svg>
-    </button>
-  </nav>
+    <main>
+      <slot />
+    </main>
 
-  <dialog id="dark-mode-dialog" style="padding: 2.5rem; border: 2px solid var(--table-border-color); border-radius: 8px; background-color: var(--body-bg-color); color: var(--body-color); max-width: 450px; text-align: center; font-family: inherit; box-shadow: var(--premium-shadow-lg);">
-    <h3 style="margin-top: 0; font-variant-caps: small-caps; border-bottom: 1px solid var(--kbd-border-color); padding-bottom: 0.5rem;">A dark mode ?</h3>
-    <p style="margin-bottom: 2rem;">
-      Oh, sweet summer child.<br><br>
-      We are a highly rigorous academic journal, not a trendy Silicon Valley IDE. We care deeply about your intellectual enlightenment, but regrettably, your retinas are on their own.<br><br>
-      <i>Please enjoy our carefully curated vintage contrast.</i>
-    </p>
-    <button onclick="document.getElementById('dark-mode-dialog').close()" style="background: var(--body-color); color: var(--body-bg-color); border: none; padding: 0.5rem 1.5rem; border-radius: 4px; cursor: pointer; font: inherit; font-variant-caps: small-caps; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">I Understand</button>
-  </dialog>
-
-  <header class="title-block">
-    <h1>{title}</h1>
-    <div class="author">{author}</div>
-    <div class="date">{date}</div>
-  </header>
-
-  {abstract && (
-    <div class="abstract">
-      <h2>Abstract</h2>
-      <p>{abstract}</p>
-    </div>
-  )}
-
-  <main>
-    <slot />
-  </main>
-  
-  <hr />
-  <footer>
-    <p>
-      <small>
-        <strong>Is This Tech Dead?</strong> A rigorous, objective, and entirely scientific analysis of technology relevance. 
-        <br />
-        <a href={`${import.meta.env.BASE_URL}`}>Home</a> | <a href={`${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}methodology`}>Methodology</a> | <a href={`${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}terms`}>Terms</a> | 
-        <a href="https://github.com/jobehi/isThisTechDead" target="_blank">Source Code</a>
-      </small>
-    </p>
-  </footer>
-</body>
+    <hr />
+    <footer>
+      <p>
+        <small>
+          <strong>Is This Tech Dead?</strong> A rigorous, objective, and entirely scientific analysis
+          of technology relevance.
+          <br />
+          <a href={`${import.meta.env.BASE_URL}`}>Home</a> | <a
+            href={`${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}methodology`}
+            >Methodology</a
+          > | <a
+            href={`${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}terms`}
+            >Terms</a
+          > |
+          <a
+            href="https://github.com/jobehi/isThisTechDead"
+            target="_blank"
+            rel="noopener noreferrer">Source Code</a
+          >
+        </small>
+      </p>
+    </footer>
+  </body>
 </html>

@@ -5,23 +5,25 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const title = "Methodology: The Calculus of 'Deaditude'";
-const abstract = "This document outlines the rigorous mathematical and statistical models utilized to calculate the Deaditude Score of software technologies, based directly on the scoring engine implementation.";
+const abstract =
+  'This document outlines the rigorous mathematical and statistical models utilized to calculate the Deaditude Score of software technologies, based directly on the scoring engine implementation.';
 
 // Read the engine python code directly from the local monorepo
-let engineSnippet = "";
+let engineSnippet = '';
 try {
   const enginePath = path.resolve(process.cwd(), '../deaditude/engine/scoring/scoring.py');
   const pythonCode = fs.readFileSync(enginePath, 'utf8');
-  
+
   // Extract the calculate_deaditude_score function block
   const match = pythonCode.match(/def calculate_deaditude_score[\s\S]*?(?=\n# ---|\nif __name__)/);
   if (match) {
     engineSnippet = match[0].trim();
   } else {
-    engineSnippet = "def calculate_deaditude_score():\n    # Could not extract function from scoring.py";
+    engineSnippet =
+      'def calculate_deaditude_score():\n    # Could not extract function from scoring.py';
   }
 } catch (e) {
-  engineSnippet = "# Error loading live engine code from ../deaditude/engine/scoring/scoring.py\n" + e.toString();
+  engineSnippet = '# Error loading live engine code. Please try again later.';
 }
 ---
 
@@ -29,18 +31,19 @@ try {
   <section>
     <h2>1. Introduction</h2>
     <p>
-      Determining whether a technology is "dead" requires moving beyond subjective developer opinions, Reddit 
-      flamewars, and Hacker News echo chambers into empirical data analysis. The Deaditude Engine aggregates 
-      signals across seven key dimensions to compute a unified score with a statistical confidence interval.
+      Determining whether a technology is "dead" requires moving beyond subjective developer
+      opinions, Reddit flamewars, and Hacker News echo chambers into empirical data analysis. The
+      Deaditude Engine aggregates signals across seven key dimensions to compute a unified score
+      with a statistical confidence interval.
     </p>
   </section>
 
   <section>
     <h2>2. Data Sources & Weighting</h2>
     <p>
-      The engine calculates a weighted average of individual deaditude scores from various sources. 
-      Because the lifecycle of a new framework looks very different from an established enterprise language, 
-      the weights adapt dynamically based on the technology's age.
+      The engine calculates a weighted average of individual deaditude scores from various sources.
+      Because the lifecycle of a new framework looks very different from an established enterprise
+      language, the weights adapt dynamically based on the technology's age.
     </p>
 
     <h3>2.1 Base Weights (Established Tech &gt; 5 years)</h3>
@@ -49,15 +52,20 @@ try {
       <li><strong>Google Jobs (20%):</strong> Employer demand and active job listings.</li>
       <li><strong>Reddit (15%):</strong> Community sentiment and discussion volume.</li>
       <li><strong>StackShare (15%):</strong> Corporate adoption and stack inclusion.</li>
-      <li><strong>YouTube (15%):</strong> Learning resources, tutorials, and content creator hype.</li>
-      <li><strong>StackOverflow (10%):</strong> Developer support and "despair index" of unanswered questions.</li>
+      <li>
+        <strong>YouTube (15%):</strong> Learning resources, tutorials, and content creator hype.
+      </li>
+      <li>
+        <strong>StackOverflow (10%):</strong> Developer support and "despair index" of unanswered questions.
+      </li>
       <li><strong>Hacker News (5%):</strong> Intellectual discourse and trending topics.</li>
     </ul>
 
     <h3>2.2 Young Tech Weights (Age &le; 5 years)</h3>
     <p>
-      Brand new technologies inherently lack massive enterprise job demand and StackShare adoption. 
-      To compensate, the engine heavily weights community hype, open-source activity, and content creation:
+      Brand new technologies inherently lack massive enterprise job demand and StackShare adoption.
+      To compensate, the engine heavily weights community hype, open-source activity, and content
+      creation:
     </p>
     <ul>
       <li><strong>GitHub:</strong> Increased to 25%</li>
@@ -71,29 +79,42 @@ try {
   <section>
     <h2>3. The Scoring Algorithm</h2>
     <p>
-      The Deaditude calculation is not a naive average. It factors in data quality, variance, and age-based generosity. The overarching formula that calculates the final Deaditude Score percentage (<i>D</i>) is defined as:
+      The Deaditude calculation is not a naive average. It factors in data quality, variance, and
+      age-based generosity. The overarching formula that calculates the final Deaditude Score
+      percentage (<i>D</i>) is defined as:
     </p>
 
-    <div style="text-align: center; margin: 3rem 0; font-size: 1.6rem; padding: 2rem; border: 2px solid var(--body-color); border-radius: 4px; box-shadow: 4px 4px 0 var(--body-color);">
-      <i>D = 10 &times; G<sub>age</sub> &times; &sum;<sub>i=1</sub><sup>7</sup> (W<sub>eff, i</sub> &times; S<sub>i</sub>)</i>
+    <div
+      style="text-align: center; margin: 3rem 0; font-size: 1.6rem; padding: 2rem; border: 2px solid var(--body-color); border-radius: 4px; box-shadow: 4px 4px 0 var(--body-color);"
+    >
+      <i
+        >D = 10 &times; G<sub>age</sub> &times; &sum;<sub>i=1</sub><sup>7</sup> (W<sub>eff, i</sub> &times;
+        S<sub>i</sub>)</i
+      >
     </div>
 
     <p>
-      Where: <br/>
-      <strong><i>G<sub>age</sub></i></strong> = Age Generosity Multiplier (0.85, 0.90, or 1.0)<br/>
-      <strong><i>W<sub>eff, i</sub></i></strong> = The normalized effective weight of the <i>i</i>-th data source<br/>
-      <strong><i>S<sub>i</sub></i></strong> = The raw deaditude score (0-10) of the <i>i</i>-th data source
+      Where: <br />
+      <strong><i>G<sub>age</sub></i></strong> = Age Generosity Multiplier (0.85, 0.90, or 1.0)<br />
+      <strong><i>W<sub>eff, i</sub></i></strong> = The normalized effective weight of the <i>i</i
+      >-th data source<br />
+      <strong><i>S<sub>i</sub></i></strong> = The raw deaditude score (0-10) of the <i>i</i>-th data
+      source
     </p>
 
     <h3>3.1 Quality Degradation & Effective Weights</h3>
     <p>
-      Each metric source returns a raw deaditude score (0-10) and a <em>quality factor</em> (<i>q</i> &isin; [0, 1]). 
-      If an API fails or data is sparse, <i>q</i> drops. The base weight is multiplied by <i>q</i> to form the <em>effective weight</em> (<i>W<sub>eff</sub></i>), which is then re-normalized across all 7 sources. 
+      Each metric source returns a raw deaditude score (0-10) and a <em>quality factor</em> (<i>q</i
+      > &isin; [0, 1]). If an API fails or data is sparse, <i>q</i> drops. The base weight is multiplied
+      by <i>q</i> to form the <em>effective weight</em> (<i>W<sub>eff</sub></i>), which is then
+      re-normalized across all 7 sources.
     </p>
 
     <h3>3.2 Age Generosity Multiplier</h3>
     <p>
-      New technologies are afforded a "grace period" to mature, while older technologies that have survived over a decade are evaluated strictly on their current momentum. Before the final score is converted to a percentage, a generosity multiplier is applied:
+      New technologies are afforded a "grace period" to mature, while older technologies that have
+      survived over a decade are evaluated strictly on their current momentum. Before the final
+      score is converted to a percentage, a generosity multiplier is applied:
     </p>
     <ul>
       <li><strong>Young (&le; 5 years):</strong> Score &times; 0.85</li>
@@ -103,29 +124,45 @@ try {
 
     <h3>3.3 Confidence Intervals</h3>
     <p>
-      We use a variance model to compute a 95% Confidence Interval. The measurement standard deviation (&sigma;) for a source is inversely proportional to its data quality:
+      We use a variance model to compute a 95% Confidence Interval. The measurement standard
+      deviation (&sigma;) for a source is inversely proportional to its data quality:
     </p>
     <div style="text-align: center; margin: 2rem 0; font-size: 1.2rem;">
-      <i>&sigma; = &sigma;<sub>base</sub> / &radic;<span style="text-decoration: overline">q</span></i>
+      <i
+        >&sigma; = &sigma;<sub>base</sub> / &radic;<span style="text-decoration: overline">q</span
+        ></i
+      >
     </div>
     <p>
-      If data quality is zero, &sigma; doubles to reflect high uncertainty. The overall variance is the sum of the squared effective weights multiplied by their respective variances, allowing the engine to mathematically express its uncertainty when data is missing or low-quality.
+      If data quality is zero, &sigma; doubles to reflect high uncertainty. The overall variance is
+      the sum of the squared effective weights multiplied by their respective variances, allowing
+      the engine to mathematically express its uncertainty when data is missing or low-quality.
     </p>
   </section>
 
   <section>
     <h2>4. Engine Implementation (Live Code)</h2>
-    <p>For full transparency, here is the exact <b>live, auto-synced</b> algorithm running in the backend Python engine right now that computes the final percentage and confidence bounds. Click the code below to view the full source file on GitHub:</p>
-    <a 
-      href="https://github.com/jobehi/isThisTechDead/blob/main/deaditude/engine/scoring/scoring.py" 
-      target="_blank" 
+    <p>
+      For full transparency, here is the exact <b>live, auto-synced</b> algorithm running in the backend
+      Python engine right now that computes the final percentage and confidence bounds. Click the code
+      below to view the full source file on GitHub:
+    </p>
+    <a
+      href="https://github.com/jobehi/isThisTechDead/blob/main/deaditude/engine/scoring/scoring.py"
+      target="_blank"
       rel="noopener noreferrer"
       style="text-decoration: none; color: inherit; display: block; transition: transform 0.2s ease, box-shadow 0.2s ease;"
-      onmouseover="this.style.transform='translateY(-2px)';" 
+      onmouseover="this.style.transform='translateY(-2px)';"
       onmouseout="this.style.transform='translateY(0)';"
       title="View scoring.py on GitHub"
     >
-      <Code code={engineSnippet} lang="python" theme="github-dark" wrap={false} class="methodology-code" />
+      <Code
+        code={engineSnippet}
+        lang="python"
+        theme="github-dark"
+        wrap={false}
+        class="methodology-code"
+      />
     </a>
   </section>
 
@@ -135,12 +172,11 @@ try {
       cursor: pointer;
       border-radius: 8px !important;
       overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
       padding: 1.5rem !important;
       font-size: 0.95rem;
       line-height: 1.5;
       margin-top: 0 !important;
     }
   </style>
-
 </AcademicLayout>

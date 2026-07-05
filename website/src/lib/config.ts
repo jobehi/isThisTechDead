@@ -68,7 +68,7 @@ interface AppConfig {
 /**
  * Helper to get an optional environment variable with a default value
  */
-export function getEnv(name: string, defaultValue: string): string {
+function getEnv(name: string, defaultValue: string): string {
   if (typeof process !== 'undefined' && process.env) {
     return process.env[name] || defaultValue;
   }
@@ -78,7 +78,7 @@ export function getEnv(name: string, defaultValue: string): string {
 /**
  * Helper to get a boolean environment variable
  */
-export function getBoolEnv(name: string, defaultValue = true): boolean {
+function getBoolEnv(name: string, defaultValue = true): boolean {
   let value;
   if (typeof process !== 'undefined' && process.env) {
     value = process.env[name];
@@ -121,7 +121,7 @@ export const config: AppConfig = {
     name: 'Is This Tech Dead?',
     description: 'Find out if your favorite technologies are dying with data-driven insights.',
     ogImage: '/is_this_tech_dead_cover.png',
-    githubUrl: 'https://github.com/jobehi/is-this-tech-dead-front',
+    githubUrl: 'https://github.com/jobehi/isThisTechDead',
     ethicalAdsId:
       (import.meta as any).env?.ETHICAL_ADS_ID || getEnv('ETHICAL_ADS_ID', 'isthistechdeadcom'),
   },
@@ -166,7 +166,7 @@ export const config: AppConfig = {
  * Log warnings for missing configurations (development only)
  * This won't break the build, but just warns developers
  */
-export function logConfigWarnings() {
+function logConfigWarnings() {
   if (process.env.NODE_ENV !== 'production') {
     if (!process.env.NEXT_PUBLIC_SUPABASE_URL) {
       console.warn(

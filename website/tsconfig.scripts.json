@@ -14,5 +14,5 @@
     "baseUrl": "."
   },
   "include": ["scripts/**/*.ts", "lib/**/*.ts"],
-  "exclude": ["node_modules", ".next", "out"]
+  "exclude": ["node_modules", "dist"]
 }

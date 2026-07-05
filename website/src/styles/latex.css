@@ -694,70 +694,6 @@ input.sidenote-toggle {
   white-space: nowrap;
 }
 
-/* Heading typography */
-h1 {
-  font-size: 2.5rem;
-  line-height: 3.25rem;
-  margin-bottom: 1.625rem;
-}
-
-h2 {
-  font-size: 1.7rem;
-  line-height: 2rem;
-  margin-top: 3rem;
-}
-
-h3 {
-  font-size: 1.4rem;
-  margin-top: 2.5rem;
-}
-
-h4 {
-  font-size: 1.2rem;
-  margin-top: 2rem;
-}
-
-h5 {
-  font-size: 1rem;
-  margin-top: 1.8rem;
-}
-
-h6 {
-  font-size: 1rem;
-  font-style: italic;
-  font-weight: normal;
-  margin-top: 2.5rem;
-}
-
-h3,
-h4,
-h5,
-h6 {
-  line-height: 1.625rem;
-}
-
-h1 + h2 {
-  margin-top: 1.625rem;
-}
-
-h2 + h3,
-h3 + h4,
-h4 + h5 {
-  margin-top: 0.8rem;
-}
-
-h5 + h6 {
-  margin-top: -0.8rem;
-}
-
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-bottom: 0.8rem;
-}
-
 /* ----------------------------------
    CUSTOM UI / UX ENHANCEMENTS 
    (Academic PhD Paper Aesthetics)
@@ -905,33 +841,6 @@ h6 {
 .scatter-dot:hover .scatter-tooltip {
   opacity: 1;
   transform: translate(-50%, -25px);
-}
-
-/* Metric Multi-column Grid */
-.metric-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-  gap: 1.5rem;
-  margin: 1.5rem 0;
-}
-
-.metric-card {
-  border: var(--border-width-thin) solid var(--body-color);
-  padding: 1rem;
-}
-
-.metric-card h4 {
-  margin-top: 0;
-  border-bottom: var(--border-width-thin) solid var(--body-color);
-  padding-bottom: 0.2rem;
-  margin-bottom: 0.5rem;
-  font-variant-caps: small-caps;
-}
-
-.metric-card ul {
-  padding-left: 1.2rem;
-  margin: 0;
-  font-size: 0.9em;
 }
 
 /* Academic CSS Chart */
