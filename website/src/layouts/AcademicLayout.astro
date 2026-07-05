@@ -6,9 +6,19 @@ interface Props {
   author?: string;
   date?: string;
   abstract?: string;
+  image?: string;
 }
 
-const { title, author = ' An Empirical Analysis of Technological Relevance', date = new Date().toLocaleDateString(), abstract } = Astro.props;
+const { 
+  title, 
+  author = ' An Empirical Analysis of Technological Relevance', 
+  date = new Date().toLocaleDateString(), 
+  abstract,
+  image = '/is_this_tech_dead_cover.png'
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://isthistechdead.com');
+const imageUrl = new URL(image, Astro.site || 'https://isthistechdead.com');
 ---
 
 <!DOCTYPE html>
@@ -17,7 +27,27 @@ const { title, author = ' An Empirical Analysis of Technological Relevance', dat
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title} - Is This Tech Dead?</title>
-  <meta name="description" content={abstract || title} />
+  <meta name="description" content={abstract || "An ongoing, highly scientific analysis of various technologies to determine their 'Deaditude'."} />
+  <meta name="keywords" content="technology trends, software engineering, is this tech dead, developer tools, framework fatigue" />
+  <link rel="canonical" href={canonicalURL} />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}favicon.svg`} />
+  <link rel="apple-touch-icon" href={`${import.meta.env.BASE_URL}${import.meta.env.BASE_URL.endsWith('/') ? '' : '/'}is_this_tech_dead_logo_small_2.png`} />
+
+  <!-- OpenGraph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={`${title} - Is This Tech Dead?`} />
+  <meta property="og:description" content={abstract || "An ongoing, highly scientific analysis of various technologies to determine their 'Deaditude'."} />
+  <meta property="og:image" content={imageUrl} />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content={canonicalURL} />
+  <meta property="twitter:title" content={`${title} - Is This Tech Dead?`} />
+  <meta property="twitter:description" content={abstract || "An ongoing, highly scientific analysis of various technologies to determine their 'Deaditude'."} />
+  <meta property="twitter:image" content={imageUrl} />
   
   <link rel="preconnect" href="https://scripts.simpleanalyticscdn.com" />
   <link rel="preconnect" href="https://static.simpleanalyticscdn.com" />
