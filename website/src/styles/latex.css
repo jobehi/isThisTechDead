@@ -1061,3 +1061,56 @@ table.booktabs-table .tech-row:hover {
 .latex-dark table.booktabs-table .tech-row:hover {
   background-color: rgba(255, 255, 255, 0.05);
 }
+
+/* ----------------------------------
+   TECH DETAILS PAGE RESPONSIVENESS
+------------------------------------- */
+
+.vitality-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+}
+
+.vitality-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.vitality-radar {
+  flex: 1;
+  min-width: 300px;
+  max-width: 100%;
+}
+
+.multimedia-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.video-card {
+  border: var(--border-width-thin) solid var(--body-color);
+  padding: 1rem;
+  background: var(--body-bg-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.video-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-bottom: 1px solid var(--body-color);
+  margin-bottom: 0.5rem;
+}
+
+.video-card strong {
+  font-size: 1.1rem;
+  line-height: 1.3;
+}
