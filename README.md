@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety.
 
-## Latest Technology Updates (2026-07-06)
+## Latest Technology Updates (2026-07-07)
 
-[![Rust: 17](https://img.shields.io/badge/Rust-17%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/rust) [![Tailwind: 46](https://img.shields.io/badge/Tailwind-46%25-green?style=flat-square)](https://www.isthistechdead.com/tailwind) [![angular.js: 70](https://img.shields.io/badge/angular.js-70%25-orange?style=flat-square)](https://www.isthistechdead.com/angularjs) [![Ionic: 51](https://img.shields.io/badge/Ionic-51%25-yellow?style=flat-square)](https://www.isthistechdead.com/ionic) [![Laravel Livewire: 64](https://img.shields.io/badge/Laravel%20Livewire-64%25-yellow?style=flat-square)](https://www.isthistechdead.com/laravel-livewire) [![Magento: 54](https://img.shields.io/badge/Magento-54%25-yellow?style=flat-square)](https://www.isthistechdead.com/magento) 
+[![ASP.NET: 35](https://img.shields.io/badge/ASP.NET-35%25-green?style=flat-square)](https://www.isthistechdead.com/asp.net) [![Joomla! CMS: 66](https://img.shields.io/badge/Joomla!%20CMS-66%25-yellow?style=flat-square)](https://www.isthistechdead.com/joomla) [![Ansible: 49](https://img.shields.io/badge/Ansible-49%25-green?style=flat-square)](https://www.isthistechdead.com/ansible) [![Avalonia: 55](https://img.shields.io/badge/Avalonia-55%25-yellow?style=flat-square)](https://www.isthistechdead.com/avalonia) [![Electron: 46](https://img.shields.io/badge/Electron-46%25-green?style=flat-square)](https://www.isthistechdead.com/electron) [![Express js: 59](https://img.shields.io/badge/Express%20js-59%25-yellow?style=flat-square)](https://www.isthistechdead.com/expressjs) 
 ## Project Components
 
 This monorepo contains two main components:
