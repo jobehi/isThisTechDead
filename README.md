@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety.
 
-## Latest Technology Updates (2026-07-08)
+## Latest Technology Updates (2026-07-09)
 
-[![NativeScript: 86](https://img.shields.io/badge/NativeScript-86%25-red?style=flat-square)](https://www.isthistechdead.com/nativescript) [![Typescript: 34](https://img.shields.io/badge/Typescript-34%25-green?style=flat-square)](https://www.isthistechdead.com/typescript) [![MySQL: 52](https://img.shields.io/badge/MySQL-52%25-yellow?style=flat-square)](https://www.isthistechdead.com/mysql) [![Orleans: 57](https://img.shields.io/badge/Orleans-57%25-yellow?style=flat-square)](https://www.isthistechdead.com/orleans) [![PostgreSQL: 38](https://img.shields.io/badge/PostgreSQL-38%25-green?style=flat-square)](https://www.isthistechdead.com/postgresql) [![Angular: 20](https://img.shields.io/badge/Angular-20%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/angular) 
+[![backbonejs: 88](https://img.shields.io/badge/backbonejs-88%25-red?style=flat-square)](https://www.isthistechdead.com/backbone) [![strapi: 42](https://img.shields.io/badge/strapi-42%25-green?style=flat-square)](https://www.isthistechdead.com/strapi) [![Solar2D: 84](https://img.shields.io/badge/Solar2D-84%25-orange?style=flat-square)](https://www.isthistechdead.com/solar2d) [![django: 40](https://img.shields.io/badge/django-40%25-green?style=flat-square)](https://www.isthistechdead.com/django) [![FastAPI: 27](https://img.shields.io/badge/FastAPI-27%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/fastapi) [![Capacitor: 46](https://img.shields.io/badge/Capacitor-46%25-green?style=flat-square)](https://www.isthistechdead.com/capacitor) 
 ## Project Components
 
 This monorepo contains two main components:
