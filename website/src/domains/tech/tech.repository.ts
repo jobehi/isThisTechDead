@@ -163,7 +163,8 @@ export class TechRepository {
       if (error) throw error;
       return count || 0;
     } catch (error) {
-      handleSupabaseError(error, 'Get respect count');
+      console.error(`Error fetching respect count for tech ${techId}:`, error);
+      return 0;
     }
   }
 
