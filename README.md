@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety.
 
-## Latest Technology Updates (2026-07-27)
+## Latest Technology Updates (2026-07-28)
 
-[![.NET: 26](https://img.shields.io/badge/.NET-26%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/dot.net) [![Visual Studio Code: 29](https://img.shields.io/badge/Visual%20Studio%20Code-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/vscode) [![Scala: 67](https://img.shields.io/badge/Scala-67%25-yellow?style=flat-square)](https://www.isthistechdead.com/scala) [![Git: 24](https://img.shields.io/badge/Git-24%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/git) [![Swift: 38](https://img.shields.io/badge/Swift-38%25-green?style=flat-square)](https://www.isthistechdead.com/swift) [![Docker: 26](https://img.shields.io/badge/Docker-26%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/docker) 
+[![Amazon Web Services: 50](https://img.shields.io/badge/Amazon%20Web%20Services-50%25-green?style=flat-square)](https://www.isthistechdead.com/aws) [![React Native: 29](https://img.shields.io/badge/React%20Native-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/react-native) [![Next.js: 18](https://img.shields.io/badge/Next.js-18%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/nextjs) [![Perl: 47](https://img.shields.io/badge/Perl-47%25-green?style=flat-square)](https://www.isthistechdead.com/perl) [![Kubernetes: 20](https://img.shields.io/badge/Kubernetes-20%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/kubernetes) [![Microsoft Azure: 40](https://img.shields.io/badge/Microsoft%20Azure-40%25-green?style=flat-square)](https://www.isthistechdead.com/azure) 
 ## Project Components
 
 This monorepo contains two main components:
