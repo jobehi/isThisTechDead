@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety.
 
-## Latest Technology Updates (2026-08-07)
+## Latest Technology Updates (2026-08-08)
 
-[![PHP: 25](https://img.shields.io/badge/PHP-25%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/php) [![Firebase: 49](https://img.shields.io/badge/Firebase-49%25-green?style=flat-square)](https://www.isthistechdead.com/firebase) [![Svelte: 48](https://img.shields.io/badge/Svelte-48%25-green?style=flat-square)](https://www.isthistechdead.com/svelte) [![elm: 69](https://img.shields.io/badge/elm-69%25-yellow?style=flat-square)](https://www.isthistechdead.com/elm) [![Nuxt.js: 41](https://img.shields.io/badge/Nuxt.js-41%25-green?style=flat-square)](https://www.isthistechdead.com/nuxtjs) [![Vagrant: 74](https://img.shields.io/badge/Vagrant-74%25-orange?style=flat-square)](https://www.isthistechdead.com/vagrant) 
+[![JavaScript: 42](https://img.shields.io/badge/JavaScript-42%25-green?style=flat-square)](https://www.isthistechdead.com/javascript) [![Flutter: 22](https://img.shields.io/badge/Flutter-22%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/flutter) [![Go: 30](https://img.shields.io/badge/Go-30%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/go) [![Ember.js: 65](https://img.shields.io/badge/Ember.js-65%25-yellow?style=flat-square)](https://www.isthistechdead.com/emberjs) [![React: 32](https://img.shields.io/badge/React-32%25-green?style=flat-square)](https://www.isthistechdead.com/react) [![Symfony: 46](https://img.shields.io/badge/Symfony-46%25-green?style=flat-square)](https://www.isthistechdead.com/symfony) 
 ## Project Components
 
 This monorepo contains two main components:
