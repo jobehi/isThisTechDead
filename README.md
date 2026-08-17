@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety.
 
-## Latest Technology Updates (2026-08-16)
+## Latest Technology Updates (2026-08-17)
 
-[![October CMS: 52](https://img.shields.io/badge/October%20CMS-52%25-yellow?style=flat-square)](https://www.isthistechdead.com/october) [![Compose Multiplatform: 50](https://img.shields.io/badge/Compose%20Multiplatform-50%25-green?style=flat-square)](https://www.isthistechdead.com/compose-mp) [![Gatsby: 75](https://img.shields.io/badge/Gatsby-75%25-orange?style=flat-square)](https://www.isthistechdead.com/gatsbyjs) [![Xamarin: 76](https://img.shields.io/badge/Xamarin-76%25-orange?style=flat-square)](https://www.isthistechdead.com/xamarin) [![Axum: 44](https://img.shields.io/badge/Axum-44%25-green?style=flat-square)](https://www.isthistechdead.com/axum) [![Actix Web: 53](https://img.shields.io/badge/Actix%20Web-53%25-yellow?style=flat-square)](https://www.isthistechdead.com/actix-web) 
+[![Rust: 10](https://img.shields.io/badge/Rust-10%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/rust) [![Tailwind: 41](https://img.shields.io/badge/Tailwind-41%25-green?style=flat-square)](https://www.isthistechdead.com/tailwind) [![angular.js: 71](https://img.shields.io/badge/angular.js-71%25-orange?style=flat-square)](https://www.isthistechdead.com/angularjs) [![Ionic: 54](https://img.shields.io/badge/Ionic-54%25-yellow?style=flat-square)](https://www.isthistechdead.com/ionic) [![Laravel Livewire: 52](https://img.shields.io/badge/Laravel%20Livewire-52%25-yellow?style=flat-square)](https://www.isthistechdead.com/laravel-livewire) [![Magento: 62](https://img.shields.io/badge/Magento-62%25-yellow?style=flat-square)](https://www.isthistechdead.com/magento) 
 ## Project Components
 
 This monorepo contains two main components:
