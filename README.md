@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety.
 
-## Latest Technology Updates (2026-08-29)
+## Latest Technology Updates (2026-08-30)
 
-[![Spring boot: 20](https://img.shields.io/badge/Spring%20boot-20%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/spring) [![Phoenix Framework: 52](https://img.shields.io/badge/Phoenix%20Framework-52%25-yellow?style=flat-square)](https://www.isthistechdead.com/phoenix) [![Vue.js: 53](https://img.shields.io/badge/Vue.js-53%25-yellow?style=flat-square)](https://www.isthistechdead.com/vuejs) [![Cake PHP: 64](https://img.shields.io/badge/Cake%20PHP-64%25-yellow?style=flat-square)](https://www.isthistechdead.com/cakephp) [![Kotlin: 31](https://img.shields.io/badge/Kotlin-31%25-green?style=flat-square)](https://www.isthistechdead.com/kotlin) [![WordPress: 43](https://img.shields.io/badge/WordPress-43%25-green?style=flat-square)](https://www.isthistechdead.com/wordpress) 
+[![laravel: 45](https://img.shields.io/badge/laravel-45%25-green?style=flat-square)](https://www.isthistechdead.com/laravel) [![Silverlight: 92](https://img.shields.io/badge/Silverlight-92%25-red?style=flat-square)](https://www.isthistechdead.com/silverlight) [![Deno: 33](https://img.shields.io/badge/Deno-33%25-green?style=flat-square)](https://www.isthistechdead.com/deno) [![Ruby on Rails: 39](https://img.shields.io/badge/Ruby%20on%20Rails-39%25-green?style=flat-square)](https://www.isthistechdead.com/rails) [![jQuery: 58](https://img.shields.io/badge/jQuery-58%25-yellow?style=flat-square)](https://www.isthistechdead.com/jquery) [![Node.js: 18](https://img.shields.io/badge/Node.js-18%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/nodejs) 
 ## Project Components
 
 This monorepo contains two main components:
