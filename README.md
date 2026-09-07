@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety.
 
-## Latest Technology Updates (2026-09-06)
+## Latest Technology Updates (2026-09-07)
 
-[![JavaScript: 33](https://img.shields.io/badge/JavaScript-33%25-green?style=flat-square)](https://www.isthistechdead.com/javascript) [![Flutter: 33](https://img.shields.io/badge/Flutter-33%25-green?style=flat-square)](https://www.isthistechdead.com/flutter) [![Go: 35](https://img.shields.io/badge/Go-35%25-green?style=flat-square)](https://www.isthistechdead.com/go) [![Ember.js: 68](https://img.shields.io/badge/Ember.js-68%25-yellow?style=flat-square)](https://www.isthistechdead.com/emberjs) [![React: 32](https://img.shields.io/badge/React-32%25-green?style=flat-square)](https://www.isthistechdead.com/react) [![Symfony: 38](https://img.shields.io/badge/Symfony-38%25-green?style=flat-square)](https://www.isthistechdead.com/symfony) 
+[![Terraform: 53](https://img.shields.io/badge/Terraform-53%25-yellow?style=flat-square)](https://www.isthistechdead.com/terraform) [![Ruby: 41](https://img.shields.io/badge/Ruby-41%25-green?style=flat-square)](https://www.isthistechdead.com/ruby) [![Elixir: 39](https://img.shields.io/badge/Elixir-39%25-green?style=flat-square)](https://www.isthistechdead.com/elixir) [![C#: 49](https://img.shields.io/badge/C#-49%25-green?style=flat-square)](https://www.isthistechdead.com/csharp) [![Dart: 39](https://img.shields.io/badge/Dart-39%25-green?style=flat-square)](https://www.isthistechdead.com/dart) [![Java: 31](https://img.shields.io/badge/Java-31%25-green?style=flat-square)](https://www.isthistechdead.com/java) 
 ## Project Components
 
 This monorepo contains two main components:
