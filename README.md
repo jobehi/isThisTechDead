@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety.
 
-## Latest Technology Updates (2026-09-21)
+## Latest Technology Updates (2026-09-22)
 
-[![Ruby: 40](https://img.shields.io/badge/Ruby-40%25-green?style=flat-square)](https://www.isthistechdead.com/ruby) [![Elixir: 36](https://img.shields.io/badge/Elixir-36%25-green?style=flat-square)](https://www.isthistechdead.com/elixir) [![C#: 56](https://img.shields.io/badge/C#-56%25-yellow?style=flat-square)](https://www.isthistechdead.com/csharp) [![Dart: 40](https://img.shields.io/badge/Dart-40%25-green?style=flat-square)](https://www.isthistechdead.com/dart) [![Java: 33](https://img.shields.io/badge/Java-33%25-green?style=flat-square)](https://www.isthistechdead.com/java) [![JavaScript: 46](https://img.shields.io/badge/JavaScript-46%25-green?style=flat-square)](https://www.isthistechdead.com/javascript) 
+[![Visual Studio Code: 25](https://img.shields.io/badge/Visual%20Studio%20Code-25%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/vscode) [![Scala: 55](https://img.shields.io/badge/Scala-55%25-yellow?style=flat-square)](https://www.isthistechdead.com/scala) [![Git: 32](https://img.shields.io/badge/Git-32%25-green?style=flat-square)](https://www.isthistechdead.com/git) [![Swift: 34](https://img.shields.io/badge/Swift-34%25-green?style=flat-square)](https://www.isthistechdead.com/swift) [![Docker: 30](https://img.shields.io/badge/Docker-30%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/docker) [![Terraform: 45](https://img.shields.io/badge/Terraform-45%25-green?style=flat-square)](https://www.isthistechdead.com/terraform) 
 ## Project Components
 
 This monorepo contains two main components:
