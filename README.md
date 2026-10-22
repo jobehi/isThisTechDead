@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety.
 
-## Latest Technology Updates (2026-10-21)
+## Latest Technology Updates (2026-10-22)
 
-[![React Native: 23](https://img.shields.io/badge/React%20Native-23%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/react-native) [![Next.js: 27](https://img.shields.io/badge/Next.js-27%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/nextjs) [![Perl: 55](https://img.shields.io/badge/Perl-55%25-yellow?style=flat-square)](https://www.isthistechdead.com/perl) [![Kubernetes: 36](https://img.shields.io/badge/Kubernetes-36%25-green?style=flat-square)](https://www.isthistechdead.com/kubernetes) [![Microsoft Azure: 45](https://img.shields.io/badge/Microsoft%20Azure-45%25-green?style=flat-square)](https://www.isthistechdead.com/azure) [![.NET: 29](https://img.shields.io/badge/.NET-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/dot.net) 
+[![Lynx: 51](https://img.shields.io/badge/Lynx-51%25-yellow?style=flat-square)](https://www.isthistechdead.com/lynx) [![Python: 29](https://img.shields.io/badge/Python-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/python) [![cordova: 84](https://img.shields.io/badge/cordova-84%25-orange?style=flat-square)](https://www.isthistechdead.com/cordova) [![meteor: 77](https://img.shields.io/badge/meteor-77%25-orange?style=flat-square)](https://www.isthistechdead.com/meteor) [![.NET MAUI: 33](https://img.shields.io/badge/.NET%20MAUI-33%25-green?style=flat-square)](https://www.isthistechdead.com/maui) [![Amazon Web Services: 53](https://img.shields.io/badge/Amazon%20Web%20Services-53%25-yellow?style=flat-square)](https://www.isthistechdead.com/aws) 
 ## Project Components
 
 This monorepo contains two main components:
