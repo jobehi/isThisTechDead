@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety.
 
-## Latest Technology Updates (2026-10-30)
+## Latest Technology Updates (2026-10-31)
 
-[![strapi: 50](https://img.shields.io/badge/strapi-50%25-yellow?style=flat-square)](https://www.isthistechdead.com/strapi) [![Solar2D: 88](https://img.shields.io/badge/Solar2D-88%25-red?style=flat-square)](https://www.isthistechdead.com/solar2d) [![django: 30](https://img.shields.io/badge/django-30%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/django) [![FastAPI: 32](https://img.shields.io/badge/FastAPI-32%25-green?style=flat-square)](https://www.isthistechdead.com/fastapi) [![Capacitor: 58](https://img.shields.io/badge/Capacitor-58%25-yellow?style=flat-square)](https://www.isthistechdead.com/capacitor) [![NativeScript: 76](https://img.shields.io/badge/NativeScript-76%25-orange?style=flat-square)](https://www.isthistechdead.com/nativescript) 
+[![Firebase: 69](https://img.shields.io/badge/Firebase-69%25-yellow?style=flat-square)](https://www.isthistechdead.com/firebase) [![Svelte: 46](https://img.shields.io/badge/Svelte-46%25-green?style=flat-square)](https://www.isthistechdead.com/svelte) [![elm: 71](https://img.shields.io/badge/elm-71%25-orange?style=flat-square)](https://www.isthistechdead.com/elm) [![Nuxt.js: 34](https://img.shields.io/badge/Nuxt.js-34%25-green?style=flat-square)](https://www.isthistechdead.com/nuxtjs) [![Vagrant: 76](https://img.shields.io/badge/Vagrant-76%25-orange?style=flat-square)](https://www.isthistechdead.com/vagrant) [![backbonejs: 80](https://img.shields.io/badge/backbonejs-80%25-orange?style=flat-square)](https://www.isthistechdead.com/backbone) 
 ## Project Components
 
 This monorepo contains two main components:
