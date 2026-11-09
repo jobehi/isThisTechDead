@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety.
 
-## Latest Technology Updates (2026-11-08)
+## Latest Technology Updates (2026-11-09)
 
-[![Silverlight: 94](https://img.shields.io/badge/Silverlight-94%25-red?style=flat-square)](https://www.isthistechdead.com/silverlight) [![Deno: 42](https://img.shields.io/badge/Deno-42%25-green?style=flat-square)](https://www.isthistechdead.com/deno) [![Ruby on Rails: 29](https://img.shields.io/badge/Ruby%20on%20Rails-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/rails) [![jQuery: 60](https://img.shields.io/badge/jQuery-60%25-yellow?style=flat-square)](https://www.isthistechdead.com/jquery) [![Node.js: 18](https://img.shields.io/badge/Node.js-18%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/nodejs) [![Spring boot: 28](https://img.shields.io/badge/Spring%20boot-28%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/spring) 
+[![Compose Multiplatform: 60](https://img.shields.io/badge/Compose%20Multiplatform-60%25-yellow?style=flat-square)](https://www.isthistechdead.com/compose-mp) [![Gatsby: 79](https://img.shields.io/badge/Gatsby-79%25-orange?style=flat-square)](https://www.isthistechdead.com/gatsbyjs) [![Xamarin: 74](https://img.shields.io/badge/Xamarin-74%25-orange?style=flat-square)](https://www.isthistechdead.com/xamarin) [![Axum: 46](https://img.shields.io/badge/Axum-46%25-green?style=flat-square)](https://www.isthistechdead.com/axum) [![Actix Web: 45](https://img.shields.io/badge/Actix%20Web-45%25-green?style=flat-square)](https://www.isthistechdead.com/actix-web) [![laravel: 46](https://img.shields.io/badge/laravel-46%25-green?style=flat-square)](https://www.isthistechdead.com/laravel) 
 ## Project Components
 
 This monorepo contains two main components:
