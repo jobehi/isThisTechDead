@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety.
 
-## Latest Technology Updates (2026-11-19)
+## Latest Technology Updates (2026-11-20)
 
-[![Lynx: 49](https://img.shields.io/badge/Lynx-49%25-green?style=flat-square)](https://www.isthistechdead.com/lynx) [![Python: 30](https://img.shields.io/badge/Python-30%25-green?style=flat-square)](https://www.isthistechdead.com/python) [![cordova: 75](https://img.shields.io/badge/cordova-75%25-orange?style=flat-square)](https://www.isthistechdead.com/cordova) [![meteor: 61](https://img.shields.io/badge/meteor-61%25-yellow?style=flat-square)](https://www.isthistechdead.com/meteor) [![.NET MAUI: 29](https://img.shields.io/badge/.NET%20MAUI-29%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/maui) [![Amazon Web Services: 54](https://img.shields.io/badge/Amazon%20Web%20Services-54%25-yellow?style=flat-square)](https://www.isthistechdead.com/aws) 
+[![Astro: 35](https://img.shields.io/badge/Astro-35%25-green?style=flat-square)](https://www.isthistechdead.com/astro) [![Flask: 60](https://img.shields.io/badge/Flask-60%25-yellow?style=flat-square)](https://www.isthistechdead.com/flask) [![CodeIgniter: 62](https://img.shields.io/badge/CodeIgniter-62%25-yellow?style=flat-square)](https://www.isthistechdead.com/code-igniter) [![NestJS: 37](https://img.shields.io/badge/NestJS-37%25-green?style=flat-square)](https://www.isthistechdead.com/nest) [![Drupal: 62](https://img.shields.io/badge/Drupal-62%25-yellow?style=flat-square)](https://www.isthistechdead.com/drupal) [![Supabase: 40](https://img.shields.io/badge/Supabase-40%25-green?style=flat-square)](https://www.isthistechdead.com/supabase) 
 ## Project Components
 
 This monorepo contains two main components:
