@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety.
 
-## Latest Technology Updates (2026-11-20)
+## Latest Technology Updates (2026-11-21)
 
-[![Astro: 35](https://img.shields.io/badge/Astro-35%25-green?style=flat-square)](https://www.isthistechdead.com/astro) [![Flask: 60](https://img.shields.io/badge/Flask-60%25-yellow?style=flat-square)](https://www.isthistechdead.com/flask) [![CodeIgniter: 62](https://img.shields.io/badge/CodeIgniter-62%25-yellow?style=flat-square)](https://www.isthistechdead.com/code-igniter) [![NestJS: 37](https://img.shields.io/badge/NestJS-37%25-green?style=flat-square)](https://www.isthistechdead.com/nest) [![Drupal: 62](https://img.shields.io/badge/Drupal-62%25-yellow?style=flat-square)](https://www.isthistechdead.com/drupal) [![Supabase: 40](https://img.shields.io/badge/Supabase-40%25-green?style=flat-square)](https://www.isthistechdead.com/supabase) 
+[![Phoenix Framework: 59](https://img.shields.io/badge/Phoenix%20Framework-59%25-yellow?style=flat-square)](https://www.isthistechdead.com/phoenix) [![Vue.js: 50](https://img.shields.io/badge/Vue.js-50%25-yellow?style=flat-square)](https://www.isthistechdead.com/vuejs) [![Cake PHP: 65](https://img.shields.io/badge/Cake%20PHP-65%25-yellow?style=flat-square)](https://www.isthistechdead.com/cakephp) [![Kotlin: 30](https://img.shields.io/badge/Kotlin-30%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/kotlin) [![WordPress: 42](https://img.shields.io/badge/WordPress-42%25-green?style=flat-square)](https://www.isthistechdead.com/wordpress) [![MongoDB: 52](https://img.shields.io/badge/MongoDB-52%25-yellow?style=flat-square)](https://www.isthistechdead.com/mongodb) 
 ## Project Components
 
 This monorepo contains two main components:
