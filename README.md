@@ -17,9 +17,9 @@ A digital hospice for technologies that were once the darlings of LinkedIn influ
 
 We track the slow, painful decline of frameworks, languages, and tools that promised to revolutionize your workflow but instead revolutionized your anxiety.
 
-## Latest Technology Updates (2026-11-25)
+## Latest Technology Updates (2026-11-26)
 
-[![Joomla! CMS: 66](https://img.shields.io/badge/Joomla!%20CMS-66%25-yellow?style=flat-square)](https://www.isthistechdead.com/joomla) [![Ansible: 54](https://img.shields.io/badge/Ansible-54%25-yellow?style=flat-square)](https://www.isthistechdead.com/ansible) [![Avalonia: 43](https://img.shields.io/badge/Avalonia-43%25-green?style=flat-square)](https://www.isthistechdead.com/avalonia) [![Electron: 33](https://img.shields.io/badge/Electron-33%25-green?style=flat-square)](https://www.isthistechdead.com/electron) [![Express js: 55](https://img.shields.io/badge/Express%20js-55%25-yellow?style=flat-square)](https://www.isthistechdead.com/expressjs) [![Rust: 20](https://img.shields.io/badge/Rust-20%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/rust) 
+[![Typescript: 27](https://img.shields.io/badge/Typescript-27%25-brightgreen?style=flat-square)](https://www.isthistechdead.com/typescript) [![MySQL: 49](https://img.shields.io/badge/MySQL-49%25-green?style=flat-square)](https://www.isthistechdead.com/mysql) [![Orleans: 52](https://img.shields.io/badge/Orleans-52%25-yellow?style=flat-square)](https://www.isthistechdead.com/orleans) [![PostgreSQL: 36](https://img.shields.io/badge/PostgreSQL-36%25-green?style=flat-square)](https://www.isthistechdead.com/postgresql) [![Angular: 38](https://img.shields.io/badge/Angular-38%25-green?style=flat-square)](https://www.isthistechdead.com/angular) [![ASP.NET: 48](https://img.shields.io/badge/ASP.NET-48%25-green?style=flat-square)](https://www.isthistechdead.com/asp.net) 
 ## Project Components
 
 This monorepo contains two main components:
